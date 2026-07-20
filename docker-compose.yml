@@ -1,7 +1,7 @@
 services:
   qdrant:
     image: qdrant/qdrant:latest
-    container_name: remake-qdrant
+    container_name: kremzapay-qdrant
     ports:
       - "6335:6333"
     volumes:
