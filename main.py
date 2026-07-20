@@ -1,5 +1,5 @@
 def main():
-    print("Hello from payhub-remake!")
+    print("Hello from kremzapay-bot!")
 
 
 if __name__ == "__main__":
