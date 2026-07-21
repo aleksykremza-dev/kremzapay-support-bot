@@ -22,12 +22,16 @@ BRAND_VOICE = (
 
 _tax = json.load(open("data/taxonomy.json", encoding="utf-8"))
 INTENT_CATEGORY = {i["id"]: i["category"] for i in _tax["intents"]}
+INTENT_DEF = {i["id"]: i["definition"] for i in _tax["intents"]}
 
 
 def generate(question, intent=None, language="en"):
     """Возвращает {'answer', 'sources', 'chunks'} или None при пустом retrieval."""
     category = INTENT_CATEGORY.get(intent)
-    hits = search(question, category=category)[:TOP_N]
+    # Подмешиваем определение интента в запрос: якорит поиск на основной статье
+    # темы, а не на её крайних случаях (баг «zwrot -> статья про 180 дней»).
+    query = f"{question}. {INTENT_DEF[intent]}" if intent in INTENT_DEF else question
+    hits = search(query, category=category)[:TOP_N]
     if not hits:
         return None
     context = "\n\n---\n\n".join(
