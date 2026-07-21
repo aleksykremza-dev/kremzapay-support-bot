@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {"q": "Which section of the dashboard holds the credentials I pass into the SDK config?", "expected_intent": "api_keys_where", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "gdzie sa te klucze do api bo przekopalem caly panel i nic", "expected_intent": "api_keys_where", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The library setup wants a merchant identifier and a secret and I have no idea where to copy them from.", "expected_intent": "api_keys_where", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "no kurcze gdzie wy chowacie te klucze, siedze nad tym godzine", "expected_intent": "api_keys_where", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "The server returns signature verification failed on POST - which parameters get concatenated before hashing?", "expected_intent": "api_signature_error", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "znowu blad podpisu, licze hash a wy go nie akceptujecie", "expected_intent": "api_signature_error", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "transakcja leci a wraca odrzucona, chyba cos zle licze z tym skrotem", "expected_intent": "api_signature_error", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "been stuck on this damn signature mismatch all night, no clue what's wrong", "expected_intent": "api_signature_error", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "If my endpoint times out, how many times do you resend the payment notification and at what interval?", "expected_intent": "webhook_setup_retry", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "nie dziala mi webhok, nie przychodza zadne powiadomienia o platnosci", "expected_intent": "webhook_setup_retry", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "moj serwer nie dostaje info ze klient zaplacil, mimo ze platnosc przeszla", "expected_intent": "webhook_setup_retry", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "your callbacks straight up never reach my server, i'm losing my mind here", "expected_intent": "webhook_setup_retry", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "After I create a payment session, which call confirms the final paid status?", "expected_intent": "api_transaction_flow", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak zaczac platnosc przez api, jaka jest kolejnosc wywolan", "expected_intent": "api_transaction_flow", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "mam token z utworzonej sesji ale nie wiem gdzie teraz wyslac klienta", "expected_intent": "api_transaction_flow", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "totally lost in this whole payment flow, can someone just walk me through the steps", "expected_intent": "api_transaction_flow", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Czy macie gotowa wtyczke pod OpenCart?", "expected_intent": "plugin_setup", "expected_scope": "in_scope", "lang": "pl", "style": "plain"},
+    {"q": "wgralem modul do woocommerce ale nie widac przycisku platnosci", "expected_intent": "plugin_setup", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "I'd rather not code the integration by hand - is there a ready component I can drop into my store?", "expected_intent": "plugin_setup", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "ta wasza wtyczka do presty w ogole nie chce ruszyc, meczcze sie z tym", "expected_intent": "plugin_setup", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "What's the maximum number of requests per second before I start getting throttled?", "expected_intent": "api_errors_limits", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "dostaje caly czas kod 429, jaki jest wasz limit zapytan", "expected_intent": "api_errors_limits", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "My test calls work but the same code fails on the live URL - do sandbox and production behave differently?", "expected_intent": "api_errors_limits", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "co chwila jakis blad z numerkiem, nie mam pojecia co znaczy, wkurza mnie to", "expected_intent": "api_errors_limits", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "What documents do I need to onboard as a limited company merchant?", "expected_intent": "account_register_kyc", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "chce zalozyc konto sprzedawcy, jakie papiery sa do weryfikacji", "expected_intent": "account_register_kyc", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "prowadze male biuro i chcialbym u was przyjmowac platnosci, od czego mam zaczac", "expected_intent": "account_register_kyc", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "ok just tell me where to sign up already, i'm ready to start taking payments", "expected_intent": "account_register_kyc", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Ile dni zwykle trwa aktywacja konta po zlozeniu dokumentow?", "expected_intent": "account_activation_time", "expected_scope": "in_scope", "lang": "pl", "style": "plain"},
+    {"q": "wyslalem papiery, kiedy konto bedzie gotowe do dzialania", "expected_intent": "account_activation_time", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Submitted my verification a few days ago and still can't accept payments - is that normal?", "expected_intent": "account_activation_time", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "no ile jeszcze mam czekac na te aktywacje, mija juz tydzien", "expected_intent": "account_activation_time", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Can I give my accountant read-only access without exposing the API keys?", "expected_intent": "account_roles_team", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak dodac kolege do panelu z ograniczonymi uprawnieniami", "expected_intent": "account_roles_team", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "chce zeby druga osoba ogarniala platnosci, ale bez dostepu do reszty", "expected_intent": "account_roles_team", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "need to add my dev to the panel but i'm not handing him the whole account, how", "expected_intent": "account_roles_team", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Where do I update the bank account number used for payouts?", "expected_intent": "account_change_data", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "zmienilismy adres firmy, jak to poprawic w panelu", "expected_intent": "account_change_data", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "spolka ma teraz inny NIP, gdzie sie to u was aktualizuje", "expected_intent": "account_change_data", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "przenioslem firme i musze wszystko pozmieniac, gdzie to do licha siedzi", "expected_intent": "account_change_data", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "How do I permanently terminate my merchant account?", "expected_intent": "account_close", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "chce zamknac konto, nie bede juz z tego korzystal", "expected_intent": "account_close", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "koncze dzialalnosc, trzeba rozwiazac umowe i skasowac konto", "expected_intent": "account_close", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "just want to delete this whole thing and walk away, how do I do that", "expected_intent": "account_close", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "I got an email claiming to be kremzaPay asking me to confirm my password - where do I report it?", "expected_intent": "security_phishing_report", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "przyszedl sms z linkiem niby od was, wyglada na oszustwo, gdzie to zglosic", "expected_intent": "security_phishing_report", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "moi klienci dostaja dziwne linki do platnosci rzekomo z waszej bramki", "expected_intent": "security_phishing_report", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "jakis oszust podszywa sie pod was i rozsyla maile, zglaszam to natychmiast!", "expected_intent": "security_phishing_report", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "I accidentally pushed my crc_key to a public repo - how do I invalidate it?", "expected_intent": "security_key_leak", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "chyba ktos przechwycil moje klucze api, jak je szybko zmienic", "expected_intent": "security_key_leak", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "przez pomylke wrzucilem plik z konfiguracja i kluczami na githuba", "expected_intent": "security_key_leak", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "oh no my keys are out in the open on the internet, help me rotate them fast", "expected_intent": "security_key_leak", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "I switched phones and my authenticator no longer has the code - how do I reset TOTP?", "expected_intent": "security_2fa_issue", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "zmienilem telefon i teraz nie moge sie zalogowac, brak kodow 2fa", "expected_intent": "security_2fa_issue", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "aplikacja z kodami zniknela po resecie telefonu i nie wejde na konto", "expected_intent": "security_2fa_issue", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "padl mi telefon z kodami i jestem zablokowany, ratujcie bo sie nie zaloguje", "expected_intent": "security_2fa_issue", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "My account was frozen without notice - what do I need to do to get it unblocked?", "expected_intent": "account_blocked_why", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "konto nagle zablokowane, nie wiem czemu, jak to odblokowac", "expected_intent": "account_blocked_why", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "loguje sie i nie moge przyjmowac platnosci, pisze ze konto zawieszone", "expected_intent": "account_blocked_why", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "you froze my account out of nowhere and my payouts are stuck, what the hell", "expected_intent": "account_blocked_why", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Is there an outage right now? None of my customers' payments are going through.", "expected_intent": "service_down_question", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "panel sie nie laduje, macie awarie czy to problem po mojej stronie", "expected_intent": "service_down_question", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "od rana zadna transakcja nie przechodzi i to u wszystkich klientow naraz", "expected_intent": "service_down_question", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "u was pozar czy co, caly sklep stoi a klienci dzwonia bez przerwy", "expected_intent": "service_down_question", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Do you have a phone line or is it email only, and what are your hours?", "expected_intent": "support_contact_how", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak sie z wami skontaktowac, dziala pomoc w weekend", "expected_intent": "support_contact_how", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "musze pogadac z zywym czlowiekiem u was, gdzie mam sie zglosic", "expected_intent": "support_contact_how", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "how on earth do I actually reach a human on your support, been trying for ages", "expected_intent": "support_contact_how", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "When I open a ticket, what logs and details should I attach so you can act quickly?", "expected_intent": "incident_report_how", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak poprawnie zglosic blad techniczny, jakie informacje dolaczyc", "expected_intent": "incident_report_how", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "chce opisac problem tak zebyscie od razu wiedzieli o co chodzi, co mam podac", "expected_intent": "incident_report_how", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "jak wam to zglosic po ludzku zebym nie odbijal sie od sciany", "expected_intent": "incident_report_how", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Where do I find my crc_key, and once I have it what fields go into the SHA-384 signature?", "expected_intent": "api_keys_where", "secondary_intent": "api_signature_error", "expected_scope": "in_scope", "lang": "en", "style": "multi"},
+    {"q": "wgralem wtyczke do woocommerce, ale gdzie teraz wkleic klucze api zeby zadzialala", "expected_intent": "plugin_setup", "secondary_intent": "api_keys_where", "expected_scope": "in_scope", "lang": "pl", "style": "multi"},
+    {"q": "Payments have been failing for everyone for an hour - is it an outage, and how do I reach someone urgently?", "expected_intent": "service_down_question", "secondary_intent": "support_contact_how", "expected_scope": "in_scope", "lang": "en", "style": "multi"},
+    {"q": "konto mam nagle zablokowane i nie wiem czemu, jak sie z wami szybko skontaktowac zeby to wyjasnic", "expected_intent": "account_blocked_why", "secondary_intent": "support_contact_how", "expected_scope": "in_scope", "lang": "pl", "style": "multi"},
+    {"q": "What documents do I need to register as a merchant, and how long until the account is active after I submit them?", "expected_intent": "account_register_kyc", "secondary_intent": "account_activation_time", "expected_scope": "in_scope", "lang": "en", "style": "multi"}
+  ]
+}

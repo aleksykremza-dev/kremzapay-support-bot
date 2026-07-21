@@ -1,0 +1,94 @@
+{
+  "cases": [
+    {"q": "Can someone explain the difference between 'authorized' and 'completed' on a transaction?", "expected_intent": "payment_status_meaning", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "co znaczy ze transakcja jest w statusie oczekujaca od samego rana", "expected_intent": "payment_status_meaning", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Zrobilem sprzedaz, w panelu widze slowo authorized i nie wiem czy moge juz wyslac towar", "expected_intent": "payment_status_meaning", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "ta transakcja stoi jako pending caly dzien, to w ogole normalne??", "expected_intent": "payment_status_meaning", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "The charge went through on your dashboard but my Shopify still says the order isn't paid.", "expected_intent": "payment_not_reported", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "u was zaplacone a na prestashop zamowienie dalej wisi jako nieoplacone, co robic", "expected_intent": "payment_not_reported", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "klient przysyla potwierdzenie przelewu a moj sklep nic nie pokazuje, jakby powiadomienie nie doszlo", "expected_intent": "payment_not_reported", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "serio znowu sklep nie dostal powiadomienia, mozecie mi je wyslac jeszcze raz?", "expected_intent": "payment_not_reported", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "I want to turn on Apple Pay at checkout, which setting handles that?", "expected_intent": "payment_method_enable", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "gdzie w panelu wlaczam platnosc blikiem dla mojego sklepu", "expected_intent": "payment_method_enable", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "otwieram sklep w piatek a na stronie nie ma jeszcze opcji platnosci karta, trzeba to gdzies wlaczyc", "expected_intent": "payment_method_enable", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "need pay-by-link live today, gdzie to sie klika?", "expected_intent": "payment_method_enable", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "If a customer uses BLIK, do they scan a code or type one in?", "expected_intent": "payment_method_question", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak to jest z google pay, klient potrzebuje karty zapisanej w telefonie czy nie", "expected_intent": "payment_method_question", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "a customer just called asking if they can pay with a QR code from their banking app, no clue what to tell them", "expected_intent": "payment_method_question", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "so how does this pay-by-link thing even work for the buyer, walk me through it", "expected_intent": "payment_method_question", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Is there a cap on how large a single card payment can be?", "expected_intent": "payment_limits", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jaka jest gorna granica pojedynczej platnosci u was", "expected_intent": "payment_limits", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "customer keeps trying to pay 40k and it bounces, guessing the amount is too high?", "expected_intent": "payment_limits", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "big order coming in, i need my per-transaction limit bumped up fast", "expected_intent": "payment_limits", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "One order but the customer's statement shows two charges for the same amount.", "expected_intent": "payment_duplicate", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "system chyba pobral kwote dwa razy za jedno zamowienie, jak to zwrocic", "expected_intent": "payment_duplicate", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "klientka pisze ze na wyciagu ma dwa razy te sama kwote z jednego zakupu", "expected_intent": "payment_duplicate", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "klient sie wsciekl bo zdjelo mu dwa razy z karty, ratujcie", "expected_intent": "payment_duplicate", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "How can I charge a customer automatically every month without asking for the card each time?", "expected_intent": "payment_recurring_setup", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "chce ustawic pobieranie cykliczne co miesiac za abonament, jak to zrobic", "expected_intent": "payment_recurring_setup", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "sprzedaje dostep miesieczny i nie chce za kazdym razem prosic klienta o dane karty", "expected_intent": "payment_recurring_setup", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "want a proper auto-renew setup like the big subscription apps, is that doable here?", "expected_intent": "payment_recurring_setup", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "How can I cancel a payment link the buyer never used?", "expected_intent": "payment_cancel_session", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak ubic nieoplacona sesje platnosci ktora klient zostawil", "expected_intent": "payment_cancel_session", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "klient wyszedl ze sklepu i zostawil otwarta platnosc, chcialbym ja zamknac", "expected_intent": "payment_cancel_session", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "ten link do platnosci wisi otwarty i mnie to denerwuje, da sie go anulowac?", "expected_intent": "payment_cancel_session", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "How long after a sale until the money lands in my bank account?", "expected_intent": "payout_when", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "kiedy wpadnie mi kasa za dzisiejsze transakcje na konto", "expected_intent": "payout_when", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "just getting started and I have no idea when to expect the first transfer from you", "expected_intent": "payout_when", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "just made my first sales, when the heck do i actually see the cash?", "expected_intent": "payout_when", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "The transfer was due yesterday under T+1 and nothing has reached my bank.", "expected_intent": "payout_missing", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "mialem miec wyplate wczoraj a na koncie pusto, gdzie sa moje pieniadze", "expected_intent": "payout_missing", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "panel pokazuje wyplate jako zrealizowana ale na rachunku nic nie widze juz drugi dzien", "expected_intent": "payout_missing", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "my payout just vanished, marked as sent but my account is empty, this isn't okay", "expected_intent": "payout_missing", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "How do I break a single settlement down into the orders that make it up?", "expected_intent": "payout_report_reconcile", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "kwota wyplaty nie zgadza mi sie z suma zamowien, gdzie mam szukac roznicy", "expected_intent": "payout_report_reconcile", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "my accountant asks why the payout is lower than sales, I need to split it into fees", "expected_intent": "payout_report_reconcile", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "these settlement numbers make no sense, can i at least export the whole thing?", "expected_intent": "payout_report_reconcile", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Can I move from getting paid every day to once a week?", "expected_intent": "payout_schedule_change", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "chce zmienic wyplaty z codziennych na raz w tygodniu, gdzie to ustawienie", "expected_intent": "payout_schedule_change", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "tyle malych przelewow codziennie tylko miesza mi w ksiegowosci, wolalbym jeden zbiorczy", "expected_intent": "payout_schedule_change", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "these daily transfers are annoying, just give me one weekly payout already", "expected_intent": "payout_schedule_change", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "We opened a new company account, where do I enter the new IBAN for payouts?", "expected_intent": "payout_account_change", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "zmienilem bank i musze podac nowy numer konta do wyplat, gdzie to zrobic", "expected_intent": "payout_account_change", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "stary rachunek firmowy zostal zamkniety wiec przelewy musza teraz isc na inny", "expected_intent": "payout_account_change", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "szybko, wyplaty maja od teraz leciec na zupelnie inne konto", "expected_intent": "payout_account_change", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "What's your commission on a standard card transaction?", "expected_intent": "fees_how_much", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "ile wynosi prowizja od platnosci blikiem w moim przypadku", "expected_intent": "fees_how_much", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "licze marze na produkcie i musze wiedziec ile zabieracie z kazdej sprzedazy", "expected_intent": "fees_how_much", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "trying to price my stuff, what's the actual cut you take per sale?", "expected_intent": "fees_how_much", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Where in the Panel do I download the invoice for your services?", "expected_intent": "invoice_where", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "gdzie znajde fakture za maj za wasze uslugi, nie moge tego znalezc", "expected_intent": "invoice_where", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "accountant is asking for your invoices and I have no clue where they even are", "expected_intent": "invoice_where", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "accountant needs your invoices yesterday and i can't find them anywhere", "expected_intent": "invoice_where", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "There's a position on my invoice I don't recognize, what is it?", "expected_intent": "invoice_understand", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "czemu na fakturze kwota jest inna niz suma prowizji ktore placilem", "expected_intent": "invoice_understand", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "patrze na fakture i ten vat na dole jakos mi sie nie sklada z reszta", "expected_intent": "invoice_understand", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "this invoice line item makes zero sense to me, what am i even paying for", "expected_intent": "invoice_understand", "expected_scope": "in_scope", "lang": "en", "style": "emotional"},
+
+    {"q": "Can I export a full-year transaction file for my accountant?", "expected_intent": "billing_accounting_export", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak wyciagnac zestawienie wszystkich transakcji za caly rok do ksiegowej", "expected_intent": "billing_accounting_export", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "zblizaja sie rozliczenia roczne i ksiegowa chce wszystko w jednym pliku csv", "expected_intent": "billing_accounting_export", "expected_scope": "in_scope", "lang": "pl", "style": "implicit"},
+    {"q": "koniec roku, potrzebuje calego rocznego podsumowania oplat i to juz", "expected_intent": "billing_accounting_export", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Wyplata z wczoraj nie doszla na konto, a przy okazji nie umiem rozbic tej z zeszlego tygodnia na poszczegolne zamowienia.", "expected_intent": "payout_missing", "secondary_intent": "payout_report_reconcile", "expected_scope": "in_scope", "lang": "pl", "style": "multi"},
+    {"q": "My shop still shows the order as unpaid and honestly I don't even know what 'authorized' is supposed to mean here.", "expected_intent": "payment_not_reported", "secondary_intent": "payment_status_meaning", "expected_scope": "in_scope", "lang": "en", "style": "multi"},
+    {"q": "Chce wlaczyc BLIK w sklepie, ale najpierw powiedzcie ile bierzecie od niego prowizji.", "expected_intent": "payment_method_enable", "secondary_intent": "fees_how_much", "expected_scope": "in_scope", "lang": "pl", "style": "multi"},
+    {"q": "Just switched banks so I need to update the IBAN, and when will the next payout actually hit the new account?", "expected_intent": "payout_account_change", "secondary_intent": "payout_when", "expected_scope": "in_scope", "lang": "en", "style": "multi"},
+    {"q": "nie moge znalezc faktury za czerwiec, a jak juz ja znajde to i tak nie rozumiem tej pozycji z vatem na dole", "expected_intent": "invoice_where", "secondary_intent": "invoice_understand", "expected_scope": "in_scope", "lang": "pl", "style": "multi"}
+  ]
+}

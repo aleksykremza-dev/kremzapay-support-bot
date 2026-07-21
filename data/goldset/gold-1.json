@@ -1,0 +1,94 @@
+{
+  "cases": [
+    {"q": "Do you accept payment in installments or only the full amount at checkout?", "expected_intent": "buyer_how_to_pay", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "czym moge zaplacic u was, tylko blik czy tez zwykly przelew?", "expected_intent": "buyer_how_to_pay", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "I've got the item in my basket and I'm ready, just not sure what options pop up at the end.", "expected_intent": "buyer_how_to_pay", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "no dobra chce to kupic ale kompletnie nie kumam jak sie u was placi, jakas pomoc?", "expected_intent": "buyer_how_to_pay", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "The checkout says declined every single time even though my card has funds.", "expected_intent": "buyer_payment_failed", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "moja platnosc ciagle sie wywala, karta jest dobra a nie chce przejsc", "expected_intent": "buyer_payment_failed", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Third attempt today and it still won't let me finish the purchase.", "expected_intent": "buyer_payment_failed", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "ile mozna, znowu error przy placeniu, juz sie wkurzam z tym!!", "expected_intent": "buyer_payment_failed", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "The amount was deducted from my bank but the shop still marks the order as awaiting payment.", "expected_intent": "buyer_money_taken_no_order", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "kasa poszla mi z konta ale zamowienie dalej nieoplacone, co jest grane?", "expected_intent": "buyer_money_taken_no_order", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "My banking app shows the charge from an hour ago yet the store hasn't updated a thing.", "expected_intent": "buyer_money_taken_no_order", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "zdjeliscie mi hajs a produktu nie widze nigdzie, gdzie sie podziala moja kasa?!", "expected_intent": "buyer_money_taken_no_order", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "It's been ten days since the return was accepted and the money still isn't back.", "expected_intent": "buyer_where_refund", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "kiedy w koncu wroci mi zwrot za oddana paczke, mija juz tydzien", "expected_intent": "buyer_where_refund", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The seller confirmed my return last Monday but my account balance hasn't moved.", "expected_intent": "buyer_where_refund", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "gdzie jest moj zwrot do cholery, czekam juz wiecznosc na te pieniadze!!", "expected_intent": "buyer_where_refund", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "I'd like to switch off the automatic monthly payment tied to my card.", "expected_intent": "buyer_cancel_recurring", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak wylaczyc to automatyczne pobieranie co miesiac z mojej karty?", "expected_intent": "buyer_cancel_recurring", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "There's a charge from you hitting my card on the 5th of every month and I no longer use the service.", "expected_intent": "buyer_cancel_recurring", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "znowu zabraliscie mi kase za abonament ktorego nie chce, wylaczcie to juz!!", "expected_intent": "buyer_cancel_recurring", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "I want to report a seller who took my payment and then blocked me.", "expected_intent": "buyer_complain_shop", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "chce zglosic sklep ktory wzial kase i przestal do mnie odpisywac", "expected_intent": "buyer_complain_shop", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Paid for a jacket two weeks ago, no shipment, no answers to any of my messages.", "expected_intent": "buyer_complain_shop", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "ten sprzedawca to zlodziej, okradl mnie i sie nie odzywa, zróbcie z tym porzadek!!", "expected_intent": "buyer_complain_shop", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Could you email me proof that the transaction was completed?", "expected_intent": "buyer_payment_confirmation", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "potrzebuje dokumentu ze zaplacilem, gdzie to u was znajde?", "expected_intent": "buyer_payment_confirmation", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The merchant won't ship until they see something official showing the money cleared.", "expected_intent": "buyer_payment_confirmation", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "dajcie mi wreszcie papier ze zaplacilem, bo sklep twierdzi ze nie zaplacilem!!", "expected_intent": "buyer_payment_confirmation", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Which screen in the merchant Panel lets me send money back to a client?", "expected_intent": "refund_how", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak w panelu oddac klientowi tylko czesc kwoty za zamowienie?", "expected_intent": "refund_how", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "A customer sent back two of the four books, I need to return only their value.", "expected_intent": "refund_how", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "musze natychmiast oddac klientowi hajs, gdzie sie to w koncu klika ten zwrot?!", "expected_intent": "refund_how", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "After I click refund, how many days before the client actually sees the money?", "expected_intent": "refund_status_time", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "zrobilem zwrot wczoraj, kiedy klient dostanie te pieniadze na konto?", "expected_intent": "refund_status_time", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "I issued it on Monday, the status still reads in progress and the buyer keeps asking.", "expected_intent": "refund_status_time", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "klient dzwoni co godzine ze zwrotu nie ma, kiedy to w koncu dojdzie do niego?!", "expected_intent": "refund_status_time", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "The client paid by BLIK, does the refund return to the same app account?", "expected_intent": "refund_special_method", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "karta klienta juz nie dziala, czy zwrot i tak do niego trafi?", "expected_intent": "refund_special_method", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The customer closed the account that made the original card payment, wondering where the refund lands.", "expected_intent": "refund_special_method", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "klient zmienil bank a ja mam mu oddac kase, jak to niby ma w ogole zadzialac?!", "expected_intent": "refund_special_method", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Is there a way to process a few hundred refunds from one spreadsheet?", "expected_intent": "refund_bulk", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "czy da sie wgrac plik i zwrocic kase od razu wielu klientom naraz?", "expected_intent": "refund_bulk", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Our concert got cancelled and 600 ticket buyers all need their money back today.", "expected_intent": "refund_bulk", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "mam 900 zwrotow do zrobienia, nie bede klikac kazdego z osobna przez caly dzien!!", "expected_intent": "refund_bulk", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Can a transaction that's already 210 days old still be refunded?", "expected_intent": "refund_after_window", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "transakcja ma juz ponad pol roku, da sie jeszcze zwrocic te kase?", "expected_intent": "refund_after_window", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The refund option is greyed out on an order from last autumn.", "expected_intent": "refund_after_window", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "klient przypomnial sobie po 8 miesiacach o zwrocie, da sie cokolwiek jeszcze zrobic?!", "expected_intent": "refund_after_window", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "When I refund an order, is the processing commission returned to me as well?", "expected_intent": "refund_fees", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "czy jak robie zwrot to prowizja wraca do mnie czy ja ja trace?", "expected_intent": "refund_fees", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "I'm doing a lot of returns this month and it feels like each one costs me the original fee.", "expected_intent": "refund_fees", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "oddaje klientowi cala kase a wy prowizji nie zwracacie?! gdzie tu sens?", "expected_intent": "refund_fees", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Can you explain in simple terms what a chargeback actually is?", "expected_intent": "chargeback_what", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "co to wlasciwie jest chargeback i jak caly ten proces u was przebiega?", "expected_intent": "chargeback_what", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The bank clawed money back off my balance and I have no idea what triggered it.", "expected_intent": "chargeback_what", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "dostalem jakies pismo o obciazeniu zwrotnym i nic z tego nie rozumiem, wytlumaczcie!!", "expected_intent": "chargeback_what", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "Where in the Panel do I upload evidence to contest a dispute?", "expected_intent": "chargeback_respond", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak odpowiedziec na spor i jakie papiery mam do was wyslac?", "expected_intent": "chargeback_respond", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Buyer claims the parcel never arrived but I've got the courier's proof of delivery.", "expected_intent": "chargeback_respond", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "zostaly mi 2 dni na odpowiedz w sporze i nie wiem co wrzucac, ratujcie mnie!!", "expected_intent": "chargeback_respond", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "What concrete steps can I take to bring my dispute ratio down?", "expected_intent": "chargeback_reduce", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "jak sprawic zeby klienci rzadziej otwierali te chargebacki u mnie?", "expected_intent": "chargeback_reduce", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "Customers keep going straight to their bank instead of contacting my shop first.", "expected_intent": "chargeback_reduce", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "mam za duzo chargebackow i boje sie ze zablokujecie mi konto, co mam robic?!", "expected_intent": "chargeback_reduce", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "In terms of cost, is it better for me to refund or to fight the dispute?", "expected_intent": "chargeback_vs_refund", "expected_scope": "in_scope", "lang": "en", "style": "plain"},
+    {"q": "co sie bardziej oplaca, zrobic zwrot czy czekac na chargeback?", "expected_intent": "chargeback_vs_refund", "expected_scope": "in_scope", "lang": "pl", "style": "typos"},
+    {"q": "The customer is threatening to call their bank unless I hand the money back myself.", "expected_intent": "chargeback_vs_refund", "expected_scope": "in_scope", "lang": "en", "style": "implicit"},
+    {"q": "nie wiem czy oddac kase czy walczyc ze sporem, doradzcie mi wreszcie cos!!", "expected_intent": "chargeback_vs_refund", "expected_scope": "in_scope", "lang": "pl", "style": "emotional"},
+
+    {"q": "I've been waiting two weeks for my refund and this shop ignores every message I send. Where's my money and what can you do about this seller?", "expected_intent": "buyer_where_refund", "secondary_intent": "buyer_complain_shop", "expected_scope": "in_scope", "lang": "en", "style": "multi"},
+    {"q": "moja karta ciagle odrzuca platnosc, moze macie jakas inna metode jak blik zebym mogl w koncu zaplacic?", "expected_intent": "buyer_payment_failed", "secondary_intent": "buyer_how_to_pay", "expected_scope": "in_scope", "lang": "pl", "style": "multi"},
+    {"q": "I need to send a partial refund to a customer from the Panel, and while I'm at it, will I get the commission back on that refund?", "expected_intent": "refund_how", "secondary_intent": "refund_fees", "expected_scope": "in_scope", "lang": "en", "style": "multi"},
+    {"q": "dostalem chargeback i nie wiem jakie dowody wyslac, a przy okazji jak zmniejszyc liczbe takich sporow na przyszlosc?", "expected_intent": "chargeback_respond", "secondary_intent": "chargeback_reduce", "expected_scope": "in_scope", "lang": "pl", "style": "multi"},
+    {"q": "The money left my account but the store still shows unpaid, can you at least send me a confirmation that the payment actually went through?", "expected_intent": "buyer_money_taken_no_order", "secondary_intent": "buyer_payment_confirmation", "expected_scope": "in_scope", "lang": "en", "style": "multi"}
+  ]
+}
