@@ -15,6 +15,9 @@
  input{flex:1;padding:11px 14px;border:1.5px solid #d6dce6;border-radius:10px;font-size:15px}
  button{padding:11px 18px;border:0;border-radius:10px;background:#15325b;color:#fff;font-weight:600;cursor:pointer}
  button:disabled{opacity:.5}
+ .thinking{color:#5b6478;font-style:italic}
+ .thinking::after{content:"";animation:dots 1.4s steps(4,end) infinite}
+ @keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
 </style></head><body>
 <div class="app">
  <header>kremzaPay Support <small>· demo, fikcyjny operator płatności</small></header>
@@ -28,11 +31,11 @@ function add(cls,text){const d=document.createElement("div");d.className="msg "+
 document.getElementById("f").addEventListener("submit",async e=>{
  e.preventDefault();const t=document.getElementById("t"),b=document.getElementById("b");
  const text=t.value.trim();if(!text)return;t.value="";b.disabled=true;
- add("user",text);const wait=add("bot","…");
+ add("user",text);const wait=add("bot thinking","🤔 Chwileczkę, przetwarzam informacje / processing");
  try{
   const r=await fetch("/chat",{method:"POST",headers:{"Content-Type":"application/json"},
    body:JSON.stringify({text,session_id:sid})});
-  const j=await r.json();sid=j.session_id;wait.textContent=j.reply;
+  const j=await r.json();sid=j.session_id;wait.className="msg bot";wait.textContent=j.reply;
   const d=document.createElement("div");d.className="dbg";
   d.textContent=`${j.debug.action} · ${j.debug.intent??"—"} · ${Object.entries(j.debug.timings_ms).map(([k,v])=>k+":"+v+"ms").join(" ")}`;
   log.appendChild(d);
