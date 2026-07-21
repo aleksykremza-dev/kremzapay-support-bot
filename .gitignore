@@ -3,3 +3,6 @@ qdrant_data/
 .venv/
 .venv/
 __pycache__/
+data/*.db
+data/cache/
+data/eval/*.log
