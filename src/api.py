@@ -77,3 +77,13 @@ def chat(msg: ChatIn):
     return {"session_id": sid, "reply": reply,
             "debug": {"action": action, "intent": (ts.get("classification") or {}).get("intent"),
                       "language": lang, "timings_ms": ts["timings_ms"]}}
+
+
+@app.get("/dashboard")
+def dashboard():
+    return FileResponse("web/dashboard.html")
+
+
+@app.get("/api/stats")
+def stats():
+    return store.get_stats()

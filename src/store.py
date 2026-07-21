@@ -96,3 +96,33 @@ if __name__ == "__main__":
     add_feedback(sid, "up")
     print(f"сессия {sid}, тикет #{tid}")
     print("тикеты:", list_tickets("new"))
+
+
+def get_stats():
+    """Сводка для панели наблюдаемости: всё читается из turn_state и тикетов."""
+    with _conn() as c:
+        sessions = c.execute("SELECT COUNT(*) FROM sessions").fetchone()[0]
+        rows = c.execute(
+            "SELECT session_id, masked_text, turn_state, created_at FROM messages "
+            "WHERE role='user' AND turn_state IS NOT NULL ORDER BY id DESC LIMIT 50"
+        ).fetchall()
+        dialogs = []
+        actions = {}
+        for r in rows:
+            ts = json.loads(r["turn_state"])
+            action = ts.get("decision", {}).get("action", "?")
+            actions[action] = actions.get(action, 0) + 1
+            cls = ts.get("classification") or {}
+            dialogs.append({
+                "text": r["masked_text"][:70], "action": action,
+                "intent": cls.get("intent"), "confidence": cls.get("confidence"),
+                "layer_path": list(ts.get("timings_ms", {}).keys()),
+                "total_ms": round(sum(ts.get("timings_ms", {}).values())),
+                "reason": ts.get("decision", {}).get("reason"),
+                "at": r["created_at"][11:19],
+            })
+        tickets = c.execute(
+            "SELECT id, reason, intent, status, created_at FROM tickets "
+            "ORDER BY id DESC LIMIT 20").fetchall()
+        return {"sessions": sessions, "actions": actions, "dialogs": dialogs,
+                "tickets": [dict(t) for t in tickets]}
