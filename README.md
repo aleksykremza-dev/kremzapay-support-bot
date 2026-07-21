@@ -113,22 +113,18 @@ Numbers are from the honest baseline run of the cascade against the **frozen gol
 set** — no cherry-picking, train and test kept separate, no leakage between the
 5412-query training corpus and the 288-case gold set.
 
-**Baseline cascade** (288 cases, 45.5 min run):
+**Before / after** — baseline cascade vs the same 288 cases after the
+failure-analysis-driven fixes (layer-0 guards v2 + classifier prompt fix):
 
-| Metric | Value |
-|---|---|
-| Accuracy | 65.6% |
-| Macro-F1 | 0.687 |
-| Soft accuracy (handoff on unsafe/emotional counted as acceptable) | 69.4% |
-
-**Per-class OOS / special-class recall:**
-
-| Class | Recall |
-|---|---|
-| chitchat | 0.93 |
-| other_in_scope | 0.80 |
-| out_of_scope | 0.45 |
-| unsafe | 0.27 |
+| Metric | Baseline | Round 2 | Δ |
+|---|---|---|---|
+| Accuracy | 65.6% | **71.9%** | +6.3 pp |
+| Macro-F1 | 0.687 | **0.715** | +0.028 |
+| out_of_scope recall | 0.45 | **0.85** | ×1.9 |
+| unsafe recall | 0.27 | **0.60** | ×2.2 |
+| other_in_scope recall | 0.80 | 0.87 | +0.07 |
+| chitchat recall | 0.93 | 0.93 | = |
+| False handoffs (workable questions sent to a human) | 20 | **6** | −14 |
 
 The failure analysis (`data/eval/baseline_analysis.md`) traced the two weak
 classes to concrete leak mechanisms: competitor/tax questions accepted by lexical
@@ -137,8 +133,10 @@ drove **layer-0 guards v2** (brand guard, tax guard, injection and fraud keys)
 and a **classifier prompt fix** (`wants_human=true` only on explicit request or
 anger at the bot, not on frustration with the situation).
 
-**Post-fix round 2 results: see `data/eval/`** (currently being measured;
-`baseline_cascade.json` holds the frozen baseline for the before/after diff).
+Full per-case reports: `data/eval/round2_cascade.json`; failure analysis that
+drove the fixes: `data/eval/baseline_analysis.md`. Remaining weak spots
+(implicit phrasings 60%, multi-intent) are the next levers: a SetFit layer-1
+classifier and threshold calibration on the training corpus.
 
 Methodology, not just scores: the gold set is version-frozen in git, the training
 corpus never overlaps it, and every pipeline change is re-run against the same
