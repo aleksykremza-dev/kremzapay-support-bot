@@ -3,10 +3,11 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
+import answer_gen
 import cascade
+import judge
 import pii
 import store
-from search import search
 
 app = FastAPI(title="kremzaPay Support Bot")
 
@@ -56,11 +57,18 @@ def chat(msg: ChatIn):
                  f"I couldn't find a complete answer, so I've created ticket #{tid}. "
                  f"Our team will get back to you.")
     elif action == "answer":
-        hits = search(masked)[:3]
-        intro = ("Znalazłem w dokumentacji:" if lang == "pl" else "Here's what I found in the docs:")
-        frags = "\n\n".join(f"• {h.payload['title']} ({h.payload['id']}):\n{h.payload['text'][:220]}…"
-                            for h in hits)
-        reply = f"{intro}\n\n{frags}"
+        cls = ts.get("classification") or {}
+        gen = answer_gen.generate(masked, intent=cls.get("intent"), language=lang)
+        if gen and judge.grounded(gen["answer"], gen["chunks"]):
+            reply = gen["answer"]
+        else:
+            tid = store.create_ticket(sid, "generation_not_grounded",
+                                      intent=cls.get("intent"))
+            reply = (f"Nie mogę teraz odpowiedzieć rzetelnie na to pytanie, więc "
+                     f"utworzyłem zgłoszenie #{tid} — zespół wróci do Ciebie."
+                     if lang == "pl" else
+                     f"I can't answer this reliably right now, so I've created "
+                     f"ticket #{tid} — our team will get back to you.")
     else:
         reply = REPLIES[action][lang]
 
