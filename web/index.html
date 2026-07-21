@@ -1,0 +1,42 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kremzaPay Support</title>
+<style>
+ body{font-family:system-ui,sans-serif;background:#f2f4f8;margin:0;display:flex;justify-content:center}
+ .app{width:min(680px,100vw);height:100vh;display:flex;flex-direction:column;background:#fff}
+ header{padding:14px 18px;background:#15325b;color:#fff;font-weight:600}
+ header small{opacity:.7;font-weight:400}
+ #log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+ .msg{max-width:80%;padding:10px 14px;border-radius:14px;white-space:pre-wrap;line-height:1.4;font-size:15px}
+ .user{align-self:flex-end;background:#15325b;color:#fff;border-bottom-right-radius:4px}
+ .bot{align-self:flex-start;background:#eef1f6;border-bottom-left-radius:4px}
+ .dbg{align-self:flex-start;font-size:11px;color:#8a93a5;margin-top:-6px}
+ form{display:flex;gap:8px;padding:12px;border-top:1px solid #e3e7ee}
+ input{flex:1;padding:11px 14px;border:1.5px solid #d6dce6;border-radius:10px;font-size:15px}
+ button{padding:11px 18px;border:0;border-radius:10px;background:#15325b;color:#fff;font-weight:600;cursor:pointer}
+ button:disabled{opacity:.5}
+</style></head><body>
+<div class="app">
+ <header>kremzaPay Support <small>· demo, fikcyjny operator płatności</small></header>
+ <div id="log"></div>
+ <form id="f"><input id="t" placeholder="Napisz wiadomość… / Type a message…" autocomplete="off">
+ <button id="b">➤</button></form>
+</div>
+<script>
+let sid=null;const log=document.getElementById("log");
+function add(cls,text){const d=document.createElement("div");d.className="msg "+cls;d.textContent=text;log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+document.getElementById("f").addEventListener("submit",async e=>{
+ e.preventDefault();const t=document.getElementById("t"),b=document.getElementById("b");
+ const text=t.value.trim();if(!text)return;t.value="";b.disabled=true;
+ add("user",text);const wait=add("bot","…");
+ try{
+  const r=await fetch("/chat",{method:"POST",headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({text,session_id:sid})});
+  const j=await r.json();sid=j.session_id;wait.textContent=j.reply;
+  const d=document.createElement("div");d.className="dbg";
+  d.textContent=`${j.debug.action} · ${j.debug.intent??"—"} · ${Object.entries(j.debug.timings_ms).map(([k,v])=>k+":"+v+"ms").join(" ")}`;
+  log.appendChild(d);
+ }catch(err){wait.textContent="Błąd połączenia: "+err}
+ b.disabled=false;t.focus();
+});
+</script></body></html>
