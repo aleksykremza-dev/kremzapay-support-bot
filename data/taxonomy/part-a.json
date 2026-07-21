@@ -1,0 +1,309 @@
+{
+  "intents": [
+    {
+      "id": "buyer_how_to_pay",
+      "category": "buyers",
+      "definition": "The buyer wants to know how to pay and which payment methods are available to complete a purchase.",
+      "examples": [
+        "How do I pay for my order?",
+        "Which payment methods can I use, BLIK or card?",
+        "Do you support Apple Pay and Google Pay for checkout?",
+        "Jak zaplacic za zamowienie blikiem?",
+        "Czy moge zapłacić kartą z 3DS?",
+        "There's no pay button anywhere, where do I actually send the money?",
+        "Chcę kupić ale nie wiem gdzie kliknąć żeby opłacić, pomóżcie"
+      ],
+      "not": [
+        "This is NOT buyer_how_to_pay if the payment was already attempted and got rejected — that is buyer_payment_failed."
+      ]
+    },
+    {
+      "id": "buyer_payment_failed",
+      "category": "buyers",
+      "definition": "The buyer tried to pay but the payment was rejected or failed and they want to know what to do next.",
+      "examples": [
+        "My card payment was rejected, what now?",
+        "Transaction failed twice, why can't I pay?",
+        "BLIK keeps saying error when I confirm in the app.",
+        "Platnosc odrzucona, co mam zrobic zeby zaplacic?",
+        "Płatność się nie powiodła, kod BLIK nie przechodzi.",
+        "It just says something went wrong, I've tried three cards and none work.",
+        "znowu blad przy platnosci!! nie da sie u was kupic niczego"
+      ],
+      "not": [
+        "This is NOT buyer_payment_failed if money left the account but the shop shows unpaid — that is buyer_money_taken_no_order.",
+        "This is NOT buyer_payment_failed if the buyer only asks which methods exist — that is buyer_how_to_pay."
+      ]
+    },
+    {
+      "id": "buyer_money_taken_no_order",
+      "category": "buyers",
+      "definition": "The buyer sees money debited from their account but the shop still shows the order as unpaid.",
+      "examples": [
+        "Money left my account but the shop says I haven't paid.",
+        "I was charged but the order status is still unpaid, help.",
+        "Card got debited, order not confirmed — where did my money go?",
+        "Pieniadze zeszly z konta a sklep pokazuje nieoplacone.",
+        "Zapłaciłem, bank pokazuje obciążenie, a zamówienie wisi jako nieopłacone.",
+        "Bank sent me a confirmation SMS but the store acts like nothing happened.",
+        "sciagneliscie mi kase a zamowienia nie ma, gdzie moje pieniadze?!"
+      ],
+      "not": [
+        "This is NOT buyer_money_taken_no_order if the payment was simply rejected with no debit — that is buyer_payment_failed.",
+        "This is NOT buyer_money_taken_no_order if the buyer is waiting for a refund of a returned item — that is buyer_where_refund."
+      ]
+    },
+    {
+      "id": "buyer_where_refund",
+      "category": "buyers",
+      "definition": "The buyer is waiting for a refund and wants to know where it is or when it will arrive.",
+      "examples": [
+        "Where is my refund? It's been a week.",
+        "When will I get my money back for the returned item?",
+        "The shop said they refunded me but I see nothing on my card.",
+        "Gdzie jest moj zwrot pieniedzy, kiedy dostane kase?",
+        "Kiedy wróci mi płatność za anulowane zamówienie?",
+        "I sent the package back days ago and still nothing came back to me.",
+        "juz drugi tydzien czekam na zwrot, oddajcie mi moje pieniadze!!"
+      ],
+      "not": [
+        "This is NOT buyer_where_refund if the buyer wants to stop future recurring charges — that is buyer_cancel_recurring.",
+        "This is NOT buyer_where_refund if money was debited but no order exists — that is buyer_money_taken_no_order."
+      ]
+    },
+    {
+      "id": "buyer_cancel_recurring",
+      "category": "buyers",
+      "definition": "The buyer wants to stop or cancel a recurring subscription charge on their payment method.",
+      "examples": [
+        "How do I stop the recurring charges on my card?",
+        "Please cancel my subscription, I don't want to be billed again.",
+        "I keep getting charged every month, how do I turn it off?",
+        "Jak anulowac cykliczne platnosci z mojej karty?",
+        "Chcę zrezygnować z subskrypcji, żeby nie pobierało co miesiąc.",
+        "Every month the same amount disappears and I never signed up for this.",
+        "trzeci raz mi scigacie kase za subskrypcje, wylaczcie to natychmiast!!"
+      ],
+      "not": [
+        "This is NOT buyer_cancel_recurring if the buyer wants a refund of a charge already made — that is buyer_where_refund.",
+        "This is NOT buyer_cancel_recurring if the buyer is unhappy with the shop's product or service — that is buyer_complain_shop."
+      ]
+    },
+    {
+      "id": "buyer_complain_shop",
+      "category": "buyers",
+      "definition": "The buyer wants to complain about a merchant or shop and its behaviour, products, or service.",
+      "examples": [
+        "The shop is ignoring my emails, can you help me with this seller?",
+        "I want to file a complaint against a merchant that scammed me.",
+        "This store took my order and never shipped anything.",
+        "Chce zlozyc skarge na sklep ktory mnie oszukal.",
+        "Sprzedawca nie odpowiada i nie wysłał towaru, co robić?",
+        "Ordered a phone, they sent me an empty box and won't reply.",
+        "ten sklep to oszusci, wziecli kase i cisza, zrobcie z tym cos!!"
+      ],
+      "not": [
+        "This is NOT buyer_complain_shop if the buyer wants their money back through the bank — that is chargeback_what.",
+        "This is NOT buyer_complain_shop if the buyer is only waiting for a refund the shop already approved — that is buyer_where_refund."
+      ]
+    },
+    {
+      "id": "buyer_payment_confirmation",
+      "category": "buyers",
+      "definition": "The buyer needs proof or confirmation that their payment went through.",
+      "examples": [
+        "Can you send me a confirmation that my payment was successful?",
+        "I need a receipt for the payment I just made.",
+        "How do I prove to the shop that I already paid?",
+        "Potrzebuje potwierdzenia platnosci, mozecie wyslac?",
+        "Gdzie znajdę dowód, że opłaciłem zamówienie?",
+        "The store wants a screenshot showing the money went through.",
+        "dajcie mi potwierdzenie ze zaplacilem bo sklep mi nie wierzy!"
+      ],
+      "not": [
+        "This is NOT buyer_payment_confirmation if money was debited but the order shows unpaid — that is buyer_money_taken_no_order.",
+        "This is NOT buyer_payment_confirmation if the payment failed and needs retrying — that is buyer_payment_failed."
+      ]
+    },
+    {
+      "id": "refund_how",
+      "category": "refunds",
+      "definition": "The merchant wants to know how to issue a full or partial refund to a customer.",
+      "examples": [
+        "How do I refund a customer from the Panel?",
+        "Where in Refunds do I issue a partial refund?",
+        "Can I refund just part of the amount and keep the rest?",
+        "Jak zrobic zwrot klientowi w panelu?",
+        "Jak wykonać częściowy zwrot za jedno zamówienie?",
+        "Customer returned one of three items, need to give back only that portion.",
+        "musze oddac klientowi kase juz teraz, gdzie sie klika ten zwrot?!"
+      ],
+      "not": [
+        "This is NOT refund_how if the merchant asks when an already-issued refund will land — that is refund_status_time.",
+        "This is NOT refund_how if the merchant wants to refund many orders from a file — that is refund_bulk."
+      ]
+    },
+    {
+      "id": "refund_status_time",
+      "category": "refunds",
+      "definition": "The merchant wants to know the timing or status of a refund they already issued.",
+      "examples": [
+        "How long does a refund take to reach the customer?",
+        "The refund shows pending, when will it complete?",
+        "What do the refund statuses in the Panel mean?",
+        "Ile trwa zwrot do klienta, kiedy dojdzie kasa?",
+        "Zwrot ma status w toku, kiedy się zakończy?",
+        "I refunded three days ago and the client says nothing arrived yet.",
+        "klient wydzwania ze zwrotu nie ma, kiedy w koncu dojdzie?!"
+      ],
+      "not": [
+        "This is NOT refund_status_time if the merchant asks how to create the refund in the first place — that is refund_how.",
+        "This is NOT refund_status_time if the buyer (not merchant) is chasing their money — that is buyer_where_refund."
+      ]
+    },
+    {
+      "id": "refund_special_method",
+      "category": "refunds",
+      "definition": "The merchant wants to know how refunds work for special cases like an expired card or BLIK specifics.",
+      "examples": [
+        "How do I refund a payment made with a card that has now expired?",
+        "The customer's card is expired, will the refund still reach them?",
+        "How does a BLIK refund work, does it go back to the app?",
+        "Jak zrobic zwrot na karte ktora juz wygasla?",
+        "Czy zwrot BLIK trafi na to samo konto co płatność?",
+        "Client changed banks and the old card is dead — where does the money land?",
+        "karta klienta wygasla a on chce zwrot, jak to w ogole ma dzialac?"
+      ],
+      "not": [
+        "This is NOT refund_special_method if the question is only about generic refund timing — that is refund_status_time.",
+        "This is NOT refund_special_method if the refund is blocked because it is past 180 days — that is refund_after_window."
+      ]
+    },
+    {
+      "id": "refund_bulk",
+      "category": "refunds",
+      "definition": "The merchant wants to issue many refunds at once, typically from an uploaded file.",
+      "examples": [
+        "Can I upload a file to refund hundreds of orders at once?",
+        "How do I do mass refunds instead of one by one?",
+        "Is there a CSV import for bulk refunds in the Panel?",
+        "Jak zrobic zwrot masowy z pliku dla wielu zamowien?",
+        "Czy mogę wgrać plik i zwrócić pieniądze zbiorczo?",
+        "We cancelled a whole event, need to give back 500 people fast.",
+        "mam 800 zwrotow do zrobienia, nie bede klikac kazdego z osobna!!"
+      ],
+      "not": [
+        "This is NOT refund_bulk if the merchant refunds a single order manually — that is refund_how.",
+        "This is NOT refund_bulk if the concern is whether commission is returned — that is refund_fees."
+      ]
+    },
+    {
+      "id": "refund_after_window",
+      "category": "refunds",
+      "definition": "The merchant wants to refund a transaction that is older than the 180-day refund window.",
+      "examples": [
+        "Can I still refund a payment from more than 180 days ago?",
+        "The transaction is 7 months old, is a refund possible?",
+        "Refund button is greyed out on an old order, why?",
+        "Czy moge zwrocic platnosc starsza niz 180 dni?",
+        "Zamówienie sprzed pół roku — da się jeszcze zwrócić kasę?",
+        "Customer only complained now about a purchase from last winter.",
+        "transakcja stara na 200 dni a klient zada zwrotu, da sie cos zrobic?"
+      ],
+      "not": [
+        "This is NOT refund_after_window if the card is expired but within 180 days — that is refund_special_method.",
+        "This is NOT refund_after_window if the merchant simply asks the standard refund timing — that is refund_status_time."
+      ]
+    },
+    {
+      "id": "refund_fees",
+      "category": "refunds",
+      "definition": "The merchant wants to know whether transaction commission is returned when a refund is issued and what a refund costs.",
+      "examples": [
+        "If I refund an order, do I get the commission back too?",
+        "Is there a fee for issuing a refund?",
+        "Does kremzaPay keep the processing fee on refunded payments?",
+        "Czy prowizja wraca do mnie przy zwrocie?",
+        "Ile kosztuje zwrot i czy tracę opłatę za transakcję?",
+        "I'm refunding a lot lately and it feels like I'm losing money each time.",
+        "oddaje klientowi kase a wy i tak zabieracie prowizje?! to jak?"
+      ],
+      "not": [
+        "This is NOT refund_fees if the merchant asks how to perform the refund — that is refund_how.",
+        "This is NOT refund_fees if the question is about chargeback costs specifically — that is chargeback_what."
+      ]
+    },
+    {
+      "id": "chargeback_what",
+      "category": "disputes",
+      "definition": "The user wants to understand what a chargeback is and how the process works.",
+      "examples": [
+        "What exactly is a chargeback?",
+        "How does the chargeback process work from start to finish?",
+        "A customer opened a chargeback — what does that mean for me?",
+        "Co to jest chargeback i jak to dziala?",
+        "Na czym polega obciążenie zwrotne od banku?",
+        "The bank pulled money back from us and I don't understand why.",
+        "dostalem cos o chargeback i nic z tego nie rozumiem, wytlumaczcie"
+      ],
+      "not": [
+        "This is NOT chargeback_what if the user already has a dispute and asks how to fight it — that is chargeback_respond.",
+        "This is NOT chargeback_what if the user asks how a chargeback differs from a refund — that is chargeback_vs_refund."
+      ]
+    },
+    {
+      "id": "chargeback_respond",
+      "category": "disputes",
+      "definition": "The merchant received a dispute and wants to know how to respond, what evidence to submit, and the deadlines.",
+      "examples": [
+        "I got a chargeback, how do I respond and what evidence do I send?",
+        "What documents win a dispute and how long do I have?",
+        "Where do I upload evidence for the chargeback in the Panel?",
+        "Jak odpowiedziec na chargeback i jakie dowody wyslac?",
+        "Ile mam czasu na odpowiedź w sporze, 14 dni?",
+        "Client claims they never got the parcel but I have the tracking, what now?",
+        "mam 3 dni do konca terminu na spor i nie wiem co wrzucic, ratujcie!!"
+      ],
+      "not": [
+        "This is NOT chargeback_respond if the user only asks what a chargeback is — that is chargeback_what.",
+        "This is NOT chargeback_respond if the user wants to lower how often chargebacks happen — that is chargeback_reduce."
+      ]
+    },
+    {
+      "id": "chargeback_reduce",
+      "category": "disputes",
+      "definition": "The merchant wants to lower their chargeback rate and prevent future disputes.",
+      "examples": [
+        "How can I reduce my chargeback rate?",
+        "What can I do to get fewer disputes from customers?",
+        "My chargeback ratio is too high, how do I bring it down?",
+        "Jak zmniejszyc ilosc chargebackow w moim sklepie?",
+        "Co robić, żeby klienci rzadziej otwierali spory?",
+        "Too many people are calling their banks instead of asking us first.",
+        "mam za duzo chargebackow i boje sie ze zablokujecie konto, co robic?"
+      ],
+      "not": [
+        "This is NOT chargeback_reduce if the merchant has a specific open dispute to answer — that is chargeback_respond.",
+        "This is NOT chargeback_reduce if the merchant asks whether to refund or let it go to chargeback — that is chargeback_vs_refund."
+      ]
+    },
+    {
+      "id": "chargeback_vs_refund",
+      "category": "disputes",
+      "definition": "The user wants to understand the difference between a chargeback and a refund and which one to choose.",
+      "examples": [
+        "What's the difference between a refund and a chargeback?",
+        "Should I just refund the customer or let it go to chargeback?",
+        "Is it cheaper to refund than to fight a dispute?",
+        "Czym rozni sie zwrot od chargebacku i co wybrac?",
+        "Lepiej zwrócić kasę czy walczyć ze sporem?",
+        "Customer threatens the bank — do I give the money back myself instead?",
+        "nie wiem czy robic zwrot czy czekac na chargeback, co mi sie oplaca?"
+      ],
+      "not": [
+        "This is NOT chargeback_vs_refund if the user only asks how to make a refund — that is refund_how.",
+        "This is NOT chargeback_vs_refund if the user asks how to respond to an already-open dispute — that is chargeback_respond."
+      ]
+    }
+  ]
+}
