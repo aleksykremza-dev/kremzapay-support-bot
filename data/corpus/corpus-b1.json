@@ -1,0 +1,2392 @@
+{
+ "cases": [
+  {
+   "q": "What's the difference between authorized and completed in your dashboard?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My transaction says 'pending' — does that mean the customer paid or not?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you explain what 'expired' status actually tells me?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The payment shows failed but the customer swears the money left their account.",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is 'authorized' the same as settled, or is it still on hold?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long does a payment normally stay in pending before it clears?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I see 'completed' on one order and 'authorized' on another, what's the practical difference?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does 'failed' mean the card was declined or something on your end?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A payment has been authorized for two days now, is that a problem?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What state should I expect right after a customer confirms in BLIK?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Co dokładnie oznacza status 'autoryzowana' przy płatności?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego transakcja od godziny wisi jako 'oczekująca'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czym różni się 'zakończona' od 'autoryzowana' w panelu?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Status pokazuje 'nieudana', ale klient twierdzi że zapłacił — o co chodzi?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Po jakim czasie płatność 'oczekująca' powinna się zaksięgować?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy 'autoryzowana' znaczy że pieniądze są już moje?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co znaczy 'wygasła' przy transakcji, klient nie zdążył?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Widzę status 'w trakcie', czy mam czekać czy coś zrobić?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność jest 'zakończona' — czyli wszystko ok i mam kasę?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego jedna transakcja jest 'autoryzowana' a druga od razu 'zakończona'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co znaczy status autoryzowana czy to juz oplacone",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czemu platnosc wisi jako oczekujaca od rana",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "status failed ale klient mowi ze zaplacil, jak to",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co to znaczy ze transakcja wygasla",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc autoryzowana to znaczy zaksiegowana czy nie",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "whats teh difference betwen pending and authorized",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "why is my paymnet stuck on pending status",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "does authorised mean i got the mony already",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "transaction says complated but im not sure what that mens",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what does expierd status mean for a payment",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czemu status sie nie zmienia z oczekujacej",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co oznacza autoryzacja platnosci u was",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc pokazuje nieudana co dalej",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "status transakcji failed dlaczego",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "is pendning normal after an hour??",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my transacton is authorized whats next",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "co znaczy status zakonczona przy platnosci blik",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dlaczego platnosc dlugo wisi jako w trakcie",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "what does it mean wen a payment expires",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "why does it say autoryzowana not zakonczona",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient dokończył płatność, ale status dalej 'oczekująca' — czemu?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What triggers a payment to move from authorized to completed?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does an expired payment mean the customer can no longer pay?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm new here, what are all the possible payment statuses?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A card payment went straight to 'completed' — is the money guaranteed?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy status 'autoryzowana' może się zmienić na 'nieudana'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The status flipped from pending to failed on its own, why?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Co się dzieje z płatnością o statusie 'wygasła'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Is pending a warning sign or just a normal in-between state?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient zapłacił BLIKiem, jaki status powinienem zobaczyć?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Why would a payment show authorized but never completed?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego płatność kartą wisi w autoryzacji tak długo?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What's the normal lifecycle of a payment status in kremzaPay?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Transakcja 'nieudana' — czy klient został obciążony czy nie?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does completed guarantee the funds are irreversible?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Co oznacza, że płatność jest 'w toku' a nie 'zakończona'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "My payment sat in pending overnight, should I be worried?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy 'oczekująca' oznacza że muszę coś potwierdzić?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "When a payment fails, is it retried automatically or is it just done?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Status 'autoryzowana' widnieje od wczoraj, to normalne?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The order status in my panel says 'pending' — I just want to know what that word means, nothing about my shop.",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam o sklep, tylko co technicznie znaczy status 'autoryzowana' u Was.",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Both my shop and your panel show pending — what does pending itself actually mean?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient pyta co znaczy 'oczekująca', a ja sam nie wiem jak to wytłumaczyć.",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ignore my store for a second — is authorized money I can count on?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co oznacza 'wygasła' — czy to to samo co anulowana sesja?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is an expired status the same thing as a cancelled payment, definition-wise?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy status 'nieudana' i 'wygasła' to co innego?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the semantic difference between failed and expired?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Płatność 'zakończona' u Was — pytam tylko co to znaczy, nie o wypłatę.",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "When you say completed, does that already mean paid out to me or just captured?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy 'zakończona' oznacza że kasa jest u mnie na koncie, czy tylko że płatność przeszła?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't care about webhooks, I just want the definition of authorized.",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Status 'oczekująca' — czy to znaczy że muszę wysłać towar czy czekać?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does completed status mean I should already ship the order?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co to znaczy technicznie, że transakcja jest 'autoryzowana' ale nie 'zakończona'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just the meaning please: what is the difference between authorized and captured?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy status płatności ma coś wspólnego z tym kiedy dostanę wypłatę?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is pending about the customer's side or about your processing?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient widzi u siebie 'w trakcie' — co ten status oznacza z Waszej strony?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What does the authorized state say about whether I'll actually receive funds?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy 'nieudana' zawsze znaczy że karta odrzucona, czy może być inny powód?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "When a status is expired, whose fault is it — customer's or system's?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co oznacza że płatność najpierw była 'autoryzowana' a potem 'nieudana'?",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there a status between authorized and completed I should know about?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "pending??",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "'autoryzowana' — co to",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "failed?!?",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "status?? help",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ok so a customer bought a chair from my store this morning, everything seemed fine, she got the confirmation on her phone, but now I'm looking at the panel and it says authorized and honestly I have no clue if that means she paid or if I'm supposed to wait or what, can someone just tell me what authorized even means",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czemu wisi pending od 3 godzin jestem zdesperowany pomocy",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "my client is angry, status says failed, did she pay or not?? i need to know NOW",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wygasła i co teraz nie rozumiem tego statusu w ogóle",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "authorized authorized authorized what does it MEAN",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "płatność completed ale ja not sure czy to znaczy że mam kasę help please",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "status oczekujaca od wczoraj rano i nic sie nie dzieje serio o co chodzi z tym",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "klient krzyczy że zapłacił a u mnie failed nie wiem co mu powiedzieć",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "so like what's pending mean is it good or bad i'm stressed",
+   "intent": "payment_status_meaning",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "transakcja 'autoryzowana' — dobra czy zła wiadomość dla mnie",
+   "intent": "payment_status_meaning",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Payment went through on your side but WooCommerce still says awaiting payment.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The customer paid, your panel confirms it, but my shop never updated the order.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My store shows the order as unpaid even though you show it completed.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The webhook to my shop clearly didn't fire — order still pending in my system.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you re-send the notification? My platform didn't receive the payment callback.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Everything's paid on kremzaPay but my Shopify order is stuck on unpaid.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Order confirmed as paid with you, but my ERP shows nothing came in.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The IPN never reached my server, so the customer's order looks unpaid to me.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Money's in, your side says done, my shop just refuses to mark it paid.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I force a status sync? Your side is paid, mine isn't.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "U Was płatność zaksięgowana, a w sklepie zamówienie dalej 'nieopłacone'.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient zapłacił, w panelu widzę potwierdzenie, ale sklep tego nie odnotował.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "WooCommerce nie zmienił statusu mimo udanej płatności u Was.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Powiadomienie nie doszło do mojego sklepu, zamówienie wisi jako nieopłacone.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy możecie wysłać ponownie webhook? Mój system nic nie dostał.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność OK po Waszej stronie, a u mnie w PrestaShop cisza.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamówienie opłacone u Was, ale mój sklep dalej czeka na płatność.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Callback nie przyszedł, przez co zamówienie u mnie jest nieopłacone.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam potwierdzenie płatności, ale integracja nie zaktualizowała zamówienia.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego mój sklep nie widzi płatności, którą Wy pokazujecie jako udaną?",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc udana u was ale woocommerce nie widzi",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "webhook nie doszedl do mojego sklepu co robic",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "u mnie w panelu ok a sklep jakby nic nie dostal",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zamowienie nadal nieoplacone mimo ze platnosc przeszla",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy mozecie wyslac powiadomienie jeszcze raz bo nie doszlo",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "paymnet done on your side but my shop says unpaid",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "the webhok never reached my store order still pending",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can you resend the notifcation my system missed it",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "money paid but shopfy order stuck on awaiting payment",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc zaksiegowana a sklep dalej czeka",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "moj sklep nie dostal callbacku znowu",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "order paid on your end mine shows nothin",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "dlaczego sklep nie aktualizuje statusu po platnosci",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient placi a u mnie zamowienie wisi jak nieoplacone caly czas",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "resend webhook please shop didnt get it",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc ok ale integracja nie zadzialala",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "why isnt my store updating after succesful payment",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "sklep pokazuje nieoplacone chociaz kasa przyszla",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "notifcation didnt arrive order still awaiting",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a way to manually retrigger the payment notification to my shop?",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Your dashboard says paid, but my customer's order is still open — what gives?",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The confirmation email went out but my backend never got the paid event.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient dostał potwierdzenie, a moje zamówienie nadal ma status 'do zapłaty'.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Payment succeeded but the order status in my CMS didn't flip to paid.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My integration missed the callback for one order — can you push it again?",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zapłacone u Was, ale WooCommerce oznacza jako oczekujące na płatność.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The funds are confirmed on your side; my store simply didn't register them.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da się ręcznie wymusić powiadomienie o płatności do sklepu?",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "One order didn't sync — paid with you, unpaid in my panel.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Mój sklep nie odebrał notyfikacji i teraz zamówienie wygląda na nieopłacone.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I recover a missed webhook so the order shows as paid?",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zamówienie zapłacone, ale u mnie w systemie brak informacji o tym.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The paid status just isn't propagating to my e-commerce platform.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność przeszła, sklep jej nie zarejestrował — jak to naprawić?",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Customer paid twenty minutes ago, still nothing on my order page.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy możecie ponownie wysłać status transakcji do mojej integracji?",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "My webhook endpoint was down briefly — can you replay the event?",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zamówienie u Was opłacone, u mnie dalej figuruje jako niezapłacone.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The order remains awaiting payment in my shop despite your confirmation.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "It's not that I don't understand completed — the problem is my shop still shows unpaid.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o to co znaczy status, tylko że u Was opłacone a w sklepie nie.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Your side says completed, my shop says unpaid — this is a sync issue, not a status question.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie jest podwójna płatność, po prostu sklep nie dostał info o tej jednej.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Only one charge happened, but my store won't mark the order as paid.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jedna płatność, nie dwie — problem w tym że sklep jej nie widzi.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I know what pending means; my issue is your paid isn't reaching my platform.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Rozumiem statusy, ale mój sklep nie zaktualizował się po Waszym 'zakończona'.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking about the meaning of authorized — asking why my shop ignores it.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient nie zapłacił dwa razy, tylko raz, a i tak zamówienie u mnie nieopłacone.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The payment is completed and singular, yet my order page is frozen on unpaid.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie duplikat — jedna transakcja, która nie dotarła do sklepu.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Your panel and my shop disagree: you say paid, I say unpaid, fix the sync.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Panel pokazuje opłacone, sklep nieopłacone — to rozjazd, nie pytanie o status.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I get that it's completed on your end — I need it completed on mine too.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak zsynchronizować status, skoro u Was jest opłacone a u mnie nie?",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's a single successful payment that my webhook just never received.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chodzi o brak powiadomienia, nie o to że nie wiem co znaczy 'opłacone'.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The difference is: your record says paid, my record says nothing arrived.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam czym jest status, pytam czemu sklep go nie odebrał.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "There's exactly one transaction and it's confirmed, my shop just didn't get told.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Mam jedną udaną płatność, której sklep nie zarejestrował — nie duplikat.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Your completed status is fine; the failure is it never propagated to me.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamówienie zostało opłacone raz, ale integracja nie dostała callbacku.",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Paid on kremzaPay, unpaid in my CMS — purely a notification delivery problem.",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "resend webhook!!",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "sklep nie widzi płatności pomocy",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "paid but unpaid?!",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "webhook?? gdzie",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Look I've been going crazy all morning, a customer bought three items, kremzaPay shows the whole thing as paid and completed, I even see the amount, but my WooCommerce just sits there stubbornly saying awaiting payment and I can't ship until it flips, so what do I do, can you resend whatever notification is supposed to come",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "klient zaplacil wy potwierdzacie a moj sklep dalej nieoplacone serio nie wiem juz co robic",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "order stuck unpaid your side paid, this is losing me sales HELP",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "u was zaplacone u mnie nie ratunku",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "webhook nie doszedl i klient czeka na wysylke a ja nie moge nic zrobic bo sklep myśli że nie zapłacił",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "paid on kremza not on shopify why WHY",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "powiadomienie nie przyszlo znowu trzeci raz dzisiaj",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "shop says unpaid you say paid i'm losing my mind",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zaplacone ale nieoplacone jednoczesnie jak to możliwe",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "can u just push the callback again pls my store is frozen",
+   "intent": "payment_not_reported",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "sklep dalej czeka na platnosc mimo ze wszystko ok u was co jest grane",
+   "intent": "payment_not_reported",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I switch on BLIK for my checkout?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where in the Panel do I activate Apple Pay?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want card payments live on my store — what do I toggle?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you walk me through enabling pay-by-link for my shop?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My customers can't see Google Pay at checkout, how do I turn it on?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which setting activates przelewy online for my store?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to add BLIK to my payment options before Friday.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I make QR payments available to my buyers?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I enable card acceptance in my account?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'd like to offer Google Pay — where's the switch?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak włączyć BLIK w moim sklepie?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w panelu aktywować płatności kartą?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę udostępnić pay-by-link w koszyku, gdzie to ustawić?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dodać Google Pay do metod płatności u mnie?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Moi klienci nie widzą BLIKa, jak go odblokować?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Które ustawienie włącza przelewy online w sklepie?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę mieć płatności kartą na stronie, co mam kliknąć?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak uruchomić płatności QR dla moich klientów?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie aktywuję Apple Pay w moim koncie?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się włączyć pay-by-link tak żeby pojawił się przy zamówieniu?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wlaczyc blika u mnie w sklepie",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie aktywowac platnosci karta w panelu",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce dodac google pay gdzie to ustawic",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "moi klienci nie widza blika jak odblokowac",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak uruchomic pay by link w koszyku",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie wlaczyc platnosci qr dla klientow",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i enable blik for my shop",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "where do i turn on google pay in the panel",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need card payments live where do i click",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to activate pay by link on my store",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "jak wlaczyc karte platnicza jako metode",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie sie aktywuje apple pay",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce zeby na stronie byl blik jak to zrobic",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "turn on qr payments for my checkout how",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "jak dodac przelewy do metod platnosci",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "enable card acceptence for my store plz",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie ustawie zeby pokazywal sie google pay",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i swtich on blik before weekend",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "chce wlaczyc platnosci mobilne u siebie",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "where can i activete pay-by-link",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I just onboarded — how do I enable my first payment method?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I turn on multiple methods at once, like BLIK and cards?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę włączyć wszystkie dostępne metody naraz, da się?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I set BLIK as a visible option in my store's checkout?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I go to activate przelewy24-style transfers for buyers?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak sprawić, żeby BLIK pojawił się jako opcja w moim sklepie?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I toggled cards on but they still don't show — what did I miss?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w ustawieniach zaznaczyć żeby karta była aktywna?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I enable Google Pay specifically on my WooCommerce shop?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę dodać płatność kartą do mojego checkoutu, od czego zacząć?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What steps activate a new payment method in the Panel?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak aktywować nową metodę płatności w panelu krok po kroku?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I want to let customers pay by QR — how do I turn that on?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie włączyć pay-by-link, żeby wysyłać klientom linki do zapłaty?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Can I enable Apple Pay just for mobile buyers on my site?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak włączyć płatności BLIK żeby działały w mojej aplikacji?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Where's the toggle to make card payments appear in my cart?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę uruchomić Google Pay przed świętami, gdzie to zrobić?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I activate the transfer payment method for my store?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dodać QR jako metodę płatności w moim sklepie internetowym?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I understand how BLIK works, now I just want to turn it on for my shop.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem jak działa pay-by-link, teraz chcę go włączyć u siebie.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking what Google Pay is — asking where to enable it in my Panel.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam jak działa BLIK, tylko gdzie go aktywować w sklepie.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I get the concept of QR payments; how do I make them live for buyers?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Rozumiem kartę, chcę tylko żeby pojawiła się w moim checkoucie.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Skip the explanation — which button activates card payments?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Bez teorii, po prostu gdzie kliknąć żeby włączyć przelewy.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I know pay-by-link sends a link; I want to enable sending them from my account.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem co to Apple Pay, chcę go tylko udostępnić moim klientom.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Already know how it works — need it switched on before the weekend.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Znam zasadę działania BLIKa, chodzi mi o jego uruchomienie u mnie.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How do I go from understanding Google Pay to actually offering it?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak przejść od wiedzy o pay-by-link do włączenia go w sklepie?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a how does it work question — a how do I activate it question.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie pytanie jak działa QR, tylko jak go włączyć na stronie.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want BLIK enabled, not explained — where's the setting?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę mieć kartę aktywną, nie tłumaczenie jak działa.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Understood the mechanics, now point me to the activation toggle.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zrozumiałem mechanikę, teraz pokażcie gdzie się to włącza.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Enough about how przelewy work — how do I put them in my cart?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dość o tym jak działa pay-by-link, jak go dodać do koszyka?",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I need Apple Pay turned on for my store, not a description of it.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Potrzebuję włączyć Google Pay u siebie, nie opisu jak działa.",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just tell me the steps to activate card payments, I know what they are.",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "blik on?",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak włączyć karte",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "enable google pay!!",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie aktywować blik pomocy",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Ok so I finally set up my little online store selling handmade candles and I really want my customers to be able to pay with BLIK because everyone in Poland uses it, but for the life of me I cannot find where in your Panel I'm supposed to flip the switch to make BLIK show up at checkout, can you point me to the exact place",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "chce blika na stronie juz teraz gdzie to sie klika bo szukam pol godziny",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "cards cards cards how do i turn ON card payments",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "potrzebuje pay by link na wczoraj jak włączyć",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "google pay please enable for my shop asap thanks",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak zrobic zeby byl blik u mnie nie moge znalezc tego nigdzie",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "turn on qr?!",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie sie wlacza karte bo klienci uciekaja bez tej opcji",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "i need blik live before friday sale HELP where do i click",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "platnosci mobilne wlaczyc gdzie to jest w panelu zgubilem sie",
+   "intent": "payment_method_enable",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "enable everything just make all methods work on my checkout please",
+   "intent": "payment_method_enable",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "How does pay-by-link work from the customer's perspective?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does BLIK require the bank app or is a code enough?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What exactly happens when a customer pays with a QR code?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is Google Pay basically the same as tapping a card?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the customer land on a page when using pay-by-link, or something else?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long is a pay-by-link valid before it stops working?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can a customer use BLIK without mobile internet?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does the buyer see step by step during a Google Pay checkout?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is a QR payment scanned with the banking app or the camera?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does pay-by-link work if the customer opens it on a desktop?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak działa pay-by-link z perspektywy klienta?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy BLIK wymaga aplikacji bankowej czy wystarczy kod?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co się dzieje, gdy klient płaci kodem QR?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy Google Pay to w praktyce to samo co płatność kartą?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy klient przy pay-by-link trafia na stronę płatności?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak długo pay-by-link jest ważny zanim wygaśnie?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy BLIK działa bez internetu w telefonie?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co widzi kupujący krok po kroku przy Google Pay?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czym różni się płatność QR od zwykłego przelewu?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy pay-by-link zadziała jak klient otworzy go na komputerze?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak dziala pay by link dla klienta",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy blik potrzebuje aplikacji czy wystarczy kod",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co sie dzieje jak klient placi kodem qr",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy google pay to to samo co karta",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak dlugo wazny jest pay by link",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy blik dziala bez internetu w telefonie",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how does pay by link work for teh customer",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "does blik need the app or just a code",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what happens wen someone pays with qr",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is google pay same as tapping a card",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czy klient przy pay by link widzi strone",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co widzi kupujacy przy platnosci google pay",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how long is a pay-by-link valid",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can customer use blik without internet",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czym rozni sie qr od przelewu zwyklego",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "does qr get scaned with bank app or camera",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czy pay by link dziala na kompie",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wyglada platnosc blik od strony klienta",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "is pay by link a page or a popup",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "co to znaczy ze klient placi blikiem jak to dziala",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "When a customer chooses BLIK, do they type a code on my site or in their app?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does Google Pay pull the card straight from the customer's phone?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wygląda proces płatności BLIK dla kupującego?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Is pay-by-link something I send by email or SMS to the customer?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy pay-by-link wysyła się mailem czy SMS-em do klienta?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What information does the customer need to complete a QR payment?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przy BLIKu klient wpisuje kod na mojej stronie czy w aplikacji?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does a pay-by-link expire after the customer opens it once?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak klient autoryzuje płatność Google Pay na telefonie?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How is a QR payment different from a standard card transaction?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy kod BLIK jest jednorazowy i ile ma cyfr?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What's the customer experience like with pay-by-link on mobile?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy Google Pay wymaga od klienta odcisku palca albo PIN-u?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does the customer confirm the QR payment in their banking app?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak działa płatność QR — klient skanuje czy pokazuje kod?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Is BLIK instant or does the customer wait for confirmation?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy pay-by-link można otworzyć wielokrotnie czy tylko raz?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What happens if the customer's BLIK code expires mid-payment?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wygląda płatność Google Pay z punktu widzenia klienta?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does pay-by-link show my store's name to the customer?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Before I decide to turn it on, how does BLIK actually work?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim włączę pay-by-link, chcę zrozumieć jak on działa.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm not enabling anything yet — just curious how QR payments function.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę jeszcze nic aktywować, pytam tylko jak działa Google Pay.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just explain how pay-by-link works; I'll decide about enabling it later.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Najpierw wytłumaczcie jak działa BLIK, włączeniem zajmę się potem.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not about setup — I want to understand the mechanics of Google Pay.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie o konfigurację, chcę pojąć jak przebiega płatność QR.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How does BLIK work, so I can decide whether to offer it?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak działa pay-by-link, żebym wiedział czy warto go włączać?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm comparing methods — how does QR differ from pay-by-link functionally?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Porównuję metody, jak działa QR w porównaniu do przelewu?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Purely informational: what's the flow when someone pays via Google Pay?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czysto informacyjnie — jak wygląda płatność przez pay-by-link?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Help me understand BLIK before I even think about the Panel.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę zrozumieć BLIK, zanim w ogóle zajrzę do panelu.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What does pay-by-link do exactly? Not asking how to switch it on.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co dokładnie robi pay-by-link? Nie pytam jak go włączyć.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Explain the customer journey for QR; enabling is a separate question.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wytłumaczcie ścieżkę klienta przy QR, włączanie to osobny temat.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I just want the theory of how Google Pay processes a payment.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Interesuje mnie sama teoria jak Google Pay przetwarza płatność.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Curious how BLIK confirms a payment — not ready to activate it.",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ciekawi mnie jak BLIK potwierdza płatność, nie włączam go jeszcze.",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can you describe how pay-by-link behaves, before I commit to using it?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "blik jak działa?",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "pay-by-link??",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "how does qr work",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "google pay to co",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "So my cousin told me BLIK is super popular and customers love it and I've been hearing about it everywhere but honestly I have no idea what actually happens when someone clicks BLIK — do they get a code, do they scan something, does it use the bank app, does it need internet, I'm just trying to wrap my head around the whole thing before anything else",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czy blik dziala bez neta wgl jak to jest z tym",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "pay by link — page? popup? email? i'm confused",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak to jest z tym qr klient skanuje czy jak nie rozumiem",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "does google pay even need a card idk how it works",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "blik kod ile cyfr i skad go klient bierze pytam z ciekawosci",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "qr?",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wyjasnijcie mi po ludzku jak dziala pay by link bo gubie sie",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "is blik like paypal or totally different how does it function",
+   "intent": "payment_method_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "co robi klient krok po kroku przy google pay serio nie wiem",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "jak dziala platnosc karta przez was od strony klienta ciekawe",
+   "intent": "payment_method_question",
+   "lang": "pl",
+   "style": "extreme"
+  }
+ ]
+}

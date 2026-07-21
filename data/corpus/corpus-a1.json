@@ -1,0 +1,2398 @@
+{
+ "cases": [
+  {
+   "q": "What options do I have to pay for my basket?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I settle this with a debit card?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is BLIK available at checkout or only cards?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'd like to know every way I can complete this purchase.",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you take Visa and Mastercard or just local methods?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I actually pay once my cart is ready?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which wallet apps work with your checkout?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I finish my order with a bank transfer?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an instalment plan when paying?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I enter card details to pay for this?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Could you tell me whether Apple Pay is accepted?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'd like to pay by tapping my phone, is that supported?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the easiest way to pay you?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I need an account to pay or can I check out as a guest?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is paying by card here safe with 3D Secure?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I split the payment across two cards?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which currencies can I pay in at checkout?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you accept prepaid cards for orders?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Show me how to pay step by step please.",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm ready to buy, how do I hand over the money?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a pay-later option available?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I pay through my online banking directly?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What payment methods show up on the checkout page?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you support Garmin Pay or only Apple and Google?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can a customer from abroad pay for a Polish shop?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Just wondering which payment types you support.",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is cash on delivery a thing here or card only?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I use a gift card balance to pay?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie metody płatności są dostępne przy zakupie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę zapłacić zwykłym przelewem za zamówienie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "W jaki sposób opłacę koszyk kartą?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da się u was płacić BLIKIem?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chciałbym wiedzieć, jak dokończyć płatność za produkt.",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Akceptujecie Google Pay w kasie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie mam kliknąć, żeby przejść do zapłaty?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przyjmujecie płatność ratalną?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak opłacić to, co mam w koszyku?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę zapłacić kartą zagraniczną w waszym sklepie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Które portfele cyfrowe działają przy waszej kasie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się zapłacić z poziomu bankowości internetowej?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest opcja odroczonej płatności, zapłać później?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "W jakiej walucie mogę zapłacić za zamówienie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę rozłożyć płatność na dwie karty?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak bezpiecznie zapłacić kartą z 3DS u was?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i pya for my order here",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "wich payment methdos do you accept",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i use blik or do i neeed a card for this",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats the quickes way to pay u guys",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "do u take applepay at chekout",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "jak zaplacic za zamowienie przez telefon",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge oplacic koszyk blikiem czy tylko karta",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie sie klika zeby zaplacic u was",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie sa mozliwosci platnosci przy zakupie",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy da sie placic karta zblizeniowo",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce kupic ale nie wiem jak wam zaplacic",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czym moge oplacic zamowienie oprocz karty",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy przyjmujecie przelew online do zaplaty",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mozecie napisac jak przejsc do platnosci",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "da sie placic google payem u was czy nie",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaka forme platnosci wybrac przy kasie",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "My card got declined at another store — before I try here, which methods do you actually accept?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't want a failed payment again, so tell me the most reliable way to pay you.",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Last time BLIK errored elsewhere; here, is BLIK or card more likely to work — what do you offer?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Before I even start, what payment options exist so I don't pick one that fails?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "A friend said your card payments fail a lot — so what other methods can I use instead?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I haven't paid yet, just want to know if transfer is an option to avoid card issues.",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Which method should I choose so the money definitely goes through the first time?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim spróbuję, jakie macie metody, żeby płatność nie została odrzucona?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę żeby coś się nie powiodło — którą metodą najlepiej u was zapłacić?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Słyszałem że karty bywają odrzucane, jakie inne opcje płatności macie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jeszcze nie płaciłem, chcę tylko wiedzieć czy jest przelew zamiast karty.",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Którą metodę wybrać, żeby na pewno przeszła za pierwszym razem?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there a way to pay that won't need 3DS, since my last 3DS attempt bounced elsewhere — what do you support?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't want to be charged without the order going through, so which method is the cleanest — what do you offer?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę zapłacić i zostać bez zamówienia — jaką metodą najbezpieczniej u was płacić?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Before buying, which payment method makes refunds easiest if I ever return — but mainly, what can I pay with?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim kupię: jaką metodą zapłacić, żeby ewentualny zwrot był łatwy — co w ogóle przyjmujecie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do you only accept cards, or is there BLIK too, because I have no card right now?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My card expires next week — can I still use it to pay, or should I pick another method you offer?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta mi zaraz wygasa, mogę nią jeszcze zapłacić, czy wybrać inną metodę?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie mam karty przy sobie, czy mogę zapłacić BLIKIem albo przelewem?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Guest checkout — how do I pay without making an account, what methods are on that page?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Bez zakładania konta, jak i czym mogę u was zapłacić?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want to pay for someone else's order, which method lets me do that?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę opłacić zamówienie znajomego — którą metodą to zrobić?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "jak placic?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "pay how??",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czym zaplacic",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "payment methods?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czy moge card payment zrobic u was jak?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how to zaplacic blikiem tutaj??",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Okay so I've been eyeing this jacket on a shop that uses your gateway for like two weeks, my partner finally said just buy it, I added it to the cart, filled in my address, and now I'm staring at the checkout screen totally lost — how on earth do I actually pay?",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Dobra, siedzę przy komputerze od dziesięciu minut, dodałem produkty do koszyka, wpisałem adres dostawy, wszystko fajnie, ale kompletnie nie widzę gdzie się płaci i jakimi metodami — możecie mi wytłumaczyć jak w ogóle opłacić to zamówienie?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "JUST TELL ME HOW TO PAY ALREADY!!!",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "JAK JA MAM WAM ZAPLACIC?!?!",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "metody platnosci",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "pay options",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "moge pay by phone tap czy nie ma takiej opcji",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "I really want this gift for my mum's birthday tomorrow, I'm not tech savvy at all, I got to a page that just shows a total and nothing else, please please just explain which buttons let me pay and what methods you take.",
+   "intent": "buyer_how_to_pay",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "platnosc?",
+   "intent": "buyer_how_to_pay",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "My card was declined at checkout, what should I do now?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The payment keeps failing every time I hit confirm.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I tried to pay three times and it just says error.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "BLIK code isn't going through, the app throws an error.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Checkout says payment unsuccessful, how do I fix this?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My transaction got rejected but nothing was charged — how do I complete it?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Card payment failed, is it a problem on my side or yours?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "It won't let me pay, keeps saying transaction declined.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I entered my 3DS code and it still failed, help.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Every card I try gets refused at your checkout.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The page just spins and then says payment error.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My bank shows no block, yet your checkout still rejects the payment, why?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payment didn't go through, do I retry or wait?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I keep getting a do not honor message when I pay, what now?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Tried Apple Pay and it errored out, what's wrong?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Getting a timeout error while paying, can't finish the order.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The confirm button gives an error, order stays unpaid, nothing charged.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My payment was blocked, how do I get it to work?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "It says card not supported when I try to pay — how do I proceed?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Failed again, third attempt, still can't buy anything.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why does my payment fail right at the last step?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I got an insufficient funds error but I have money, what do I do?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The BLIK confirmation timed out and the payment failed.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Card declined, no charge, how can I retry safely?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payment rejected — is my card blocked or is it your system?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność została odrzucona, co mam teraz zrobić?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Za każdym razem przy potwierdzeniu wyskakuje błąd płatności.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kod BLIK nie przechodzi, aplikacja pokazuje błąd.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Próbowałem zapłacić trzy razy i ciągle błąd.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kasa pokazuje płatność nieudaną, jak to naprawić?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Transakcja odrzucona, ale nic nie zostało pobrane — jak dokończyć?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta odrzucona przy płatności, to problem u mnie czy u was?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nie mogę zapłacić, ciągle wyskakuje że transakcja odrzucona.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wpisałem kod 3DS i dalej się nie powiodło, pomóżcie.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Każda karta jest odrzucana przy waszej kasie.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Strona się kręci i wyświetla błąd płatności.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mój bank nie zgłasza żadnej blokady, a wasza kasa i tak odrzuca płatność, dlaczego?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność nie przeszła, mam ponawiać czy czekać?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ciągle dostaję odmowę przy płatności, co dalej?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Spróbowałem Google Pay i wyskoczył błąd, o co chodzi?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność zablokowana, jak sprawić żeby zadziałała?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Pisze że karta nieobsługiwana przy płatności, jak zapłacić?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Znów się nie udało, trzecia próba i nic.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego płatność pada na samym końcu?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc odrzucona co teraz mam zrobic",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kod blik nie przechodzi ciagle blad, pomozcie",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "nie moge zaplacic transakcja odrzucona za kazdym razem",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "karta odrzucona ale nic nie pobrano jak ponowic",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "probwoalem 3 razy zaplacic i ciagle error",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czemu platnosc pada na ostatnim kroku, nic nie zeszlo",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "my card keeps geting declined at checkout wtf",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "payment failled again nothing charged how to retry",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "blik keps erroring when i confrim, cant pay",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "transaction rejcted no charge what do i do now",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "cant finish order it says paymnet error every time",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "znowu blad przy platnosci nie da sie kupic",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wyskakuje blad i zamowienie zostaje nieoplacone, nic nie zeszlo z konta",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "karta odmowa, konto nietkniete, jak mam ponowic platnosc",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "apple pay errored no money taken how do i pay now",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "3ds passed but payment still failed nothing debited",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The payment failed and I want to be sure nothing was taken — how do I try again?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It said error, my banking app shows no charge, so how do I complete the purchase?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Declined at checkout — is there another method I should use to get it to go through?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My card failed, should I switch to BLIK to actually pay?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Payment rejected and nothing debited, do I just retry or is my order dead?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Three declines, no money moved, what's the next thing I try?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The checkout errored before any charge — how do I finish paying?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Płatność się nie udała, konto nietknięte, jak mam ją ponowić?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Odrzucone przy kasie, nic nie zeszło — czy spróbować inną metodą, żeby przeszło?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta odmówiła, mam przełączyć się na BLIK żeby w końcu zapłacić?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Błąd płatności, bank nie pokazuje obciążenia, ponawiać czy nie?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Trzy odmowy, żadnych pieniędzy nie pobrano, co robić dalej?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I never got to pay because it kept failing — which step am I doing wrong?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "W ogóle nie udało mi się zapłacić bo ciągle błąd — co robię źle na tym etapie?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Almost looked like I got charged but the bank reversed it instantly — payment failed, how do I redo it?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Przez chwilę wyglądało na obciążenie, ale bank od razu cofnął — płatność padła, jak powtórzyć?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The app showed a pending charge that disappeared, and the order is unpaid because the payment failed — what now?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Pokazało oczekujące obciążenie które zniknęło, płatność nieudana — co teraz?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Since card keeps failing, what's the recommended way to actually get this paid?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Skoro karta ciągle pada, jak najlepiej doprowadzić tę płatność do końca?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "3DS failed on my side — do I retry with the same card or is it hopeless?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "3DS mi nie przeszło — ponawiać tą samą kartą czy to bez sensu?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Payment error right at confirmation, no charge — is it my bank blocking or your gateway?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Błąd dokładnie przy potwierdzeniu, bez obciążenia — to mój bank blokuje czy wasza bramka?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It failed and I'm worried about trying again in case I get double charged — is it safe to retry?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "odrzucone",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "declined",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "blad platnosci",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "payment failed",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czy moge payment failed retry zrobic u was?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "moja card declined co teraz next step?",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "So I've spent the last twenty minutes typing my card number over and over, the shop is one I really trust, my balance is fine, and yet every single time I press pay it flashes red and says the transaction was declined and nothing gets charged, I am at my wit's end, what do I actually do to make this payment go through?",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Siedzę już pół godziny, wpisuję dane karty raz za razem, na koncie mam pieniądze, a mimo to za każdym razem po kliknięciu zapłać wyskakuje że transakcja odrzucona i nic nie schodzi z konta, załamuję się, powiedzcie proszę co mam zrobić żeby ta płatność w końcu przeszła.",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "IT KEEPS FAILING!! WHY CAN'T I PAY?!?!",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ZNOWU BLAD!! NIE DA SIE U WAS ZAPLACIC?!",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "error przy pay, nothing charged, help me retry",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "nie przechodzi",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "This is the third day I'm trying to buy concert tickets before they sell out, my card is perfectly fine everywhere else, but your checkout throws an error at the last second every time and takes nothing from my account, I'm panicking, please tell me how to get past this.",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "rejected",
+   "intent": "buyer_payment_failed",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "PLATNOSC declined AGAIN, co mam robic???",
+   "intent": "buyer_payment_failed",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Money left my account but the shop still says my order isn't paid.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I was charged, yet the order status shows unpaid — what happened?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My card got debited and the order never confirmed, where's my money?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The bank took the amount but the store shows nothing paid.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Funds are gone from my balance but the purchase didn't register.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I paid, the money's deducted, but the shop acts like I didn't.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Got a debit notification, order still pending payment, help.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The amount was withdrawn twice but the order is marked unpaid.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My statement shows the charge but the seller says no payment received.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Card charged successfully but the order page says awaiting payment.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I see the transaction on my card but my order vanished.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The money was taken and now the shop wants me to pay again.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payment went out of my account but the confirmation never came.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I've been charged for an order that the system says doesn't exist.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Bank confirms the payment left, the merchant says they got nothing.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Cash gone, order unpaid — did the payment get stuck somewhere?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My account is minus the amount but there's no order on your end.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The store charged me but there's no order number anywhere.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I was debited at checkout but then it errored and no order appeared.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Money's out, order missing — where did my payment go?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Pieniądze zeszły z konta, a sklep pokazuje nieopłacone.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zostałem obciążony, a status zamówienia to nadal nieopłacone.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta obciążona, zamówienie się nie potwierdziło — gdzie moje pieniądze?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Bank pobrał kwotę, a sklep pokazuje że nic nie zapłacono.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Środki zniknęły z konta, a zakup się nie zarejestrował.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zapłaciłem, pieniądze pobrane, a sklep twierdzi że nie.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostałem powiadomienie o obciążeniu, zamówienie wisi jako nieopłacone.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kwota pobrana dwa razy, a zamówienie oznaczone jako nieopłacone.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Na wyciągu widzę obciążenie, sprzedawca mówi że nie dostał wpłaty.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta obciążona, a strona zamówienia pisze oczekiwanie na płatność.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Widzę transakcję na karcie, ale moje zamówienie zniknęło.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Pieniądze pobrane, a sklep każe mi płacić jeszcze raz.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność wyszła z konta, a potwierdzenie nigdy nie przyszło.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Obciążono mnie za zamówienie, którego system nie widzi.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Bank potwierdza że kasa zeszła, sprzedawca mówi że nic nie dostał.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kasa pobrana, zamówienie nieopłacone — gdzie to utknęło?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Konto na minusie o tę kwotę, a u was żadnego zamówienia.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sklep mnie obciążył, ale nigdzie nie ma numeru zamówienia.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Obciążono mnie przy kasie, potem błąd i zamówienie się nie pojawiło.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Pieniądze wyszły, zamówienia brak — gdzie moja płatność?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "sciagneliscie mi kase a zamowienia nie ma gdzie moje pieniadze",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "pieniadze zeszly z konta a sklep pokazuje nieoplacone",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zostalem obciazony ale zamowienie dalej nieoplacone",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "karta obciazona zamowienie sie nie potwierdzilo, gdzie kasa",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "bank pobral a sklep mowi ze nic nie zaplacilem",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zaplacilem pieniadze pobrane a sklep twierdzi ze nie",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kwota zeszla dwa razy a zamowienie nieoplacone",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "na wyciagu widze oplate sprzedawca mowi ze nic nie dostal",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "money left my acount but order says unpiad",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i was chraged but the order is still marked unpaid",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "card debited no order confirmd where is my money",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "got charged twice and the ordr is missing help",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "bank took the cash but shop shows nothng paid",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my balnce is minus the amount but no order on your side",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "pieniadze pobrane a potwierdzenia brak, co sie stalo",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "obciazyliscie mnie a numeru zamowienia nigdzie nie ma",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kase zabraliscie zamowienia nie widac, gdzie ono jest",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "charged at chekout then error and no order appered",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my statement shows the charge seller says no payment",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "konto obciazone zamowienie znikneło gdzie platnosc",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The payment looked like it failed but the money is actually gone from my account and there's no order — what now?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It said payment error, yet my bank shows the amount debited and no order was created.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I got a decline message but was still charged and have no order — where's my money?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Checkout errored, but the cash left my account and nothing was ordered.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is this a failed payment or did you actually take my money? The order is unpaid but my card shows the charge.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wyglądało na nieudaną płatność, ale kasa zeszła z konta i nie ma zamówienia — co teraz?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Pisało błąd płatności, a bank pokazuje pobranie i zamówienie się nie utworzyło.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostałem komunikat o odrzuceniu, a i tak mnie obciążyliście i nie mam zamówienia.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Kasa błąd, a mimo to pieniądze wyszły z konta i nic nie zamówiłem.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nieudana płatność czy zabraliście mi kasę? Zamówienie nieopłacone, a karta obciążona.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "You charged me for an order that never existed — do I need a refund or is this a stuck payment?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Obciążyliście mnie za zamówienie którego nie ma — to zwrot czy zawieszona płatność?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want my money back for a charge that has no matching order, not for any return.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę odzyskać pieniądze za obciążenie bez zamówienia, nie za żaden zwrot towaru.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The money was taken, no order confirmed — will it bounce back on its own or is it lost?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Pieniądze pobrane, zamówienie niepotwierdzone — samo wróci czy przepadło?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My double-click at checkout charged me but only showed one failed order — money's gone, order unpaid.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kliknąłem dwa razy przy kasie, pobrało, a zamówienie jedno i nieopłacone — kasa zniknęła.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The card charge is pending for two days and the order still shows unpaid — did you take it or not?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Obciążenie wisi jako oczekujące od dwóch dni, a zamówienie wciąż nieopłacone — pobrane czy nie?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Bank SMS confirms payment, your store shows unpaid — I'm not asking for a refund, I want the order.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "SMS z banku potwierdza płatność, sklep pokazuje nieopłacone — nie chcę zwrotu, chcę zamówienie.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I paid successfully according to my bank but the merchant never got it — where is the money sitting?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Według banku zapłaciłem, sprzedawca nic nie dostał — gdzie te pieniądze utknęły?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Charged, no order, and I'm scared it'll just disappear — is this on your side or the bank's?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "obciazono",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "charged unpaid",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "money gone",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "byłem charged ale order unpaid, gdzie moja money?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "money taken no order, co robic teraz?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "I bought a pair of shoes last night, clicked pay with my card, the screen glitched and went blank so I assumed nothing happened, but this morning my banking app shows the full amount was taken and when I log into the shop my order still says awaiting payment, so now I'm out the money with nothing to show for it, what is going on?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Wczoraj wieczorem kupowałam buty, kliknęłam zapłać kartą, ekran się zaciął i zrobił biały, więc pomyślałam że nic się nie stało, ale rano w aplikacji banku widzę że pełna kwota została pobrana, a w sklepie zamówienie dalej wisi jako oczekujące na płatność, więc jestem bez pieniędzy i bez zamówienia, o co tu chodzi?",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "YOU TOOK MY MONEY AND THERE'S NO ORDER!!!",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "SCIAGNELISCIE KASE A ZAMOWIENIA BRAK!!! GDZIE MOJE PIENIADZE?!",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "pobrano",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "debited but order missing, help pls gdzie kasa",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Please help, I'm a student and that was basically my whole week's budget, the payment came out of my account instantly, I got the bank notification, but the shop insists the order is unpaid and now nobody can tell me where my money actually went, I'm really stressed.",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "debited nothing",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "MONEY zeszlo z konta ale ORDER unpaid, wtf gdzie to jest?!",
+   "intent": "buyer_money_taken_no_order",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Where's my refund? It's been over a week now.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When can I expect the money back for my return?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The shop said they refunded me but I don't see it on my card.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long until my refund actually lands in my account?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I returned the item ages ago, still no refund — what's the holdup?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My refund is marked as sent but nothing has arrived.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you check the status of my refund please?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "It's day ten and the refund still isn't showing up.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The merchant approved my return — when do I get my money?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm waiting on a refund for a cancelled order, where is it?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My refund was promised for last week and still hasn't come.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many business days does a refund normally take to arrive?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The seller confirmed the refund but my bank shows nothing yet.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I got a refund email but no money in my account, why?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund pending forever — is there a delay on your side?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Returned two items, got refunded for one — where's the rest?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My card refund is taking way longer than promised.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When will the refund for my returned parcel be visible?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Still no sign of my refund, can you tell me the timeline?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The refund left the shop days ago but hasn't reached me.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest mój zwrot pieniędzy, minął już tydzień?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy dostanę kasę za zwrócony towar?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sklep mówi że zrobił zwrot, a ja nic nie widzę na karcie.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile jeszcze czekać aż zwrot wpłynie na moje konto?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Odesłałem produkt dawno temu, a zwrotu wciąż nie ma.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot oznaczony jako wysłany, a nic nie przyszło.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Możecie sprawdzić status mojego zwrotu?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dziesiąty dzień i zwrotu dalej nie widać.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sprzedawca zaakceptował zwrot — kiedy dostanę pieniądze?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czekam na zwrot za anulowane zamówienie, gdzie on jest?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot obiecany na zeszły tydzień i nadal go nie ma.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile dni roboczych zwykle trwa zwrot na kartę?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sprzedawca potwierdził zwrot, a bank nic nie pokazuje.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostałem maila o zwrocie, ale pieniędzy brak, dlaczego?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot w toku od wieków — czy to opóźnienie po waszej stronie?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Odesłałem dwie rzeczy, zwrot za jedną — gdzie reszta?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot na kartę trwa dużo dłużej niż obiecano.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy zobaczę zwrot za odesłaną paczkę?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dalej ani śladu zwrotu, jaki jest przewidywany termin?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot wyszedł ze sklepu dni temu, a do mnie nie dotarł.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "juz drugi tydzien czekam na zwrot oddajcie moje pieniadze",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie jest moj zwrot minal tydzien",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy dostane kase za zwrocony towar",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "sklep mowi ze zrobil zwrot a ja nic nie widze na karcie",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile jeszcze czekac az zwrot wplynie na konto",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "odeslalem produkt dawno a zwrotu wciaz brak",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zwrot oznaczony jako wyslany a nic nie przyszlo",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "sprzedawca zaakceptowal zwrot kiedy dostane pieniadze",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wheres my refund its been over a weeek",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "when will i get my money bck for the return",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "shop said they refuned me but i see nothng",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how long untill the refund lands on my card",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "returnd the item ages ago still no refund",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "refund marked snet but nothing arrived yet",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my refund is takng way too long to show up",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "zwrot w toku od wiekow, kiedy wplynie na moje konto",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dostalem maila o zwrocie ale kasy nie ma na karcie",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy w koncu wroci mi platnosc za anulowane zamowienie",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "still waiting on refund can you chek the status",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "the merchant refuned me days ago and stil nothing",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I cancelled my subscription last month and was promised a refund for the last charge — where is that refund?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking to stop billing, that's done — I just want the refund you already approved.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The subscription is already cancelled; where's the money back for the extra month I got charged?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Anulowałem subskrypcję i obiecano mi zwrot za ostatnią opłatę — gdzie ten zwrot?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę wyłączać płatności, to już zrobione — pytam tylko gdzie mój obiecany zwrot.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Subskrypcja już anulowana; gdzie pieniądze za nadpłacony miesiąc?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "You stopped the recurring charge, good, but the refund for it still hasn't reached my card.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Cykliczne płatności już zatrzymane, ale zwrot za nie nadal do mnie nie wpłynął.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I returned the product and the shop confirmed a refund — this isn't a missing-order thing, just where's my money back?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The order was real, I sent it back, refund was approved — when does it arrive?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwróciłem produkt i sklep potwierdził zwrot — to nie zaginione zamówienie, po prostu gdzie moje pieniądze?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamówienie istniało, odesłałem je, zwrot zatwierdzony — kiedy wpłynie?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't a charge without an order — I paid, got the item, returned it, and I'm chasing the refund.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie obciążenie bez zamówienia — zapłaciłem, dostałem towar, odesłałem i czekam na zwrot.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The shop cancelled my order and said money would come back — how long does that refund take?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Sklep anulował moje zamówienie i obiecał zwrot — ile taki zwrot trwa?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Refund was issued to an expired card of mine — will I still get it and when?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot poszedł na moją wygasłą kartę — czy i kiedy go dostanę?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Partial refund landed but the rest of my return money is missing, where is it?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Częściowy zwrot wpłynął, ale reszta pieniędzy za zwrot gdzieś przepadła, gdzie ona jest?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The refund shows completed on the shop's side but zero on my bank — whose delay is this?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot po stronie sklepu jako zakończony, a na koncie zero — czyje to opóźnienie?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I was told 5 days for the refund, it's day 12 — is it lost?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Powiedziano mi 5 dni na zwrot, jest dzień 12 — zginął gdzieś?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's been three weeks since the return was accepted and still no money back — where's my refund?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "zwrot??",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund???",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie zwrot",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "where refund",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "kiedy dostane my refund back??",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "where is moj zwrot, juz tydzien mija",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "I ordered a coat, it didn't fit, I sent it back exactly per the instructions two and a half weeks ago, the shop emailed me saying the refund was processed on their end, and yet every day I refresh my banking app and there is still absolutely nothing coming back to me, so I really need to know where my refund is and when it will finally show up.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Zamówiłam płaszcz, nie pasował, odesłałam go dokładnie według instrukcji ponad dwa tygodnie temu, sklep napisał mi mailem że zwrot został u nich przetworzony, a mimo to codziennie odświeżam aplikację banku i wciąż kompletnie nic do mnie nie wraca, więc naprawdę muszę wiedzieć gdzie jest mój zwrot i kiedy się w końcu pojawi.",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "WHERE IS MY REFUND?!?! IT'S BEEN FOREVER!!",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "GDZIE MOJ ZWROT?!?! ODDAJCIE MOJE PIENIADZE!!!",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "zwrot kiedy",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refunded?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "I'm honestly at the end of my patience, I returned a faulty blender almost a month ago, the seller keeps saying it's been refunded, my bank keeps saying they see nothing, and I'm stuck in the middle with no money and no product, can someone please just tell me where the refund actually is.",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "moj refund still nie ma, kiedy wplynie?",
+   "intent": "buyer_where_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "money back?",
+   "intent": "buyer_where_refund",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}

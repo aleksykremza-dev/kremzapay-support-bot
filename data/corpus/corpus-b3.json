@@ -1,0 +1,2998 @@
+{
+ "cases": [
+  {
+   "q": "When exactly does the money reach my bank account?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long after a sale before I see the funds?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the typical payout timing for card payments?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is your default settlement daily or weekly?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm brand new, when should I expect my first transfer?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do weekend sales pay out on Monday?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many business days until settlement lands?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When are funds from today's transactions released?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What time of day do payouts usually hit the account?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the payout clock start at payment or at capture?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How soon can I withdraw what I earned this week?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Roughly when will yesterday's revenue arrive?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a holding period before the very first payout?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When do I get paid for a BLIK transaction, same speed as card?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the cutoff time to make it into today's payout batch?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If I sell tonight, is the money there tomorrow morning?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How does your payout cycle work exactly?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When can I count on the transfer showing up?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the delay between a completed order and the payout?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do bank holidays push my payout to a later day?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "when do i actualy recieve my money",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how meny days till the cash hits my acount",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "wen is teh first payout for a new merchant",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how long befor funds are availabe to me",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is teh payout dayly or weekly by defualt",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats the usal time for money to arive",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "when will todays sales be payed out",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how soon do i get payd after a sale",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "does the transfair come next buisness day",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "when duz the first settlment happen",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy środki z dzisiejszej sprzedaży trafią na moje konto?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Po ilu dniach roboczych dostanę wypłatę?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest domyślny harmonogram wypłat?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy mogę spodziewać się pierwszego przelewu?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "O której godzinie zwykle przychodzą wypłaty?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy sprzedaż z weekendu wypłaca się w poniedziałek?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Za ile dni zobaczę pieniądze za wczorajsze płatności?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy wypłaty są realizowane następnego dnia roboczego?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile trzeba czekać na środki po zaksięgowaniu płatności?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy będzie wypłata za transakcje BLIK?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dokładnie działa cykl wypłat u Was?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dni wolne przesuwają termin wypłaty?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sprzedałem dziś wieczorem, kasa będzie rano?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Do której godziny muszę sprzedać, żeby wejść w dzisiejszą wypłatę?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak szybko mogę wypłacić to, co zarobiłem w tym tygodniu?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy pojawią się pieniądze za dzisiejsze zamówienia?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile dni roboczych czeka się na rozliczenie?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest odstęp między opłaconym zamówieniem a wypłatą?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy pierwsza wypłata ma dłuższy okres oczekiwania?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy dokładnie dostanę przelew za sprzedaż?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy dostane kase za dzisiejsza sprzedaz",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "po ilu dniach srodki sa na koncie",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki macie domyslny harmonogram wyplat",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wgl kiedy przyjdzie pierwszy przelew jako nowy sklep",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "za ile dostane pieniadze za wczoraj",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy wyplata jest nastepnego dnia roboczego",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "o ktorej zwykle wchodza przelewy",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile sie czeka na kase po platnosci blik",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy bede mial srodki za dzisiejsze zamowienia",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy sprzedaz z soboty wyplaci sie w poniedzialek",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nothing's late yet, I just want to know when the payout normally comes.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My first sale was an hour ago — not worried, just when does it typically settle?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there a minimum payout amount before you send the transfer?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Below what balance do you hold the payout instead of sending it?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't think anything is missing, I only need to understand the timing.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The order completed today; when is the earliest it could pay out — not saying it's late.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the standard T+ value for settlements here?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Just checking the normal schedule before I assume a payout is delayed.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do payouts under a certain sum roll over to the next cycle?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Everything looks fine, I only want to know the usual arrival day.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie mówię, że coś zginęło — pytam tylko, kiedy normalnie przychodzi wypłata.",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy jest jakaś minimalna kwota, żeby wypłata w ogóle wyszła?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Poniżej jakiej kwoty wstrzymujecie przelew do następnego cyklu?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Na razie nic się nie spóźnia, chcę tylko znać standardowy termin.",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Pierwsza sprzedaż była przed chwilą, po prostu kiedy to zwykle się rozlicza?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaki jest domyślny T+ dla przelewów, zanim uznam że coś nie gra?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim uznam wypłatę za opóźnioną — jaki jest normalny harmonogram?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy małe kwoty przechodzą na kolejny cykl wypłat?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wszystko wygląda ok, chcę tylko wiedzieć, którego dnia zwykle wpada kasa.",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ile wynosi minimalny próg wypłaty na konto?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I know my current setup is daily — just confirming when today's batch lands, not changing anything.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking to switch frequency, just when the next scheduled one arrives.",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem, że mam dzienne wypłaty — tylko potwierdzam, kiedy dziś wpadnie, nie zmieniam.",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the money \"mine\" the moment the payment completes or only at payout time?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kiedy środki są faktycznie moje — po płatności czy dopiero przy wypłacie?",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "kiedy wyplata???",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "when money",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "payout when??",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ok so I opened the shop like three days ago, made a couple of sales, my wife keeps asking when the money comes and honestly I have no clue how this whole thing works, when do I get paid?",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "first sale ever omg when does the cash actually show up i'm so confused",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dzien dobry jestem nowy zupelnie nie wiem jak to dziala sprzedalem cos wczoraj i kiedy dostane za to pieniadze na konto bo zona pyta",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "hej kiedy kasa",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "stary kiedy w koncu przyjdzie ta wyplata bo czekam",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "when payout land bro",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "So excited made my first sale today!! when do I see the money???",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "pierwsza sprzedaz kiedy kasa na koncie",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "money when please",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dude just tell me the day the transfer arrives",
+   "intent": "payout_when",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile czekac na kase",
+   "intent": "payout_when",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "My payout was due yesterday and still nothing on the account.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The schedule said T+1 but no transfer landed.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Panel shows the payout as sent, yet my bank is empty.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Two days overdue and the money still hasn't hit my account.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Expected settlement this morning, checked the bank, nothing there.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "You marked the payout completed but I never received it.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where is my transfer? It was supposed to arrive on Monday.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The funds left your side apparently but never reached me.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payout status says realized but nothing came in.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I was owed a payout Friday and it's now Tuesday with no money.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My weekly settlement didn't come through this week.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The dashboard says paid out, my accountant says nothing arrived.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Overdue payout — it's been sitting as sent for three days.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "No money from yesterday's due payout, can you trace it?",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The transfer for last week is missing entirely from my account.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payout was scheduled and confirmed but I see zero on my end.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Should have gotten paid at the latest today, still empty.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "It's way past the usual time and the transfer never showed.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My due payout vanished — marked done in your system, absent in mine.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Been waiting since the promised date, the money is just not here.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my payout was ment to arive yesterday and its not here",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "no transfair landed even tho schedule says t+1",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "panel says sent but my bank acount is emty",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "money is gone i never got the payout that was due",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "its two days overdue and stil nothing arived",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "you marked it payed out but i recieved nothing",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "wheres my transfer it shoud have come monday",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "the funds apparantly left but never reachd me",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "payout says done but nuthing hit my acount",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "waiting since fryday and no money showd up",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Wypłata miała być wczoraj, a na koncie nadal nic.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Harmonogram mówi T+1, ale żaden przelew nie dotarł.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "W panelu wypłata jako wysłana, a na banku pusto.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dwa dni po terminie i pieniędzy dalej nie ma.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Środki miały dojść rano, sprawdziłem konto — zero.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Oznaczyliście wypłatę jako zrealizowaną, a ja nic nie dostałem.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest mój przelew? Miał przyjść w poniedziałek.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Środki niby wyszły od Was, ale do mnie nie dotarły.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Status wypłaty zrealizowana, a wpłaty brak.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wypłata należała się w piątek, jest wtorek i nadal nic.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Tygodniowe rozliczenie w tym tygodniu nie przyszło.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Panel pokazuje wypłacone, księgowa mówi że nic nie wpłynęło.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wypłata po terminie — od trzech dni wisi jako wysłana.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Brak pieniędzy za wczorajszą należną wypłatę, możecie sprawdzić?",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przelew za zeszły tydzień w ogóle nie pojawił się na koncie.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wypłata zaplanowana i potwierdzona, a u mnie zero.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Najpóźniej dziś miało wpłynąć, konto nadal puste.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Minął zwykły termin, a przelewu jak nie było, tak nie ma.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Należna wypłata przepadła — u Was zrobione, u mnie brak.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czekam od obiecanej daty, a pieniędzy po prostu nie ma.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wyplata miala byc wczoraj a na koncie dalej nic",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "harmonogram mowi t+1 ale zaden przelew nie doszedl",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "w panelu wyslane a na banku pusto",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dwa dni po terminie i kasy nadal brak",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "oznaczyliscie jako zrealizowana a ja nic nie dostalem",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie moj przelew mial byc w poniedzialek",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "status zrealizowana a wplaty brak na koncie",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czekam od piatku i nic nie przyszlo",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "srodki niby wyszly ale do mnie nie dotarly",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "naleezna wyplata zniknela u was zrobione u mnie nic",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "It's now past T+1 and the payout that was due hasn't arrived — not asking the schedule, it's late.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I know the schedule is daily; today's due payout simply didn't come.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The amount in the report is right, but that exact payout never reached my bank.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a reporting mismatch — the whole due transfer is just absent from my account.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Yesterday's payout was overdue by the schedule you gave me and still isn't here.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't about understanding the report; a payout that was owed never landed.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Payout marked sent on the due date, three days later my bank shows nothing.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The scheduled settlement passed its date and the money never showed up.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Everything reconciled fine last month; this month's due payout just didn't arrive.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's overdue now — beyond the normal window — and the transfer is missing.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem, że wypłaty są dzienne — dzisiejsza należna po prostu nie przyszła.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie kwestia zrozumienia raportu — należny przelew po prostu nie dotarł.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Minął termin T+1, wypłata jest spóźniona, nie pytam o harmonogram.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Kwoty w raporcie się zgadzają, ale ta konkretna wypłata nie weszła na bank.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wypłata oznaczona jako wysłana w terminie, trzy dni później na koncie zero.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zaplanowane rozliczenie minęło swój termin, a pieniądze nie dotarły.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "W zeszłym miesiącu wszystko się rozliczyło, ta należna wypłata nie przyszła.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jest już po terminie, poza normalnym oknem, i przelewu brakuje.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie jest niezgodność w raporcie, po prostu należna wypłata zniknęła.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wypłata była wymagalna wczoraj wg Waszego harmonogramu i wciąż jej nie ma.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The shop shows the order paid fine — my problem is the payout to my bank never came.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient zapłacił i sklep to widzi — problem w tym, że wypłata na moje konto nie doszła.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not the webhook — the customer money is fine, it's my due settlement that's missing.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Past the promised payout date, funds neither in the panel as pending nor in my bank.",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Po obiecanej dacie wypłaty — ani w panelu jako oczekująca, ani na koncie.",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "gdzie moja kasa",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "wyplaty brak!!!",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "where's my money",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "payout missing??",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ok this is not funny you literally marked it as paid out two days ago and I have refreshed my banking app a hundred times and there is nothing there absolutely nothing where is my money",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zaznaczyliscie ze wyslane a na koncie ZERO od trzech dni gdzie sa moje pieniadze bo zaczynam sie denerwowac naprawde",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "money gone. panel says sent. bank says no. help NOW",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "nic nie przyszlo pomocy",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "seriously where is it, was due monday, it's thursday, i'm freaking out",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "kasa nie doszla a mialo byc wczoraj co jest",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "payout said done. i got nothing. explain??",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "przelew zniknal pomozcie",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "due yesterday not here today what do i do",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "mialo byc a nie ma gdzie to",
+   "intent": "payout_missing",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "my transfer just didn't come and i'm losing it here",
+   "intent": "payout_missing",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I match a single payout back to the orders inside it?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The settlement report shows net — where do I find gross and the fees?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The payout sum doesn't equal my total sales, where's the gap?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which orders were bundled into last Tuesday's transfer?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I export the transaction list for one specific payout?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I reconcile a payout against my order records?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the difference between the net and gross columns here?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The report totals don't tie out to what I expected, can you explain?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I see the fee deductions that make up the net figure?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need a breakdown of every order that fed into this settlement.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How is the payout amount calculated from the underlying sales?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I download a CSV linking payouts to order IDs?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why is the deposited amount lower than the sum of my orders?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which transactions correspond to the 3,412 zł that landed?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I read the settlement statement line by line?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to tie each transfer to its orders for my books.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The gross minus fees doesn't match the net shown, help me check.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a report that shows fees per transaction inside a payout?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I cross-check the payout report with my shop's sales log?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I get a per-order breakdown of what was settled?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i mach a payout to the orders inside it",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "the report shows net were do i see gros and fees",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "the payout dosnt equal my total sales wheres the diference",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i exort the transaction list for one payout",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i reconsile the payout with my orders",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats the diference betwen net and gros here",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "the totals dont tie out can you explane",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "were are the fee deductons in this report",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i need a brakdown of orders in this setlement",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "why is the depositd amount lower than my sales",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dopasować pojedynczą wypłatę do zamówień, które ją tworzą?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Raport pokazuje netto — gdzie znajdę brutto i prowizje?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Suma wypłaty nie zgadza się z moją sprzedażą, gdzie różnica?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Które zamówienia weszły do wtorkowego przelewu?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę wyeksportować listę transakcji dla jednej wypłaty?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak rozliczyć wypłatę z moimi zamówieniami?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czym różni się kolumna netto od brutto w raporcie?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sumy w raporcie nie wychodzą tak jak zakładałem, wyjaśnicie?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie widzę potrącone prowizje składające się na kwotę netto?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję rozbicia każdego zamówienia wchodzącego w to rozliczenie.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak liczona jest kwota wypłaty z poszczególnych sprzedaży?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę pobrać CSV łączący wypłaty z numerami zamówień?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego wpłacona kwota jest niższa niż suma zamówień?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Które transakcje odpowiadają za 3 412 zł, które weszło?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak czytać zestawienie rozliczeniowe pozycja po pozycji?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę powiązać każdy przelew z jego zamówieniami do księgowania.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Brutto minus prowizja nie daje netto z raportu, sprawdźmy to.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest raport pokazujący prowizję na każdej transakcji w wypłacie?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak porównać raport wypłat z logiem sprzedaży w moim sklepie?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dostanę rozbicie na zamówienia tego, co zostało rozliczone?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak dopasowac wyplate do zamowien ktore ja tworza",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "raport pokazuje netto gdzie brutto i prowizje",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "suma wyplaty nie zgadza sie ze sprzedaza gdzie roznica",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ktore zamowienia weszly do wtorkowego przelewu",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge wyeksportowac transakcje dla jednej wyplaty",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak rozliczyc wyplate z moimi zamowieniami",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czym rozni sie netto od brutto w raporcie",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dlaczego wplacona kwota jest nizsza niz suma zamowien",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "potrzebuje rozbicia zamowien z tego rozliczenia",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak czytac to zestawienie rozliczeniowe",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The money did arrive — I just can't match the amount to my orders.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nothing's missing, the total is simply lower than my sales and I want to know why.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't for my accountant's books — I need to tie this one payout to its orders.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The payout landed fine, I only need the net-vs-gross breakdown to check it.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not an export for bookkeeping — a reconciliation of this specific transfer to its transactions.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The transfer is here, the figure just doesn't add up against what I sold.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't need a yearly summary, only the orders behind this single settlement.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The amount is correct on the bank, I just want the fee breakdown that explains the net.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not that a payout is absent — it's that I can't reconcile the one that came.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Money's in, but which orders and which fees produced exactly this number?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kasa przyszła — tylko nie umiem dopasować kwoty do zamówień.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nic nie zginęło, suma jest po prostu niższa niż sprzedaż i chcę wiedzieć czemu.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie eksport dla księgowej — chcę powiązać tę jedną wypłatę z jej zamówieniami.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wypłata weszła, potrzebuję tylko rozbicia netto-brutto, żeby to sprawdzić.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie potrzebuję rocznego podsumowania, tylko zamówień z tego jednego rozliczenia.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Kwota na banku się zgadza, chcę tylko rozpisania prowizji tłumaczącego netto.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie tak, że wypłaty brakuje — nie mogę rozliczyć tej, która przyszła.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Pieniądze są, ale które zamówienia i prowizje dały dokładnie tę kwotę?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Przelew dotarł, liczba po prostu nie zgadza się z tym, co sprzedałem.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie księgowość roczna — dopasowanie tego konkretnego przelewu do transakcji.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't want to change anything about payouts, just understand this report's numbers.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę nic zmieniać w wypłatach, chcę tylko zrozumieć liczby w tym raporcie.",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can the export include order IDs so I can reconcile, not just a plain fee dump?",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy eksport może zawierać numery zamówień, żeby rozliczyć, a nie samą listę opłat?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The payout came on time — my only issue is the settlement figures don't reconcile.",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "netto brutto?",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "raport nie gra",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "reconcile how",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "numbers don't add up??",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ok so I've been staring at this settlement report for an hour and the number that hit my bank is like two hundred zloty less than the sum of all my orders and I cannot for the life of me figure out where the difference comes from is it fees is it something else",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "which orders are in this payout i literally cannot tell send help",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "siedze nad tym raportem od godziny wplynelo mniej niz suma zamowien i nie wiem gdzie sie podziala roznica prowizje czy co",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "net vs gross halp",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak to rozliczyc bo mi sie nie zgadza kompletnie",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "payout 3412 which orders??",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "export csv per payout can i",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "kwota inna niz sprzedaz czemu",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "fees where in report",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie brutto w tym zestawieniu",
+   "intent": "payout_report_reconcile",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "match payout to orders pls",
+   "intent": "payout_report_reconcile",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Could I flip my payouts from daily over to weekly?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I adjust how frequently my settlements run?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'd rather get one weekly transfer than many small ones.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is it possible to set payouts every two weeks?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I move from weekly to daily settlements?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I get paid monthly instead of every day?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I adjust how often my money is sent?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want fewer, larger transfers — how do I set that up?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can the payout cycle be changed to twice a week?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I make my payouts come less frequently?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Switch me to weekly payouts please, where's the setting?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an option for on-demand payouts instead of scheduled?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need daily settlements now that volume is up, how to change?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I set a custom payout schedule for my account?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I change the day of the week my payout goes out?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Move my settlements from Fridays to Mondays, possible?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I pause automatic payouts and trigger them manually?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to change the frequency, not the bank details.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where in the Panel do I change the payout interval?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I go from monthly back to daily payouts?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i swich from dayly to weekly payouts",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i chnage my setlement frequancy",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "id rather get one weekly transfr not many small ones",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is it posible to set payouts evry two weeks",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i move from wekly to daly",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i get payed monthly insted of every day",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "were do i ajust how often money is sent",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i want fewr bigger transfers how to set up",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "change the payout cyle to twice a week",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "make my payouts come les frequntly",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę przełączyć wypłaty z dziennych na tygodniowe?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienić częstotliwość wypłat?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wolałbym jeden przelew tygodniowo niż wiele małych.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się ustawić wypłaty co dwa tygodnie?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przejść z tygodniowych na dzienne rozliczenia?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę dostawać wypłaty raz w miesiącu zamiast codziennie?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie ustawię, jak często wysyłane są pieniądze?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę rzadziej, ale większe przelewy — jak to zrobić?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy cykl wypłat można zmienić na dwa razy w tygodniu?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak sprawić, żeby wypłaty przychodziły rzadziej?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przełączcie mnie na tygodniowe wypłaty, gdzie to ustawienie?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest opcja wypłat na żądanie zamiast zaplanowanych?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję teraz dziennych rozliczeń, bo wzrósł obrót, jak zmienić?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę ustawić własny harmonogram wypłat?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienić dzień tygodnia, w którym idzie wypłata?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przesuńcie moje rozliczenia z piątku na poniedziałek, można?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę wstrzymać automatyczne wypłaty i uruchamiać je ręcznie?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zmienić częstotliwość, nie dane bankowe.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w panelu zmienię interwał wypłat?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę wrócić z miesięcznych na dzienne wypłaty?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge przelaczyc wyplaty z dziennych na tygodniowe",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zmienic czestotliwosc wyplat",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wolalbym jeden przelew tygodniowo niz wiele malych",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "da sie ustawic wyplaty co dwa tygodnie",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak przejsc z tygodniowych na dzienne",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge dostawac kase raz w miesiacu zamiast codziennie",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie ustawie jak czesto ida pieniadze",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce rzadziej ale wieksze przelewy jak to zrobic",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "przelaczcie mnie na tygodniowe gdzie to ustawienie",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zrobic zeby wyplaty byly rzadsze",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I don't want to change the account, just how often it pays out.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not the IBAN — I only want to switch the payout frequency.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Keep the same bank, just make it weekly instead of daily.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The account stays; change the cadence to biweekly please.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not about where the money goes, it's about how often.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Same destination account, different schedule — is that allowed?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm happy with the bank details, I just need less frequent payouts.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Don't touch my account number, only the payout interval.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Leave the IBAN as is, I want to go from daily to weekly.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking when the next one lands — asking to change the frequency going forward.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę zmieniać konta, tylko jak często wychodzą wypłaty.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie IBAN — chcę tylko zmienić częstotliwość wypłat.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zostawcie ten sam bank, ma być tygodniowo zamiast codziennie.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Konto bez zmian, zmieńcie cykl na co dwa tygodnie.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie o to, gdzie idą pieniądze, tylko jak często.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To samo konto docelowe, inny harmonogram — można?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Dane bankowe zostają, chcę tylko rzadszych wypłat.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie ruszajcie numeru konta, tylko interwał wypłat.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "IBAN bez zmian, chcę przejść z dziennych na tygodniowe.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam, kiedy przyjdzie następna — chcę zmienić częstotliwość na przyszłość.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Instead of the current daily transfers, can you consolidate into one per week?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamiast obecnych dziennych przelewów, można scalić w jeden tygodniowy?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I understand the schedule — now I want to actually change it to monthly.",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Rozumiem harmonogram — teraz chcę go faktycznie zmienić na miesięczny.",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can the frequency be per-order or only on a fixed cycle?",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "zmiana czestotliwosci",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "weekly instead pls",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "payouts less often",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "co dwa tygodnie sie da?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "hey so right now I'm getting like five tiny transfers a week and it's a mess for my bookkeeping can you just make it one payout a week instead I don't care which day just less often please",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "daily is annoying make it weekly how",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dostaje pare malych przelewow w tygodniu i to burdel dla ksiegowosci zrobcie jeden tygodniowo prosze obojetnie ktory dzien byle rzadziej",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "rzadziej prosze",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "change frequency where click",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "z dziennych na miesieczne moze byc?",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "monthly payouts possible??",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "tygodniowo zamiast codziennie",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "fewer transfers pls how",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "switch cadence to biweekly",
+   "intent": "payout_schedule_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak ustawic rzadsze wyplaty",
+   "intent": "payout_schedule_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I swap in a new bank account for my payouts?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We switched banks — where do I enter the new IBAN?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I changed my business account, where do I put the new number?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My old account is closed, send the money to a different one.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payouts should go to a new account from now on.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where in the Panel do I change my settlement bank account?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I add a different IBAN for receiving payouts?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Need to redirect my transfers to another bank.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I replace the account number on file for payouts?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We opened a new company account, update the payout destination.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Change the receiving account for my settlements, please.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My IBAN changed after the bank merger, how do I fix it?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I edit the bank details my money is sent to?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can payouts be moved to my new mBank account?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want a different account to receive future payouts.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I swap the destination account for withdrawals?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The account you're paying into is wrong, how do I correct it?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Update my payout IBAN to the new one I just got.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I change the bank account without pausing payouts?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I submit a new account number for settlements?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i updat the bank acount for my payouts",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "we swiched banks were do i put the new iban",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my old acount is closd send money to a diferent one",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "payouts shoud go to a new acount from now on",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "where do i chnage my setlement bank acount",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i add a diferent iban for reciving payouts",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need to redirekt my transfers to anther bank",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i replac the acount number on file",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "update the payout distination to my new acount",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "change the reciving acount for my setlements",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ustawić inny numer rachunku do wypłat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zmieniliśmy bank — gdzie wpisać nowy IBAN?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zmieniłem rachunek firmowy, gdzie podać nowy numer?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Stare konto zamknięte, wysyłajcie kasę na inne.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wypłaty od teraz mają iść na nowe konto.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w panelu zmienię konto do rozliczeń?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę dodać inny IBAN do odbioru wypłat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Muszę przekierować przelewy na inny bank.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak podmienić numer konta zapisany do wypłat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Otworzyliśmy nowe konto firmowe, zmieńcie cel wypłat.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Proszę zmienić konto odbiorcze dla moich rozliczeń.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mój IBAN się zmienił po fuzji banku, jak to poprawić?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie edytuję dane bankowe, na które idą pieniądze?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy wypłaty można przenieść na moje nowe konto w mBanku?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę, żeby przyszłe wypłaty szły na inne konto.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak podmienić konto docelowe do wypłat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Konto, na które płacicie, jest błędne, jak to poprawić?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zaktualizujcie mój IBAN do wypłat na nowy.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę zmienić konto bez wstrzymywania wypłat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie zgłosić nowy numer konta do rozliczeń?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wpisac inny numer rachunku do wyplat",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zmienilismy bank gdzie wpisac nowy iban",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zmienilem rachunek firmowy gdzie podac nowy numer",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "stare konto zamkniete slijcie kase na inne",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wyplaty od teraz maja isc na nowe konto",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie w panelu zmienie konto do rozliczen",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge dodac inny iban do odbioru wyplat",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "musze przekierowac przelewy na inny bank",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak podmienic numer konta zapisany do wyplat",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zaktualizujcie moj iban do wyplat na nowy",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Don't change how often — I just need a new account on file.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The frequency is fine, only the destination IBAN must change.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Keep the weekly schedule, just send it to a different bank.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Same cadence, new account number — how do I update it?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not about timing, it's about where the payout lands.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Leave the schedule alone, only swap the receiving account.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't want to touch the payout frequency, just the IBAN.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Same payout days, different bank — where do I change it?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not changing when I get paid, changing which account gets it.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Keep everything as is except the account the money goes to.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie zmieniajcie częstotliwości — potrzebuję tylko nowego konta.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Częstotliwość jest ok, ma się zmienić tylko IBAN docelowy.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zostawcie tygodniowy harmonogram, wysyłajcie na inny bank.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ten sam cykl, nowy numer konta — jak zaktualizować?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie o terminy, tylko o to, gdzie trafia wypłata.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie ruszajcie harmonogramu, podmieńcie tylko konto odbiorcze.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę zmieniać częstotliwości wypłat, tylko IBAN.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Te same dni wypłat, inny bank — gdzie to zmienię?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie zmieniam, kiedy dostaję, zmieniam na jakie konto.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zostawcie wszystko poza kontem, na które idą pieniądze.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My old account is closed so I need to give you a new IBAN for payouts.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Stare konto zamknięte, więc muszę podać nowy IBAN do wypłat.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Redirect future payouts to a new account — the schedule can stay daily.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Przekierujcie przyszłe wypłaty na nowe konto — harmonogram może zostać dzienny.",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The next payout should land on a different account than before.",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "nowy iban gdzie",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "change account pls",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "inne konto do wyplat",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "new bank where put",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "hey so we just moved everything over to a new business bank because the old one was charging us a fortune and now I need all my future payouts to go to the new account instead where exactly do I put the new number",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "old account dead need to change the payout iban asap",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "przenieslismy firme do nowego banku bo stary drogi i teraz wszystkie wyplaty maja isc na nowe konto gdzie wpisac ten numer",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "zmiana konta pilne",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "wrong account fix it",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "nowe konto firmowe zmiencie cel",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "update iban for payouts",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie zmienic rachunek do wyplat",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "different account from now on",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "konto zamkniete slijcie gdzie indziej",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "send payouts elsewhere how",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}

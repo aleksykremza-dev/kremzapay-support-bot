@@ -1,0 +1,2992 @@
+{
+ "cases": [
+  {
+   "q": "Do I get my processing fee back when I refund an order?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When I send money back to a client, does the commission come back to me?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is issuing a refund free or does it cost me something?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Will kremzaPay return the transaction fee if I refund in full?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I refunded a customer yesterday, was the fee returned too?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does a partial refund return part of the commission?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How much do you charge merchants for processing a refund?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If a buyer gets their money back, do I still pay the card fee?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are there any hidden costs when I give a customer a refund?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the commission on the original sale stay with you after a refund?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to know the cost of refunding through the panel.",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When refunds pile up, am I losing the fees every single time?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the merchant fee refundable together with the payment?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you deduct anything extra when I process a return?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund cost question: does the 1.9% come back to my balance?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dostane prowizje z powrotem, gdy zrobie zwrot?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile kosztuje mnie zwrot pieniedzy dla klienta?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przy pelnym zwrocie oddajecie mi oplate za transakcje?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Robie zwrot i zastanawiam sie, czy trace prowizje.",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot jest darmowy dla sprzedawcy?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przy czesciowym zwrocie wraca czesc prowizji czy nie?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy kremzaPay pobiera dodatkowa oplate za wykonanie zwrotu?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Oddaje kase klientowi, czy oplata transakcyjna zostaje u was?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce wiedziec, jaki jest koszt zwrotu w panelu.",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy prowizja od sprzedazy przepada, jak zwroce platnosc?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy prowizja wraca jak robie zwrot klientowi?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile kosztuje zwrot pieniedzy w waszym systemie?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "przy zwrocie oddajecie oplate za transakcje czy nie",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "robie duzo zwrotow ostatnio i chyba trace na prowizji za kazdym razem",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy zwrot jest platny dla sprzedawcy czy darmowy",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czesciowy zwrot to czy wraca czesc prowizji tez",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kremzapay trzyma prowizje po zwrocie? nie rozumiem",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "oddaje kase kupujacemu a oplata zostaje u was tak?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki jest koszt zrobienia zwrotu przez panel",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "prowizja od sprzedazy przepada jak zwroce platnosc?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "do i get teh commission back after a refund or not",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is there a fee for refunding, i keep loosing money",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "when i refund does the procesing fee come back to me",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "refund cost?? do you keep the fee anyway",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "if i give money back does kremzapay retun the commision",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "does partial refund give back part of teh fee",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "are refunds free for merchants or do u charge",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i refunded 200 orders, did i loose all the fees?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "will the transacton fee be returned with a full refund",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats the charge for issuing a refund thru panel",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Explain the fee structure for refunds, please.",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If I refund within 24 hours, is the commission waived?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do fee-free refunds exist on your platform?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My accountant asks whether refunded transactions still incur a fee.",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does refunding a canceled order return the gateway fee?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jesli zwroce platnosc tego samego dnia, prowizja jest zwracana?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ksiegowa pyta, czy zwrocone transakcje wciaz maja naliczona oplate.",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot anulowanego zamowienia oddaje oplate bramki?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wyjasnijcie prosze strukture oplat przy zwrotach.",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy istnieja zwroty bez potracania prowizji?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How is the fee handled on a refunded subscription payment?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refunding an overcharge, do I eat the fee on that?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przy zwrocie nadplaty ponosze koszt prowizji?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak rozliczana jest oplata przy zwrocie platnosci cyklicznej?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does the fee come off my payout even after I refund the buyer?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I refund and will it cost me the commission?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "When I click refund in the panel, does it also give my fee back?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak zrobic zwrot i czy przy tym strace prowizje?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Robiac zwrot w panelu, czy odzyskam oplate za transakcje?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is refunding cheaper than losing the fee, same fee as a normal sale?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Does a refund keep the fee like a chargeback does?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przy zwrocie trace prowizje tak samo jak przy chargebacku?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Refund fee vs chargeback fee, for the refund one is my commission returned?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I refund only shipping, is the fee on that portion returned?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "For a partial refund of 30 zl, how much commission comes back?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przy zwrocie tylko kosztow wysylki prowizja tez wraca?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwracam 30 zl czesciowo, ile prowizji dostane z powrotem?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does the fixed part of the fee return or only the percentage?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wraca stala czesc oplaty czy tylko procentowa przy zwrocie?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "After a full refund my balance is short the fee, is that expected?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Po pelnym zwrocie na saldzie brakuje mi prowizji, tak ma byc?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the refund fee different for BLIK versus card?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy oplata za zwrot rozni sie dla BLIK i karty?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I refund a lot, is there a monthly cost tied to refund volume?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Robie duzo zwrotow, czy jest miesieczny koszt zalezny od ich liczby?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do you charge a flat fee per refund or a percentage?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Pobieracie stala oplate za zwrot czy procent od kwoty?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Refund a foreign-currency payment, is the FX fee returned?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot platnosci w obcej walucie, czy oddajecie oplate przewalutowania?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If I refund, do I lose both the sale fee and pay a refund fee?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "fees on refunds??",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zwrot=koszt?",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ok so i've been refunding customers all week because the batch was defective and now i'm staring at my payouts and it feels like every single refund quietly ate my commission and honestly if that's true it's brutal because i already lost the product, do i get the fee back or not",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "sluchajcie robie zwrot za zwrotem bo dostawa byla wadliwa i mam wrazenie ze za kazdym razem znika mi prowizja, powiedzcie wprost czy ja odzyskuje czy nie bo to sie nie spina finansowo",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund robie ale fee zostaje u was? co za bez sens",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "i refund the client but you keep prowizja anyway?! serio?",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "oddaje kase a wy i tak zarabiacie na mnie, gdzie tu sprawiedliwosc",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "PAY ME BACK THE FEE",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "koszt zwrotu ile",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund fee yes or no",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czy ja place za to ze oddaje pieniadze klientowi?? absurd",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "losing money on every refund, help",
+   "intent": "refund_fees",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "prowizja zwrot tak nie",
+   "intent": "refund_fees",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Can you explain what a chargeback actually is?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How does the whole chargeback flow work step by step?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A buyer filed a chargeback and I have no idea what that means.",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What happens when a bank issues a chargeback against my shop?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm new to this, what does chargeback even mean?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Who initiates a chargeback, the customer or the bank?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What are the stages of a chargeback from start to end?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is a chargeback the same as the bank taking money back?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why did money get pulled from my account by the card issuer?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What triggers a chargeback in the first place?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you walk me through how a dispute becomes a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does a chargeback mean for a merchant like me?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long does a typical chargeback case last?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What are the reason codes on a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I received a chargeback notification, what is this?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Mozecie wytlumaczyc, czym jest chargeback?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przebiega proces obciazenia zwrotnego krok po kroku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient zlozyl chargeback i nie wiem, co to znaczy.",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co sie dzieje, gdy bank robi obciazenie zwrotne na moim sklepie?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jestem nowy, co w ogole oznacza slowo chargeback?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kto rozpoczyna chargeback, klient czy bank?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie sa etapy chargebacku od poczatku do konca?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy chargeback to to samo, co odebranie pieniedzy przez bank?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego wystawca karty sciagnal pieniadze z mojego konta?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co powoduje powstanie chargebacku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co to jest chargeback i jak dziala",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak przebiega obciazenie zwrotne od banku krok po kroku",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient zrobil chargeback nie wiem o co chodzi",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co sie dzieje jak bank robi chargeback na moim sklepie",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kto zaczyna chargeback klient czy bank?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie sa etapy chargebacku od poczatku",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chargeback to to samo co bank zabiera kase?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czemu wystawca karty sciagnal mi pieniadze z konta",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co powoduje ze powstaje chargeback",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dostalem powiadomienie o chargebacku co to jest",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "whats a chargeback exactly, never heard of it",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how does the chargback proces work",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "buyer opened a chargback, what does taht mean for me",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "bank pulled money bak from me, why, what is this",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "explain chargebak like im five please",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "who starts a chargeback the custmer or teh bank",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what are the stges of a chargeback",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is chargback same as bank clawing money back",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "got a chargeback notice, no idea whats going on",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how long does a chargeback case usualy take",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the difference between the bank and the card network in a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does a chargeback show up on my statement automatically?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What is the role of the acquirer during a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is arbitration part of the chargeback process?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does representment mean in a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czym rozni sie bank od organizacji kartowej w chargebacku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaka jest rola acquirera podczas chargebacku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy arbitraz jest czescia procesu chargeback?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co oznacza representment w chargebacku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy chargeback pojawia sie na wyciagu automatycznie?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "In simple terms, how does a chargeback move through the system?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the lifecycle of a chargeback dispute?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Prosto mowiac, jak chargeback przechodzi przez system?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest cykl zycia sporu chargeback?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Who ultimately decides the outcome of a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What is a chargeback and does it mean I already lost the money?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Someone opened a dispute, is that a chargeback and how does it work?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co to jest chargeback i czy to znaczy, ze juz stracilem pieniadze?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ktos otworzyl spor, czy to chargeback i jak on dziala?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a chargeback something the bank does or the customer does, how does it start?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy chargeback robi bank czy klient, jak to sie zaczyna?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I got an email about an obciazenie zwrotne, what is that process?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostalem maila o obciazeniu zwrotnym, na czym polega ten proces?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What does it mean when funds are held because of a chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co znaczy, ze srodki sa zablokowane z powodu chargebacku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a chargeback a scam by the customer or a normal bank process?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy chargeback to oszustwo klienta czy normalna procedura banku?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The customer went to their bank instead of me, what is that called and how does it work?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient poszedl do banku zamiast do mnie, jak to sie nazywa i jak dziala?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What is a pre-arbitration in the chargeback timeline?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czym jest pre-arbitraz w procesie chargeback?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does every chargeback go through the same steps or does it vary?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy kazdy chargeback przechodzi te same etapy?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What is a second chargeback or second presentment?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czym jest drugi chargeback lub second presentment?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How does a card-network chargeback differ from a bank complaint mechanically?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak chargeback organizacji kartowej rozni sie mechanicznie od reklamacji bankowej?",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Explain the chargeback process, I don't want to fight it yet, just understand it.",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wytlumaczcie proces chargeback, na razie nie chce walczyc, chce zrozumiec.",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is obciazenie zwrotne the Polish word for chargeback and what does it involve?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "chargeback?",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "co to chargeback",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "obciazenie zwrotne???",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "wtf is a chargeback",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "so a customer i sold a laptop to two months ago apparently called their bank and now there's this thing called a chargeback on my account and money is gone and i've literally never dealt with this before in my life so can someone just explain from zero what this even is because i'm lost",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dostalem dzis jakis dokument o chargebacku, nigdy w zyciu sie z tym nie spotkalem, prowadze maly sklep i totalnie nie wiem o co chodzi, wytlumaczcie mi to od zera bo panikuje",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chargeback to co w ogole jest, help",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "bank zabral kase 'chargeback' whats that mean",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "explain chargeback prosze po ludzku",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "what is this chargeback thing i'm scared",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "obciazenie zwrotne wytlumacz",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chargeback meaning",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "co znaczy chargeback pomocy",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "never seen 'chargeback' before, what is it",
+   "intent": "chargeback_what",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "chargeback jak to dziala",
+   "intent": "chargeback_what",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "I received a chargeback, how do I fight it?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What evidence should I submit to win a dispute?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where in the panel do I upload documents for a chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many days do I have to respond to a chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The customer claims non-delivery but I have tracking, what do I send?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I contest a chargeback that's clearly fraud?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the deadline to reply to a dispute?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which documents actually win chargeback cases?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I respond to a goods not received chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to dispute this chargeback, walk me through the steps.",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I upload the invoice and proof of delivery both?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What format should the evidence be in for a dispute?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I still respond if the deadline is tomorrow?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I challenge a chargeback where the buyer did get the product?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What happens after I submit my chargeback evidence?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Dostalem chargeback, jak sie od niego odwolac?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dowody wyslac, zeby wygrac spor?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w panelu wgrywam dokumenty do chargebacku?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile dni mam na odpowiedz na chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient twierdzi, ze nie dostal paczki, a ja mam tracking, co wyslac?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zakwestionowac chargeback, ktory jest ewidentnym oszustwem?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest termin na odpowiedz w sporze?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktore dokumenty faktycznie wygrywaja chargebacki?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak odpowiedziec na chargeback towar nie dotarl?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce zakwestionowac ten chargeback, poprowadzcie mnie krok po kroku.",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dostalem chargeback jak sie bronic",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie dowody wyslac zeby wygrac spor",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie w panelu wgrac dokumenty do chargebacku",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile mam dni na odpowiedz na chargeback",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient mowi ze nie dostal paczki a ja mam tracking co robic",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zakwestionowac chargeback ktory to oszustwo",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki termin na odpowiedz w sporze mam",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ktore dokumenty wygrywaja chargebacki",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak odpowiedziec na chargeback towar nie dotarl",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce zakwestionowac ten chargeback pomozcie krok po kroku",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "got a chargback how do i fight it",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what evidnce do i send to win the dispute",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "where do i uplad docs for the chargeback",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how meny days to respond to a chargeback",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "custmer says no delivery but i have trackng, what now",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to contst a fraud chargeback",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats the deadline to reply to a dispute",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "which docs win chargback cases",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i repond to goods not received chargeback",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i wanna dispute this chargback, steps please",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I add a signed delivery confirmation as evidence?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The dispute reason is product not as described, how do I counter it?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is a screenshot of our chat enough to win the case?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I need to write a cover letter for the chargeback response?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My response was rejected, can I escalate the chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy moge dodac podpisane potwierdzenie doreczenia jako dowod?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Powod sporu to produkt niezgodny z opisem, jak to zbic?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zrzut ekranu z naszej rozmowy wystarczy, zeby wygrac?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy do odpowiedzi na chargeback trzeba dolaczyc pismo przewodnie?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Moja odpowiedz zostala odrzucona, czy moge eskalowac chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I respond when the customer says the transaction was unauthorized?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the strongest evidence for a digital-goods chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak odpowiedziec, gdy klient mowi, ze transakcja byla nieautoryzowana?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest najmocniejszy dowod przy chargebacku za produkt cyfrowy?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I have 48 hours left on this dispute, what do I upload right now?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A chargeback landed today, what evidence do I gather to answer it?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dzis wplynal chargeback, jakie dowody zebrac, zeby odpowiedziec?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The bank asked for documents on a dispute, which ones do I send and by when?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Bank poprosil o dokumenty do sporu, ktore wyslac i do kiedy?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "This chargeback is fraud, how do I prove it and respond in time?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ten chargeback to fraud, jak to udowodnic i zdazyc z odpowiedzia?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I understand what a chargeback is now, how do I actually respond to mine?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Rozumiem juz, co to chargeback, jak mam odpowiedziec na swoj?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I respond in the kremzaPay panel or directly to the bank?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Odpowiadam w panelu kremzaPay czy bezposrednio do banku?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the exact deadline counted from, issue date or notification date?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Od kiedy liczy sie termin, od daty chargebacku czy powiadomienia?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If I ignore the chargeback, do I automatically lose, or should I respond?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jesli zignoruje chargeback, czy automatycznie przegrywam, czy odpowiadac?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can I partially accept and partially dispute a chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy moge czesciowo uznac i czesciowo zakwestionowac chargeback?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The buyer got the item and opened a chargeback, how do I document that?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kupujacy dostal towar i otworzyl chargeback, jak to udokumentowac?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What proof do I attach for a subscription chargeback the customer forgot about?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaki dowod dolaczyc przy chargebacku za subskrypcje, o ktorej klient zapomnial?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My deadline passed, can I still submit late evidence for the dispute?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Minal mi termin, czy moge jeszcze wyslac spoznione dowody do sporu?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "For a credit not processed chargeback, do I show I already refunded?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Przy chargebacku zwrot nieprzetworzony mam pokazac, ze juz zwrocilem?",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What evidence template does kremzaPay recommend for responding?",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "how do i fight this",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "spor jak odpowiedziec",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "dowody???",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ok panic mode i literally have like two days maybe less to respond to this chargeback the guy bought a phone got it signed for it and now says never arrived i have the courier signature the tracking the whole chat what exactly do i throw into the panel to win this thing please",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "evidence to win NOW",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "blagam mam moze dwa dni na odpowiedz na ten chargeback klient kupil telefon podpisal odbior a teraz mowi ze nic nie dostal mam podpis kuriera tracking cala rozmowe co dokladnie wrzucic w panel zeby to wygrac",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chargeback przyszedl how do i respond fast",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "mam dispute evidence gdzie wrzucic",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "HELP deadline jutro chargeback",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "3 dni do konca terminu na spor ratujcie co wrzucic",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how to win chargeback right now",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "odpowiedz na chargeback jak",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "dispute deadline how long",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "klient klamie mam tracking co robic",
+   "intent": "chargeback_respond",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "fight the chargeback how",
+   "intent": "chargeback_respond",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "How can I lower my chargeback rate?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What steps reduce the number of disputes I get?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My chargeback ratio is too high, how do I fix it long-term?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I stop customers from going straight to their bank?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What best practices prevent chargebacks?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I keep my dispute rate under the threshold?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Ways to minimize fraudulent chargebacks on my store?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can I proactively avoid chargebacks?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What descriptor changes cut down on I don't recognize this disputes?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I reduce friendly fraud on my shop?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Tips to bring my chargeback percentage down before you flag me?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do other merchants keep chargebacks low?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What causes most chargebacks and how do I prevent them?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can better delivery tracking lower my dispute count?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I set up alerts to prevent chargebacks?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak obnizyc swoj wskaznik chargeback?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie kroki zmniejsza liczbe sporow, ktore dostaje?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Moj wskaznik chargeback jest za wysoki, jak to naprawic na stale?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak powstrzymac klientow przed pojsciem od razu do banku?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dobre praktyki zapobiegaja chargebackom?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak utrzymac wskaznik sporow ponizej progu?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sposoby na minimalizacje oszukanczych chargebackow w sklepie?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak proaktywnie unikac chargebackow?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmniejszyc friendly fraud w moim sklepie?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wskazowki, jak zbic procent chargebackow, zanim mnie oznaczycie?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak obnizyc wskaznik chargeback",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie kroki zmniejsza liczbe sporow",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "moj wskaznik chargeback za wysoki jak naprawic",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak powstrzymac klientow przed pojsciem do banku",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie praktyki zapobiegaja chargebackom",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak utrzymac spory ponizej progu",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "sposoby na mniej oszukanczych chargebackow",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak proaktywnie unikac chargebackow",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zmniejszyc friendly fraud w sklepie",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zbic procent chargebackow zanim mnie zablokujecie",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i lower my chargback rate",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what reduces the number of dispues i get",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my chargback ratio too high how to fix",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to stop customers going stright to bank",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "best practises to prevent chargebacks",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to keep disute rate under threshold",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "ways to minimise fraudlent chargebacks",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to proactivly avoid chargebacks",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "reduce frendly fraud on my shop how",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "tips to bring chargeback percentge down",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does adding 3D Secure reduce chargebacks?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Would clearer refund policies lower my dispute rate?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How much can good customer support cut chargebacks?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Should I use a chargeback alert service to prevent them?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's a safe chargeback ratio to stay under?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dodanie 3D Secure zmniejsza chargebacki?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jasniejsza polityka zwrotow obnizy wskaznik sporow?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Na ile dobra obsluga klienta ogranicza chargebacki?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy warto uzywac serwisu alertow chargeback, zeby im zapobiegac?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki bezpieczny wskaznik chargeback trzymac?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I prevent repeat chargebacks from the same buyer?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What order-verification steps reduce disputes?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zapobiec powtarzajacym sie chargebackom od tego samego kupujacego?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie kroki weryfikacji zamowien zmniejszaja spory?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I want a long-term plan to keep disputes low, where do I start?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I keep getting chargebacks, how do I stop them happening, not just answer them?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ciagle dostaje chargebacki, jak sprawic, zeby nie powstawaly, a nie tylko na nie odpowiadac?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Instead of fighting each dispute, how do I prevent them upfront?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamiast walczyc z kazdym sporem, jak im zapobiegac z gory?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Too many buyers call their bank first, how do I get them to contact me instead?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Za duzo kupujacych dzwoni najpierw do banku, jak sklonic ich, by pisali do mnie?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My account is at risk from high chargebacks, how do I bring the rate down fast?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Moje konto jest zagrozone przez chargebacki, jak szybko obnizyc wskaznik?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Will refunding disputes quickly lower my ratio, or is that a separate thing?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy szybkie zwroty przy sporach obniza moj wskaznik, czy to osobna sprawa?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the monitoring threshold before kremzaPay penalizes me, and how to stay below?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaki jest prog monitoringu, zanim kremzaPay mnie ukarze, i jak zostac ponizej?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do faster shipping and tracking numbers actually reduce future disputes?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy szybsza wysylka i numery sledzenia naprawde zmniejszaja przyszle spory?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How do I prevent subscription I forgot about chargebacks specifically?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak konkretnie zapobiec chargebackom typu zapomniana subskrypcja?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does a recognizable billing descriptor really cut disputes?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy rozpoznawalny opis na wyciagu naprawde ogranicza spory?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What preventive settings in the panel lower chargeback risk?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jakie ustawienia zapobiegawcze w panelu obnizaja ryzyko chargeback?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How do I train my support team to head off disputes before the bank?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak przeszkolic obsluge, by wyprzedzac spory przed bankiem?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Are there fraud-scoring tools to stop chargebacks before they start?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy sa narzedzia oceny fraudu, by zatrzymac chargebacki, zanim sie zaczna?",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How low does my chargeback rate need to be to avoid extra fees?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "how to reduce chargebacks",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "mniej chargebackow jak",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "prevention?",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "za duzo sporow!!",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "guys my chargeback ratio has been creeping up for three months now mostly people saying they don't recognize the charge and i'm terrified you'll shut my account down so what do i actually change on my end to make these stop happening in the first place",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "sluchajcie moj wskaznik chargeback rosnie od trzech miesiecy glownie ludzie mowia ze nie rozpoznaja platnosci i boje sie ze zamkniecie mi konto wiec co mam realnie zmienic u siebie zeby te spory w ogole przestaly sie pojawiac",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how to lower chargebacki bo blokada grozi",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "prevent disputes zanim bank mnie dorwie",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "STOP the chargebacks how",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "boje sie blokady konta za chargebacki co robic",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chargeback rate down how",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak nie miec sporow",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "too many disputes fix it",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wskaznik za wysoki ratujcie",
+   "intent": "chargeback_reduce",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "lower my ratio please",
+   "intent": "chargeback_reduce",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "How is a refund different from a chargeback in practice?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Should I refund the buyer myself or let the chargeback run?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which costs me less, refunding now or defending a chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer is threatening to call the bank, should I refund first?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund vs chargeback, which is better for my business?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If I refund after a chargeback starts, does that help or hurt?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When should I choose a voluntary refund over a chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does a refund avoid the chargeback fee entirely?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Buyer wants money back, refund directly or push to dispute?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's smarter, refund the order or take the chargeback loss?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is a chargeback worse for me than just refunding?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund or chargeback, which one hurts my metrics less?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Should I preempt a chargeback by refunding right away?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I decide between refund and letting the dispute go through?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If the customer already opened a chargeback, is refunding still an option?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czym praktycznie rozni sie zwrot od chargebacku?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam sam zwrocic kupujacemu czy pozwolic na chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co mnie mniej kosztuje, zwrot teraz czy obrona chargebacku?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient grozi telefonem do banku, mam najpierw zwrocic?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot czy chargeback, co lepsze dla mojego biznesu?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jesli zwroce po rozpoczeciu chargebacku, pomoze to czy zaszkodzi?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy wybrac dobrowolny zwrot zamiast chargebacku?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot pozwala uniknac oplaty za chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kupujacy chce kase z powrotem, zwrocic czy pchac w spor?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co madrzejsze, zwrocic zamowienie czy przyjac strate z chargebacku?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czym rozni sie zwrot od chargebacku w praktyce",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mam sam zwrocic czy pozwolic na chargeback",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co tansze zwrot teraz czy obrona chargebacku",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient grozi bankiem mam zwrocic najpierw?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zwrot czy chargeback co lepsze dla biznesu",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zwroce po chargebacku to pomoze czy zaszkodzi",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy wybrac zwrot zamiast chargebacku",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy zwrot pozwala uniknac oplaty za chargeback",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient chce kase zwrocic czy pchac w spor",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co madrzej zwrocic czy przyjac strate z chargebacku",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "hows a refund diffrent from a chargeback",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "should i refund or let the chargback happen",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats cheaper refund or fighting a disute",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "custmer threatens the bank, refund first?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "refund vs chargback which is better",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "if i refund after chargback starts does it help",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "when to choose refund over chargback",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "does refunding avoid the chargback fee",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "buyer wants money bak, refund or dispute",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is a chargback worse than just refunding",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does refunding stop an in-progress chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If I refund, will the customer still be able to chargeback too?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which one keeps my chargeback ratio clean, refund or dispute?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is refunding always the safer choice over a chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the financial trade-off between refund and chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot zatrzymuje trwajacy juz chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jesli zwroce, czy klient i tak moze zrobic chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co utrzymuje moj wskaznik czysty, zwrot czy spor?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot jest zawsze bezpieczniejszy niz chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest bilans finansowy miedzy zwrotem a chargebackiem?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Customer double-dipped, refund and chargeback, how does that compare?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "For a small amount, is it worth disputing or just refunding?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient wzial podwojnie, zwrot i chargeback, jak to porownac?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przy malej kwocie warto walczyc w sporze czy po prostu zwrocic?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Explain when a refund beats a chargeback and vice versa.",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to refund to avoid a chargeback, how do I do that and is it wise?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chce zwrocic, by uniknac chargebacku, jak to zrobic i czy to madre?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The dispute is open; is refunding now better than submitting evidence?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Spor jest otwarty; czy zwrot teraz jest lepszy niz wyslanie dowodow?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Should I respond to the chargeback or just refund and move on?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Mam odpowiadac na chargeback czy po prostu zwrocic i zapomniec?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If refunding is cheaper than the dispute fee, should I always refund?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jesli zwrot jest tanszy niz oplata za spor, czy zawsze zwracac?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Buyer opened a dispute, refund to close it or fight it with proof?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kupujacy otworzyl spor, zwrocic, zeby go zamknac, czy walczyc dowodami?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a self-initiated refund recorded differently than a chargeback loss?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy samodzielny zwrot jest ksiegowany inaczej niz przegrany chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Which affects my account health more, a refund or a chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co bardziej wplywa na kondycje konta, zwrot czy chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Customer says refund me or I chargeback, what's my best move?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient mowi zwroc albo robie chargeback, co najlepiej zrobic?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does giving a refund guarantee they won't chargeback anyway?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy danie zwrotu gwarantuje, ze i tak nie zrobia chargebacku?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "For a clearly-lost dispute, should I refund instead to save the fee?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Przy ewidentnie przegranym sporze zwrocic, zeby oszczedzic oplate?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Refund now vs chargeback later, what's the total cost difference?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot teraz vs chargeback pozniej, jaka roznica w kosztach calkowitych?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is it ever better to let the chargeback happen than to refund?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy kiedykolwiek lepiej pozwolic na chargeback niz zwrocic?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Should a merchant default to refunds to keep disputes off the books?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "refund or chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zwrot czy chargeback",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "co wybrac?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "so the customer is basically holding a gun to my head saying either i refund the whole order right now or she's calling her bank to do a chargeback and i genuinely don't know which one costs me less or looks worse on my account so somebody tell me which path to take",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "which is cheaper for me",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "klient praktycznie przystawia mi pistolet do glowy mowiac ze albo zwroce cale zamowienie teraz albo dzwoni do banku po chargeback i szczerze nie wiem co mnie mniej kosztuje ani co gorzej wyglada na koncie wiec powiedzcie ktora droge wybrac",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund czy czekac na chargeback co sie oplaca",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "cheaper to refund niz walczyc?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "just refund albo dispute?? decyzja",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "nie wiem czy zwrot czy chargeback pomocy",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund vs dispute which",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zwrocic czy nie",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chargeback albo zwrot co tansze szybko",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help me choose refund or chargeback",
+   "intent": "chargeback_vs_refund",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zwrot=lepszy niz chargeback?",
+   "intent": "chargeback_vs_refund",
+   "lang": "pl",
+   "style": "extreme"
+  }
+ ]
+}
