@@ -1,0 +1,3148 @@
+{
+ "cases": [
+  {
+   "q": "Can I invite a second admin to manage payouts with me?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I give my accountant view-only access to reports?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is it possible to create a role that only sees transactions but not settings?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to add three people from my dev team to the dashboard",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I remove a former employee from the account?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What permission levels are available for team members?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can my bookkeeper have access to invoices without seeing API keys?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I invite a colleague by email to the merchant panel?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I manage who can log into our account?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can two people be logged into the same merchant account at once?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I set someone as a read-only user?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want my developer to see the integration keys but nothing financial",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I change a user's role from viewer to manager?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I restrict a team member to only the refunds section?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I add a finance manager who can approve withdrawals?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an audit log of what each user did in the panel?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dodać księgową z dostępem tylko do faktur?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę nadać różne uprawnienia dla różnych osób w zespole?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaprosić kolegę do panelu przez e-mail?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę usunąć byłego pracownika z konta, jak to zrobić?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ustawić komuś dostęp tylko do odczytu?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się dodać drugiego administratora do zarządzania wypłatami?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienić rolę użytkownika z podglądu na pełny dostęp?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję dodać programistę, żeby widział tylko klucze API",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da się ograniczyć pracownika tylko do sekcji zwrotów?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie zarządzam tym, kto ma dostęp do naszego konta?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak nadać komuś uprawnienia do zatwierdzania płatności?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest historia działań poszczególnych użytkowników w panelu?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę dodać wspólnika do zarządzania firmą w systemie",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak odebrać komuś dostęp, ale nie kasować całego konta?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i ad another user to my acount?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can i give my acountant redonly acess pls",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need to invit my dev team to teh dashbord",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how remove old employe from panel",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "want to set diferent permision levels for my staff",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can my bookeeper see reports but nt the keys",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i mak someone a viewer only user",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is ther a way to add a colleauge to manage payments",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to chnge role of a team memeber",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "who can i give acces to withdrawls approval?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dodac ksiegowa z dostepem tylko do odczytu?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy moge nadac rozne uprawnienia roznym osobom?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce zaprosic wspolpracownika do panelu",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak usunac bylego pracownika z konta?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da sie dodac drugiego admina do wyplat?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuje zeby programista widzial klucze ale nie finanse",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ograniczyc kogos tylko do sekcji zwrotow?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie ustawia sie uprawnienia dla zespolu?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce dodac kolege do zarzadzania platnosciami bez pelnego dostepu",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienic role uzytkownika w panelu?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Our new hire needs access to the payments dashboard, how?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I limit an intern to sandbox only?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I transfer ownership of the account to my business partner?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę żeby dwie osoby zarządzały wypłatami, jak to skonfigurować?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak nadać dostęp działowi księgowości do samych raportów?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Can I have separate logins for each employee instead of sharing one?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaprosić zewnętrznego księgowego bez dawania mu haseł do banku?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da sie zrobic konto z podgladem tylko dla szefa?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I resend an invitation to a teammate who didn't get it?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję nadać uprawnienia menedżerskie nowej osobie w firmie",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I'm registering and want to add my accountant right away — how do team seats work?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "When I add a team member, do they go through their own KYC?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I change who manages the account, do I need to update company data too?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My colleague left the company — should I remove his user or change the account owner?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Can a team member update the company address, or only the owner?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I want my developer to access the API keys — is that a role setting or the keys page?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Should I create a new user for my accountant or just share my login?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do team members each get their own 2FA or do they share mine?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I give someone manager rights, can they close the account?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Can a read-only user still see the API keys?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I need to hand over the account to a new owner but keep myself as viewer",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Does adding a user change anything on my invoices or billing?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Who is allowed to add or remove other users — only the main admin?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jeśli dodam księgową, czy ona przejdzie osobną weryfikację KYC?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy członek zespołu może zmienić dane firmy, czy tylko właściciel?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Mój wspólnik odchodzi — usunąć jego konto czy zmienić właściciela?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy pracownik z dostępem menedżerskim może zamknąć konto?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę przekazać zarządzanie panelem komuś innemu, ale zostać jako podgląd",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy dodanie użytkownika wpłynie na moje faktury?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Programista ma widzieć klucze API — to ustawienie roli czy strona z kluczami?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Kto może dodawać nowych użytkowników — tylko główny administrator?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy użytkownik tylko do odczytu widzi klucze API?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I remove a user before I close the account, or does closing handle it?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Can my new business partner become a co-owner without re-registering the company?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jeśli zmieniam osobę zarządzającą, czy muszę też zaktualizować dane firmy?",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "roles?",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "uprawnienia",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "team access how add user please quick boss needs it today",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Add user. Now. My accountant is waiting on the phone and I can't find where.",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak dodac usera do panelu bo szef krzyczy a ja nie moge znalezc tego nigdzie pomocy",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "permissions???",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "chce dac ksiegowej dostep ale tylko readonly no wiesz zeby nie namieszala w kluczach ani w wyplatach tylko faktury widziala rozumiesz",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "member",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dodaj kolege do konta",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help i shared my login with 4 people and its a mess how do i give them proper separate accounts instead",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "role viewer dla ksiegowej pilne",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "user management gdzie to jest w panelu nie moge znalezc",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "kto ma dostep do konta chce sprawdzic i usunac starych ludzi",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how many seats do i get and can i add my whole team right now its urgent",
+   "intent": "account_roles_team",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wywalcie byłego pracownika z panelu ASAP zanim coś zepsuje",
+   "intent": "account_roles_team",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I update my company's registered address in the panel?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to change the bank account where my payouts go",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where can I edit the billing email on my account?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We rebranded — how do I change the company name on file?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I update my VAT/NIP number after a change?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I change the contact phone number on the account?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I update the IBAN for withdrawals?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I moved offices, how do I update my address for invoices?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I edit the company data shown on receipts?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My email changed, how do I update the login/contact email?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I change the account holder's name?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I update my company's legal form after restructuring?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I update the bank account name associated with payouts?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I correct a typo in my registered company name?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to change the payout bank from one to another, what's the process?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I update the beneficiary details for settlements?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaktualizować adres firmy w panelu?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zmienić numer konta bankowego do wypłat",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie edytuję adres e-mail do faktur?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zmieniliśmy nazwę spółki, jak to poprawić w systemie?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaktualizować numer NIP po zmianie?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę zmienić numer telefonu kontaktowego na koncie?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak podmienić IBAN do wypłat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przeprowadziłem firmę, jak zmienić adres na fakturach?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak edytować dane firmy widoczne na paragonach?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zmienił mi się e-mail, jak zaktualizować adres logowania?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie zmienię imię i nazwisko właściciela konta?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaktualizować formę prawną spółki po przekształceniu?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zmienić bank, na który przychodzą wypłaty",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak poprawić literówkę w nazwie firmy?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i chnge my company adres in the panel",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need to updat the bank acount for payouts",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "wher can i edit the biling email",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "we changed compny name how to fix it",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to updat my nip/vat numbr",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i chage the contact phone on acount",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i swap the iban for withdrawls",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "moved office need new adres on invoces",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my emial changed how update login email",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i corect the acount holder name",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaktualizowac adres firmy w panelu?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce zmienic numer konta do wyplat",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie edytuje email do faktur?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zmienilismy nazwe spolki, jak poprawic?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienic numer NIP na koncie?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy moge zmienic telefon kontaktowy?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak podmienic IBAN do wyplat?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przenioslem firme, jak zmienic adres na fakturach?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zmienil mi sie mail, jak zaktualizowac dane logowania?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak poprawic nazwe wlasciciela konta?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I add a second bank account for payouts and make it the default?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I update my company's postal code without re-verifying everything?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to fix the wrong REGON number on my profile",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienić dane rozliczeniowe po zmianie właściciela firmy?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie zmienię adres korespondencyjny, inny niż siedziba?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I change my display name that customers see on the payment page?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zaktualizować dane kontaktowe osoby odpowiedzialnej za rozliczenia",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da sie zmienic nazwe sklepu widoczna przy platnosci?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I update my company registration number after a merger?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Muszę zmienić numer rachunku, bo zamknąłem stary w banku",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "My payouts stopped arriving after I switched banks — did I update the account wrong?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I need to re-verify KYC if I change my bank account?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I change the company owner's name, does that affect team roles?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is changing my company address the same as closing and reopening the account?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I want to change the email — will that log everyone else out?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Changing my bank account or closing the old merchant profile — which do I need?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Will updating my NIP require a new contract or just an edit?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Can I change the payout account myself or does support have to do it?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I updated my address but invoices still show the old one — is it a separate field?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Does changing the billing email also change the login email?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I change the bank account, how long until payouts use the new one?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jeśli zmienię konto bankowe, czy muszę przejść weryfikację od nowa?",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy zmiana nazwy firmy wymaga nowej umowy, czy wystarczy edycja?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zmiana danych firmy to to samo co założenie konta od nowa?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy zmiana adresu e-mail wyloguje resztę zespołu?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Sam zmienię numer konta do wypłat czy musi to zrobić support?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zmieniłem NIP w panelu, ale na fakturach dalej stary — osobne pole?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Po zmianie banku wypłaty przestały przychodzić — źle wpisałem konto?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy zmiana właściciela konta wpływa na uprawnienia zespołu?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I need to change the bank account but the account is currently frozen",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Can I change my company data while a payout is pending?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I change the account holder here or is that part of closing and re-registering?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zmieniam bank — czy stare konto sprzedawcy trzeba zamknąć?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy mogę zmienić dane firmy, jeśli konto jest zablokowane?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Updating the payout IBAN — is that under account data or a separate settlements page?",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "IBAN",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "adres",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "change bank account now payouts going to wrong place fix asap",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zmienic konto bankowe do wyplat gdzie to jest nie moge znalezc pomozcie",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "new NIP where update",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "nazwa firmy sie zmienila trzeba wszedzie pozmieniac adres nip i konto do wyplat bo inaczej faktury beda zle a ksiegowa mnie zabije",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "email",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "update address plz",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zmiana danych spolki po przeksztalceniu w sp z oo jak to zrobic wszystko na raz",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help wrong bank account on file money went somewhere else how do i correct it",
+   "intent": "payout_account_change",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "podmienic IBAN pilne stary bank zamkniety",
+   "intent": "payout_account_change",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "company name typo fix it there's a letter wrong on all my invoices",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie zmienic mail do logowania bo stary juz nie istnieje",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "moved cities need everything updated address invoices contact everything asap",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zmien mi telefon kontaktowy na koncie",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I permanently close my merchant account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to cancel the service and terminate my contract",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the process to delete my kremzaPay account completely?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm shutting down my business, how do I close everything here?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I offboard and stop using your gateway?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What happens to my transaction history if I close the account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I close my account online or do I need to contact support?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I no longer need this, how do I unsubscribe and remove my data?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I end my agreement with kremzaPay?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a cancellation fee for closing the account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long does it take to fully close a merchant account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to terminate — will my remaining balance be paid out first?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I delete all my company data when I leave?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I temporarily close the account and reopen it later?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I sold my business, how do I close or transfer the account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What do I need to do before closing to avoid issues?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak trwale zamknąć konto sprzedawcy?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zrezygnować z usługi i rozwiązać umowę",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak całkowicie usunąć moje konto w kremzaPay?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamykam firmę, jak zamknąć tu wszystko?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zrezygnować z korzystania z waszej bramki?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co stanie się z historią transakcji po zamknięciu konta?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę zamknąć konto online, czy muszę pisać do supportu?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Już tego nie potrzebuję, jak się wypisać i usunąć dane?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zakończyć umowę z kremzaPay?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest opłata za zamknięcie konta?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile trwa całkowite zamknięcie konta sprzedawcy?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Rozwiązuję umowę — czy saldo zostanie najpierw wypłacone?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak usunąć wszystkie dane firmy przy odejściu?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sprzedałem firmę, jak zamknąć lub przekazać konto?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i clse my merchent acount",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i wana cancel the servce and end contrat",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to delet my acount compltely",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "shuting down busines how close everythng here",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what hapens to my data if i terminat",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i clos acount online or need suport",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how long to fuly close a merchent acount",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is ther a cancelation fee to close",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i dont need this anymor how to unsubscrib",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i end my agrement with you",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak trwale zamknac konto sprzedawcy?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce zrezygnowac z uslugi i rozwiazac umowe",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak calkowicie usunac konto?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamykam firme, jak tu wszystko zamknac?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co bedzie z historia transakcji po zamknieciu?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy moge zamknac konto online czy przez support?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile trwa zamkniecie konta sprzedawcy?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest oplata za zamkniecie konta?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Juz nie potrzebuje, jak sie wypisac i usunac dane?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zakonczyc umowe z wami?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Do I have to withdraw all funds before I can close the account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I reopen a closed account if I change my mind?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I close one of my two merchant accounts but keep the other?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zamknąć tylko jedno z moich kont, drugie zostawić",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy po zamknięciu konta dostanę potwierdzenie rozwiązania umowy?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Is my data deleted immediately or kept for some legal period?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Muszę zamknąć konto do końca miesiąca, jak przyspieszyć?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da sie zamknac konto bez dzwonienia, samemu w panelu?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I cancel before the next billing cycle so I'm not charged?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zlikwidowałem działalność, muszę rozwiązać z wami umowę",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I don't want to change my data, I just want the whole account gone",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is my account closed or just frozen? I want it closed for good",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Instead of updating my company info, can I just close and start fresh?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I remove myself as the only user, does that close the account?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I want to pause payments, not fully close — is that the same thing?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I close the account or just change the bank so payouts stop?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My account is blocked anyway — can I just close it instead of appealing?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "If I close the account, do my team members lose access automatically?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is closing the account different from deleting my personal login?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm switching to another provider — do I close here or just stop using it?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Will closing the account cancel my subscription billing too?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chcę zmieniać danych, chcę żeby całe konto zniknęło",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Moje konto jest zablokowane — mogę je po prostu zamknąć zamiast się odwoływać?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamiast aktualizować dane firmy, mogę zamknąć i założyć nowe?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jeśli usunę siebie jako jedynego użytkownika, czy konto się zamknie?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę tylko wstrzymać płatności, nie zamykać na stałe — to to samo?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamknąć konto czy tylko zmienić bank, żeby wypłaty się zatrzymały?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy zamknięcie konta anuluje też abonament?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Przechodzę do innego dostawcy — zamknąć u was czy po prostu przestać używać?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Po zamknięciu konta zespół automatycznie traci dostęp?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is closing an account reversible, or is it permanent like deleting company data?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I paused billing but still want to close — do I need both steps?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy zamknięcie konta to to samo co usunięcie mojego loginu?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My verification is still pending — can I cancel the whole thing?",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Weryfikacja jeszcze trwa — mogę anulować całość i zamknąć?",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "close",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zamknij",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "just delete everything i quit",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "chce zamknac konto natychmiast mam dosc tego wszystkiego jak to zrobic",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "cancel account now",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "koncze dzialalnosc zamykam firme trzeba u was rozwiazac umowe i usunac wszystkie dane bo juz nigdy tego nie tkne",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "terminate",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "usun konto",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "im done with this get me out how do i shut the whole account down for good",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zamkniecie konta krok po kroku prosze",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "delete my account and all data gdpr right to be forgotten",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "nie chce tego wiecej zamykajcie",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how close account before they charge me again urgent",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wypiszcie mnie calkowicie z systemu koniec wspolpracy",
+   "intent": "account_close",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "account closure process asap moving to competitor",
+   "intent": "account_close",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "I received an email claiming to be from you asking me to confirm my password — is it real?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Someone sent my customers a fake payment link pretending to be kremzaPay",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is this SMS about my account being suspended actually from you?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I got a suspicious message with a login link, where do I report it?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "There's a phishing site copying your gateway, who do I notify?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A caller claimed to be kremzaPay support and asked for my API key — should I report this?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I think someone is impersonating your brand in an email campaign",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Got an email with your logo asking to 'verify' my bank details — looks fake",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I report a fraudulent email pretending to be from your company?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My client forwarded me a scam message using your name, what do I do?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an address to report phishing that abuses your brand?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Received a fake invoice email supposedly from kremzaPay",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Someone set up a lookalike domain of yours to trick merchants",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to report a suspicious text asking me to update my payment info",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "This message says my payout failed and links to a weird site — phishing?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A fake kremzaPay app is asking users for their credentials, reporting it",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Dostałem maila rzekomo od was z prośbą o potwierdzenie hasła — to prawda?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktoś wysyła moim klientom fałszywe linki do płatności podszywając się pod was",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy ten SMS o zawieszeniu konta jest naprawdę od was?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przyszła podejrzana wiadomość z linkiem do logowania, gdzie to zgłosić?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jest strona phishingowa kopiująca waszą bramkę, komu to zgłosić?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktoś dzwonił podając się za wasz support i prosił o klucz API — zgłaszam",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chyba ktoś podszywa się pod waszą markę w kampanii mailowej",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostałem maila z waszym logo z prośbą o 'weryfikację' konta bankowego — wygląda fałszywie",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zgłosić fałszywego maila podszywającego się pod waszą firmę?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient przesłał mi oszukańczą wiadomość z waszą nazwą, co robić?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest adres do zgłaszania phishingu wykorzystującego waszą markę?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostałem fałszywą fakturę rzekomo od kremzaPay",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktoś założył domenę łudząco podobną do waszej, żeby oszukiwać sprzedawców",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zgłosić podejrzanego SMS-a z prośbą o aktualizację danych płatności",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "i got an emial pretending to be you askng for my paswrd is it real",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "someone sendng my custmers fake payment links as kremzapay",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is this sms about acount suspention from you or scam",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "recived suspicous mesage with login link wher to report",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "ther is a fishing site coping your gateway who to tel",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "a caler said hes your suport and wanted my api key report it?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "someone imprsonating your brand in emails",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "got fake invoce email suposedly from kremzapay",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to report a fraudlent email pretending to be you",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "this txt says my payout failed links to wierd site fishing?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Dostalem maila rzekomo od was z prosba o haslo, to prawda?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktos wysyla moim klientom falszywe linki podszywajac sie pod was",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy ten SMS o zawieszeniu konta jest od was?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przyszla podejrzana wiadomosc z linkiem, gdzie zglosic?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jest strona phishingowa kopiujaca wasza brame, komu zglosic?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktos dzwonil podajac sie za wasz support i prosil o klucz, zglaszam",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chyba ktos podszywa sie pod wasza marke w mailach",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostalem falszywa fakture niby od kremzapay",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zglosic falszywego maila podszywajacego sie pod was?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient przeslal mi oszukancza wiadomosc z wasza nazwa, co robic?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Is kremza-pay-secure.com a legitimate domain of yours or a scam?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I almost clicked a link in an email from 'kremzaPay Security' — want to report it",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My customers are getting texts with a payment link I never sent",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy adres kremzapay-platnosci.pl należy do was, czy to oszustwo?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Prawie kliknąłem link w mailu od 'Bezpieczeństwo kremzaPay', zgłaszam",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Someone is running fake ads with your logo to phish merchants",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Moi klienci dostają SMS-y z linkiem do płatności, którego nie wysyłałem",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostalem maila ze musze potwierdzic dane bo konto bedzie zamkniete, to scam?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "A WhatsApp message using your branding asked for my crc_key — reporting",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Ktoś podszywa się pod wasz support na Messengerze, gdzie to zgłosić?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I got a phishing email but didn't click anything — do I still report it or is it fine?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Someone phished my customer, not me — is that still something I report to you?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I received a fake email; should I also change my keys just in case?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "A scammer is using your name — is this a phishing report or a support ticket?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I got a suspicious link but I'm not sure if it's phishing or a real notification from you",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Someone tried to trick me into giving my password — I didn't, but want to warn you",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a text asking me to 'reactivate' my account a scam I should report?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My employee received a fake kremzaPay email — do I report on their behalf?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Should I report the phishing site or just block it myself?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I forwarded a scam email — is that the right way to report impersonation?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Someone is impersonating you AND I think they got a customer's card — where do I start?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostałem phishing, ale nic nie kliknąłem — i tak zgłaszać?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Oszust podszył się pod was do mojego klienta — zgłaszać u was?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostałem fałszywego maila — czy dla pewności zmienić też klucze?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ktoś używa waszej nazwy — to zgłoszenie phishingu czy zwykły ticket?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie wiem, czy ten link to phishing, czy prawdziwe powiadomienie od was",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ktoś próbował wyłudzić moje hasło, nie dałem, ale chcę was ostrzec",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy SMS z prośbą o 'reaktywację' konta to scam do zgłoszenia?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Mój pracownik dostał fałszywego maila od was — zgłosić za niego?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zgłosić stronę phishingową czy sam ją zablokować?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I clicked a phishing link but didn't enter anything — report the site or worry about my keys?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The email looked like yours and asked for my login — is reporting enough or do I lock my account?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kliknąłem link phishingowy, ale nic nie wpisałem — zgłosić stronę czy martwić się o klucze?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Mail wyglądał jak wasz i prosił o login — wystarczy zgłosić czy blokować konto?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is warning you about a scam campaign the same channel as normal support?",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "phishing",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "oszustwo",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "SCAM EMAIL pretending to be you what do i do report where NOW",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dostalem podejrzanego smsa niby od was z linkiem czy to wy czy oszust bo boje sie kliknac",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "fake link!!!",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ktos podszywa sie pod wasza brame wysyla moim klientom linki do platnosci i ludzie place oszustom a ja nie wiem gdzie to zglosic ratujcie",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "impersonation report",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "to wy czy oszust?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "someone is pretending to be kremzapay support and calling my customers asking for card numbers i need to report this immediately who do i contact",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "phishing z waszym logo gdzie zglosic pilne",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "got weird sms 'your payout is blocked click here' obviously fake reporting it",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "fałszywa strona was kopiuje!!! zgłaszam",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "is kremzapay-verify dot net yours or scammer answer fast customers clicking it",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "podejrzany mail od 'kremzapay security' prosi o haslo scam?",
+   "intent": "security_phishing_report",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "someone cloned your website my clients are entering their details there help report",
+   "intent": "security_phishing_report",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "I accidentally pushed my api_key to a public GitHub repo, what now?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My crc_key got exposed in a log file, how do I revoke it?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I think my API credentials were stolen, how do I rotate them?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A former developer still has our secret key — how do I invalidate it?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My keys were leaked in a screenshot I posted, how fast can I reset them?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I regenerate my api_key after it was compromised?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Our .env file with the crc_key ended up in a public bucket, help",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Someone may have my merchant credentials, how do I lock them out?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I committed secrets to git and pushed — how do I rotate everything?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My API key was found in a leaked database, what should I do?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I revoke a key that's been shared by mistake?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I pasted my keys into a public forum by accident, how to invalidate?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My laptop with saved credentials was stolen — rotate my keys?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How quickly does key rotation take effect so the old one stops working?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I suspect my crc_key is compromised, walk me through revoking it",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "An old integration leaked our API key — need new credentials now",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Przypadkiem wypchnąłem api_key do publicznego repo na GitHubie, co teraz?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mój crc_key wyciekł w pliku logów, jak go unieważnić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chyba ukradziono moje dane API, jak je zmienić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Były programista wciąż ma nasz sekretny klucz — jak go unieważnić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klucze wyciekły na screenie, który wrzuciłem — jak szybko je zresetować?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wygenerować nowy api_key po kompromitacji?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Plik .env z crc_key trafił do publicznego repozytorium, ratunku",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktoś może mieć moje dane sprzedawcy, jak go zablokować?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wrzuciłem sekrety do gita i wypchnąłem — jak wszystko zmienić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mój klucz API znalazł się w wycieku bazy, co robić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak unieważnić klucz, który przez pomyłkę udostępniłem?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wkleiłem klucze na publiczne forum, jak je unieważnić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Skradziono mi laptopa z zapisanymi kluczami — zmienić je?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak szybko rotacja klucza zacznie działać, żeby stary przestał?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "i acidentaly pushd my api_key to public github what now",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my crc_key got exposd in logs how to revok it",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i think my api credentals were stolen how to rotat them",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "old dev stil has our secret key how to invaldate",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my keys leakd in a screensht how fast can i reset",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i regenerat my api_key after it was compromsed",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "our env file with crc_key ended up public help",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "someone mite have my merchent credentals how to lock out",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "comited secrets to git and pushd how to rotate all",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my api key was in a leakd databse what to do",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Przypadkiem wypchnalem api_key do publicznego repo, co teraz?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Moj crc_key wyciekl w logach, jak go uniewaznic?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chyba ukradziono moje dane API, jak je zmienic?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Byly programista wciaz ma nasz sekretny klucz, jak uniewaznic?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klucze wyciekly na screenie ktory wrzucilem, jak zresetowac?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wygenerowac nowy api_key po kompromitacji?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Plik env z crc_key trafil do publicznego repo, ratunku",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wrzucilem sekrety do gita i wypchnalem, jak wszystko zmienic?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wkleilem klucze na publiczne forum, jak uniewaznic?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Skradziono mi laptopa z kluczami, zmienic je?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "GitGuardian alerted me my kremzaPay key is public — how do I rotate it?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I shared my api_key in a support chat with a third party, is it compromised?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Our CI logs printed the secret key in plaintext, need to revoke",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Wyciekł nam klucz przez publiczny Postman collection, jak zmienić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwolniony pracownik mógł skopiować nasze klucze — jak je wymienić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Someone forked our repo before we removed the key — assume it's leaked?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Mój klucz był w kodzie frontendu widocznym dla wszystkich, co robić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klucz api trafil na pastebin, jak go szybko zablokowac?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How do I audit if a leaked key was actually used before I revoke it?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Podejrzewam nieautoryzowane użycie moich kluczy, jak je natychmiast unieważnić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I gave my api_key to someone who turned out to be a scammer — is that a leak I need to fix?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Where do I regenerate my keys after a leak — same page as finding them?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I think my keys are fine but I want to rotate them just to be safe after a phishing email",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My key might be leaked — do I revoke it or just generate a second one?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is finding my keys the same place where I revoke a compromised one?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I entered my crc_key on a fake site — is my key now compromised?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My key was exposed but I'm not sure it was used — rotate anyway?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "After a leak, do I also need to reset my password and 2FA?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Someone logged into my account with my key — is that a leak or a hack?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I lost my phone that had my keys saved — leaked or not?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I report the leak as phishing or is there a separate credential-reset process?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dałem klucz komuś, kto okazał się oszustem — to wyciek, który muszę naprawić?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdzie wygenerować nowe klucze po wycieku — tam gdzie się je znajduje?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wpisałem crc_key na fałszywej stronie — czy klucz jest teraz skompromitowany?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Klucz mógł wyciec, ale nie wiem, czy był użyty — rotować mimo to?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy znajdowanie kluczy to to samo miejsce co unieważnianie skompromitowanego?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Po wycieku klucza muszę też zmienić hasło i 2FA?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Ktoś zalogował się moim kluczem — to wyciek czy włamanie?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zgubiłem telefon z zapisanymi kluczami — wyciekły czy nie?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zgłosić wyciek jako phishing, czy jest osobny proces resetu kluczy?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My keys leaked because of a phishing site — do I rotate first or report the site first?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I just want new keys because the old ones might be out there — is that the leak process?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klucze wyciekły przez stronę phishingową — najpierw rotacja czy zgłoszenie?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę po prostu nowe klucze, bo stare mogły wyciec — to jest ta procedura?",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is regenerating a key the same as revoking a leaked one, or two different actions?",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "leaked",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wyciekło",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "OMG my api key is on github public repo revoke it NOW how",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wyciekly klucze wrzucilem przypadkiem caly env na githuba trzeba to natychmiast uniewaznic zanim ktos wykorzysta pomocy",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "rotate keys asap",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "wystawilem crc_key w internecie ktos moze juz mi wyprowadzac kase jak to zablokowac szybko",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "compromised",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "unieważnij klucze",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help someone has my secret key i saw weird transactions how do i kill the key immediately before more money goes",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "klucz api na pastebin PILNE rotacja",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "pushed .env to public repo 10 min ago how do i revoke before bots scrape it",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ktos ma moje klucze ratujcie blokujcie wszystko",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "key exposed in frontend js anyone can read it need new one now",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "moje klucze wyciekly przez byłego pracownika zmienic je wszystkie natychmiast",
+   "intent": "security_key_leak",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "revoke my crc_key i think its stolen transactions i dont recognize",
+   "intent": "security_key_leak",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I change our registered company address in the panel?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zmienilismy siedzibe firmy, gdzie zaktualizowac adres?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Our company name changed after rebranding, how do I update it with you?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zmienic nazwe firmy w ustawieniach konta?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Need to update the contact email for our merchant account",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie moge podmienic dane kontaktowe wlasciciela konta?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "We converted from JDG to sp. z o.o. — what do you need from us?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Spolka zmienila forme prawna, jakie dokumenty musze dostarczyc?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "How long does a company data update take to go through?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Aktualizacja adresu w KRS juz jest, jak przeniesc to do was?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "update comapny addres in settings pls",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "zmiana danych firmy gdzie to sie robi w panelu",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Can I edit the legal representative listed on the account?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcemy dopisac nowego reprezentanta firmy do konta",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does changing the company address affect my payouts? Bank stays the same.",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zmieniam tylko adres firmy, konto bankowe zostaje — czy wyplaty beda szly normalnie?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want to update company details, not close the account — where do I do that?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Aktualizacja NIP to nowa umowa czy zwykla zmiana danych?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is updating company data the same form as the initial KYC verification?",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Po zmianie nazwy firmy dostane nowa weryfikacje czy tylko poprawke danych?",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "adres nieaktualny zmienic szybko",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "COMPANY NAME IS WRONG ON INVOICES FIX THE ACCOUNT DATA PLEASE",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "przeprowadzka firmy nowy adres nowy telefon wszystko do zmiany od jutra",
+   "intent": "account_change_data",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "we merged with another company help me sort the account details",
+   "intent": "account_change_data",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}
