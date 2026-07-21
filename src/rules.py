@@ -1,7 +1,8 @@
-"""Слой 0 каскада v2: правила (~0 мс). Порядок проверки = приоритет безопасности."""
+"""Cascade layer 0 v2: rules (~0 ms). Check order = safety priority."""
+# [L0-RULES] Layer 0: deterministic guards
 import re
 
-# 1) Инъекции в промпт — классика атак (находка №2 экзамена).
+# 1) Prompt injections - classic attacks (exam finding #2).
 INJECTION = [
     r"ignore (all |your |previous |the )?(instructions|rules|prompt)",
     r"system prompt|developer mode|jailbreak|\bdan mode\b|jesteś teraz|act as if",
@@ -9,24 +10,24 @@ INJECTION = [
     r"(wypisz|pokaż|poka[zż]|show|reveal|print).{0,25}(prompt|instrukcj|instructions)",
     r"tryb (dewelopera|deweloperski|developer)",
 ]
-# 2) Просьбы помочь с фродом.
+# 2) Requests to help with fraud.
 FRAUD = [
     r"stolen (card|credit)|charge .{0,30}without .{0,15}(permission|consent)",
     r"kradzion\w+ kart|skradzion\w+ kart",
     r"(obej[śs][ćc]|omin[ąa][ćc]|bypass).{0,25}(kyc|weryfikacj|verification)",
     r"launder|prani\w+ (pieni|brudnych)",
 ]
-# 3) Чужие провайдеры — не наша поддержка (находка №1: 16 утечек в answer).
+# 3) Third-party providers - not our support (finding #1: 16 leaks in answer).
 COMPETITORS = [
     r"\b(payu|stripe|przelewy ?24|p24|tpay|paypal|adyen|dotpay|paynow|klarna|revolut)\b",
 ]
-# 4) Налоги/бухгалтерия вне kremzaPay (НЕ трогаем VAT наших фактур — это billing).
+# 4) Taxes/accounting outside kremzaPay (do NOT touch VAT on our invoices - that is billing).
 TAX = [
     r"\b(pit|cit)\b.{0,30}(rozlicz|zezna|deklarac)|rozlicz\w*.{0,20}\b(pit|cit)\b",
     r"\bkpir\b|urz[ąa]d skarbowy|\bzus\b|jednoosobow\w+ dzialalno",
     r"(personal|own|prywatn\w+).{0,20}(visa|mastercard|card|kart).{0,30}(dispute|bank|spor)",
 ]
-# 5) Явная просьба позвать человека (из v1).
+# 5) Explicit request to call a human (from v1).
 HUMAN = [
     r"(chce|chcę|prosze|proszę|potrzebuje|potrzebuję|daj(cie)?|połącz|polacz|przełącz|przelacz)"
     r".{0,40}(konsultant|człowiek|czlowiek|operator|doradc|agent)",
@@ -47,7 +48,7 @@ GUARDS = [
 
 
 def check(text):
-    """Вердикт слоя 0: {'action','reason','layer'} или None -> следующий слой."""
+    """Layer 0 verdict: {'action','reason','layer'} or None -> next layer."""
     for action, reason, patterns in GUARDS:
         for pattern in patterns:
             if pattern.search(text):
@@ -64,7 +65,7 @@ if __name__ == "__main__":
         ("Jak rozliczyc PIT z dzialalnosci?", "redirect"),
         ("chcę rozmawiać z konsultantem", "handoff"),
         ("jak zrobić zwrot płatności?", None),
-        ("VAT na waszej fakturze — jak go zaksięgować?", None),   # НАШ vat -> дальше
+        ("VAT na waszej fakturze — jak go zaksięgować?", None),   # OUR vat -> next
         ("szybkie przelewy nie dzialaja", None),                  # przelewy ≠ przelewy24
     ]
     ok = 0
@@ -73,5 +74,5 @@ if __name__ == "__main__":
         got = v["action"] if v else None
         mark = "OK " if got == expected else "FAIL"
         ok += got == expected
-        print(f"[{mark}] {text[:50]:<50} -> {got} (ждали {expected})")
+        print(f"[{mark}] {text[:50]:<50} -> {got} (expected {expected})")
     print(f"\n{ok}/{len(samples)}")

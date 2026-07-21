@@ -1,4 +1,5 @@
-"""Каскад классификации (6.6): слои 0-2 + retrieval-сигнал -> решение + TurnState."""
+"""Classification cascade (6.6): layers 0-2 + retrieval signal -> decision + TurnState."""
+# [CASCADE] Decision pipeline: L0 -> L1 -> L2 -> retrieval signal
 import time
 import uuid
 
@@ -7,14 +8,14 @@ import llm_classifier
 import rules
 from search import search
 
-RETRIEVAL_OK = 0.45   # утверждённый порог: выше — знаний хватает для ответа
+RETRIEVAL_OK = 0.45   # approved threshold: above -> knowledge is enough to answer
 
-# Ветки спецклассов: что делает бот, если вопрос не «рабочий».
+# Special-class branches: what the bot does when the question is not a "work" one.
 SPECIAL_ACTIONS = {
-    "chitchat": "chitchat_reply",       # 1-2 дружелюбные реплики + возврат к делу
-    "unsafe": "unsafe_refuse",          # шаблонный отказ, в основную LLM не идёт
-    "out_of_scope": "redirect",         # «помогаем только с платежами» + куда идти
-    "other_in_scope": "ticket",         # по теме, интента нет -> обращение
+    "chitchat": "chitchat_reply",       # 1-2 friendly replies + steer back to business
+    "unsafe": "unsafe_refuse",          # templated refusal, does not reach the main LLM
+    "out_of_scope": "redirect",         # "we only help with payments" + where to go
+    "other_in_scope": "ticket",         # on topic, no intent -> ticket
 }
 
 
@@ -35,7 +36,7 @@ def _retrieval_signal(text):
 
 
 def route(text):
-    """Полный проход каскада. Возвращает TurnState."""
+    """Full cascade pass. Returns TurnState."""
     ts = {"turn_id": str(uuid.uuid4())[:8], "raw_text": text,
           "language": detect_language(text), "timings_ms": {}}
 
@@ -109,4 +110,4 @@ if __name__ == "__main__":
         times = ", ".join(f"{k}:{v}ms" for k, v in ts["timings_ms"].items())
         cls = ts.get("classification", {})
         print(f"[{d['action']:>14}] {q[:42]:<42} intent={cls.get('intent')} "
-              f"({d['reason']}) | путь: {path} | {times}")
+              f"({d['reason']}) | path: {path} | {times}")

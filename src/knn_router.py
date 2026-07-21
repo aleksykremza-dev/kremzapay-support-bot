@@ -1,4 +1,5 @@
-"""Слой 1 каскада: kNN по тренировочному корпусу (миллисекунды, без LLM)."""
+"""Cascade layer 1: kNN over the training corpus (milliseconds, no LLM)."""
+# [L1-KNN] Layer 1: embedding kNN router
 import glob
 import json
 import os
@@ -8,9 +9,9 @@ from fastembed import TextEmbedding
 
 EMBED_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 CACHE_DIR = "data/cache"
-K = 10            # сколько соседей голосуют
-T_ACCEPT = 0.62   # средняя похожесть победителей выше -> метка принята (старт, тюним в 6.7)
-T_OOS = 0.45      # максимальная похожесть ниже -> кандидат out_of_scope
+K = 10            # how many neighbors vote
+T_ACCEPT = 0.62   # mean similarity of winners above -> label accepted (initial, tuned in 6.7)
+T_OOS = 0.45      # max similarity below -> out_of_scope candidate
 
 _embedder = None
 _vectors = None
@@ -25,7 +26,7 @@ def _load_corpus():
 
 
 def _ensure_index():
-    """Строит (или грузит из кэша) матрицу эмбеддингов корпуса. Один раз."""
+    """Builds (or loads from cache) the corpus embedding matrix. Once."""
     global _embedder, _vectors, _labels
     if _vectors is not None:
         return
@@ -37,30 +38,30 @@ def _ensure_index():
         _labels = json.load(open(lab_path, encoding="utf-8"))
         return
     cases = _load_corpus()
-    print(f"Индексирую корпус: {len(cases)} примеров (один раз, потом кэш)...")
+    print(f"Indexing corpus: {len(cases)} examples (once, then cached)...")
     texts = [c["q"] for c in cases]
     _vectors = np.array([v for v in _embedder.embed(texts)], dtype=np.float32)
-    _vectors /= np.linalg.norm(_vectors, axis=1, keepdims=True)  # нормируем -> косинус = скалярное
+    _vectors /= np.linalg.norm(_vectors, axis=1, keepdims=True)  # normalize -> cosine = dot product
     _labels = [c["intent"] for c in cases]
     np.save(vec_path, _vectors)
     json.dump(_labels, open(lab_path, "w", encoding="utf-8"))
-    print("Кэш записан:", vec_path)
+    print("Cache written:", vec_path)
 
 
 def classify(text):
-    """Вердикт слоя 1: accepted / oos_candidate / grey (-> слой 2)."""
+    """Layer 1 verdict: accepted / oos_candidate / grey (-> layer 2)."""
     _ensure_index()
     q = np.array(list(_embedder.embed([text]))[0], dtype=np.float32)
     q /= np.linalg.norm(q)
-    sims = _vectors @ q                      # косинусная похожесть со всеми 5412 разом
-    top_idx = np.argsort(sims)[-K:][::-1]    # индексы 10 ближайших
+    sims = _vectors @ q                      # cosine similarity against all 5412 at once
+    top_idx = np.argsort(sims)[-K:][::-1]    # indices of the 10 nearest
     top = [(_labels[i], float(sims[i])) for i in top_idx]
 
     votes = {}
     for label, sim in top:
         votes.setdefault(label, []).append(sim)
     winner = max(votes, key=lambda l: (len(votes[l]), sum(votes[l])))
-    win_conf = sum(votes[winner]) / len(votes[winner])   # средняя похожесть победителей
+    win_conf = sum(votes[winner]) / len(votes[winner])   # mean similarity of winners
     max_sim = top[0][1]
 
     if max_sim < T_OOS:
