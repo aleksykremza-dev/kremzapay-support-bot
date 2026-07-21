@@ -1,0 +1,296 @@
+{
+  "intents": [
+    {
+      "id": "payment_status_meaning",
+      "category": "payments",
+      "definition": "The user wants to understand what a payment status means (pending, authorized, completed, failed, expired) or why a payment is stuck in that state.",
+      "examples": [
+        "What does 'authorized' mean, is the money already mine?",
+        "Why is this transaction still pending after an hour?",
+        "dlaczego platnosc wisi w statusie oczekujaca",
+        "Co oznacza status 'expired' przy transakcji?",
+        "Klient zapłacił ale u was widzę 'failed', o co chodzi?",
+        "it's just sitting there not moving, is that normal??",
+        "Płatność autoryzowana czy to znaczy że zaksięgowana?"
+      ],
+      "not": [
+        "This is NOT payment_status_meaning if the payment is completed on our side but the shop platform shows it as unpaid — that is payment_not_reported."
+      ]
+    },
+    {
+      "id": "payment_not_reported",
+      "category": "payments",
+      "definition": "The user's payment succeeded in kremzaPay but their shop still shows the order as unpaid, typically because the webhook notification did not arrive.",
+      "examples": [
+        "Payment is completed on your side but my shop marks the order unpaid.",
+        "The webhook never reached my store, order stays 'awaiting payment'.",
+        "klient zaplacil a w sklepie dalej wisi nieoplacone",
+        "Zamówienie nie zmieniło statusu mimo udanej płatności.",
+        "u mnie w panelu ok, a sklep jakby nic nie dostal",
+        "can you resend the notification, my system didn't get it?",
+        "Zapłacone u Was, ale WooCommerce tego nie widzi."
+      ],
+      "not": [
+        "This is NOT payment_not_reported if the user only asks what 'pending' means without a shop-vs-provider mismatch — that is payment_status_meaning.",
+        "This is NOT payment_not_reported if the customer was actually charged two times — that is payment_duplicate."
+      ]
+    },
+    {
+      "id": "payment_method_enable",
+      "category": "payments",
+      "definition": "The user wants to turn on or configure a specific payment method for their own shop.",
+      "examples": [
+        "How do I enable BLIK for my store?",
+        "Where in the Panel do I switch on Google Pay?",
+        "jak wlaczyc platnosci karta u mnie w sklepie",
+        "Chcę dodać pay-by-link do checkoutu, gdzie to ustawić?",
+        "moi klienci nie widza BLIKa na stronie, jak to odblokowac",
+        "need card payments live before the weekend, what do I click?",
+        "Da się skonfigurować przelewy tak żeby pojawiły się w koszyku?"
+      ],
+      "not": [
+        "This is NOT payment_method_enable if the user only wants to understand how a method works, not activate it — that is payment_method_question."
+      ]
+    },
+    {
+      "id": "payment_method_question",
+      "category": "payments",
+      "definition": "The user wants to understand how a particular payment method works, such as BLIK, Google Pay, QR codes, or pay-by-link.",
+      "examples": [
+        "How does pay-by-link actually work for the customer?",
+        "Does BLIK need the app or just a code?",
+        "jak dziala platnosc przez kod QR",
+        "Czym różni się Google Pay od zwykłej karty u Was?",
+        "klient pyta czy blik dziala bez internetu, jak to jest",
+        "so with pay-by-link do they get a page or what?",
+        "Czy pay-by-link ma jakiś termin ważności?"
+      ],
+      "not": [
+        "This is NOT payment_method_question if the user wants to activate the method in their shop — that is payment_method_enable."
+      ]
+    },
+    {
+      "id": "payment_limits",
+      "category": "payments",
+      "definition": "The user wants to know the minimum or maximum amount allowed per payment, or wants their transaction limit raised.",
+      "examples": [
+        "What's the maximum single payment I can accept?",
+        "Can I raise my transaction limit above the default?",
+        "jaka jest minimalna kwota platnosci",
+        "Klient chce zapłacić 60 tysięcy, a system nie pozwala.",
+        "czemu nie przechodzi platnosc na 55 tys, za duzo?",
+        "we're onboarding a big client, need a higher cap asap",
+        "Czy da się podnieść limit pojedynczej transakcji?"
+      ],
+      "not": [
+        "This is NOT payment_limits if the question is about the minimum payout amount to the bank account — that is payout_when."
+      ]
+    },
+    {
+      "id": "payment_duplicate",
+      "category": "payments",
+      "definition": "The user reports that a customer was charged more than once for a single order.",
+      "examples": [
+        "My customer got charged twice for one order.",
+        "There are two identical transactions for the same purchase.",
+        "klient zaplacil dwa razy za to samo zamowienie",
+        "Widzę podwójną płatność na tę samą kwotę, jak to cofnąć?",
+        "chyba pobralo dwa razy, klient sie wkurza",
+        "she says her card shows the amount twice, help",
+        "Dwie takie same transakcje w minutę, to błąd?"
+      ],
+      "not": [
+        "This is NOT payment_duplicate if there is only one charge but the shop shows it as unpaid — that is payment_not_reported."
+      ]
+    },
+    {
+      "id": "payment_recurring_setup",
+      "category": "payments",
+      "definition": "The user wants to set up recurring payments, card tokenization, or subscriptions from the merchant side.",
+      "examples": [
+        "How do I set up monthly subscription charges?",
+        "Can I save a customer's card token for recurring billing?",
+        "jak ustawic platnosci cykliczne dla abonamentu",
+        "Chcę pobierać co miesiąc bez proszenia klienta o kartę za każdym razem.",
+        "potrzebuje zeby karta sie zapamietala i sciagalo automatycznie",
+        "we want a Netflix-style auto-renew, is that possible here?",
+        "Da się zrobić subskrypcję z tokenem karty?"
+      ],
+      "not": [
+        "This is NOT payment_recurring_setup if the user only wants to enable a method for one-off checkout — that is payment_method_enable."
+      ]
+    },
+    {
+      "id": "payment_cancel_session",
+      "category": "payments",
+      "definition": "The user wants to cancel an unpaid payment or asks about a payment session expiring.",
+      "examples": [
+        "How do I cancel a payment the customer never completed?",
+        "The session expired before he paid, what now?",
+        "jak anulowac nieoplacona transakcje",
+        "Link do płatności wygasł, po ilu minutach to się dzieje?",
+        "klient nie zdazyl zaplacic i wszystko przepadlo",
+        "customer walked away, kill that pending link please",
+        "Czy sesja płatności ma limit czasu?"
+      ],
+      "not": [
+        "This is NOT payment_cancel_session if the customer already paid twice and wants one charge reversed — that is payment_duplicate."
+      ]
+    },
+    {
+      "id": "payout_when",
+      "category": "payouts",
+      "definition": "The user wants to know when they will receive their money or how the payout schedule works.",
+      "examples": [
+        "When do I actually get the money in my bank?",
+        "What's your payout schedule, daily or weekly?",
+        "kiedy dostane wyplate za wczorajsze platnosci",
+        "Za ile dni środki trafiają na konto?",
+        "sprzedalem dzis, kasa bedzie jutro czy pozniej",
+        "just started, no idea when the first transfer lands",
+        "Czy wypłaty są następnego dnia roboczego?"
+      ],
+      "not": [
+        "This is NOT payout_when if a scheduled payout was due but never showed up — that is payout_missing."
+      ]
+    },
+    {
+      "id": "payout_missing",
+      "category": "payouts",
+      "definition": "The user expected a payout that was due but it has not arrived on their bank account.",
+      "examples": [
+        "My payout was supposed to arrive yesterday and it's not here.",
+        "No transfer landed even though the schedule says T+1.",
+        "brak wyplaty na koncie mimo ze mialo byc wczoraj",
+        "Środki nie doszły, a w panelu widnieje jako wysłane.",
+        "czekam juz dwa dni i nic nie przyszlo na bank",
+        "money's just gone missing, nothing hit my account",
+        "Wypłata oznaczona jako zrealizowana, ale na koncie pusto."
+      ],
+      "not": [
+        "This is NOT payout_missing if the user only asks about the general schedule and nothing is overdue yet — that is payout_when."
+      ]
+    },
+    {
+      "id": "payout_report_reconcile",
+      "category": "payouts",
+      "definition": "The user wants to understand or reconcile a settlement report, including net versus gross, matching payouts to orders, or exporting the data.",
+      "examples": [
+        "How do I match a payout to the individual orders inside it?",
+        "The settlement report shows net, where do I see gross and fees?",
+        "jak rozliczyc raport wyplat z zamowieniami",
+        "Nie zgadza mi się kwota wypłaty z sumą sprzedaży, gdzie różnica?",
+        "te liczby w raporcie sie nie skladaja, co jest netto a co brutto",
+        "need to reconcile last month's payouts, can I export this?",
+        "Czy mogę pobrać zestawienie transakcji do jednej wypłaty?"
+      ],
+      "not": [
+        "This is NOT payout_report_reconcile if a payout is simply missing from the account — that is payout_missing.",
+        "This is NOT payout_report_reconcile if the user wants an export purely for their accountant's bookkeeping — that is billing_accounting_export."
+      ]
+    },
+    {
+      "id": "payout_schedule_change",
+      "category": "payouts",
+      "definition": "The user wants to change how often their payouts are made.",
+      "examples": [
+        "Can I switch from daily payouts to weekly?",
+        "How do I change my settlement frequency?",
+        "jak zmienic czestotliwosc wyplat na tygodniowa",
+        "Wolałbym dostawać środki raz w tygodniu, da się?",
+        "codzienne przelewy mi nie pasuja, chce rzadziej",
+        "prefer one big transfer instead of many small ones, possible?",
+        "Czy mogę ustawić wypłaty co dwa tygodnie?"
+      ],
+      "not": [
+        "This is NOT payout_schedule_change if the user wants to change the destination bank account — that is payout_account_change."
+      ]
+    },
+    {
+      "id": "payout_account_change",
+      "category": "payouts",
+      "definition": "The user wants to change the bank account that payouts are sent to.",
+      "examples": [
+        "How do I update the bank account for my payouts?",
+        "We switched banks, where do I put the new IBAN?",
+        "jak zmienic numer konta do wyplat",
+        "Zmieniłem rachunek firmowy, gdzie wpisać nowy?",
+        "stare konto zamkniete, kase trzeba slac na inne",
+        "payouts should go to a different account from now on",
+        "Czy mogę podać inny numer konta do rozliczeń?"
+      ],
+      "not": [
+        "This is NOT payout_account_change if the user wants to change how often payouts happen, not where they go — that is payout_schedule_change."
+      ]
+    },
+    {
+      "id": "fees_how_much",
+      "category": "billing",
+      "definition": "The user wants to know how much commission kremzaPay charges them.",
+      "examples": [
+        "What commission do you take per transaction?",
+        "How much do you charge on card payments?",
+        "ile bierzecie prowizji od platnosci",
+        "Jaka jest opłata za BLIK w moim przypadku?",
+        "chce wiedziec ile mnie kosztuje kazda transakcja",
+        "trying to work out my margins, what's your cut?",
+        "Czy prowizja jest taka sama dla każdej metody?"
+      ],
+      "not": [
+        "This is NOT fees_how_much if the user already has an invoice and wants a line item explained — that is invoice_understand."
+      ]
+    },
+    {
+      "id": "invoice_where",
+      "category": "billing",
+      "definition": "The user wants to find or download their invoices.",
+      "examples": [
+        "Where can I download my invoices?",
+        "How do I find last month's invoice in the Panel?",
+        "gdzie znajde fakture za wasze uslugi",
+        "Nie widzę faktury za czerwiec, gdzie jej szukać?",
+        "potrzebuje sciagnac fakture a nie wiem gdzie klikac",
+        "accountant's asking for the invoices, where are they?",
+        "Czy faktury są w panelu czy przychodzą mailem?"
+      ],
+      "not": [
+        "This is NOT invoice_where if the user found the invoice but doesn't understand a position on it — that is invoice_understand."
+      ]
+    },
+    {
+      "id": "invoice_understand",
+      "category": "billing",
+      "definition": "The user wants to understand the positions on their invoice, such as line items or VAT.",
+      "examples": [
+        "What does this line item on my invoice mean?",
+        "Is VAT included in the amount shown on the invoice?",
+        "co oznacza ta pozycja na fakturze",
+        "Dlaczego na fakturze jest inna kwota niż suma prowizji?",
+        "nie rozumiem tego vatu na dole faktury",
+        "the numbers on this invoice don't add up for me, explain?",
+        "Czy ta opłata na fakturze to prowizja czy coś innego?"
+      ],
+      "not": [
+        "This is NOT invoice_understand if the user cannot locate the invoice at all — that is invoice_where.",
+        "This is NOT invoice_understand if the user only asks the general commission rate with no invoice in hand — that is fees_how_much."
+      ]
+    },
+    {
+      "id": "billing_accounting_export",
+      "category": "billing",
+      "definition": "The user wants exports or summaries of their billing data for accounting purposes, such as an annual summary or a file for their accountant.",
+      "examples": [
+        "Can I export all transactions for my accountant?",
+        "Where do I get an annual summary for bookkeeping?",
+        "jak wyeksportowac dane do ksiegowosci",
+        "Potrzebuję zestawienia za cały rok do rozliczenia.",
+        "ksiegowa prosi o plik z wszystkimi transakcjami za rok",
+        "year-end is coming, need everything in one CSV",
+        "Czy mogę pobrać roczne podsumowanie opłat?"
+      ],
+      "not": [
+        "This is NOT billing_accounting_export if the user is trying to reconcile one specific payout against its orders — that is payout_report_reconcile."
+      ]
+    }
+  ]
+}
