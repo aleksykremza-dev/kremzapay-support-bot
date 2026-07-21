@@ -1,4 +1,5 @@
-"""Слой 2 каскада: LLM-классификатор для серой зоны (двухходовка: категория -> интент)."""
+"""Cascade layer 2: LLM classifier for the grey zone (two-stage: category -> intent)."""
+# [L2-LLM] Layer 2: two-stage LLM classifier
 import json
 import os
 
@@ -17,7 +18,7 @@ SPECIAL = {s["id"]: s["definition"] for s in _tax["special_classes"]}
 
 
 def _ask_json(prompt):
-    """Один вызов Ollama с принудительным JSON-выходом."""
+    """A single Ollama call with forced JSON output."""
     r = httpx.post(OLLAMA_URL + "/api/generate",
                    json={"model": MODEL, "prompt": prompt, "stream": False,
                          "format": "json",
@@ -66,7 +67,7 @@ def _stage2_intent(text, category):
 
 
 def classify(text):
-    """Полный вердикт слоя 2."""
+    """Full layer 2 verdict."""
     s1 = _stage1_category(text)
     label = s1.get("label", "")
     if label in SPECIAL:

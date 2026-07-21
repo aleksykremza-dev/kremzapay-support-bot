@@ -1,4 +1,5 @@
-"""6.7: экзамен каскада на золотом наборе. Метрики: accuracy, macro-F1, OOS-recall, confusion."""
+"""6.7: cascade exam on the gold set. Metrics: accuracy, macro-F1, OOS-recall, confusion."""
+# [EVAL] Gold-set exam harness
 import glob
 import json
 import os
@@ -7,7 +8,7 @@ from collections import Counter, defaultdict
 
 import cascade
 
-# Во что каскад "переводит" свой вердикт для сравнения с ожиданием золотого набора.
+# How the cascade "maps" its verdict for comparison with the gold-set expectation.
 ACTION_TO_LABEL = {
     "chitchat_reply": "chitchat",
     "unsafe_refuse": "unsafe",
@@ -16,7 +17,7 @@ ACTION_TO_LABEL = {
 
 
 def predicted_label(ts):
-    """Единая метка предсказания: спецкласс, handoff или конкретный интент."""
+    """Unified prediction label: special class, handoff or a specific intent."""
     action = ts["decision"]["action"]
     if action in ACTION_TO_LABEL:
         return ACTION_TO_LABEL[action]
@@ -64,14 +65,14 @@ def main():
             action = ts["decision"]["action"]
         except Exception as exc:
             pred, action, ts = "ERROR", "error", {}
-            print(f"  ! ошибка на кейсе {n}: {exc}")
+            print(f"  ! error on case {n}: {exc}")
         rows.append({"q": c["q"], "gold": expected, "pred": pred, "action": action,
                      "style": c.get("style"), "lang": c.get("lang"),
                      "hit": pred == expected})
         if n % 10 == 0:
             acc = sum(r["hit"] for r in rows) / len(rows)
-            print(f"  {n}/{len(gold)}  точность пока: {acc:.0%}  "
-                  f"({(time.time()-t0)/60:.1f} мин)")
+            print(f"  {n}/{len(gold)}  accuracy so far: {acc:.0%}  "
+                  f"({(time.time()-t0)/60:.1f} min)")
 
     per, macro = f1_scores(rows)
     acc = sum(r["hit"] for r in rows) / len(rows)
@@ -95,16 +96,16 @@ def main():
     json.dump(report, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     print("\n" + "=" * 60)
-    print(f"ЭКЗАМЕН КАСКАДА: {len(rows)} кейсов за {report['minutes']} мин")
+    print(f"CASCADE EXAM: {len(rows)} cases in {report['minutes']} min")
     print(f"  accuracy:  {acc:.1%}")
     print(f"  macro-F1:  {macro}")
-    print(f"  OOS-recall (безопасность): {safety}")
-    print(f"  по стилям: {report['by_style']}")
-    print(f"  решения:   {dict(actions)}")
-    print("  топ путаниц:")
+    print(f"  OOS-recall (safety): {safety}")
+    print(f"  by style:  {report['by_style']}")
+    print(f"  decisions: {dict(actions)}")
+    print("  top confusions:")
     for line in report["top_confusions"][:10]:
         print(f"    {line}")
-    print(f"Полный отчёт: {out}")
+    print(f"Full report: {out}")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
-"""Ingest: читает статьи kb/, режет на куски, превращает в эмбеддинги, грузит в Qdrant."""
+"""Ingest: reads kb/ articles, splits into chunks, turns them into embeddings, loads into Qdrant."""
+# [INGEST] KB -> chunks -> embeddings -> Qdrant
 import glob
 import os
 import uuid
@@ -12,23 +13,23 @@ load_dotenv()
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6335")
 COLLECTION = "kremzapay_kb"
 EMBED_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-CHUNK_SIZE = 800  # символов в одном куске (~1-2 абзаца)
+CHUNK_SIZE = 800  # characters per chunk (~1-2 paragraphs)
 
 
 def parse_article(path):
-    """Разбирает файл статьи: паспорт (frontmatter) отдельно, текст отдельно."""
+    """Parses an article file: the passport (frontmatter) separately, the text separately."""
     raw = open(path, encoding="utf-8").read()
     _, front, body = raw.split("---", 2)
     meta = {}
     for line in front.strip().splitlines():
         key, _, value = line.partition(":")
         meta[key.strip()] = value.strip()
-    body = body.rsplit("---", 1)[0]  # отрезаем дисклеймер в конце
+    body = body.rsplit("---", 1)[0]  # cut off the disclaimer at the end
     return meta, body.strip()
 
 
 def split_chunks(body):
-    """Режет текст на куски ~CHUNK_SIZE символов, не разрывая абзацы."""
+    """Splits text into chunks of ~CHUNK_SIZE characters without breaking paragraphs."""
     chunks, current = [], ""
     for paragraph in body.split("\n\n"):
         if len(current) + len(paragraph) > CHUNK_SIZE and current:
@@ -42,7 +43,7 @@ def split_chunks(body):
 
 def main():
     articles = sorted(glob.glob("kb/*/*.md"))
-    print(f"Статей найдено: {len(articles)}")
+    print(f"Articles found: {len(articles)}")
 
     texts, payloads = [], []
     for path in articles:
@@ -50,15 +51,15 @@ def main():
         for i, chunk in enumerate(split_chunks(body)):
             texts.append(meta["title"] + "\n" + chunk)
             payloads.append({**meta, "chunk": i, "text": chunk})
-    print(f"Кусков получилось: {len(texts)}")
+    print(f"Chunks produced: {len(texts)}")
 
-    print("Считаю эмбеддинги (первый запуск качает модель ~200 МБ, потом быстро)...")
+    print("Computing embeddings (first run downloads the model ~200 MB, then fast)...")
     embedder = TextEmbedding(EMBED_MODEL)
     vectors = list(embedder.embed(texts))
 
     client = QdrantClient(url=QDRANT_URL)
     if client.collection_exists(COLLECTION):
-        client.delete_collection(COLLECTION)  # повторный запуск = перезаливка с нуля
+        client.delete_collection(COLLECTION)  # re-run = full reload from scratch
     client.create_collection(
         COLLECTION,
         vectors_config=VectorParams(size=384, distance=Distance.COSINE),
@@ -68,7 +69,7 @@ def main():
         for v, p in zip(vectors, payloads)
     ]
     client.upsert(COLLECTION, points)
-    print(f"Готово: {len(points)} точек в коллекции '{COLLECTION}'")
+    print(f"Done: {len(points)} points in collection '{COLLECTION}'")
 
 
 if __name__ == "__main__":

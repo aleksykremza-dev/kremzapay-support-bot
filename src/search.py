@@ -1,4 +1,5 @@
-"""Retrieval v2: поиск по смыслу + опциональный фильтр по категории статей."""
+"""Retrieval v2: semantic search + optional filter by article category."""
+# [RETRIEVAL] Semantic search with category filter
 import os
 import sys
 
@@ -25,10 +26,10 @@ def _lazy():
 
 
 def search(question, category=None):
-    """Топ-K кусков; с category ищем только в статьях этой категории.
+    """Top-K chunks; with category, search only within that category's articles.
 
-    Фильтр сужает поиск («zwrot» больше не утащит в chargeback-статьи),
-    а если в категории нашлось мало — честно откатываемся на всю базу.
+    The filter narrows the search ("zwrot" no longer drifts into chargeback
+    articles), and if the category yields too few, we fall back to the whole base.
     """
     _lazy()
     vector = list(_embedder.embed([question]))[0].tolist()
@@ -37,17 +38,17 @@ def search(question, category=None):
         flt = Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
     hits = _client.query_points(COLLECTION, query=vector, limit=TOP_K,
                                 query_filter=flt).points
-    if category and len(hits) < 2:          # категория пустовата -> вся база
+    if category and len(hits) < 2:          # category too sparse -> whole base
         hits = _client.query_points(COLLECTION, query=vector, limit=TOP_K).points
     return hits
 
 
 def main():
     question = " ".join(sys.argv[1:]) or "How do I refund a payment?"
-    print(f"Вопрос: {question}\n-- без фильтра:")
+    print(f"Question: {question}\n-- without filter:")
     for h in search(question)[:3]:
         print(f"  [{h.score:.3f}] {h.payload['id']} ({h.payload['category']}) {h.payload['title']}")
-    print("-- фильтр category=refunds:")
+    print("-- filter category=refunds:")
     for h in search(question, category="refunds")[:3]:
         print(f"  [{h.score:.3f}] {h.payload['id']} ({h.payload['category']}) {h.payload['title']}")
 
