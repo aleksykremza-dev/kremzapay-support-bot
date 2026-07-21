@@ -36,7 +36,7 @@ def _stage1_category(text):
         "Rules: chitchat = ONLY light small talk (greetings, jokes, thanks). "
         "Complaints, frustration or dissatisfaction with the bot/service are NOT chitchat - "
         "pick the matching category instead. wants_human=true if the user explicitly OR "
-        "implicitly wants a live person (frustration with the bot counts).\n\n"
+        "unambiguously wants a live person: asks for one, or is angry AT THE BOT/SERVICE itself. Frustration about a payment problem alone is NOT wants_human - classify the problem instead.\n\n"
         f"User message: {text}\n\n"
         'Reply JSON: {"reasoning": "<one short sentence>", '
         '"label": "<one category OR special class id>", "wants_human": true|false}'
@@ -55,8 +55,9 @@ def _stage2_intent(text, category):
         f"User message: {text}\n\n"
         "Rules: think first (reasoning), then decide. If the message contains TWO goals, "
         "set secondary_intent. confidence: high = ready to act without a human check, "
-        "medium = probably right, low = unsure. wants_human=true if the user explicitly "
-        "or implicitly asks for a live person.\n"
+        "medium = probably right, low = unsure. wants_human=true ONLY if the user asks "
+        "for a live person or is angry at the bot/service itself; frustration about "
+        "the problem alone is NOT wants_human.\n"
         'Reply JSON: {"reasoning": "...", "intent": "<id>", "secondary_intent": "<id or null>", '
         '"confidence": "high|medium|low", "sentiment": "negative|neutral|positive", '
         '"urgency": "high|normal", "wants_human": true|false}'

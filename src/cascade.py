@@ -43,7 +43,7 @@ def route(text):
     ts["rules"] = rules.check(text)
     ts["timings_ms"]["rules"] = round((time.monotonic() - t) * 1000, 1)
     if ts["rules"]:
-        ts["decision"] = {"action": "handoff", "reason": "explicit_human_request",
+        ts["decision"] = {"action": ts["rules"]["action"], "reason": ts["rules"]["reason"],
                           "confidence": "high"}
         return ts
 
