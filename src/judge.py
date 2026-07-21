@@ -1,4 +1,5 @@
-"""Этап 7: судья (output-rail) — сверяет готовый ответ с источниками до отправки."""
+"""Stage 7: judge (output-rail) — checks the finished answer against sources before sending."""
+# [JUDGE] Output guardrail: groundedness fact-check
 import os
 
 import httpx
@@ -10,7 +11,7 @@ MODEL = os.getenv("ANSWER_MODEL", "qwen2.5:7b-instruct")
 
 
 def grounded(answer, chunks):
-    """True, если каждое фактическое утверждение ответа опирается на источники."""
+    """True if every factual claim in the answer is backed by the sources."""
     context = "\n\n---\n\n".join(chunks)
     prompt = (
         "You are a strict fact-checker.\n"

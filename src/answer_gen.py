@@ -1,4 +1,5 @@
-"""Этап 7: генерация ответа из найденных кусков. Голос бренда — в BRAND_VOICE."""
+"""Stage 7: answer generation from retrieved chunks. Brand voice lives in BRAND_VOICE."""
+# [GENERATION] Grounded answer generation with brand voice
 import json
 import os
 
@@ -12,7 +13,7 @@ OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 MODEL = os.getenv("ANSWER_MODEL", "qwen2.5:7b-instruct")
 TOP_N = 3
 
-# Голос бренда — правь свободно, это лицо kremzaPay.
+# Brand voice — edit freely, this is the face of kremzaPay.
 BRAND_VOICE = (
     "You are the kremzaPay support assistant. Style: warm but concise, "
     "address the user informally ('ty' in Polish, 'you' in English), "
@@ -26,10 +27,10 @@ INTENT_DEF = {i["id"]: i["definition"] for i in _tax["intents"]}
 
 
 def generate(question, intent=None, language="en"):
-    """Возвращает {'answer', 'sources', 'chunks'} или None при пустом retrieval."""
+    """Returns {'answer', 'sources', 'chunks'} or None on empty retrieval."""
     category = INTENT_CATEGORY.get(intent)
-    # Подмешиваем определение интента в запрос: якорит поиск на основной статье
-    # темы, а не на её крайних случаях (баг «zwrot -> статья про 180 дней»).
+    # Mix the intent definition into the query: anchors the search on the topic's
+    # main article rather than its edge cases (bug "zwrot -> article about 180 days").
     query = f"{question}. {INTENT_DEF[intent]}" if intent in INTENT_DEF else question
     hits = search(query, category=category)[:TOP_N]
     if not hits:
@@ -63,6 +64,6 @@ if __name__ == "__main__":
     import sys
     q = " ".join(sys.argv[1:]) or "jak zrobic zwrot?"
     result = generate(q, intent="refund_how", language="pl")
-    print(result["answer"] if result else "retrieval пуст")
+    print(result["answer"] if result else "retrieval empty")
     if result:
-        print("\nИсточники:", "; ".join(result["sources"]))
+        print("\nSources:", "; ".join(result["sources"]))

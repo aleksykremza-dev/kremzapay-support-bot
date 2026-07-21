@@ -20,21 +20,21 @@
  h2{font-size:15px;margin:0 0 8px}
 </style></head><body>
 <h1>kremzaPay — panel obserwowalności</h1>
-<div class="sub">каждое решение бота: ветка · интент · путь по слоям · время — прозрачность вместо чёрного ящика</div>
+<div class="sub">every bot decision: branch · intent · layer path · time — transparency instead of a black box</div>
 <div class="cards" id="cards"></div>
-<h2>Последние диалоги</h2>
-<table><thead><tr><th>Время</th><th>Сообщение</th><th>Решение</th><th>Интент</th><th>Путь слоёв</th><th>мс</th></tr></thead>
+<h2>Recent dialogs</h2>
+<table><thead><tr><th>Time</th><th>Message</th><th>Decision</th><th>Intent</th><th>Layer path</th><th>ms</th></tr></thead>
 <tbody id="dialogs"></tbody></table>
-<h2>Очередь обращений</h2>
-<table><thead><tr><th>#</th><th>Причина</th><th>Интент</th><th>Статус</th></tr></thead>
+<h2>Ticket queue</h2>
+<table><thead><tr><th>#</th><th>Reason</th><th>Intent</th><th>Status</th></tr></thead>
 <tbody id="tickets"></tbody></table>
 <script>
 async function refresh(){
  const s = await (await fetch("/api/stats")).json();
  const total = Object.values(s.actions).reduce((a,b)=>a+b,0);
  document.getElementById("cards").innerHTML =
-  `<div class="card"><b>${s.sessions}</b><span>сессий</span></div>`+
-  `<div class="card"><b>${total}</b><span>обработано</span></div>`+
+  `<div class="card"><b>${s.sessions}</b><span>sessions</span></div>`+
+  `<div class="card"><b>${total}</b><span>handled</span></div>`+
   Object.entries(s.actions).map(([a,n])=>`<div class="card"><b>${n}</b><span>${a}</span></div>`).join("");
  document.getElementById("dialogs").innerHTML = s.dialogs.map(d=>
   `<tr><td>${d.at}</td><td>${d.text}</td><td><span class="pill a-${d.action}">${d.action}</span><br>

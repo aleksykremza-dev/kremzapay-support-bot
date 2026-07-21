@@ -1,4 +1,5 @@
-"""Этап 8: хранилище (SQLite) — сессии, сообщения+TurnState, тикеты, actions_log, оценки."""
+"""Stage 8: storage (SQLite) — sessions, messages+TurnState, tickets, actions_log, feedback."""
+# [STORE] SQLite persistence: sessions, TurnState, tickets, audit
 import json
 import os
 import sqlite3
@@ -94,12 +95,12 @@ if __name__ == "__main__":
     tid = create_ticket(sid, "no_knowledge", category="payments", intent="payment_limits")
     log_action(sid, "get_payment_status", {"session_id": "s-123"}, "completed")
     add_feedback(sid, "up")
-    print(f"сессия {sid}, тикет #{tid}")
-    print("тикеты:", list_tickets("new"))
+    print(f"session {sid}, ticket #{tid}")
+    print("tickets:", list_tickets("new"))
 
 
 def get_stats():
-    """Сводка для панели наблюдаемости: всё читается из turn_state и тикетов."""
+    """Summary for the observability panel: everything is read from turn_state and tickets."""
     with _conn() as c:
         sessions = c.execute("SELECT COUNT(*) FROM sessions").fetchone()[0]
         rows = c.execute(

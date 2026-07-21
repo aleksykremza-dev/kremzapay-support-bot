@@ -1,4 +1,5 @@
-"""Этап 9: HTTP API. Конвейер: PII-маскер -> каскад -> ветка ответа -> хранилище."""
+"""Stage 9: HTTP API. Pipeline: PII masker -> cascade -> reply branch -> storage."""
+# [API] HTTP pipeline: PII -> cascade -> branch reply -> store
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from pydantic import BaseModel

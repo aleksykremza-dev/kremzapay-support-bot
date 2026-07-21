@@ -1,4 +1,5 @@
-"""Merge: собирает три части таксономии в один data/taxonomy.json."""
+"""Merge: combines three taxonomy parts into a single data/taxonomy.json."""
+# [TAXONOMY] Merge taxonomy parts
 import json
 
 PARTS = [
@@ -15,9 +16,9 @@ for path in PARTS:
     special += part.get("special_classes", [])
 
 ids = [i["id"] for i in intents]
-assert len(ids) == len(set(ids)), "дубль id в таксономии!"
+assert len(ids) == len(set(ids)), "duplicate id in taxonomy!"
 
 taxonomy = {"version": 1, "intents": intents, "special_classes": special}
 json.dump(taxonomy, open("data/taxonomy.json", "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
-print(f"taxonomy.json готов: {len(intents)} интентов, {len(special)} спецкласса, версия 1")
+print(f"taxonomy.json ready: {len(intents)} intents, {len(special)} special classes, version 1")
