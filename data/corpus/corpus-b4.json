@@ -1,0 +1,2392 @@
+{
+ "cases": [
+  {
+   "q": "How much is your commission on a standard card transaction?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What percentage do you take from each sale?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you tell me the fee rate for BLIK payments?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the cost per transaction for a small shop like mine?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you charge a flat fee or a percentage on payments?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What are your rates for processing Google Pay?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How much will I pay you for every 100 zl I collect?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a monthly fee on top of the transaction commission?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does it cost me to accept pay-by-link payments?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are your fees different for foreign cards?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What commission applies to Apple Pay through your system?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How much do you deduct before sending me the money?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Could you break down your pricing per payment method?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What is the going rate you charge merchants per transaction?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do bigger turnover shops get a lower commission?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What is your fee for accepting instant transfers?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Tell me the percentage cut on subscription charges.",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's your commission compared to a flat card terminal?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How much per transaction if I only do BLIK?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What would you charge me on a 30 zl payment?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jaka jest wasza prowizja od pojedynczej transakcji kartą?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile procent pobieracie od każdej sprzedaży?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest koszt przyjęcia płatności BLIK w moim sklepie?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile zapłacę wam za obsługę Google Pay?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy prowizja jest stała czy procentowa?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile wynosi opłata za pay-by-link?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaka jest stawka dla kart zagranicznych?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile potrącacie zanim prześlecie mi środki?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przy większym obrocie prowizja jest niższa?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki macie cennik dla poszczególnych metod płatności?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile kosztuje mnie przyjęcie przelewu natychmiastowego?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaka prowizja obowiązuje przy płatnościach cyklicznych?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile bierzecie od transakcji Apple Pay?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest opłata miesięczna oprócz prowizji od transakcji?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaką macie stawkę dla nowego, małego sklepu?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile mnie kosztuje każda płatność kartą u Was?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy prowizja różni się w zależności od kwoty zamówienia?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile procent zabieracie z płatności abonamentowej?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie są wasze opłaty za obsługę płatności mobilnych?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile wynosi prowizja za transakcję na kwotę 500 zł?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile bierzecie prowizji od karty kredytowej",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaka jest oplata za blika u was",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile mnie kosztuje jedna transakcja przez wasz system",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy prowizja jest taka sama dla przelewu i karty",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile procent scigacie od kazdej platnosci",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki macie cennik dla platnosci mobilnych",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile zaplace za pay by link za sztuke",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy przy wiekszym obrocie schodzicie z prowizja",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how much comission you take per transaction",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats ur fee for card payements",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how mch do u charge on blik",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "what percentag do you take from a sale",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "hw much is the transaction fee for google pay",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "do u charge extra for foriegn cards",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "ile kosztuje przyjecie platnosci kartowej miesiecznie",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaka prowizje placi sklep za transakcje",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile scigacie z kazdej stowki",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy oplata za transakcje zalezy od metody",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how much comissio on recurring charges",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "ile wynosi wasza marza od transakcji",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Before I sign up, what commission will I be paying — I don't have any invoice yet, just the rate please.",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ogólnie, ile wynosi prowizja — nie chodzi mi o fakturę, tylko o stawkę.",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm building my pricing model, what's the raw percentage you charge, not a specific bill.",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim dostanę pierwszą fakturę, chcę znać samą stawkę prowizji.",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just the headline rate, what percent per card sale, no invoice involved.",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaka jest wasza stawka prowizji, pytam ogólnie a nie o konkretną pozycję na dokumencie.",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If I refund a customer, do you still keep your commission — how much?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jeśli zwracam klientowi pieniądze, czy nadal pobieracie prowizję i w jakiej wysokości?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How much is the fee when a transaction gets refunded, same percent as a normal sale?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ile wynosi opłata przy zwrocie płatności, czy taka sama jak przy sprzedaży?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie mam jeszcze żadnej faktury od Was, ale ile będzie wynosić prowizja miesięcznie?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Roughly what will you charge me per month in commission, ballpark, before any invoice arrives?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the commission you quote the final number or does VAT get added on top of the rate?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy podawana prowizja to kwota końcowa, czy do stawki dochodzi jeszcze VAT?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What's your effective rate all-in per transaction, just the number, no bill needed?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Interesuje mnie tylko procent prowizji, nie rozliczenie ani faktura.",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do you charge the same cut on a partial refund as on the full sale?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy dla płatności ratalnej prowizja jest inna niż dla jednorazowej?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Comparing providers — what's your per-transaction commission versus a fixed 1%?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Porównuję oferty, jaka jest u Was prowizja od transakcji w procentach?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How much do you charge, and is that per transaction or per payout?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ile bierzecie prowizji — liczone od transakcji czy od wypłaty?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just the rate card please, what percent for cards, BLIK and transfers each.",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Poproszę samą tabelę stawek: karta, BLIK, przelew — ile za każdą.",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Before onboarding, what commission tier will a shop with 50k monthly turnover get?",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "fees??",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How much??? nobody on your site tells me the actual percent you take and it's driving me crazy, just give me a number please",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "słuchajcie szukam wszędzie i nigdzie nie ma napisane ile wy bierzecie za transakcję, powiedzcie mi w końcu ten procent bo się poddaję",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ok so like whats the % — po polsku ile to jest ta prowizja od jednej płatności",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "hi ile prowizja for card payment thanks",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "STAWKA. Ile. Za transakcję. Tyle chcę wiedzieć.",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "im so confused about pricing can you literally just tell me your cut per sale i dont need anything else omg",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "koszt?",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "prowizja za blika ile i czy to duzo bo konkurencja tania",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "what % u take bro",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile ile ile prowizja od platnosci kartowej mowcie",
+   "intent": "fees_how_much",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "rate per transaction — number only",
+   "intent": "fees_how_much",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Where in the Panel do I download my invoice?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can I get a copy of last month's invoice?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to find my invoices for Q2, where are they stored?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you email invoices or do I fetch them from the dashboard?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where's the button to export my invoice as PDF?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I access invoices from before I changed my email?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which section holds my billing documents?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I download all my invoices in one go?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My accountant needs the March invoice, where do I grab it?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I can't locate any invoices in my account, where should I look?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an invoices tab somewhere in the merchant panel?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I get last year's invoices for the audit?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do you keep the VAT invoices for your services?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to download the invoice from two months ago.",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can I resend an invoice to a different email address?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where can I see the full history of invoices issued to me?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I need to request invoices or are they there ready to download?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Point me to where invoices live in the settings.",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I find the invoice for the setup fee I paid?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I click to save my monthly invoice?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w panelu mogę pobrać fakturę?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ściągnąć fakturę za ubiegły miesiąc?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Szukam faktur za drugi kwartał, gdzie one są?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy faktury przychodzą mailem czy pobieram je z panelu?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest przycisk do zapisania faktury w PDF?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dostać się do faktur sprzed zmiany adresu e-mail?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "W której zakładce znajdę dokumenty rozliczeniowe?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę pobrać wszystkie faktury naraz?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Księgowa potrzebuje faktury za marzec, skąd ją wziąć?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nie mogę znaleźć żadnej faktury na koncie, gdzie mam szukać?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy w panelu jest gdzieś zakładka z fakturami?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak pobrać faktury za cały ubiegły rok do audytu?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie trzymacie faktury VAT za wasze usługi?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę pobrać fakturę sprzed dwóch miesięcy.",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wysłać fakturę ponownie na inny adres?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie zobaczę całą historię wystawionych mi faktur?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy faktury generują się automatycznie do pobrania?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wskażcie mi gdzie w ustawieniach są faktury.",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie znajdę fakturę za opłatę aktywacyjną?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "W które miejsce kliknąć, żeby zapisać fakturę miesięczną?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie pobrac fakture w panelu",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak sciagnac fakture za zeszly miesiac",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "nie moge znalezc faktury gdzie ona jest",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie sa moje faktury w koncie",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak pobrac wszystkie faktury na raz",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie klikac zeby zapisac fakture pdf",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ksiegowa prosi fakture a ja nie wiem skad ja wziac",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie w ustawieniach znajde faktury vat",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "where do i downlaod my invoce",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "cant find my invocies anywhere in the panel",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how do i get last munths invoice",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "where r the invoices in the dashbord",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i need to dwnload the invoice for june",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "wheres the invoces tab pls",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie jest zakladka faktury bo nie widze",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak sie dostac do starych faktur sprzed roku",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie pobiore fakture za marzec dla ksiegowej",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how to acess invoices from my acount",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie w panelu klikam po fakture",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "faktury gdzie one sa w systemie",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I found the invoice but I actually just want to download a clean PDF copy of it.",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Widzę fakturę na ekranie, ale jak ją stąd pobrać na dysk?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The invoice is showing but there's no download link — where is it?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Faktura się wyświetla, gdzie jest przycisk pobierania?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't need to understand it, I just need to locate and save June's invoice.",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi mi o treść faktury, tylko gdzie ją pobrać.",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where do I download invoices — not the transaction export, the actual VAT invoices?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdzie pobiorę same faktury, a nie zestawienie transakcji?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My accountant wants the invoice files themselves, where can I fetch each one?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Księgowa chce konkretne pliki faktur, skąd je pobrać pojedynczo?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the invoice in the same place as the settlement report or somewhere else?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy faktura jest w tym samym miejscu co raport wypłat, czy gdzie indziej?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I got the email but the attachment is missing, where do I download the invoice instead?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostałem maila bez załącznika, skąd pobrać samą fakturę?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where can I find the invoice — I can see the fees listed but not the document itself.",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Widzę naliczone opłaty, ale gdzie jest sam dokument faktury?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I need to re-download an invoice I already had, where's the archive?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Muszę ponownie pobrać fakturę, gdzie jest archiwum?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where are invoices for a sub-account under my main merchant login?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdzie są faktury dla subkonta pod moim głównym loginem?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I download invoices per month or is there one place for the whole year's files?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Faktury pobieram co miesiąc czy jest jedno miejsce z całym rokiem?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I can open the invoice preview but can't save it, where's the actual file?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Otwieram podgląd faktury, ale nie mogę zapisać, gdzie jest plik?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where do I grab the correction invoice you issued last week?",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "faktura?",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "invoice where",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie faktury",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "invoices???",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ludzie ratunku szukam tej faktury od pol godziny klikam wszedzie i nie ma jej nigdzie gdzie wy to chowacie",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "i have looked EVERYWHERE in this panel and there is no invoice download button anywhere please just tell me where it is",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "hej gdzie invoice for last month thx",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "where download faktura pls",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "FAKTURA. Gdzie. Pobrać. Teraz.",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help cant find invoice accountant waiting angry",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "pobrac",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie ja to pobiore te fakture bo termin goni a nic nie widze w tym panelu",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "invoice location??? been searching 20 min",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie gdzie gdzie faktura za maj mowcie szybko",
+   "intent": "invoice_where",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "download invoice — which tab",
+   "intent": "invoice_where",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "What is this line item labeled 'processing' on my invoice?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why does my invoice show a higher amount than the commissions I calculated?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the VAT already included in the totals on this invoice?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you explain the second position on my June invoice?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "There's a charge on the invoice I don't recognize, what is it?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does 'settlement fee' mean on my bill?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why are there two different rates on the same invoice?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My invoice total doesn't match my sales, what's the extra line?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the difference between net and gross on this invoice?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which part of the invoice is your commission and which is VAT?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why does this month's invoice have an item that wasn't there before?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you tell me what the 'monthly service' line covers?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The invoice shows a minus figure, what does that represent?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How is the VAT calculated on the invoice amount?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does the abbreviation on line 3 of my invoice stand for?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why is there a fixed fee on top of the percentage on my invoice?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My invoice lists a currency conversion charge, can you explain it?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What period does the invoice actually cover, the dates confuse me?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is this amount on the invoice before or after your commission?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Explain why the invoice sum is different from what I received in payouts.",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Co oznacza pozycja 'obsługa' na mojej fakturze?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego kwota na fakturze jest wyższa niż policzone prowizje?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy VAT jest już wliczony w sumy na fakturze?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy możecie wyjaśnić drugą pozycję na fakturze za czerwiec?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jest opłata na fakturze, której nie rozpoznaję, co to?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co znaczy 'opłata rozliczeniowa' na moim rachunku?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego na jednej fakturze są dwie różne stawki?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Suma faktury nie zgadza się ze sprzedażą, co to za dodatkowa pozycja?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaka jest różnica między netto a brutto na tej fakturze?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Która część faktury to prowizja, a która to VAT?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego na fakturze za ten miesiąc jest pozycja, której wcześniej nie było?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co obejmuje wiersz 'usługa miesięczna' na fakturze?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Na fakturze jest kwota ujemna, co to oznacza?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak liczony jest VAT od kwoty na fakturze?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co oznacza skrót w trzeciej pozycji faktury?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego oprócz procentu jest jeszcze opłata stała na fakturze?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Faktura zawiera opłatę za przewalutowanie, możecie wyjaśnić?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakiego okresu dotyczy ta faktura, te daty mnie mylą?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy ta kwota na fakturze jest przed czy po waszej prowizji?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wyjaśnijcie czemu suma faktury różni się od otrzymanych wypłat.",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co oznacza ta pozycja na fakturze nie rozumiem",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dlaczego kwota na fakturze inna niz prowizje",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy vat jest wliczony w te sume na fakturze",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co to za oplata rozliczeniowa na rachunku",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czemu na fakturze sa dwie stawki",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "nie rozumiem tego minusa na fakturze co to",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ktora czesc faktury to prowizja a ktora vat",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co obejmuje ta pozycja usluga miesieczna",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "why is my invoce total higer than my comission",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "whats this line item on the invoce mean",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is vat includ in the invoice total",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "theres a charge i dont recognise on my bil what is it",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "why two diferent rates on one invoice",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "explain the settlment fee on my invoice pls",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czemu suma faktury nie zgadza sie ze sprzedaza",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co znaczy ten skrot na fakturze w pozycji trzeciej",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dlaczego jest oplata stala oprocz procentu na fakturze",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co to za oplata za przewalutowanie na fakturze",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "whats the diference between net and gross here",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "jaka pozycja na fakturze to wasza prowizja",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I've got the invoice open in front of me — what's the third line for?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Mam fakturę przed sobą, do czego jest ta trzecia pozycja?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I found the invoice fine, I just don't get why the fee is this high on it.",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Fakturę już mam, tylko nie rozumiem czemu ta prowizja na niej jest taka wysoka.",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't about where it is — it's downloaded, I need this VAT figure explained.",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o to gdzie jest, mam ją pobraną, wytłumaczcie mi ten VAT.",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "On my invoice the commission line — is that the same 1.5% rate you advertise?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Na fakturze pozycja prowizji — czy to ta sama stawka 1,5% co w cenniku?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The invoice I downloaded shows a fee I want explained, not the general rate.",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Na pobranej fakturze jest opłata, którą chcę zrozumieć, nie ogólną stawkę.",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Why is the amount charged on my invoice not matching the commission percentage you quote?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dlaczego kwota z faktury nie zgadza się z procentem prowizji, który podajecie?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Looking at this specific invoice, what makes the total go above my expected fees?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Patrząc na tę konkretną fakturę, czemu suma przekracza spodziewane opłaty?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The invoice has a line called 'correction' — what got corrected?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Faktura ma pozycję 'korekta' — co zostało skorygowane?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does the invoice amount already have your commission subtracted or is it added?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy kwota na fakturze ma już odjętą prowizję, czy jest ona doliczona?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "On this bill, is line 2 the VAT on the commission or a separate charge?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Na tym rachunku, czy pozycja 2 to VAT od prowizji, czy osobna opłata?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I understand where my invoice is, I just can't read what position 4 refers to.",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem gdzie jest faktura, tylko nie umiem odczytać czego dotyczy pozycja 4.",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The gross on my invoice — how did you get from my sales to that number?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kwota brutto na fakturze — jak z mojej sprzedaży wyszła ta liczba?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My invoice shows a fee for a refund — why am I billed for that on this document?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "vat?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "this line item?",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "co to za pozycja",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "invoice line meaning",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "patrze na te fakture i kompletnie nie rozumiem skad te liczby czemu tyle wyszlo pomozcie bo glowa boli",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "i am staring at my invoice and NONE of these numbers make sense to me what is going on with the totals",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "hej co to znaczy this 'settlement fee' na fakturze thanks",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "why so much na tej fakturze explain pls",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "POZYCJA 3. Co to. Wytłumaczcie.",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "confused invoice numbers wrong help",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "netto?",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "czemu na fakturze tyle wyszlo skoro sprzedalem mniej nic z tego nie rozumiem",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "these invoice lines make zero sense to me",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "vat vat czemu taki duzy na fakturze tlumaczcie",
+   "intent": "invoice_understand",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "explain position two — invoice",
+   "intent": "invoice_understand",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Can I export all my transactions to a CSV for bookkeeping?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I get a full-year summary for my accountant?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need a file with every payment for last year's taxes.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I pull all billing data into a spreadsheet?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an annual report of fees I can hand to accounting?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you generate a yearly summary of all commissions paid?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My accountant wants an export of all invoices and fees together.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I download a report of all transactions for the fiscal year?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I get an XML file for my accounting software?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where's the export for a complete tax-year overview?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need everything from January to December in one download.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you offer a bulk export of billing records?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can I export monthly summaries for the whole year at once?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I schedule an automatic export of billing data to my accountant?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a format I can import straight into my ERP?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want a single document summarizing all charges for 2025.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I get a breakdown of total fees for the year for my books?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I export data filtered by quarter for accounting?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I download the year-end financial summary?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My bookkeeper needs a full transaction list, how do I generate it?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę wyeksportować wszystkie transakcje do CSV dla księgowości?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie pobiorę roczne zestawienie dla księgowej?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję pliku ze wszystkimi płatnościami do rozliczenia rocznego.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wyciągnąć wszystkie dane rozliczeniowe do arkusza?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest roczny raport opłat, który przekażę księgowości?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy możecie wygenerować roczne podsumowanie wszystkich prowizji?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Księgowa chce eksport faktur i opłat razem.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak pobrać raport wszystkich transakcji za rok obrotowy?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dostanę plik XML do programu księgowego?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest eksport pełnego przeglądu za rok podatkowy?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję wszystkiego od stycznia do grudnia w jednym pobraniu.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy oferujecie zbiorczy eksport danych rozliczeniowych?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wyeksportować podsumowania miesięczne za cały rok naraz?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę ustawić automatyczny eksport danych do księgowej?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest format, który zaimportuję prosto do ERP?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę jeden dokument z podsumowaniem wszystkich opłat za 2025.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dostać zestawienie sumy opłat za rok do ksiąg?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę wyeksportować dane filtrowane po kwartale?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie pobiorę roczne podsumowanie finansowe?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Księgowy potrzebuje pełnej listy transakcji, jak ją wygenerować?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wyeksportowac wszystkie transakcje do csv dla ksiegowej",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie pobiore roczne zestawienie do rozliczenia",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "potrzebuje plik ze wszystkimi platnosciami za caly rok",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy jest roczny raport oplat dla ksiegowosci",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ksiegowa prosi export wszystkich faktur i oplat",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak sciagnac raport transakcji za caly rok obrotowy",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy dostane xml do programu ksiegowego",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie eksport za caly rok podatkowy jednym plikiem",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i export all transactons to csv for my accontant",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need a yearly sumary of all fees for bookeeping",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i get an anual report for taxes",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "where to downlod full year export for accouting",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "i need everythin jan to dec in one file",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to exprt monthly sumaries for whole year",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge ustawic automatyczny eksport do ksiegowej",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie pobrac podsumowanie finansowe za rok",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wyciagnac wszystkie dane rozliczeniowe do excela",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "export danych po kwartale dla ksiegowosci jak zrobic",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "bookkeper wants full transaction list how to make it",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "jeden dokument z oplatami za caly 2025 gdzie",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I don't need to match a single payout, I just want the whole year's data for my accountant.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o dopasowanie jednej wypłaty, chcę całoroczne dane dla księgowej.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can I export all settlement and fee data for bookkeeping, not reconcile one transfer?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy mogę wyeksportować wszystkie dane do księgowości, nie rozliczać jednej wypłaty?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "For my accounting, I need a general export of everything, not a specific payout breakdown.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Do księgowości potrzebuję ogólnego eksportu wszystkiego, nie rozbicia konkretnej wypłaty.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My accountant wants a yearly file — is that different from the payout reconciliation report?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Księgowa chce roczny plik — czy to co innego niż raport rozliczenia wypłat?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I just need a bulk export for the books, does it include fees and VAT summarized?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Potrzebuję po prostu zbiorczego eksportu do ksiąg, czy jest tam suma opłat i VAT?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can the accounting export cover the entire year in one file rather than per payout?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy eksport księgowy obejmie cały rok w jednym pliku zamiast per wypłata?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want a tax-year summary of fees, not a line-by-line match of orders to a payout.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę podsumowanie opłat za rok podatkowy, nie dopasowanie zamówień do wypłaty.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there an export meant specifically for the accountant, separate from reconciliation tools?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy jest eksport przeznaczony dla księgowej, osobny od narzędzi rozliczeniowych?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "For year-end books I need all transactions — do I use the same export as reconciling payouts?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Na zamknięcie roku potrzebuję wszystkich transakcji — czy to ten sam eksport co przy wypłatach?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can I hand my accountant one annual CSV instead of reconciling each payout myself?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy mogę dać księgowej jeden roczny CSV zamiast rozliczać każdą wypłatę?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I need the accounting export in JPK format for the Polish tax office.",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Potrzebuję eksportu księgowego w formacie JPK dla urzędu skarbowego.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does the annual summary include all fees, or only completed payouts?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy roczne podsumowanie zawiera wszystkie opłaty, czy tylko zrealizowane wypłaty?",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My accountant asked for a full data dump for the year, where's that export, not the payout report?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "export?",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "csv for accountant",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "eksport do ksiegowej",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "roczne zestawienie???",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ksiegowa mnie zabije potrzebuje wszystkiego za caly rok w jednym pliku a ja nie wiem jak to wyciagnac pomozcie blagam",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "its tax season and i need EVERY single transaction for the whole year in one export can you please just tell me how",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "hej jak wyeksportowac all transactions for accounting thx",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "need export danych do ksiegowosci pls year 2025",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "EKSPORT. Cały rok. Do księgowej. Jak.",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "accountant deadline export all fees now help",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "pobrac wszystko",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie ja wyciagne te wszystkie transakcje za rok bo ksiegowa czeka a termin mija",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "whole year data dump for my books — how",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "eksport eksport caly rok do rozliczenia dajcie plik",
+   "intent": "billing_accounting_export",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "annual fee summary — one file — where",
+   "intent": "billing_accounting_export",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}

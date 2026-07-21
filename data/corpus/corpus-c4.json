@@ -1,0 +1,2998 @@
+{
+ "cases": [
+  {
+   "q": "I got a new phone and now I can't pass two-factor to sign in",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My authenticator was wiped, how do I reset TOTP?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The login screen asks for a code but my app shows nothing",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Every 2FA code I type comes back as invalid",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can I turn off two-step verification temporarily?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Lost my device with the codes, locked out of the panel now",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I deleted the authenticator app by accident, need to restore 2FA",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you send me new backup codes for two-factor?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My time-based codes are out of sync and rejected",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Reinstalled the app and it no longer generates the right numbers",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Phone died permanently, no way to get the verification code",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I move my 2FA to a new phone without the old one?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The SMS with the login code never arrives anymore",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I scanned a new QR but the old account still blocks me",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Need to unlink the authenticator tied to my broken phone",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Two-step keeps failing even with a code straight from the app",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where is the option to reset my second factor?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I can log in with password but the 2FA step won't accept anything",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Got locked out after enabling 2FA on a phone I no longer have",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My colleague set up 2FA and left, how do I regain access?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Authenticator shows a code but your system says it expired instantly",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I recover login if I lost both phone and backup codes?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I changed my SIM and now the one-time code doesn't come",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The 6-digit code is always one step behind, clock issue maybe?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can support disable my 2FA so I can set it up fresh?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "New device, old seed gone, please help me get back in",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Verification app stopped working after the OS upgrade",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I never saved recovery codes and now my phone is bricked",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How to re-pair my authenticator after wiping the handset?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Locked out because the TOTP won't validate, need a reset",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Wymienilem telefon i nie moge przejsc weryfikacji dwuetapowej",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Aplikacja uwierzytelniajaca skasowana, jak zresetowac TOTP?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ekran logowania prosi o kod a apka nic nie pokazuje",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kazdy kod 2FA wychodzi jako nieprawidlowy",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak tymczasowo wylaczyc weryfikacje dwuskladnikowa?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zgubilem urzadzenie z kodami, zablokowany dostep do panelu",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przez przypadek usunalem aplikacje z kodami, trzeba odzyskac 2FA",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mozecie wyslac nowe kody zapasowe do logowania?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kody czasowe rozjechaly sie i sa odrzucane",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przeinstalowalem apke i generuje zle numery",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Telefon padl na amen, nie mam jak dostac kodu weryfikacyjnego",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przeniesc 2FA na nowy telefon bez starego?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "SMS z kodem logowania juz nie przychodzi",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zeskanowalem nowy QR ale stare konto dalej mnie blokuje",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Trzeba odpiac authenticator od zepsutego telefonu",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dwuetapowa ciagle sie wywala mimo swiezego kodu z aplikacji",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest opcja resetu drugiego skladnika?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Haslo dziala ale krok 2FA nic nie akceptuje",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zablokowany po wlaczeniu 2FA na telefonie ktorego juz nie mam",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kolega ustawil 2FA i odszedl, jak odzyskac dostep?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Niemoge sie zalogowac bo kod dwuetpowy nie dziala",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zmienilm telefon i teraz brak dostepu do kodow totp",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "apka autoryzacyjna pokazuje kod ale system mowi ze wygasl",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zresetowac 2fa jak zgubilem telefn i kody zapsowe",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wymiania karty sim i one-time kod juz nie dochdzi",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kod z aplikacj zawsze spozniony, chyba zegar sie rozjechal",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mozecie wylaczyc mi 2fa zebym ustawil od nowa?",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "nowe urzadzenie a ziarno stracone, pomozcie wejsc",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "aplikacja weryfikacyjna przstala dzialac po aktualizacji systemu",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "nie zapisalem kodow odzyskiwania a telefon zabity, co teraz",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I can't get into my account because the second factor won't verify, not the account itself just the 2FA",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is my login blocked or is it just the 2FA code failing? I think it's the code",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Password accepted, only the authentication code step stops me",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a suspension, I simply lost my 2FA device and can't finish login",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My account seems fine but the two-step page keeps looping",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It says login failed but only after the code prompt, account looks active",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o blokade konta, tylko o kod dwuetapowy ktory nie dziala",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Konto nie jest zawieszone, po prostu nie mam dostepu do kodu 2FA",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Haslo przechodzi, dopiero na kroku kodu mnie zatrzymuje",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie zablokowane konto, zgubilem tylko telefon z kodami",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Login works up to the OTP, then it rejects me, device lost not compromised",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My keys are fine, it's the 2FA on the panel login I lost access to",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie wyciekly mi klucze, chodzi wylacznie o utracony 2FA do logowania",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't think I was hacked, I just can't produce the login code anymore",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Account is active per the email, but I'm stuck at two-factor after password",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie ma awarii, tylko ja nie moge przejsc weryfikacji dwuetapowej",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Everything loads, I just can't complete the second step of sign-in",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Reset hasla nie pomoze, problem jest z kodem 2FA a nie haslem",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not that I forgot my password, the authenticator is the blocker",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zmiana hasla przeszla ale i tak zatrzymuje mnie krok z kodem",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Only the TOTP is the issue, my credentials and keys are untouched",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Support said account is fine, so why does 2FA still reject my codes?",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Panel dziala u innych, ja utknalem na kodzie dwuetapowym",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I can reach the login page fine, the two-factor is what's broken",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie phishing, nie wyciek, po prostu apka 2FA nie generuje kodu",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "2FA??",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "kody nie dzialaja pomocy!!!",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "locked out totp gone HELP",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "padl mi telefon i teraz nic te kody boze co ja mam zrobic zeby wejsc na konto bo mam platnosci klientow czekaja a ja utknalem na tym cholernym kodzie ktory sie nie generuje",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "authenticator wiped can't login pls",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "NIE MOGE WEJSC KOD NIE DZIALA",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help 2fa broken new phone no codes what now im panicking",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "totp?? reset??",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "zmienilem fona i cala apka z kodami poszla sie paic teraz loguje sie a on chce kod ktorego nie mam gdzie te backup codes bylo",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "code rejected code rejected code rejected aaaa",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "lost phone lost codes lost mind help me get in",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "weryfikacja dwuetapowa mnie wykancza nie moge nic zrobic",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "new phone old app gone i need in NOW clients waiting",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "kod z apki zly zawsze zly co jest kurcze",
+   "intent": "security_2fa_issue",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "i just want to log in why is 2fa so broken ehh",
+   "intent": "security_2fa_issue",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "My merchant account got frozen overnight, what triggered it?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why can't I accept payments, the panel says account suspended",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What are the reasons you would block a seller account?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My payouts are on hold, is my account restricted?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I logged in fine but everything is greyed out, am I blocked?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Suddenly my account status shows limited, why?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I get my suspended account reinstated?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "You froze my funds without notice, what's the reason?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What documents unblock a restricted merchant account?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My account was disabled, how long to appeal it?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is my account blocked because of a chargeback spike?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Everything worked yesterday, today the account is locked, why?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I find out the reason my account was flagged?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My dashboard shows account under review, what does that mean for me?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Got an email saying my account is restricted, no explanation given",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Who decides to freeze an account and how do I contest it?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My transactions are being declined because the account is on hold",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you tell me why my seller profile was deactivated?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Account suspended for suspicious activity, what activity exactly?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I lift the block on my merchant account?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My withdrawals are blocked, is the whole account frozen?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What compliance issue could freeze my account like this?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need my account unblocked urgently, what's the process?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Why was my account limited right after a big transaction?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The system won't let me operate, says account restricted",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is my account frozen because I changed my bank details?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My account got locked and I have zero idea what I did wrong",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What steps unfreeze a merchant account that was put on hold?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Received account temporarily blocked, temporary for how and why?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My whole account is disabled, not just login, and I want to know why",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Moje konto sprzedawcy zostalo zamrozone w nocy, co to spowodowalo?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dlaczego nie moge przyjmowac platnosci, panel mowi konto zawieszone",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie sa powody blokady konta sprzedawcy?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wyplaty wstrzymane, czy moje konto jest ograniczone?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Loguje sie ale wszystko wyszarzone, czy jestem zablokowany?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nagle status konta pokazuje ograniczone, dlaczego?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przywrocic zawieszone konto do dzialania?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamrozeliscie moje srodki bez ostrzezenia, jaki powod?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dokumenty odblokowuja konto z ograniczeniami?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Konto wylaczone, ile trwa odwolanie?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy konto zablokowane przez wzrost chargebackow?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wczoraj dzialalo, dzis konto zablokowane, dlaczego?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak sprawdzic powod dla ktorego konto zostalo oznaczone?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Panel pokazuje konto w trakcie weryfikacji, co to znaczy dla mnie?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostalem maila ze konto ograniczone, bez wyjasnienia",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kto decyduje o zamrozeniu konta i jak to zakwestionowac?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Transakcje odrzucane bo konto wstrzymane",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mozecie powiedziec czemu profil sprzedawcy dezaktywowany?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Konto zawieszone za podejrzana aktywnosc, jaka dokladnie?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zdjac blokade z konta sprzedawcy?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czemu moje konto zablokwane nagle nie wiem o co chodzi",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wyplaty zamrozne a ja nic nie zrobilem, jaki powod?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "konto zawiesznoe i nie moge przyjmowac kasy, jak odblkowac",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dostalem info ze konto ograniczne, za co?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "panel mowi konto pod przegladem co mam teraz zrobic",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czmu zablokwaliscie mi wyplaty bez slowa",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "konto disabled po duzej transkacji, dlczego",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak odmrozic konto ktore wsadziliscie na hold",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "status konta ograniczony od rana, co sie dzieje",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "moje cale konto wylaczone chce wiedziec dlaczego i jak wrocic",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I can log in fine but the account itself is frozen, not a 2FA thing",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't about verification time, my active account got blocked",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not an outage, only my account is suspended while others work",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a code problem, the account is flagged and won't let me operate",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My 2FA works, I'm inside, but the account shows restricted, why?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Account already activated months ago, now suddenly it's blocked, reason?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o logowanie 2FA, samo konto jest zamrozone",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie kwestia czasu aktywacji, moje dzialajace konto zablokowano",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie awaria u was, tylko moje konto jest zawieszone",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Kod dwuetapowy dziala, wchodze, ale konto pokazuje ograniczone",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Konto dawno aktywne, teraz nagle blokada, jaki powod?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Others' payments go through, only my account is on hold, why me?",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "U innych platnosci przechodza, tylko moje konto wstrzymane, czemu?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I got in past login, it's the account status that's blocking payments",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Weszlem normalnie, to status konta blokuje platnosci a nie logowanie",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking how to reach support, asking why the account is frozen",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam jak sie skontaktowac, pytam czemu konto zamrozone",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My login is fine, it's specifically the account being suspended",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Moje logowanie ok, chodzi konkretnie o zawieszenie konta",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "This is a block on the account, not a general service failure",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Konto zablokowane to nie to samo co awaria systemu, co z moim?",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Password and 2FA pass, then it says account restricted, the account itself",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Haslo i 2FA przechodza, potem mowi konto ograniczone, samo konto",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not that activation is pending, it was active and got frozen",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie oczekiwanie na aktywacje, konto bylo czynne i je zamrozono",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "zablokowane??",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "why frozen?!?!",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "konto padlo blokada pomocy",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "nagle wszystko stoi konto zawieszone bez powodu klienci nie moga placic ja nie wiem co zrobilem zle blagam wytlumaczcie za co ta blokada bo firma stoi",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "account suspended no reason HELP",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ZA CO BLOKADA KONTA",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "frozen account cant sell losing money why why why",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "blokada?? odblokujcie??",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "logowanie dziala 2fa dziala a mimo to konto zamrozone i nikt nic nie mowi za co jak dlugo co ja mam zrobic zeby wrocic do przyjmowania platnosci",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "account limited randomly panicking what did i do",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "unblock me please account frozen business dying",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "konto zawieszone od rana i cisza z waszej strony",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "suspended suspended suspended and no email why",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "moje konto zablokowane a ja nic nie rozumiem za co to",
+   "intent": "account_blocked_why",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "why is my account locked i did nothing wrong ughh",
+   "intent": "account_blocked_why",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Is your payment gateway having an outage right now?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "None of my customers can pay, is kremzaPay down?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The dashboard won't load at all, is it on your end?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payments have been failing for everyone since this morning, outage?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are your servers down? Every transaction is timing out",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a system-wide problem, nothing is going through?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My whole checkout is broken, is the gateway offline?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a status page to check if you're up?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "All payments stuck across all my stores, is it you?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The panel returns 503, are you experiencing downtime?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the API down? Every call fails right now",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customers report the payment page is blank, is it an outage?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Everything froze at once, is kremzaPay currently unavailable?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are payments delayed system-wide at the moment?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Half my transactions vanished mid-processing, is there a fault?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the gateway experiencing issues today?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My site can't reach your servers, is there an incident ongoing?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Nothing loads on your side, are you having technical problems?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is it just me or is the whole platform down?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Massive payment failures right now, is this a known outage?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The checkout button spins forever, is your service up?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are you offline? My customers are all getting errors",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there maintenance happening that's blocking payments?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Every single order fails to process, is the system down?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a live outage right now affecting transactions?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The admin panel is completely unresponsive, is it your side?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "All my clients calling that payments don't work, outage on your end?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the gateway timing out for everyone or just my account?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Sudden total failure of payments, are you experiencing an outage?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Website says gateway unavailable, is that a global problem?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy wasza bramka ma teraz awarie?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zaden klient nie moze zaplacic, kremzaPay padlo?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Panel w ogole sie nie laduje, to po waszej stronie?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Platnosci od rana nie przechodza u nikogo, awaria?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Serwery padly? Kazda transakcja sie wywala",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest ogolny problem, nic nie przechodzi?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Caly checkout nie dziala, bramka offline?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Macie strone statusu zeby sprawdzic czy dzialacie?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wszystkie platnosci stoja we wszystkich sklepach, to wy?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Panel zwraca 503, macie przestoj?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "API padlo? Kazde zapytanie sie wywala",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klienci pisza ze strona platnosci jest pusta, awaria?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wszystko zamarzlo naraz, kremzaPay niedostepne?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy platnosci sa opoznione w calym systemie?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Polowa transakcji zniknela w trakcie, jest usterka?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy bramka ma dzis problemy?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Moja strona nie moze polaczyc sie z serwerami, trwa incydent?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nic sie nie laduje u was, macie problemy techniczne?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "To tylko u mnie czy cala platforma padla?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Masowe bledy platnosci, znana awaria?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy macie awarie bo nic nie przchodzi od godziny",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "panel sie nie laduje w ogole to u was czy u mnie",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wszystke platnosci stoja u wszystkich klientow, padlo?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "serwery leza? kazda transkacja timeout",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "bramka nie dziala caly sklep stoi to wasza strona?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy jset awaria platnosci teraz bo klienci dzwonia",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "api sie wywala non stop, macie przstoj?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "strona platnsci pusta u klientow, awaria u was?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wszystko padlo naraz jestescie online w ogole",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "nagle zero platnosci u wszystkich to globalny problem?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Not reporting a bug, just asking, is the service down right now?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't need the support number, I need to know if there's an outage",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't one missing payment, ALL of them fail, is it an outage?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Before I file a ticket, is this a known system-wide failure?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is it a general outage or should I report my specific issue?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie zglaszam bledu, pytam tylko czy macie teraz awarie",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o jedna transakcje, wszystkie padaja, to awaria?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim zaloze zgloszenie, czy to znana awaria systemu?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To awaria ogolna czy mam zglaszac swoj przypadek osobno?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie potrzebuje kontaktu do supportu, chce wiedziec czy jest przestoj",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Every merchant seems affected, is this global or should I open a ticket?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is this an outage or is just my single transaction not showing up?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy to awaria czy tylko moja jedna platnosc nie widnieje?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a support-hours question, is the platform actually down now?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wszyscy sprzedawcy dotknieci, to globalne czy mam pisac zgloszenie?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My one payment missing is different, here EVERYTHING is down, right?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Moja jedna brakujaca platnosc to co innego, tu wszystko lezy, tak?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm not asking how to contact you, just confirm if there's downtime",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam jak sie kontaktowac, potwierdzcie tylko czy jest awaria",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Should I wait for the outage to end or report each failed order?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czekac az awaria minie czy zglaszac kazde nieudane zamowienie?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the whole gateway offline, or do I need to raise an incident?",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Cala bramka offline czy mam zglosic incydent?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Confirm outage first, then I'll decide whether to file a report",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Najpierw potwierdzcie awarie, potem zdecyduje czy skladac zgloszenie",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "padlo??",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "awaria?!",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "down right now???",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ludzie u was pozar wszystko stoi ani jedna platnosc nie idzie klienci wydzwaniaja sklep martwy od dwudziestu minut powiedzcie czy to awaria bo ja juz nie wyrabiam",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "is kremzapay dead rn",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "NIC NIE DZIALA AWARIA?!",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "everything down payments dead help is it you",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "przestoj?? status??",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "caly sklep stoi nic nie przechodzi panel nie laduje api timeout wszystko naraz to musi byc u was awaria prawda prawda?",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "outage outage everything failing aaaa",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gateway offline my shop is frozen whats happening",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "czy wy w ogole zyjecie bo nic nie dziala",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "down down down all payments failing why",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "macie awarie tak czy nie szybko prosze",
+   "intent": "service_down_question",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "no payments going through anywhere is it an outage or what",
+   "intent": "service_down_question",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "What's the best way to get in touch with your support team?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a phone number for customer service?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What are your support opening hours?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a live chat with a real agent?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which email should I write to for help?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you offer support on weekends?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's your typical response time for inquiries?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a helpline I can call during business hours?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I reach a human at kremzaPay?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the SLA on support replies?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I contact support in English or only Polish?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have support outside of 9 to 5?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I find your contact details?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a way to talk to someone right away?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What channels can I use to reach your help desk?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you provide 24/7 assistance?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How quickly do you usually answer emails?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a WhatsApp or messenger for support?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What number do I dial for urgent help?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are your consultants available on public holidays?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Whom do I email about my account questions?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a dedicated line for merchants?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the fastest channel to reach your team?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I schedule a call with a support rep?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a contact form somewhere on the site?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I get priority support if I'm on a paid plan?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What times can I reach a consultant by phone?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you answer messages on social media?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is email the only way or is there a hotline too?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When is your support desk actually staffed?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak najlepiej skontaktowac sie z waszym zespolem wsparcia?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Macie numer telefonu do obslugi klienta?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest czat na zywo z prawdziwym konsultantem?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Na jaki adres mailowy pisac po pomoc?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy oferujecie wsparcie w weekendy?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest typowy czas odpowiedzi na zapytania?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest infolinia w godzinach pracy?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dotrzec do zywego czlowieka w kremzaPay?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie macie SLA na odpowiedzi supportu?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Moge pisac po angielsku czy tylko po polsku?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Macie wsparcie poza godzinami 9 do 17?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie znajde wasze dane kontaktowe?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da sie z kims porozmawiac od reki?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakimi kanalami moge dotrzec do pomocy?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest pomoc 24 na dobe?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak szybko zwykle odpowiadacie na maile?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest WhatsApp albo messenger do supportu?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Pod jaki numer dzwonic w pilnej sprawie?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy konsultanci sa dostepni w swieta?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak sie z wami skntaktowac macie telefn?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "w jkich godzinach dziala pomoc techniczna",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "na jaki mail pisac zeby ktos odpisal szybko",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy jest infolina w weekend czy tylko w tygodniu",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak dogadac sie z zywym czlwiekiem u was",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "macie czat na zywo czy tylko formularz",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki numer do was zeby zadzwonic w pilnej sprwie",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy odpowiadacie na wiadmosci w soboty",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie sa wasze dane kontkatowe na stronie",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile sie czeka na odpowiedz od supprtu zwykle",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I don't want to file a ticket yet, just how do I reach you?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not reporting an incident, just asking for your contact info",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there an outage? No, I only need your support hours",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "How do I contact you, separate from opening a formal report?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Before I describe my problem, where do I even send it?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chce jeszcze skladac zgloszenia, jak sie z wami skontaktowac?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie zglaszam incydentu, pytam tylko o dane kontaktowe",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie o awarie chodzi, potrzebuje tylko godzin pracy supportu",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak sie z wami skontaktowac, niezaleznie od formalnego zgloszenia?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim opisze problem, gdzie w ogole to wyslac?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I just need the phone number, not the incident procedure",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Potrzebuje tylko numeru telefonu, nie procedury zgloszenia",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where's your contact page, I'm not opening a bug report",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdzie jest strona kontaktowa, nie zglaszam bledu",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just tell me the channels to reach you, not how to log an issue",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Powiedzcie tylko jak do was dotrzec, nie jak zglaszac problem",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How and when can I reach a person, regardless of any outage?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak i kiedy dotrzec do czlowieka, niezaleznie od awarii?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm not describing a fault, I want your general helpline",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie opisuje usterki, chce ogolna infolinie",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Which address do I use to contact you, not the ticket system",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ktory adres sluzy do kontaktu, nie system zgloszen",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do you have hours listed anywhere, so I know when to call?",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Macie gdzies podane godziny, zebym wiedzial kiedy dzwonic?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Just the way to reach support, I'll explain the problem later",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "kontakt?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "telefon do was?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how reach support",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "sluchajcie potrzebuje z kims pogadac ale nie wiem gdzie pisac ani dzwonic macie jakis numer maila cokolwiek bo blokuje sie i nie wiem gdzie szukac pomocy u was",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "support number pls",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "GDZIE DO WAS PISAC",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "need a human where do i call ehh",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "godziny? mail? telefon?",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chcialbym sie z wami jakos skontaktowac ale na stronie nic nie widze ani telefonu ani czatu ani maila gdzie wy w ogole jestescie jak was zlapac",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "contact contact how contact",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "is there a phone or just email tell me",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jak sie dodzwonic do was pomocy",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "reach you how?? hours??",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "macie infolinie czy nie no jak",
+   "intent": "support_contact_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "someone to talk to where",
+   "intent": "support_contact_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "What information should I include when reporting a bug?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I open a proper support ticket for a technical issue?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What logs do you need to investigate a failed transaction?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How should I structure an incident report so you can act fast?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I submit a detailed problem description?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What details make a good bug report for your team?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a template for reporting technical incidents?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I attach transaction IDs and logs to a report?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the correct way to escalate a technical problem?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which fields must I fill in when filing an issue?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I report an error with all the right diagnostics?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What data helps you reproduce the problem I'm seeing?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Should I include request and response payloads in my report?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I properly document a payment failure for you?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where can I upload logs when opening a ticket?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the format you prefer for incident submissions?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I file a bug so it doesn't get bounced back for more info?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What timestamps and IDs should accompany my report?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I report an integration error the right way?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What should a complete incident ticket contain?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you want screenshots or just the raw logs in a report?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I lodge a formal complaint about a technical fault?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the process to report a reproducible bug step by step?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How detailed should my error report be to get resolved quickly?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I describe the issue and paste the error codes?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I open a case and track its progress?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What must I provide so you can debug my failed API call?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I submit a technical issue with reproduction steps?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which reference numbers do you need in a problem report?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I report this so it reaches the right technical team?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie informacje dolaczyc przy zglaszaniu bledu?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zalozyc porzadne zgloszenie dla problemu technicznego?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie logi potrzebujecie do zbadania nieudanej transakcji?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ulozyc opis incydentu zebyscie szybko zadzialali?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie przeslac szczegolowy opis problemu?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie szczegoly tworza dobre zgloszenie bledu?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Macie szablon do zglaszania incydentow technicznych?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dolaczyc identyfikatory transakcji i logi do zgloszenia?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak poprawnie eskalowac problem techniczny?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ktore pola musze wypelnic przy skladaniu zgloszenia?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zglosic blad z wlasciwymi danymi diagnostycznymi?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dane pomoga wam odtworzyc moj problem?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dolaczyc payloady zapytan i odpowiedzi do zgloszenia?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dobrze udokumentowac dla was nieudana platnosc?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie wgrac logi przy otwieraniu zgloszenia?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki format zgloszen preferujecie?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zglosic blad zeby nie odbil sie po wiecej informacji?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie znaczniki czasu i ID dolaczyc do zgloszenia?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak poprawnie zglosic blad integracji?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co powinno zawierac kompletne zgloszenie incydentu?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie info dac przy zglaszniu bledu zebyscie ogarneli",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zalozyc porzdne zgloszenie techniczne u was",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie logi wam wyslac zeby zbadac padnieta transkacje",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie wgrac logi przy otwieraniu ticketa",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak eskalowac problem zeby trafil do wlasciwych ludzi",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ktore pola wypelnic w zgloszniu problemu",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak opisac blad zeby nie odbijac sie od scian",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jakie id i timestampy dolczyc do zgloszenia",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "macie wzor zgloszenia incydntu technicznego",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "co ma zawierac dobre zgloszenie zeby szybko naprawili",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Not asking your hours, how do I structure the report itself?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I know how to reach you, but what should the ticket contain?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there an outage? No, I want to file my own incident properly",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Beyond the contact email, what details go into the report?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I have your number, now what info do I give when I call it in?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam o godziny, jak zbudowac samo zgloszenie?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem jak sie kontaktowac, ale co ma zawierac zgloszenie?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie awaria, chce poprawnie zlozyc wlasne zgloszenie",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Poza mailem kontaktowym, jakie szczegoly wpisac w zgloszenie?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Mam wasz numer, jakie dane podac gdy zadzwonie ze sprawa?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a general question of where you are, what data does the ticket need?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi gdzie jestescie, jakich danych wymaga zgloszenie?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I can contact you fine, I just need the reporting format",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Kontakt mam, potrzebuje tylko formatu zgloszenia",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "This isn't downtime, I need to log a specific reproducible bug",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie przestoj, chce zglosic konkretny odtwarzalny blad",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Once I've reached support, what makes a report complete?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdy juz dotre do supportu, co czyni zgloszenie kompletnym?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not about opening hours, about what logs to attach to a case",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie o godzinach, o tym jakie logi zalaczyc do sprawy",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't need the phone line, I need the incident checklist",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie potrzebuje numeru, potrzebuje listy do zgloszenia incydentu",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Separate from contacting you, how do I document the fault itself?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Niezaleznie od kontaktu, jak udokumentowac sama usterke?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Assuming it's not an outage, how do I report my one bug cleanly?",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "jak zglosic blad?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "co dolaczyc do zgloszenia?",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how report bug properly",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "mam blad w integracji i chce go zglosic ale nie wiem co wam wyslac jakie logi id timestampy screeny zeby nie odsylali mnie po wiecej danych i zeby od razu ogarneli o co chodzi jak to zrobic dobrze",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "what logs you need for a ticket",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "JAK POPRAWNIE ZGLOSIC INCYDENT",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "bug report format? what to include? help",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zgloszenie?? logi?? co dac??",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chce opisac ten blad tak dokladnie zeby raz a dobrze ale kompletnie nie wiem od czego zaczac co wkleic jakie numery transakcji jakie logi w jakiej kolejnosci pomozcie ulozyc",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how do i file this properly ehh",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ticket ticket what fields do i fill",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jakie dane do zgloszenia zebyscie naprawili szybko",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "report an incident how what info aaa",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "co wpisac zeby zgloszenie mialo rece i nogi",
+   "intent": "incident_report_how",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "need to log a bug what exactly do you want from me",
+   "intent": "incident_report_how",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}

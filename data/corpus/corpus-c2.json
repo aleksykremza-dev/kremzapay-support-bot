@@ -1,0 +1,2398 @@
+{
+ "cases": [
+  {
+   "q": "Do you have a plugin for WordPress?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where can I download the kremzaPay module for OpenCart?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need a ready made extension for my Shopify store",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a Joomla component for accepting payments?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I embed a payment button widget without coding?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I connect the plugin to my WooCommerce checkout?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does your SDK support React Native apps?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which plugin works with WooCommerce Subscriptions?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I installed the module but the payment option is missing at checkout",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a Wix app for your gateway?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I add the drop in widget to my landing page?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you provide a plugin for Drupal Commerce?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where is the configuration screen for the PrestaShop module?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I just paste an embed snippet instead of building the API?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an official Magento 2 extension?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I update the plugin to the latest version?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The Shopify app installed but I see no payment method",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a plugin compatible with WooCommerce HPOS?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which folder do I upload the PrestaShop module to?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a Squarespace integration widget?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I enable your payment gateway inside the WooCommerce settings?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you ship a JavaScript SDK I can drop into my site?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a plugin for BigCommerce?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "After installing the module nothing shows on the payment page",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I use your widget on a plain HTML site?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I get the .zip of the WooCommerce plugin?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a Ghost integration for donations?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the plugin support guest checkout out of the box?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I configure test mode inside the plugin?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a plugin for Laravel or a package on Packagist?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy macie wtyczkę do WordPressa?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie pobrać moduł do OpenCart?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak podłączyć wtyczkę do koszyka WooCommerce?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest gotowy widget do wklejenia na stronę?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zainstalowałem moduł, ale nie widzę metody płatności przy kasie",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy istnieje oficjalne rozszerzenie do Magento 2?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaktualizować wtyczkę do najnowszej wersji?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy macie aplikację do Wix?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w module PrestaShop jest ekran konfiguracji?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest paczka na Composer do Laravela?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Macie jakas wtyczke pod WooCommerce?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie sciagne modul do PrestaShop?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zainstalowalem wtyczke ale przycisk platnosci sie nie pokazuje",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest integracja pod Shopify gotowa do wklejenia?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wgrac modul do Magento, bo cos nie dziala",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy macie widzet ktory wkleje na strone bez kodowania?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuje gotowego pluginu, nie chce pisac tego recznie",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak skonfigurowac wtyczke woo zeby dzialala w trybie testowym",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Macie sdk do aplikacji mobilnej androidowej?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest paczka zip z wtyczka do wordpresa",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wgralem modul do opencart ale nic sie nie zmienilo w kasie",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest wtyczka kompatybilna z najnowszym woocommerce",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki plugin pasuje do prestashop 8",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nie widze ustawien wtyczki w panelu sklepu, gdzie one sa",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da sie wstawic wasz przycisk platnosci na zwyklym html",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Szukam modulu do drupala, macie cos takiego",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dodac wasz widget do strony na wix",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Instaluje wtyczke ale wywala blad przy aktywacji",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy macie gotowy komponent pod joomle",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuje wtyczki pod sklep na presta, gdzie ja znajde",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Does the WooCommerce plugin handle the whole transaction flow for me or do I still call the API?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Once the plugin is installed, do I still need to register transactions myself?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy wtyczka do PrestaShop sama obsługuje całą sesję płatności?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where in the plugin settings do I paste my merchant_id and api_key?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdzie w konfiguracji wtyczki wpisać klucze API?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does the Shopify app do the signature calculation automatically?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy moduł Magento sam liczy podpis, czy muszę coś kodować?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If I use your plugin do I still need to set up webhooks manually?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przy wtyczce muszę ręcznie ustawiać powiadomienia, czy ona robi to sama?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want the drop in widget so I don't have to code the API calls myself",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę gotowy moduł, żeby nie ogarniać całego flow płatności ręcznie",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does the plugin cover redirect to the gateway automatically?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Po instalacji wtyczki czy muszę jeszcze weryfikować status transakcji sam?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Which is easier for my WooCommerce store, the plugin or coding the API directly?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy lepiej użyć waszej wtyczki, czy pisać integrację API od zera?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The plugin asks for keys, does it also handle the payment confirmation for me?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy wtyczka sama przekierowuje klienta do bramki po utworzeniu zamówienia?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "With the SDK widget, do I still manage the session token myself?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy używając widgetu muszę sam ogarniać token sesji?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does installing the Magento extension replace writing the API integration entirely?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zainstaluję moduł i to wystarczy, czy trzeba jeszcze coś dopisać w API?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does your plugin need my API keys or does it configure them for me?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy wtyczka pobiera klucze sama z panelu, czy muszę je wkleić?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I have the plugin installed but it wants a crc_key field, is that normal setup?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wtyczka prosi o crc_key przy konfiguracji, czy to normalny krok instalacji?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wtyczka?",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Plugin WooCommerce???",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "SDK?",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "eh, ta wasza wtyczka do woo nie chce sie w ogole zainstalowac, probowalem trzy razy, kasowalem, wgrywalem od nowa, restartowalem sklep i dalej nic, co ja robie zle na litosc boska",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help installing plugin plz",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Hej mam sklep na prestashop i chcialbym u was platnosci ale nie wiem od czego zaczac czy jest jakas gotowa wtyczka bo kodzic nie umiem w ogole a klient czeka",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "moduł magento nie działa pomocy",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "can u send me the woocommerce plugin zip link asap need it today",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ni cholery ta wtyczka, caly dzien z nia siedze i przycisk sie nie pokazuje, wkurzajace to strasznie",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "shopify app where",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Dzien dobry, prosze o pomoc, probuje wgrac wasz modul platnosci do sklepu opencart ale kompletnie sie na tym nie znam, moze ktos mnie poprowadzic krok po kroku bo sie gubie",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "widget embed how",
+   "intent": "plugin_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "mam woo i chce plugin, gdzie klikac, help",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "instalacja wtyczki krok po kroku prosze bo pierwszy raz",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "plugin do presta pls, szybko, klient dzwoni",
+   "intent": "plugin_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "What does HTTP 503 mean from your API?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I keep hitting a 429, how many requests per second are allowed?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the rate limit on the transaction endpoint?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Error code 401 keeps showing up, what does it indicate?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I switch from the sandbox to the live environment?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What is the base URL for the production API?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a burst limit or just a per minute cap?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My request returns 400 but no clear reason, where's the error list?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do sandbox and production share the same rate limits?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does error 422 mean in your responses?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long is the ban after too many 429 responses?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where can I find a full list of your API error codes?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the sandbox slower than production on purpose?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the daily quota for API calls?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I get a 500 sometimes, is that on your side?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the rate limit reset every minute or is it a rolling window?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Which endpoint URL do I use for testing vs going live?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What response code means the transaction id was not found?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Are there different limits for verified and unverified merchants?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I read the Retry-After header you send?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does a 403 mean if my keys are correct?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a sandbox for testing before production?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My prod key returns 401 but sandbox works, why?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the maximum payload size before you reject with an error?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you return error details in JSON or just a code?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Getting error code 409, what conflict does that mean?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many concurrent connections can I open?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a separate rate limit for the status check endpoint?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What HTTP status do you return when I exceed the quota?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I move my integration from test mode to live?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Co oznacza błąd 429 z waszego API?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest limit zapytań na sekundę?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie znajdę pełną listę kodów błędów?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przełączyć się z sandboxa na produkcję?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest adres bazowy dla środowiska produkcyjnego?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostaję błąd 400, gdzie sprawdzić co oznacza?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy limity są takie same na sandboxie i produkcji?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co znaczy kod 503 w odpowiedzi API?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Na jak długo blokujecie po przekroczeniu limitu?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile requestów dziennie mogę wysłać?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co oznacza kod bledu 401 u was?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile zapytan na minute moge wyslac zanim dostane 429?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przelaczyc integracje z testu na produkcje?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest lista wszystkich kodow bledow api?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostaje ciagle 429, jaki macie limit",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki url produkcyjny, bo mam tylko sandboxowy",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co znaczy blad 500, to po waszej stronie czy mojej",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy sandbox ma inne limity niz produkcja",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Na ile mnie blokujecie jak przekrocze limit zapytan",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostalem kod 403 mimo ze klucze sa dobre, o co chodzi",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile polaczen jednoczesnych moge otworzyc",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest maksymalny rozmiar requestu zanim odrzucicie",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wywala mi 422, co to za blad",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie sprawdze co oznacza dany kod odpowiedzi",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy limit resetuje sie co minute czy to okno przesuwne",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Testuje na sandboxie, jaki jest adres produkcyjny",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co robic jak ciagle leci 503 z waszego api",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy sa rozne limity dla zweryfikowanych i nie",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dostaje blad ale nie wiem co znaczy ten numer",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak odczytac naglowek retry-after ktory wysylacie",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I get a 400 error, is that a rate limit or a signature problem?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostaję 400, to limit zapytań czy błąd podpisu?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does exceeding the rate limit also cause signature mismatch errors?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przekroczenie limitu może zwracać błąd wyglądający jak zły podpis?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a 401 about wrong keys or about rate limiting?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy 401 to kwestia kluczy czy limitów?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My webhook endpoint gets 429 from you, is that the same API rate limit?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy webhooki też podlegają temu samemu limitowi zapytań?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "When you retry a webhook, does that count against my rate limit?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy ponawiane webhooki liczą się do mojego limitu zapytań?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What error code do you return if my signature is wrong, is it in the same list?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaki kod błędu dostanę przy złym podpisie i czy jest na tej samej liście?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a 403 a blocked IP for webhooks or a general API error?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy 403 oznacza zablokowane IP dla webhooków czy ogólny błąd API?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Sandbox returns a different error than production for the same call, why?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Sandbox zwraca inny błąd niż produkcja przy tym samym zapytaniu, czemu?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does the rate limit differ between the webhook confirmations and normal API calls?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy limit jest inny dla potwierdzeń webhook a normalnych wywołań API?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I get error 429 only in production, not sandbox, is the limit lower live?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dostaję 429 tylko na produkcji, czy limit jest tam niższy?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Which error code means too many requests versus which means bad payload?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Który kod to za dużo zapytań, a który zły payload?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does switching to production change my rate limit compared to sandbox?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przejście na produkcję zmienia mój limit względem sandboxa?",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is a timeout on your side counted as a 5xx error or a rate limit?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "429?",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Blad 500 co robic",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ej ludzie dostaje ciagle 429 i 503 na zmiane, raz przechodzi raz nie, klienci nie moga placic, nie wiem czy to limit czy awaria, pomozcie bo trace kase",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "rate limit help",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Dostaje jakis kod, nie wiem co to znaczy, cos sie sypie, ratujcie",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "sandbox vs prod url???",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "why 401 aaaa my keys are correct i swear i checked ten times",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ile tego limitu bo mi caly czas wywala i szlag mnie trafia z tym",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "error 400 meaning pls",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "production base url gdzie, potrzebuje na juz bo wchodzimy live jutro",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "503 znowu",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "help too many requests error what do",
+   "intent": "api_errors_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jaki limit requestow na minute, krotko",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "dostaje 429 non stop kurde co jest",
+   "intent": "api_errors_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I open a merchant account with you?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What documents do I need to verify my business?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to start accepting card payments, how do I sign up?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you need my company registration papers for onboarding?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the process to become a verified merchant?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do sole proprietors need different documents than companies?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where do I upload my KYC documents?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I register with just my tax ID or do you need more?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What paperwork proves my business is legitimate for you?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I create a seller account from scratch?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you require a bank statement during registration?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is a passport enough for identity verification?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What are the steps to onboard as a new merchant?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I need to submit proof of business address?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I begin the verification process for my shop?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can a foreign company register as a merchant?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What ID documents does KYC require for the owner?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I need a NIP and a REGON to sign up?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where's the merchant sign up form?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What info about beneficial owners do you collect?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I register as a freelancer without a company?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you need a scan of the articles of association?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I apply to accept payments on my website?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's required to complete business verification?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I have to provide a utility bill for address proof?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I sign up if I run a nonprofit?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What documents do you accept for KYC of a limited company?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I register first and verify later, or both at once?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I start onboarding before my company is fully registered?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the first step to becoming a kremzaPay merchant?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak założyć konto sprzedawcy u was?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dokumenty są potrzebne do weryfikacji firmy?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę zacząć przyjmować płatności, od czego zacząć?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jednoosobowa działalność potrzebuje innych dokumentów niż spółka?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie przesłać dokumenty do weryfikacji KYC?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy wystarczy NIP, czy potrzebujecie czegoś więcej?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie kroki trzeba przejść, żeby zostać zweryfikowanym sprzedawcą?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy do rejestracji potrzebny jest wyciąg bankowy?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie znajdę formularz rejestracji sprzedawcy?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dokumenty tożsamości wymaga KYC dla właściciela?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zalozyc konto sprzedawcy zeby przyjmowac platnosci",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie papiery trzeba dac do weryfikacji dzialalnosci",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce sie zarejestrowac jako sprzedawca, gdzie zaczac",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy do rejestracji wystarczy nip i regon",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie wgrywa sie dokumenty do kyc",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam jdg, jakie dokumenty musze zlozyc do weryfikacji",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy potrzebujecie skanu umowy spolki przy rejestracji",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przejsc proces weryfikacji firmy krok po kroku",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy obca firma moze zalozyc u was konto sprzedawcy",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuje dowodu adresu firmy, jaki dokument sie nadaje",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak zaczac przyjmowanie platnosci na mojej stronie",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie jest formularz zeby sie zapisac jako sprzedawca",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy freelancer bez firmy moze zalozyc konto",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dane o wlascicielach zbieracie przy rejestracji",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Rejestruje sie pierwszy raz, co dokladnie trzeba przygotowac",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy wystarczy dowod osobisty do potwierdzenia tozsamosci",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Prowadze fundacje, jak zalozyc u was konto",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Musze podac wyciag z konta przy zakladaniu konta?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jakie dokumenty akceptujecie przy weryfikacji spolki z oo",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chce zalozyc konto ale nie wiem jakie dokumenty przygotowac",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I'm registering now, which documents do I upload to speed up verification?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Rejestruję się teraz, jakie dokumenty wgrać, żeby weryfikacja poszła sprawnie?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What do I need to submit so my account can be verified at all?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Co muszę złożyć, żeby konto w ogóle mogło przejść weryfikację?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "During sign up, does the main owner register first before adding staff?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przy rejestracji najpierw zakłada konto właściciel, a potem dodaje pracowników?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To register, do I need documents for every team member or just me?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy do rejestracji potrzebne są dokumenty każdej osoby, czy tylko moje?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Before activation, which KYC papers must be complete?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jakie dokumenty KYC muszą być kompletne, zanim konto zostanie aktywowane?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What documents are required so verification doesn't get rejected?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jakie dokumenty złożyć, żeby weryfikacja nie została odrzucona?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I want to register the company and set myself as the owner, what docs?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę zarejestrować firmę i ustawić siebie jako właściciela, jakie dokumenty?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I complete KYC first and then invite my accountant, or the reverse?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy najpierw robię KYC, a potem zapraszam księgową, czy odwrotnie?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the document checklist to finish onboarding as a merchant?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaka jest lista dokumentów, żeby dokończyć onboarding sprzedawcy?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To get verified, do you need documents from the beneficial owner too?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy do weryfikacji potrzebujecie też dokumentów beneficjenta rzeczywistego?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Which documents make registration go through the first time?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jakie dokumenty sprawią, że rejestracja przejdzie za pierwszym razem?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I'm onboarding a spolka z o.o., what exactly must I prepare to be approved?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Onboarduję spółkę z o.o., co dokładnie przygotować, żeby zostać zaakceptowanym?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What identity proof does the primary account holder need to register?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Rejestracja?",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "KYC docs?",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Jak zalozyc konto",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "dzien dobry chcialbym zaczac przyjmowac u was platnosci mam mala firme jednoosobowa i kompletnie nie wiem jakie dokumenty przygotowac ani gdzie sie w ogole rejestruje moze ktos podpowie od czego zaczac",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "sign up merchant how",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Chce sie zapisac jakie papiery potrzebne szybko powiedzcie",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "what documents for kyc",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "mam firme chce konto sprzedawcy jakie dokumenty dawac help",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Wkoncu chce ruszyc ze sprzedaza ale ta rejestracja mnie przeraza, tyle dokumentow, od czego zaczac na litosc boska",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "register company account plz",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jakie dokumenty do weryfikacji, jdg, krotko prosze",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "onboarding merchant steps???",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "gdzie sie zapisac zeby brac platnosci na stronie",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "chce konto, jakie dokumenty, jdg jednoosobowa",
+   "intent": "account_register_kyc",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how to become merchant need list of papers asap",
+   "intent": "account_register_kyc",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "How long does account activation usually take?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I submitted my documents, when will I hear back?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many days until my merchant account is active?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the typical verification turnaround time?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When can I start accepting payments after signing up?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is verification instant or does it take a few days?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long before my KYC is approved?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I applied last week, is that a normal wait?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the SLA for merchant verification?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does activation take longer for companies than sole traders?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How soon after uploading docs is the account live?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a faster track to get verified quicker?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My account still says pending, how long is that expected?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When does the review of my documents finish?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many business days for approval on average?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is verification quicker if I submit everything at once?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When will my account switch from pending to active?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long does the compliance check take?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I've been waiting three days, is something wrong or is that normal?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the average time to go live?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does weekend submission delay activation?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long until I can process my first transaction?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is same day activation possible?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When should I expect the verification email?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long are documents usually under review?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Any idea how many days until my shop is approved?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the wait time before I can accept cards?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you activate accounts faster during business hours?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long does the final approval step take?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "When will my status change after I submitted everything?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Ile czasu zajmuje aktywacja konta u was?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Złożyłem dokumenty, kiedy dostanę odpowiedź?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Po ilu dniach konto będzie aktywne?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy będę mógł zacząć przyjmować płatności?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile zwykle trwa weryfikacja sprzedawcy?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy aktywacja jest natychmiastowa, czy trwa kilka dni?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak długo trwa zatwierdzenie KYC?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Konto ciągle jest w statusie oczekującym, ile to normalnie trwa?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy weekend opóźnia aktywację konta?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile dni roboczych trwa średnio zatwierdzenie?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile trwa aktywacja konta u was",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zlozylem dokumenty wczoraj, kiedy odpowiecie",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Po ilu dniach konto bedzie aktywne u was",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy zaczne przyjmowac platnosci po rejestracji",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile normalnie trwa weryfikacja firmy",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czekam juz tydzien, czy to normalny czas",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da sie przyspieszyc weryfikacje",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Konto wisi w statusie oczekujacym, jak dlugo to trwa",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile dni roboczych na akceptacje srednio",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy status zmieni sie z oczekujacego na aktywny",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak szybko po wgraniu dokumentow konto jest gotowe",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy weryfikacja idzie szybciej jak wysle wszystko naraz",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile czekac zanim zrobie pierwsza transakcje",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy aktywacja tego samego dnia jest mozliwa",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kiedy dostane maila o weryfikacji",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak dlugo dokumenty sa sprawdzane",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile dni zanim sklep zostanie zatwierdzony",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czekam trzeci dzien, to normalne czy cos nie tak",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy w godzinach pracy aktywujecie szybciej",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile trwa ostatni etap zatwierdzenia konta",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I already uploaded all the documents, now how long until it's approved?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wgrałem już wszystkie dokumenty, ile teraz czekać na akceptację?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Docs are in, so what's the remaining time to activation?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dokumenty złożone, ile jeszcze zostało do aktywacji?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My account is pending, not blocked right? How long is pending normal?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Konto jest oczekujące, nie zablokowane, prawda? Ile trwa taki status?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I finished KYC, how many more days before I can accept payments?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Skończyłem KYC, ile jeszcze dni zanim zacznę przyjmować płatności?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Everything is submitted, is the wait normal or is my account stuck?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wszystko wysłane, czy to normalne oczekiwanie, czy konto utknęło?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "After passing verification, how soon does activation follow?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Po przejściu weryfikacji, jak szybko następuje aktywacja?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I sent the documents you asked for, when does the review complete?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wysłałem dokumenty, o które prosiliście, kiedy kończy się przegląd?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's been a week since I registered, is that a normal activation time?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Minął tydzień od rejestracji, czy to normalny czas aktywacji?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My documents were accepted, how long till the account goes live?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dokumenty zaakceptowane, ile do uruchomienia konta?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is my long wait a delay or has my account been frozen?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy moje długie czekanie to opóźnienie, czy konto zostało zamrożone?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I completed onboarding, what's the timeline to full activation?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dokończyłem onboarding, jaki jest czas do pełnej aktywacji?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "All KYC papers approved, when exactly can I start selling?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wszystkie dokumenty KYC zatwierdzone, kiedy dokładnie mogę zacząć sprzedawać?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Verification passed yesterday, how long before the account is usable?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ile czekać?",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "When active?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Kiedy konto aktywne",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "no ludzie zlozylem papiery juz piec dni temu i dalej nic, status wisi na oczekujacy, klienci czekaja a ja nie moge brac platnosci, ile jeszcze mam siedziec i patrzec na ten ekran",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how long verification",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ile to jeszcze potrwa bo trace cierpliwosc",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "activation time?",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "still pending after a week is this normal or forgotten about me",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Kiedy w koncu ruszy to konto, dni mijaja a ja stoje w miejscu",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "approval eta plz",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile dni na aktywacje, krotko",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "konto oczekujace ile jeszcze",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "when can i accept payments already waiting forever",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "dokumenty zlozone, ile czekac na aktywacje",
+   "intent": "account_activation_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "how many days till approved need to know today",
+   "intent": "account_activation_time",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}

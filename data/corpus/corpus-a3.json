@@ -1,0 +1,2398 @@
+{
+ "cases": [
+  {
+   "q": "Any idea how long a refund typically takes once it's been issued?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I processed a refund yesterday, still shows as processing — is that normal?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you tell me what triggers a refund to move from pending to completed?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We issued a refund on Monday, customer hasn't seen it yet, how much longer should we wait?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the refund clock start from when I click confirm or from when the bank picks it up?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the average turnaround time for refunds through kremzaPay?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The dashboard says refund completed but the client says it's not in their account, what gives?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'm trying to understand the difference between 'processing' and 'settled' for a refund I made.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many business days should I tell my customer to expect the refund?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund was submitted last week, still no update on the status — is that expected?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Just want to confirm — refunds usually clear within a couple of days, right?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a way to check exactly when a refund I sent will actually land?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "One of our refunds has been sitting in the queue for 48 hours, is that within normal range?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can weekends delay when a refund actually gets deposited?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need an ETA for a refund I issued this morning for a customer.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What does it mean when the refund status changes to 'awaiting bank confirmation'?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Our accounting team wants to know how long refunds sit in pending before they clear.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I refunded an order two days ago — should I be worried it's not marked complete yet?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I know if the refund actually went through on your end or is still stuck?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer support asked me for a refund timeline, what should I quote them?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund is stuck at 'in progress' for four days now, is that unusual?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the refund status update automatically or do I need to refresh it manually?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We noticed refunds take longer on holidays — is there an official cutoff time?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to figure out why a refund I sent hasn't moved past the initial status.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the SLA for refund processing after I hit send?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to know if refunds get faster once the merchant account is verified longer.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Could you clarify the meaning of each refund status shown in the panel?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an email notification when a refund I issued finally settles?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long before a refund I made shows up as finalized in reports?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The refund I sent three days ago is still labeled 'processing' — what's the usual wait?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zrobiłem zwrot wczoraj, ile zwykle trzeba czekać, żeby zmienił status na zakończony?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot księguje się w weekendy, czy dopiero w poniedziałek?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam zwrot wysłany dwa dni temu i wciąż widnieje jako w toku, to normalne?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak długo standardowo trwa realizacja zwrotu po jego zatwierdzeniu w panelu?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chciałbym wiedzieć, kiedy dokładnie zwrot zmieni status z oczekującego na zaksięgowany.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Od czego zależy czas realizacji zwrotu, który już wysłałem klientowi?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest jakiś sposób sprawdzenia dokładnego czasu zaksięgowania zwrotu?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot wisi w statusie przetwarzania od trzech dni, czy to jeszcze mieści się w normie?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Muszę powiedzieć klientowi, kiedy pieniądze wrócą na kartę, jaki jest przeciętny czas?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy status zwrotu aktualizuje się sam, czy trzeba odświeżać panel ręcznie?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zrobilem zwrot 3 dni temu i dalej nic, ile to jeszcze potrwa?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy zwrot ktory wyslalem w piatek w koncu dojdzie do klienta?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zwrot ma satus w toku juz 5 dni, to normalne czy cos poszlo nie tak?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how long dose it usually take for a refund too show up on teh customers acount?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc zwrocona wczoraj a status ciagle processing, dlugo tak bedzie?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kiedy w koncu zmieni sie stauts tego zwortu co wyslalem wczoraj",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "i sent the refund 2 days ago, still says pendign, whats teh normal wait time",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "zwrot zrobiony w srode, teraz jest piatek i nic sie nie zmienilo w statusie",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "just curius how long refunds normaly take to reach the client acount",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "wyslalem zwrot i teraz nie wiem czy to normalne ze tak dlugo sie ksieguje bo minely juz 4 dni",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "refund still shows proccessing after 3 days is taht usual or should i worry",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "chce sie dowiedziec ile trwa ksiegowanie zwrotu na karte po jego wyslaniu",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "does teh refund status update automaticaly or i gotta refresh panel myself",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "zwortu jeszcze nie widac u klienta a minely 4 dni, kiedy to sie skonczy",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "wat does pending mean exactly for a refund i already send out",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "zwrot wyslany w poniedzialek dalej wisi w statusie oczekujacy, ile jeszcze czekac",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how long befor a refund clears after i hit confirm in teh panel",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "mozecie powiedziec kiedy dojdize ten zwrot bo klient juz pyta",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "refund ben sitting at in progress for days now is that normal wait time",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "ile dni roboczych trzeba liczyc zeby zwrot zaksiegowal sie na koncie klienta",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Wiem już jak zrobić zwrot, zrobiłem go wczoraj — pytanie tylko, kiedy się zaksięguje?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I know how to issue refunds, already did one this morning, just need the timeline for when it lands.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam jak zrobić zwrot, bo już to zrobiłem, tylko ile potrwa zanim klient go zobaczy.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot został już wysłany przeze mnie z panelu, interesuje mnie tylko czas realizacji.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Panel pokazał że zwrot poszedł, nie muszę wiedzieć jak go zrobić, chcę wiedzieć kiedy się skończy.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Już kliknąłem zwrot częściowy klientowi, teraz czekam i nie wiem ile to jeszcze potrwa.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Mój klient dzwoni i pyta gdzie jego pieniądze, ja jako sprzedawca chcę sprawdzić status zwrotu, który mu wysłałem.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My customer is asking me where their refund is, so as the merchant I want to check the status of the one I sent them.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Prowadzę sklep i klient napisał, że nie ma zwrotu — chcę sprawdzić po swojej stronie, na jakim etapie jest ten przelew.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Obsługuję zamówienie klienta i muszę mu odpowiedzieć, kiedy dotrze zwrot, który zainicjowałem w panelu.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "As the seller I issued the refund for my customer's order and now need to know its current status to update them.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient napisał do mnie z pytaniem o zwrot, sprawdzam więc w panelu sprzedawcy jaki jest jego aktualny status.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jestem merchantem, wysłałem zwrot dla kupującego trzy dni temu i chcę zweryfikować status po swojej stronie zanim mu odpowiem.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "To zwykły zwrot na zwykłą kartę, nic specjalnego, tylko chcę wiedzieć ile jeszcze potrwa.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nothing unusual here, just a normal card refund, I only want to know the timing.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta jest aktywna, nie wygasła, zwrot standardowy, pytam tylko o czas realizacji.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot idzie na zwykłą kartę płatniczą bez żadnych komplikacji, chcę tylko poznać status.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Regular card refund, nothing special about the method, just wondering about the current status.",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie BLIK ani nic nietypowego, zwykła karta, interesuje mnie tylko kiedy zwrot dojdzie.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot wysłałem wczoraj, więc to świeża sprawa, nie sprzed pół roku — kiedy się zakończy?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "This refund is from this week, not some old transaction, so what's the expected timing?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Transakcja była trzy dni temu, zwrot też jest świeży, chcę tylko wiedzieć na jakim jest etapie.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamówienie i zwrot są z tego tygodnia, nic starego, po prostu pytam o status realizacji.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The order was placed just five days ago and I refunded it right away — how long until it shows as done?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie jest stary zwrot sprzed miesięcy, zrobiłem go dziś rano, ile normalnie trzeba czekać?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Status?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Timeline?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Kiedy??",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "This is ridiculous, I sent the refund FOUR days ago and it's still sitting there doing nothing, when is it going to actually finish??",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "No błagam, zwrot wysłałem w poniedziałek, dziś piątek, klient mi urywa telefon, kiedy to się wreszcie skończy?!",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Więc tak, sytuacja jest taka: klient zamówił towar, zwrócił go, ja zrobiłem zwrot w panelu jakieś cztery dni temu, status od razu pokazał w toku i tak zostało do dziś, próbowałem odświeżać stronę, dzwoniłem nawet do banku, nikt nic nie wie, więc pytam tutaj — ile jeszcze to może trwać?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "So here's the thing, I refunded an order last Tuesday because the item arrived damaged, the panel showed it as processing right away, I waited, checked again on Wednesday, still processing, checked again today and it's Friday now and nothing changed, is this actually stuck or is it just slow?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Zrobiłem refund wczoraj i teraz status is still pending, jak długo to zwykle takes?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Refund was issued two days ago but the status w panelu still says w toku, when will it actually complete?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Jestem już zmęczony tym czekaniem, zwrot wisi w systemie od pięciu dni i nikt mi nie powie kiedy to się skończy.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "eta?",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile jeszcze",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Nie no serio, to już trzeci raz jak piszę w tej sprawie, zwrot zrobiłem w zeszły czwartek, minęło już prawie tydzień, status w panelu ani drgnął, klient grozi że napisze skargę, ja rozumiem że czasem coś się opóźnia ale to zaczyna być absurd, powiedzcie mi w końcu kiedy to się zaksięguje.",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Still processing after a week?? seriously when does this refund actually finish",
+   "intent": "refund_status_time",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Robiłem refund klientowi trzy dni temu, sprawdzam status i dalej pending, kiedy to się w końcu zamknie?",
+   "intent": "refund_status_time",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "My customer's Visa expired last month, can we still send the refund to it?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to refund a purchase but the card on file was replaced with a new one — where does the money go?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer says their bank closed the account tied to that card, how do refunds work then?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If someone pays via BLIK and later wants a refund, does it show up back in the BLIK app?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We need to refund a client whose card got cancelled after a chargeback dispute unrelated to us — is that even possible?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Got a request for a refund but the card number no longer exists in their banking app, what happens?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does a refund to an expired Mastercard actually process or bounce back to us?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We have a case where the client's whole banking relationship changed — new bank, new account — is there a special refund procedure for that or does it just fail?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refunding BLIK payments, does the money land in their bank account or stay in the BLIK wallet?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Card was reissued with a new number after fraud, will the refund still find it?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Support ticket: customer wants money back but card is dead, new one issued by bank, what's the process?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a special flow for refunding to a card that's past its expiry date?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We have a refund pending for someone who no longer banks with the same institution, need guidance.",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Quick question — BLIK refunds, do they route through the same phone number or the bank account?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Client's physical card was stolen and replaced, does the refund follow the new card automatically?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do refunds behave when the underlying card token is no longer valid?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A customer emailed saying their card expired right after the purchase and now wants a refund, what's next?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Our system flagged an expired card during a refund attempt — is there a workaround?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If a BLIK payment needs reversing, does it always return to the originating bank account?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer's old bank merged with another one and the card was reissued, refund status unclear.",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What happens to a refund if the card was closed by the issuing bank before we processed it?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Need clarity on refunding customers who pay through BLIK — does the app show it instantly?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The card used at checkout is no longer active, customer wants a refund issued today.",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you guys have a fallback method when refunding to an expired card fails?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer switched to a different bank mid-dispute, card number changed, refund got stuck.",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is BLIK refund mechanics different from a standard card refund in terms of settlement time?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Card token expired between purchase and refund request — does kremzaPay handle that automatically?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We're seeing card not found errors when refunding someone whose card was replaced.",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How does the system route a refund when the customer's card was cancelled for suspected fraud?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to understand BLIK refund flow — does it credit the same account the payment came from?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient placil karta ktora terazjuz nie dziala, jak zrobic zwrot?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta wygasła tydzień po zakupie, klient chce zwrot, co teraz?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot BLIK od razu widac w aplikacji bankowej czy dopiero po jakims czasie?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Bank klienta zamknal jego stare konto, karta juz nie istnieje, jak przeslac zwrot?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam sytuacje gdzie stara karta zostala wymieniona na nowa, czy zwrot pojdzie automatycznie na nowa?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot na karte ktora zgubiona i zablokowana przez bank - jak to dziala?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Platnosc byla przez BLIK, zwrot ma isc na konto czy zostac w aplikacji?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kliet zmienil bank calkowicie, stara karta juz nieaktywna, gdzie wyladuje zwrot?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nasz system pokazuje blad przy probie zwrotu na wygasla karte, co robic?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest jakis specjalny proces zwrotu gdy numer karty sie zmienil po reklamacji?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta klienta zostala przez bank anulowana z powodu podejrzenia oszustwa, a my mamy zrobic zwrot.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zastanawiam się, czy przy zwrocie BLIK trzeba czekać na potwierdzenie z aplikacji, czy pieniądze pojawiają się automatycznie?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zakup byl niedawno ale karta wlasnie wygasla, czy zwrot sie uda?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Bank wydal nowa karte po kradziezy, stara zablokowana, co ze zwrotem na te transakcje?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuje info czy zwrot na zamknieta karte w ogole moze przejsc.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Uzytkownik pyta czy BLIK zwraca pieniadze od razu do apki czy trzeba czekac na banku.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam klienta ktory zmienil bank tydzien po zakupie, karta stara juz nie istnieje.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da sie zrobic zwrot gdy karta zostala fizycznie zniszczona i wymieniona?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot utknal bo system nie widzi juz starej karty klienta w bazie.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak wyglada zwrot kiedy platnosc byla BLIK-iem a klient prosi o cofniecie po tygodniu?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta wygasła w zeszłym tygodniu, a klient dziś chce zwrot za zakup sprzed miesiąca — da się?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przy zwrocie BLIK liczy się numer telefonu czy konto bankowe klienta?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nowa karta zamiast starej po utracie — zwrot dotrze automatycznie czy trzeba coś zgłaszać?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klientka pisze, że bank zamknął jej rachunek i pyta co się stanie ze zwrotem środków.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mamy przypadek zwrotu na kartę unieważnioną przez bank z powodu chargebacku.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcialbym wiedziec czy zwrot bedzie widoczny w aplikacji BLIK czy tylko na koncie bankowym.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Karta przeterminowana, ale zakup byl 3 dni temu, czy zwrot mimo to przejdzie?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "System odrzuca zwrot bo karta zostala zastapiona nowa przez bank klienta.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak to jest z BLIK — zwrot idzie od razu czy trzeba czekac na potwierdzenie z aplikacji?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient przeszedl do innego banku, stara karta deaktywowana, zwrot sie zawiesil w systemie.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The purchase was only 5 days ago but the customer's card expired yesterday — is this still refundable, or does the 180-day rule matter here?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I know refunds can take a few days normally, but does that timeline change when the card involved is expired?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "How exactly do I process a refund when the customer's card expired — is there a different button or flow for that?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zakup był tydzień temu, więc daleko do limitu 180 dni, ale karta klienta właśnie wygasła — czy to problem?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem że zwykle zwrot zajmuje kilka dni, ale czy z BLIK-iem czas się zmienia?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak konkretnie zrobić zwrot krok po kroku gdy karta klienta jest już wygasła?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking about the 180-day limit — the card is just expired and the purchase was last week, what happens?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Does BLIK refund status update instantly or does it sit pending like a normal card refund?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the actual procedure in the dashboard to issue a refund via BLIK specifically?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie jest kwestia limitu czasowego — karta po prostu wygasła dwa dni po zakupie, co teraz?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak długo czeka się na zwrot BLIK w porównaniu do zwykłej karty, chodzi mi o sam mechanizm nie limity?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Krok po kroku: jak wystawić zwrot kiedy płatność była BLIK a nie kartą?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Transaction is from three weeks ago, well under any age limit — but the card expired right after, does the refund still land?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I get that old refunds get blocked eventually, this one's recent though, card's just expired — status update please.",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot na czas nie jest problemem bo zakup świeży, ale karta między zakupem a zwrotem wygasła — co dalej?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is issuing a refund to an expired card a manual process or does the system handle rerouting automatically?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Interesuje mnie mechanika: czy zwrot BLIK to ten sam kanał co płatność czy zupełnie inny proces bankowy?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Purchase happened four days ago so we're nowhere near any refund deadline, but the card was just replaced by the bank — how does that affect things?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę wiedzieć jak technicznie wysłać zwrot gdy numer karty już nie istnieje w systemie banku.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam o termin 180 dni, pytam o to co się dzieje ze zwrotem kiedy karta w międzyczasie przestała działać.",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Status check: refund initiated on a BLIK payment two days ago, does BLIK show real-time confirmation or is there a delay specific to it?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The refund window isn't the issue here — it's that the card expired between the purchase and now, does that block anything?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot zlecony wczoraj przez BLIK, czy tam czas oczekiwania wygląda inaczej niż przy karcie?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How do I actually trigger a refund in the panel when the payment method was BLIK, not a card?",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta wygasa za tydzień ale już teraz chcemy zrobić zwrot, czy zdążymy zanim przestanie działać, i jak to zrobić technicznie?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "wygasła?",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "expired card refund??",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "BLIK???",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zwrot BLIK kiedy",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "so this customer, ok let me explain the whole thing, he bought like a month ago, then last week his bank apparently just... closed his account? or merged with another bank, I don't even know the details he wasn't clear, anyway now I need to refund him and I have no idea if it's even possible or where the money would even go, please help",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "słuchaj mam tu klienta który dzwonił trzy razy już wkurzony bo jego karta wygasła i teraz nie wie co z jego pieniędzmi, ja też nie wiem co mu powiedzieć bo nigdy się z tym nie spotkałem, da się to jakoś ogarnąć",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "this is ridiculous, card expired, BLIK app shows nothing, customer is furious and honestly so am I, WHERE IS THE MONEY",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "no i co teraz, karta martwa, zwrot wisi, klient pisze do mnie co dwie godziny, help",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "tak więc customer's card wygasła like literally yesterday and he wants zwrot dzisiaj, is that possible or nie",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "karta expired ale zakup był 2 dni temu, nie 180 dni, tylko expired, co robimy",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "URGENT - blik refund not showing, customer changed banks, card dead, need answer now",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zmienił bank",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund + dead card = ???",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "I'm so done with this, third time this week a customer's card is expired when we try to refund and nobody on my team knows the actual mechanics of where BLIK money goes vs card money, can someone just explain it properly",
+   "intent": "refund_special_method",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "karta nieważna, zwrot nie idzie, klient krzyczy, pomocy",
+   "intent": "refund_special_method",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Our concert got postponed and I need to refund 1,200 ticket holders in one go — is there a bulk tool for that?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the process for uploading a spreadsheet of order IDs and refunding all of them automatically?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We're shutting down a product line and need to process refunds for every open order this week, ideally in a batch.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the merchant panel support importing an Excel sheet with amounts and IDs to trigger refunds in bulk?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I have a list of 340 transactions that need refunding — can I process them together instead of one at a time?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Looking for a way to schedule an overnight batch job that refunds a large set of orders from a file.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can your API accept a bulk refund request with an array of transaction IDs?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We need to refund an entire ticket batch from a cancelled festival — around 3,000 attendees.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a template file I should use for uploading refunds in bulk?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How many refunds can I fit into a single CSV upload before the system rejects it?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We messed up pricing on a whole product category — need to refund every order from that SKU at once.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to find where in the dashboard I can drag and drop a refund file instead of manual entry.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is batch refunding limited to a certain file size, or can I push a huge order list?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We closed our shop early and owe refunds to hundreds of subscribers — what's the fastest bulk method?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can the system process refunds queued from an export file overnight without me babysitting it?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Our event got cancelled last minute, I need every one of the 900 orders refunded today via upload.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does kremzaPay let integrators fire off refunds for a whole order list programmatically?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What columns does the bulk refund CSV expect — order ID, amount, reason?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We had a payment gateway glitch that double-charged 200 customers, need to reverse them all at once.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a bulk refund endpoint or do I have to loop single refund calls myself?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Need to process refunds for an entire batch of orders tied to a recalled product.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I refund a whole day's worth of transactions in one upload instead of individually?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We're refunding an entire cohort of beta testers — is there a way to do that as one operation?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I import a refund list so I don't have to click through each transaction manually?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a max row limit on the mass refund file upload?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We need to reverse charges for a whole batch of orders from a fraud sweep, several hundred at once.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to automate refunds for a large group of subscription cancellations via file upload.",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the panel let admins select a whole filtered order list and refund them together?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We have a spreadsheet export from our old system with 1,500 refund candidates — can that be imported directly?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's the turnaround for a batch refund job once I submit the file?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy da się zaimportować plik z listą zamówień do zbiorczego zwrotu?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mamy odwołaną imprezę i musimy oddać pieniądze za 600 biletów naraz.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak przygotować plik CSV, żeby system przyjął go do masowego zwrotu?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy panel pozwala zaznaczyć całą listę zamówień i zrobić zwrot jednym kliknięciem?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję zwrócić pieniądze za całą partię zamówień z wadliwej dostawy.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile pozycji może zawierać plik do zbiorczego zwrotu środków?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcemy zamknąć sklep i oddać pieniądze wszystkim klientom z otwartymi zamówieniami w jednej paczce.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest jakiś szablon pliku do importu zwrotów hurtowych?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mamy pomyłkę w cenniku i musimy zwrócić pieniądze za całą kategorię produktów naraz.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Szukam opcji, żeby wgrać arkusz z numerami zamówień i puścić zwroty automatycznie w nocy.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mam plik z 500 zamowieniami do zwrotu, da sie to wgrac zbiorczo?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "impreza odwolana, trzeba oddac kase za 1000 biletow naraz, jak to zrobic hurtowo",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge zaimportowac csv zeby zrobic masowy zwrot bez klikania kazdego zamowienia",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "potrzebuje zwrocic pieniadze za cala paczke zamowien z blednej wysylki, macie import pliku?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wgrac arkusz excel z lista zamowien do zwrotu zbiorczego",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mamy zamkniety sklep i trzeba oddac kase wszystkim klientom naraz, ile zamowien mozna wrzucic w jednym pliku",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "system przyjmuje plik csv do zwrotow masowych czy trzeba robic to recznie kazde zamowienie",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "300 zwrotow do zrobienia po awarii platnosci, jest jakis sposob zeby to zrobic hurtowo z pliku",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy da rade zaznaczyc caly batch zamowien i puscic zwrot razem zamiast pojedynczo",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mam eksport ze starego systemu, 800 wierszy do zwrotu, mozna to zaimportowac od razu",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "odwolalismy caly event, trzeba zwrocic kase 700 osobom, jak zrobic to zbiorczo a nie po kolei",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki format pliku csv przyjmuje system do zwrotow masowych, id zamowienia i kwota?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "pomylka w cenach, trzeba zwrocic pieniadze za cala kategorie produktow naraz, da sie plikiem",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy jest limit wierszy w pliku do zbiorczego zwrotu srodkow",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mamy 450 zamowien po awarii bramki platnosci, trzeba wszystkie zwrocic naraz, jak najszybciej",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "szukam opcji zeby wgrac plik z zamowieniami i zrobic zwrot automatycznie zamiast recznie",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "duza partia zwrotow po odwolanym koncercie, 950 biletow, jest jakas masowa funkcja",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zrobic import pliku z lista zamowien zeby zwrocic pieniadze wszystkim naraz",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "mamy awarie systemu i 600 podwojnych platnosci do zwrotu, da sie to hurtowo cofnac",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "potrzebuje puscic zwrot dla calej grupy zamowien z jednego pliku csv zamiast recznie klikac",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I know how to refund one order manually, but how do I do that same thing for 200 orders without repeating the steps 200 times?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamiast klikać 'zwróć' przy każdym zamówieniu osobno, jest jakiś sposób żeby zrobić to dla całej listy naraz?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The refund button only lets me pick one order — is there a version of that flow for a whole file of orders?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wiem jak zrobić pojedynczy zwrot, ale mam 400 takich do zrobienia, czy da się to zautomatyzować z pliku?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Instead of the single-order refund form, do you have an equivalent that takes a whole list at once?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zrobiłem już kilka zwrotów ręcznie, ale zostało mi 600 zamówień — musi być szybszy sposób niż klikanie każdego.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If I refund 500 orders in one batch upload, does each one still get charged the transaction fee separately?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Robiąc zwrot zbiorczy z pliku dla 300 zamówień, czy prowizja jest liczona osobno za każde czy raz za cały import?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "We're about to bulk-refund a whole cancelled event — will the fees eat into the batch the same way as single refunds?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy przy masowym zwrocie z pliku CSV opłaty transakcyjne też zostaną zwrócone za każde zamówienie z osobna?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Planning a batch refund of 1,000 orders — before I upload the file, does the commission come back per order or is there some bulk discount on fees?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcemy zrobić zwrot hurtowy dla całej partii zamówień, ale zastanawiam się czy opłaty za każdą transakcję też wrócą przy imporcie pliku.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I uploaded a file with 700 refunds this morning — how long until the whole batch finishes processing?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wgrałem plik z 500 zwrotami wczoraj, ile czasu zajmie przetworzenie całej partii zanim pieniądze trafią do klientów?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Once I submit a bulk refund CSV, is there a way to track when each of the hundreds of refunds actually lands on the card?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zrobiłem zbiorczy zwrot dla całego odwołanego wydarzenia, kiedy mniej więcej wszystkie 800 zwrotów się zaksięgują?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does a batch of 2,000 refunds process instantly or does it queue up and take days to clear all of them?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Puściłem masowy zwrot z pliku w piątek, do teraz część zamówień jeszcze nie ma statusu zwrócone, ile to jeszcze potrwa dla całej paczki?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamiast pytać jak zwrócić jedno zamówienie, pytam: jak zrobić to dla 250 na raz, wgrywając plik?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the bulk refund feature just the single-refund flow repeated automatically, or an actual separate batch process with its own fee rules?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Musimy oddać pieniądze za całą partię 350 zamówień z odwołanego wydarzenia — pytanie czy prowizja od każdego biletu też wraca w tym zbiorczym imporcie.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "After I run a mass refund from a file, how soon do the hundreds of individual refund confirmations show up for each customer?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi mi o zwrot jednego zamówienia — mam plik z tysiącem zamówień, czy da się to zrobić w jednym zbiorczym procesie zamiast ręcznie?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "For a batch refund covering 900 orders, is the processing time the same per-order as a manual single refund, or does bulk get prioritized differently?",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Robimy zwrot masowy dla 500 zamówień na raz — martwi mnie tylko czy opłata serwisowa zostanie oddana przy każdym z nich w tym imporcie.",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "masowo?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "bulk??",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "zbiorczo",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "plik csv zwroty??",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ok so this is insane, our whole spring festival got cancelled by the venue, not even our fault, and now I'm sitting here with a spreadsheet of literally 2,400 ticket orders and someone told me I have to click refund on each one separately?? that cannot be real, tell me there's a way to just dump the file in and walk away",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "słuchajcie, mam załamanie nerwowe, klient odwołał cały kontrakt, mamy 1800 zamówień do zwrotu, księgowa płacze, ja płaczę, błagam powiedzcie że jest jakiś import pliku a nie że mam to klikać ręcznie do rana",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "mam plik z refundami do zrobienia, like 600 orders, czy jest bulk upload option czy muszę robić to jedno po drugim bo nie mam na to czasu",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "need to bulk refund like 900 zamówień from a cancelled koncert, is there jakiś CSV import or what",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "1000 zwrotów do zrobienia i mam klikać każdy osobno?! musi być jakaś masowa opcja!!",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "hurtowo?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "we have THOUSANDS of refunds to push after this cancellation disaster, please tell me there's a batch upload and not one-by-one clicking",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ok tak więc mamy sytuację, event odwołany, ludzie wściekli, ja mam plik excel z 3000 rows, każdy to jeden refund, i teraz pytanie is there any way makes this bulk zamiast robić to po jednym bo inaczej będę tu do jutra",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "import zwrotów?",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "I've been on this dashboard for two hours clicking refund one at a time and I'm only at order 40 out of 650, my hand actually hurts, is there genuinely no way to upload a file and just have it process the whole list because at this rate I'll be here until midnight",
+   "intent": "refund_bulk",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "csv zwrot masowy pls, need it dzisiaj",
+   "intent": "refund_bulk",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Can i still refund an oder thats like 8 months old?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund button won't let me click it on an order from last November.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "This transaction is about 210 days old and the client wants their money back.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there any way to refund something older than half a year?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The order is from two winters ago and the customer just submitted a refund request.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We have a purchase from almost a year ago that needs refunding, can it be done?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to refund a 9-month-old order but nothing happens when i click the buton.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A client wants a refund on a transaction from 195 days back.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund option seems disabled for orders past a certain age, ours is from July last year.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The purchase happened 7 months ago, is refunding still an option?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Old transaction, maybe 200+ days, customer is asking for money back now.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do we handle a refund request on something bought last summer?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Order from 11 months back — refund keeps faling silently.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Been trying to refund a transaction and it just says unavailable, it's from last Christmas.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer noticed the charge only now, transaction dates back to early last year.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We missed the refund window apparently, order is 8 months old.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Client's transaction is a year old and they want a refund processed.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The refund control is greyed out, checked and the order is 220 days old.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is refunding a payment from more than half a year back even doable on our end?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "There's an order sitting since last spring that a customer wants refunded.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund atempt keeps failing for a transaction placed almost 10 months ago.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to issue money back on a really old order, maybe 190-something days.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The transaction predates our usual refund cutoff by quite a bit, over 6 months.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer emailed about a refund for something they bought ages ago, like last October.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The system wont let me refund this — order was placed 205 days ago.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We've got a client demanding a refund on a purchase from nearly a year back.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "This one's an old order, bought sometime last fall, refund button does nothing.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund request came in for a transaction that's clearly past half a year old.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a workaround for refunding orders older then the usual limit? This one is from last February.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The customer's order is from way back, probably 8-9 months, and they want their money returned.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy można jeszcze zwrócić zamówienie sprzed 8 miesięcy?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Przycisk zwrotu jest wyszarzony przy zamówieniu z zeszłej zimy.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Transakcja ma jakieś 210 dni, klient chce zwrot pieniędzy.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da sie w ogole zwrocic platnosc ktora ma juz ponad pol roku?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamówienie jest sprzed prawie roku, klient teraz dopiero się odezwał.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Probuje zrobic zwrot za zamowienie sprzed 9 miesiecy i nic sie nie dzieje.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Platnosc jest starsza niz 195 dni, da sie cos z tym zrobic?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Opcja zwrotu jest zablokowana, zamowienie ma ponad 200 dni.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamowienie sprzed lata zeszlego roku - zwrot w ogole mozliwy?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient napisał dopiero teraz, a transakcja jest z zeszłego października.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamowienie stare, chyba z lutego zeszlego roku, przycisk zwrotu nieaktywny.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy przekroczenie 180 dni na zwrot to twardy limit? Nasze zamówienie ma 220 dni.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot nie chce się zrobić — transakcja pochodzi sprzed jedenastu miesięcy.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mamy zamowienie sprzed prawie roku i klient zada zwrotu, co robic?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "System nie pozwala zrobić zwrotu, zamówienie ma 205 dni.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamowienie z zeszlej wiosny, klient chce pieniadze z powrotem, mozna cos zrobic?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność sprzed pół roku plus parę tygodni — zwrot w ogóle wchodzi w grę?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient dopiero teraz zgłosił się w sprawie zakupu sprzed zeszłych świąt.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamowienie ma ponad 190 dni i przycisk zwrotu nic nie robi po kliknieciu.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest jakis sposob na zwrot zamowienia starszego niz zwykly limit? To z zeszlego lutego.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Transakcja sprzed 8-9 miesięcy, klient nalega na zwrot, da radę?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zwrot dla starego zamowienia, jakies 200 dni wstecz, nie dziala.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamówienie leży od zeszłej jesieni, teraz klient chce zwrot.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Probowalem zrobic zwrot ale to zamowienie ma juz prawie rok.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zgłoszenie zwrotu za starą płatność, chyba z zeszłego marca, nic się nie dzieje.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot płatności sprzed ponad pół roku jest w ogóle technicznie możliwy?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Mam klienta co chce zwrot za zamówienie z zeszłego lata, to już z 10 miesięcy.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zamowienie stare - 215 dni - a system caly czas odrzuca proba zwrotu.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Transakcja jest starsza niż zwykły termin zwrotu, dokładnie z zeszłego stycznia.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy zwrot za zamówienie sprzed roku wymaga jakiejś specjalnej procedury?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The card on file is still valid, but the refund button is disabled because the order is 9 months old — is that the reason?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not about the card expiring, the transaction itself is just really old, like 8 months. Can it still be refunded?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta klienta jest ok, problem chyba w tym że zamówienie ma ponad 200 dni — czy to blokuje zwrot?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "How do I actually issue a refund for an order that's past the 180-day mark?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jak zrobić zwrot dla zamówienia, które przekroczyło 180 dni? Przycisk jest szary.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Normally refunds take a few days to settle, but this one won't even start — the order is from last April.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwykle zwrot trwa parę dni roboczych, ale tu nawet się nie zaczyna, bo zamówienie jest sprzed 10 miesięcy.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is the refund window the same as the card's expiry date, or is it purely about how old the transaction is? This order is 7 months old and the card is fine.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy to kwestia terminu ważności karty, czy po prostu transakcja jest za stara? Karta działa, ale zamówienie ma prawie rok.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "What's the process to refund something once it's outside the normal window — this one's sitting at 195 days?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Jaka jest procedura zwrotu, gdy zamówienie wypadło poza standardowe okno czasowe? U nas to 190 dni.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The client's card hasn't expired, it's just that we're way past the usual refund timeframe — order from last June.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta nie wygasła, po prostu minęło już dużo czasu od zakupu — zamówienie z zeszłego czerwca, prawie rok.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "So refunds usually just take a couple business days right? This one's been stuck because the purchase is 8 months old.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zwrot zwykle zajmuje kilka dni, ale tutaj nic się nie dzieje, bo zamówienie jest sprzed 8 miesięcy.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Can you walk me through refunding an order that's aged past the cutoff? It's roughly 210 days now.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Możesz wytłumaczyć jak zwrócić zamówienie, które jest starsze niż limit? Ma teraz około 210 dni.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Card details are current, no issue there — the real problem is the purchase happened almost a year ago.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Dane karty są aktualne, to nie jest problem — problemem jest to że zakup był prawie rok temu.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking about typical processing time, I need to know if a 9-month-old order can be refunded at all.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam o standardowy czas realizacji zwrotu, tylko czy zamówienie sprzed 9 miesięcy da się w ogóle cofnąć.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Where in the dashboard do I refund an order once it's crossed the 180-day line? This one's at 200.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Gdzie w panelu mogę zrobić zwrot zamówienia po przekroczeniu 180 dni? To ma już 200.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The payment method is perfectly valid, the transaction is just old — six and a half months to be exact.",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Metoda płatności jest w porządku, transakcja jest po prostu stara — dokładnie sześć i pół miesiąca.",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Za stara?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Przeterminowane?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "180+ days??",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "too old to refund?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "słuchajcie no bo mam tu klienta, dzwoni wściekły, krzyczy że mu nikt nie oddaje kasy, a jak sprawdzam to zamówienie ma jakieś 240 dni, no i teraz co, mam mu powiedzieć że pech?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "ok so this guy has been emailing me for a week about a refund and I finally checked and the order is from literally february last year, like over 300 days, and he's furious, what do I even tell him at this point",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "hej, mam pytanie bo ten customer chce zwrot a transaction ma like 8 miesięcy, is that even possible still?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "klient wkurzony bo order jest old, jakies 210 dni, zwrot się nie robi, help?",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "This is ridiculous, the customer bought this MONTHS ago and now your system just refuses to refund it, is there literally nothing I can do??",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "To jakiś żart, zamówienie ma pół roku plus, klient wydzwania codziennie, a wasz system w ogóle nie chce zrobić zwrotu, co mam z tym zrobić?!",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "no więc tak, siedzę tu i próbuję już od godziny zrobić zwrot na zamówienie które okazuje się że jest z zeszłego lata, czyli ze dziewięć miesięcy temu mniej więcej, i guzik działa, przycisk szary jak beton",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "9 months, refundable?",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Serio nie da się już zwrócić?! Ma tylko 200 dni!",
+   "intent": "refund_after_window",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "klient is really mad, zamówienie z zeszłej zimy, refund button just sits there greyed out, co robić??",
+   "intent": "refund_after_window",
+   "lang": "en",
+   "style": "extreme"
+  }
+ ]
+}

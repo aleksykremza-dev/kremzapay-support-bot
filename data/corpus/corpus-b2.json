@@ -1,0 +1,2398 @@
+{
+ "cases": [
+  {
+   "q": "What's the highest amount a single transaction can go through for?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a ceiling on how much one customer can pay at once?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My checkout blocks anything over 50k, can that be lifted?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do you have a minimum charge amount below which payments won't process?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We need to accept a 120000 PLN invoice, will the system allow it?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How high can I push my per-payment cap?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a floor amount for card payments?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Client wants to pay a large deposit, will your limit stop it?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can the maximum transaction value be increased for my account?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What is the smallest payment BLIK will accept?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jaki jest górny limit pojedynczej płatności u Was?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy istnieje minimalna kwota, poniżej której transakcja nie przejdzie?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę przyjąć wpłatę na 80 tysięcy, czy system to puści?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się zwiększyć limit na jedną transakcję ponad standard?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Ile maksymalnie może zapłacić klient jedną płatnością?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient próbuje zapłacić 95 tys i dostaje odmowę, to przez limit?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy dla przelewów jest inny limit niż dla kart?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję podnieść próg transakcji przed dużym zamówieniem.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jaka najniższa kwota jest dopuszczalna dla płatności kartą?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy limit dzienny sumuje się ze wszystkich transakcji?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Trying to figure out the cap before a big B2B sale next week.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does the maximum differ between BLIK and card?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "If a single order is 200k, do I need a special limit bump?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Where in settings can I see my current transaction ceiling?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can you temporarily raise my limit for one large payment?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Gdzie w panelu sprawdzę mój aktualny limit na transakcję?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę na jeden dzień podnieść limit dla dużej wpłaty?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient hurtowy zapłaci 150 tys, obecny limit tego nie obejmie.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy minimalna kwota zależy od metody płatności?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Do jakiej sumy mogę przyjmować bez podnoszenia limitu?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jaki macie maksymalny limit na jedna platnosc",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy da sie podniesc limit transakcji dla mojego konta",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "minimalna kwota platnosci ile to jest u was",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient chce zaplacic 70k a system blokuje czemu",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "potrzebuje wyzszy limit bo wchodzi duzy klient",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy jest gorna granica kwoty na jedna transakcje",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dlaczego nie przechodzi platnosc na 65 tysiecy",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "gdzie ustawie wyzszy prog dla platnosci kartowych",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy limit na blika jest inny niz na karte",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile najmniej moze wynosic platnosc zeby przeszla",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "whats the max i can charge in one go, cant find it",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can u raise my per transaction limit pls its too low",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is ther a minimum amount for payments to work",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "custmer cant pay 90k says limit reached how to fix",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need higer cap for a big order this friday",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how much is the biggst single payment allowed here",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "czemu system nie pozwala na wieksza kwote platnosci",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "limit transakcji za niski jak go zwiekszyc szybko",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge zdjac limit na maksymalna wplate",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "minimum na karte ile wynosi u was nie wiem",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Our average ticket is going up, will I hit a max soon?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the per-transaction limit tied to my account tier?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy limit pojedynczej wpłaty można ustawić samodzielnie?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What happens if a customer tries to pay above the max?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę wiedzieć jaki mam pułap na jedną płatność kartą.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Do bigger merchants get higher default caps?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy nowy sklep ma niższy limit na start?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Is there any cap on total daily payment volume?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient zapłaci 250 tys, czy w ogóle jest taki limit górny?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Can I set my own minimum order value in the payment page?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is the max on a single payment the same as the payout threshold, or different — I mean the payment one.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Not about when I get paid, I just need the top amount a customer can pay in one transaction.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient pyta o limit wpłaty, nie mylić z minimalną wypłatą — chodzi o pojedynczą płatność.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "For recurring clients the amounts are big; before I set anything up, what's the max per single charge?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ignore payouts — what's the smallest amount a payment can be to even go through?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "I want to know the cap per transaction, not how often money lands in my bank.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chodzi mi o maksymalną kwotę jednej transakcji, a nie o próg wypłaty na konto.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Before cancelling a huge pending payment I want to know if it was blocked by a limit.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "A duplicate isn't the issue — the single charge is just too large and won't pass, what's the limit?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy górny limit płatności zmienia się, jeśli włączę płatności cykliczne? Pytam o limit kwoty.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking about subscriptions, just the maximum one-time amount I can accept.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The payment failed at 88k — is that a per-payment limit and can it be raised?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient chce zapłacić dużą sumę jednorazowo, jaki jest limit tej jednej płatności?",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Does turning on card saving change my maximum transaction value at all?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "What is the minimum charge — not minimum payout, the minimum a customer must pay?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Interesuje mnie próg maksymalny na transakcję, nie częstotliwość rozliczeń.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "If I raise the per-transaction cap, does it affect the payout amount rules? Focus on the payment cap.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "My concern is the biggest amount accepted per payment before onboarding a large buyer.",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy limit na jedną wpłatę różni się od limitu dziennego? Chodzi o kwotę jednej płatności.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a double charge — the one payment is above your allowed maximum, can you lift it?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "How large can one card payment be here, separate from any subscription setup?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Chcę tylko poznać maksymalną kwotę pojedynczej transakcji, nic o wypłatach.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Is there a hard ceiling per payment that I need approval to exceed?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zanim anuluję nieopłaconą transakcję na 300 tys, powiedzcie czy limit to zablokował.",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Client's one-off payment of 60k bounced — limit issue, right? Can it go higher?",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "MAX KWOTA ILE?!",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "minimum",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "So basically I run a furniture shop and this one client, right, he's been with me forever and now he finally wants to buy the big custom order which is like 140 thousand zloty and the payment just WON'T go through and I'm panicking because is this a limit thing or what, help",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "cap too low FIX IT",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile maksymalnie AAAA klient czeka",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Ok so quick pytanie — jaki max limit na one payment bo mam duzego klienta i he needs to pay dzisiaj",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "WHY BLOCKED AT 50K",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "maksimum",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "big client big money system says no, limit? podniescie prosze bo tracę deal",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "can i pay 999999999 lol or is there a cap",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "TRANSAKCJA ODRZUCONA za duza kwota co robic",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "limit na platnosc pls",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Listen I don't have time — customer, 75k, one payment, blocked, is it a limit YES or NO and how do I raise it",
+   "intent": "payment_limits",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "minimalna kwota??? klient chce 2 zl zaplacic",
+   "intent": "payment_limits",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "A buyer says their bank shows the same order billed twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Two identical charges hit my client's card for one purchase.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Same amount was taken from the customer two times, how to refund one?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer completed checkout once but got debited twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "There are duplicate transactions for a single order in my panel.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "One order, two payments of the exact same value — how did that happen?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My client was billed double and is demanding one back.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The card statement shows two withdrawals for the same product.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I reverse the extra charge when someone paid twice?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "A shopper got charged twice within a minute for one basket.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient został obciążony dwa razy za jedno zamówienie.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Widzę dwie identyczne transakcje na tę samą kwotę, jak zwrócić jedną?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kupujący twierdzi, że na karcie ma dwa razy tę samą płatność.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Pobrało podwójnie za jeden zakup, jak to naprawić?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Dwie takie same wpłaty w odstępie minuty, to błąd systemu?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klientka mówi że zapłaciła raz a bank pokazuje dwa obciążenia.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak cofnąć nadmiarową płatność jeśli klient zapłacił dwukrotnie?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Za to samo zamówienie mam dwie płatności, którą anulować?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "System pobrał od klienta dwa razy tę samą kwotę.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Podwójne obciążenie karty za jeden produkt, co teraz?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "My customer clicked pay once, why are there two charges?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Refund needed — the same transaction went through twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Someone paid, page reloaded, and now there are two payments.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is a double charge on one order something you can fix?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Client sees the amount twice on their statement, one order only.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient kliknął raz, a płatność poszła dwa razy, dlaczego?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebny zwrot, bo ta sama transakcja przeszła dwukrotnie.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Strona się odświeżyła i teraz są dwie płatności za jedno.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy możecie cofnąć jedno z dwóch obciążeń za to samo zamówienie?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Kupujący widzi kwotę dwa razy na wyciągu, zamówienie jedno.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient zaplacil dwa razy za jedno zamowienie jak zwrocic",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "sa dwie identyczne transakcje na to samo pomocy",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "pobralo podwojnie z karty klienta co robic",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klientka wkurzona bo obciazono ja dwukrotnie za jeden zakup",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dwie takie same platnosci w minute to blad",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak cofnac nadmiarowa platnosc klient zaplacil 2 razy",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "system sciagnal kwote dwa razy za jedno zamowienie",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "na wyciagu klienta widnieje ta sama transakcja dwa razy",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "podwojna platnosc jak zrobic zwrot jednej",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "za jeden order dwie wplaty jak to odkrecic",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "custmer got charged twice for one order pls help refund",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "two same transactions same amount how do i reverse one",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "my buyer paid once but card shows it twise",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "duplicate payment on single order need to give one back",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "client billd double within a minute is this a bug",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "same order two chargs how did that happen",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "klient placi raz a schodzi dwa razy z konta",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "dwa obciazenia za jeden zakup jak anulowac jedno",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "pobrano dwukrotnie klient chce zwrot szybko",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "why two payments for one basket refund one plz",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Order 4821 has two successful payments logged, is that a duplicate?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I refund just the second of two identical charges?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Zamówienie ma dwie udane płatności w logach, to duplikat?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Both charges are marked completed — how do I undo one?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Klient dzwoni wściekły, obciążyliście go dwa razy.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "It looks like a retry created a second charge, can you void it?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy ponowna próba mogła stworzyć drugą płatność?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The customer paid twice and wants an immediate reversal.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Mam dwie zaksięgowane płatności za jedną transakcję, pomóżcie.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Two debits, one purchase — please guide me on the refund.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "My shop marks the order paid, but the customer's card shows two charges — that's a double charge, right?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The webhook is fine, order shows paid, problem is the buyer was billed twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Sklep pokazuje opłacone, ale klient ma dwa obciążenia — to podwójna płatność, nie brak powiadomienia.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not that the store missed the payment — it got two payments for one order.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Ignore the shop status, the real issue is two identical charges on one purchase.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Order says unpaid in Woo AND the client was charged twice — but I care about the double charge refund.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "W panelu widzę dwie płatności, w sklepie jedną — czyli klient zapłacił dwa razy, jak zwrócić?",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a missing notification — there are genuinely two debits for the same basket.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Customer paid twice; one shows in my shop, one doesn't, but the card was hit twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie jest brak webhooka, klient realnie zapłacił dwukrotnie za jedno zamówienie.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "My store received one webhook but the customer says two charges left their account.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The order isn't stuck unpaid — it's double paid and I must refund the extra one.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient obciążony dwa razy, choć sklep pokazuje tylko jedną opłatę — potrzebny zwrot nadwyżki.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Both transactions succeeded on your side even if the shop only logged one — refund one please.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not a sync problem; the payment literally went through twice for one cart.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Sklep pisze nieopłacone, ale na karcie klienta są dwie płatności — chodzi o duplikat, nie o powiadomienie.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't need you to resend a webhook, I need one of two identical charges reversed.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The customer got debited twice; the shop status is a separate thing, focus on the double charge.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Panel pokazuje dwie transakcje na tę samą kwotę, w sklepie jest bałagan, ale problem to podwójne pobranie.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Order marked paid once but money left the account twice — how do I return the duplicate?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Two charges appear for order #77; the store only reflects one, but the buyer paid twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o to że sklep nie dostał powiadomienia — klient ma dwie takie same płatności.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The shop is fine, ignore it — customer's statement clearly shows the amount twice.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient zapłacił, sklep opłacony, ale bank pokazuje drugie identyczne obciążenie, cofnijcie je.",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Regardless of what my store displays, there are two completed payments for one order — refund one.",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "TWICE?!",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "podwojnie pobrane RATUNKU",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "double charge",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ok so my customer just called me literally screaming because she bought one single lamp from my store, ONE, and her bank app is showing TWO payments the exact same amount like a minute apart and she thinks I'm scamming her and I need to refund one RIGHT NOW how",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "klient placi 2x AAAA zwrot",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "two charges one order fix",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Panie kupujący mnie zjada bo dwa razy schodło z karty za jeden zakup i co ja mam mu powiedzieć help pls",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "DWA RAZY POBRANE ZA JEDNO",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "duplikat",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "she paid once but got billed twice i swear it's not my fault the page just froze and boom two payments zwróćcie",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "charged twice HELP customer angry",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "jeden order dwie platnosci ile mozna",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "refund the second one NOW klient czeka",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Listen it's simple — one order, two identical charges, customer furious, I need one reversed, tak czy nie da się?",
+   "intent": "payment_duplicate",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "podwojna transakcja???",
+   "intent": "payment_duplicate",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How can I bill my members every month automatically?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I want to charge a saved card on a schedule without asking each time.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is card tokenization supported so I can do repeat billing?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Setting up a subscription plan — how do recurring charges work here?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I store a customer's card and debit it monthly?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "We're launching a membership, need auto-renewing payments.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I enable automatic monthly billing for subscribers?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Does your platform support saving cards for future automatic charges?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need weekly recurring debits from the same card, possible?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "What's required to set up subscription billing on my account?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ustawić automatyczne miesięczne obciążenia dla abonentów?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę pobierać z zapisanej karty co miesiąc bez pytania klienta.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy obsługujecie tokenizację karty do płatności cyklicznych?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Zakładam plan subskrypcyjny, jak działają u Was płatności cykliczne?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się zapisać kartę klienta i ściągać co miesiąc?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Uruchamiam abonament, potrzebuję automatycznego odnawiania płatności.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak włączyć cykliczne pobieranie opłat od subskrybentów?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy można zapamiętać kartę do przyszłych automatycznych obciążeń?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Potrzebuję cotygodniowych płatności z tej samej karty, da radę?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Co jest potrzebne, żeby ustawić rozliczanie subskrypcji?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Can customers be charged on the 1st of each month automatically?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I'd like a Spotify-style recurring plan, how to configure it?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How do I take the first payment and then auto-bill afterwards?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there an API for creating recurring payment agreements?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Do I need customer consent stored for repeat charges?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy klienci mogą być obciążani automatycznie 1. każdego miesiąca?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chciałbym plan cykliczny jak w Netflixie, jak to skonfigurować?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak pobrać pierwszą płatność, a potem automatycznie kolejne?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy jest API do tworzenia zgód na płatności cykliczne?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy muszę przechować zgodę klienta na powtarzalne obciążenia?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak ustawic platnosci cykliczne dla abonamentu miesiecznego",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce zapamietac karte klienta i sciagac co miesiac",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy da sie zrobic subskrypcje z tokenem karty",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "potrzebuje automatyczne odnawianie platnosci dla czlonkow",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak wlaczyc cykliczne pobieranie bez pytania klienta",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy obslugujecie tokenizacje do powtarzalnych platnosci",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "zakladam abonament jak zrobic zeby samo sciagalo",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "platnosci cykliczne co tydzien z tej samej karty da rade",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak skonfigurowac miesieczne obciazenia subskrybentow",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy moge trzymac karte i pobierac automatycznie",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i set up recuring monthly billing for subs",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "want to save card tokn and charge every month automaticaly",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is subscripton billing possible on ur platform",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "need auto renew paymnts for my membership site",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how to charge saved card on schedule without askin",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "does it suport card tokenization for repeat charges",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "cykliczne platnosci jak to ustawic dla klientow",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "chce abonament miesieczny zeby karta sama placila",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak zrobic automatyczne skladki co miesiac od userow",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "tokenizacja karty do subskrypcji jak wlaczyc",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "For my gym app I need monthly dues pulled automatically.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can recurring amounts vary each cycle or must they be fixed?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Dla aplikacji fitness potrzebuję automatycznych miesięcznych składek.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy kwota cykliczna może się zmieniać, czy musi być stała?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I want the customer to approve once and then be billed forever.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How are failed recurring charges retried in your system?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak obsługiwane są nieudane płatności cykliczne, są ponawiane?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Chcę żeby klient zgodził się raz, a potem był obciążany co okres.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Do I set up the tokenized card at first checkout or later?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Czy token karty zapisuję przy pierwszej płatności czy później?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "I already enabled card payments — now how do I make them recur monthly?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not about switching on BLIK for checkout, I need automatic repeat billing.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karty już mam włączone, teraz chcę żeby pobierały się cyklicznie co miesiąc.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Beyond enabling a method, how do I turn on subscriptions specifically?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o dodanie metody do koszyka, tylko o cykliczne obciążenia.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Cards work for one-off already; what I need is the recurring/token setup.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Włączyłem pay-by-link, ale potrzebuję wersji, która pobiera automatycznie co okres.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Do I need to enable a separate feature to charge saved cards on a schedule?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Enabling Google Pay is done; can that same method be used for auto-renew?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Metoda karta jest aktywna, jak ją teraz podpiąć pod subskrypcję?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I don't want a single checkout payment — I want it set up to bill repeatedly.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy oprócz włączenia płatności kartą trzeba osobno aktywować cykliczne?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Once a payment method is live, what extra step makes it recurring?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Płatności jednorazowe działają, teraz chcę automatyczne odnawianie abonamentu.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not a method-activation question — how do I configure token-based monthly billing?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Mam włączony checkout, ale interesuje mnie zapamiętanie karty i cykl.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Enabling the method was easy; the recurring subscription part is what I'm stuck on.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie pytam jak dodać BLIK, pytam jak ustawić stałe miesięczne pobrania.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Which setting turns a one-time method into a repeat-billing agreement?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Karta włączona w sklepie, jak zrobić by ściągała co miesiąc sama?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "I switched card payments on last week; now I need auto-charge for members.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Czy włączenie metody wystarcza do cyklicznych, czy trzeba coś jeszcze?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not activating a new payment option — reusing the existing card for monthly dues.",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Metoda płatności działa, teraz konfiguruję tokenizację do subskrypcji.",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Enabling checkout is one thing; how do I actually schedule recurring debits?",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "subskrypcje?",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "AUTO CHARGE HOW",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "recurring",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "So I'm building this little SaaS thing right and I want people to pay me every single month without me having to chase them or them re-entering the card each time like how do the big guys do the whole save-the-card-and-bill-forever thing can your system even do that",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "karta co miesiac SAMA prosze",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "tokenizacja pls",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Hej mam pomysl na abonament and I want auto renew like netflix czy da sie to u was ustawic bo nie wiem od czego zaczac",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "MONTHLY BILLING SETUP???",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "cyklicznie",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "want subscriptions saved cards recurring the whole thing gdzie to klikam bo się gubię",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "auto pobieranie co miesiac tak czy nie",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "SUBSCRIPTION PLEASE HELP",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "token karty zapisac i placic samo",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "Look I just need one thing — customer approves once, card gets billed every month automatically, is that a feature here or not",
+   "intent": "payment_recurring_setup",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "platnosci cykliczne???",
+   "intent": "payment_recurring_setup",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "How do I cancel a payment link the customer never used?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The checkout session timed out before he paid, what happens now?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I kill a pending payment that was never completed?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How long before an unpaid payment link expires?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Customer abandoned the cart, how do I void the open payment?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a time limit on a payment session?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "I need to cancel an order's unpaid transaction, where's the button?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The pay-by-link is still open but they won't pay, can I close it?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "After how many minutes does a payment session auto-expire?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "How can I manually expire a payment that's stuck pending unpaid?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jak anulować link do płatności, którego klient nie użył?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Sesja płatności wygasła zanim zapłacił, co teraz?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę zamknąć oczekującą płatność, która nie została opłacona?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Po jakim czasie wygasa nieopłacony link do płatności?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Klient porzucił koszyk, jak unieważnić otwartą płatność?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy sesja płatnicza ma limit czasu?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Muszę anulować nieopłaconą transakcję zamówienia, gdzie to zrobić?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Link jest wciąż aktywny, ale nie zapłacą, mogę go zamknąć?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Po ilu minutach sesja płatności sama wygasa?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Jak ręcznie wygasić płatność, która wisi jako nieopłacona?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The buyer changed their mind before paying, cancel the session?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I revoke a payment link I sent by mistake?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Payment's been pending unpaid for an hour, how do I clear it?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Is there a way to shorten how long a checkout stays open?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "He never finished paying, do I need to cancel it manually?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Kupujący się rozmyślił przed zapłatą, anulować sesję?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę cofnąć link do płatności wysłany przez pomyłkę?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Płatność wisi nieopłacona od godziny, jak ją usunąć?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Da się skrócić czas, przez jaki checkout pozostaje otwarty?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Nie dokończył płatności, muszę anulować ręcznie?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak anulowac nieoplacona transakcje ktorej klient nie skonczyl",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "sesja platnosci wygasla zanim zaplacil co dalej",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "po jakim czasie wygasa link do platnosci",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient porzucil koszyk jak zamknac otwarta platnosc",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "czy sesja platnicza ma limit czasu ile",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "musze anulowac oczekujaca platnosc gdzie klikac",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "link platnosci nadal aktywny a nie zaplaca zamknac go",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "po ilu minutach platnosc sama wygasa",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "jak recznie wygasic platnosc wiszaca nieoplacona",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "kupujacy sie rozmyslil anulowac ta platnosc jak",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "how do i cancle a payment link customer never paid",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "sesion timed out before he paid whats now",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "can i kill a pendng payment thats unpaid",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "how long till an unpaid link expres",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "custmer left cart how to void the open paymnt",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "is ther a time limit on payment sesion",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "anulowac link do platnosci nieuzyty przez klienta jak",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "platnosc wisi nieoplacona chce ja skasowac",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "ile trwa sesja zanim wygasnie link platniczy",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "klient nie zdazyl zaplacic wszystko przepadlo jak anulowac",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "If I don't cancel, does the pending payment just disappear on its own?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Can I set expiry to 10 minutes for my payment links?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Jeśli nie anuluję, czy oczekująca płatność sama zniknie?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Czy mogę ustawić wygasanie linku na 10 minut?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "There's an open transaction blocking the order, how do I close it?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "The link expired — can I reopen it or must I make a new one?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "Otwarta transakcja blokuje zamówienie, jak ją zamknąć?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "Link wygasł, mogę go odnowić czy muszę zrobić nowy?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "What state does a payment go to once its session expires?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "varied"
+  },
+  {
+   "q": "W jaki status przechodzi płatność po wygaśnięciu sesji?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "varied"
+  },
+  {
+   "q": "The customer never actually paid — no charge at all, I just want to cancel the open session.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "It's not a double charge; nothing was paid, I need to void the pending payment.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie podwójne obciążenie — klient nic nie zapłacił, chcę anulować otwartą sesję.",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nobody was charged twice, the payment simply expired unpaid, what now?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "There's no money taken, the session is just hanging — how do I cancel it?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient nie został obciążony, transakcja wisi nieopłacona, jak ją zamknąć?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not asking to reverse a charge — there was never a successful payment, just cancel it.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Two links were sent but neither was paid; I want to cancel the unused ones.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Wysłałem dwa linki, żaden nieopłacony, chcę anulować te nadmiarowe sesje.",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "He started paying, it timed out, no charge went through — how do I clear it?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie chodzi o zwrot, bo nic nie pobrano — po prostu anuluj wygasłą płatność.",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "The order shows a pending payment that was never completed, cancel it please.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Zamówienie ma oczekującą płatność, której nie dokończono, proszę anulować.",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "It's an abandoned, unpaid session — not a duplicate charge to refund.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Klient rozpoczął dwie płatności, obie nieopłacone, jak je unieważnić?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "There's a duplicate pending link but zero charges — I just need to cancel one.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Mam dwa oczekujące linki, żadnej opłaty, jak anulować ten zbędny?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Nothing to refund since no payment succeeded; how do I close the expired attempt?",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Nie ma czego zwracać, płatność nieudana i wygasła, jak ją skasować?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Customer tried twice, both unpaid and now expired — cancel them, no refund needed.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "The pending charge never captured any money, I want it cancelled before it lingers.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "Oczekująca płatność nic nie pobrała, chcę ją anulować zanim będzie wisieć.",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "Not a reversal — the session is unpaid and I want to expire it manually.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "To nie jest cofnięcie opłaty, sesja jest nieopłacona i chcę ją zamknąć ręcznie.",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "boundary"
+  },
+  {
+   "q": "There are two open payment attempts, neither paid; please cancel the extra session.",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "boundary"
+  },
+  {
+   "q": "anuluj?",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "WYGASŁO co teraz",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "cancel",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Ok so this guy put stuff in his cart got the payment link from me and then just... vanished, never paid, and now there's this pending thing sitting in my panel forever and I don't know if it'll just die on its own or if I have to go in and kill it manually somebody tell me",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "sesja padła RATUNKU",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "kill pending link",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Klient zniknął nie zapłacił and I have this open session czy ono samo wygasa czy muszę coś zrobić bo wisi",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "HOW LONG TILL IT EXPIRES",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "anulowac",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "link never paid customer gone chce to zamknac ale nie wiem gdzie klikać help",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "expire this payment NOW",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "ile czasu ma sesja zanim padnie",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  },
+  {
+   "q": "cancel unpaid transaction pls",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "Simple question — customer didn't pay, link is just sitting there pending, do I cancel it or does it auto-expire, and after how long",
+   "intent": "payment_cancel_session",
+   "lang": "en",
+   "style": "extreme"
+  },
+  {
+   "q": "nieoplacone wisi jak usunac???",
+   "intent": "payment_cancel_session",
+   "lang": "pl",
+   "style": "extreme"
+  }
+ ]
+}
