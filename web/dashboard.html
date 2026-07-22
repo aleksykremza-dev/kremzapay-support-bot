@@ -29,6 +29,7 @@
 <table><thead><tr><th>#</th><th>Reason</th><th>Intent</th><th>Status</th></tr></thead>
 <tbody id="tickets"></tbody></table>
 <script>
+const esc=s=>String(s??"\u2014").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 async function refresh(){
  const s = await (await fetch("/api/stats")).json();
  const total = Object.values(s.actions).reduce((a,b)=>a+b,0);
@@ -37,11 +38,11 @@ async function refresh(){
   `<div class="card"><b>${total}</b><span>handled</span></div>`+
   Object.entries(s.actions).map(([a,n])=>`<div class="card"><b>${n}</b><span>${a}</span></div>`).join("");
  document.getElementById("dialogs").innerHTML = s.dialogs.map(d=>
-  `<tr><td>${d.at}</td><td>${d.text}</td><td><span class="pill a-${d.action}">${d.action}</span><br>
-   <span class="path">${d.reason??""}</span></td><td>${d.intent??"—"}</td>
+  `<tr><td>${d.at}</td><td>${esc(d.text)}</td><td><span class="pill a-${d.action}">${d.action}</span><br>
+   <span class="path">${esc(d.reason)}</span></td><td>${esc(d.intent)}</td>
    <td class="path">${d.layer_path.join(" → ")}</td><td>${d.total_ms}</td></tr>`).join("");
  document.getElementById("tickets").innerHTML = s.tickets.map(t=>
-  `<tr><td>#${t.id}</td><td>${t.reason}</td><td>${t.intent??"—"}</td><td>${t.status}</td></tr>`).join("");
+  `<tr><td>#${t.id}</td><td>${esc(t.reason)}</td><td>${esc(t.intent)}</td><td>${esc(t.status)}</td></tr>`).join("");
 }
 refresh();setInterval(refresh,5000);
 </script></body></html>
