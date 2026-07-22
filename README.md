@@ -96,11 +96,14 @@ guessed reply.
   stored as a JSON column per turn.
 - **Observability dashboard** — `/dashboard` (chain of decisions per session)
   and `/api/stats`.
-- **n8n webhook channel** — a working n8n workflow (Webhook → HTTP Request →
-  Respond) drives the `/chat` endpoint; verified end-to-end with live requests
-  (fast-path replies in ~0.4 s, LLM-bound answers in tens of seconds on the
-  reference hardware). The `/chat` endpoint is plain JSON in / JSON out, so any
-  orchestrator can drive it the same way.
+- **Orchestrator-agnostic webhook API** — `/chat` is plain JSON in / JSON out,
+  verified end-to-end with live webhook requests (fast-path replies in ~0.4 s,
+  LLM-bound answers in tens of seconds on the reference hardware). Any
+  orchestrator or channel gateway can drive it without adapters.
+- **Cost profile** — fully local, zero paid APIs; the cascade resolves a large
+  share of traffic without any LLM call. Per-dialog token economics and a
+  comparison against hosted models and per-resolution vendor pricing:
+  [`docs/ECONOMICS.md`](docs/ECONOMICS.md).
 - **Evaluation harness** — a **frozen 288-case gold set** (`data/goldset/`, with
   a documented safety/OOS share) held strictly separate from a **5412-query
   training corpus** (`data/corpus/`, synthetic and disclosed as such).
