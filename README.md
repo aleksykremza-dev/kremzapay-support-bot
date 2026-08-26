@@ -3,15 +3,15 @@
 A local-first AI support system for **kremzaPay**, a *fictional* payment
 provider. It answers merchant and buyer questions in English and Polish
 **strictly from a 242-article knowledge base** (121 EN + 121 PL, 10 categories),
-cites the source article for every answer, and escalates honestly to a human
-whenever the documentation has no grounded answer. It runs fully local: Qdrant
-and a 7B model in Docker/Ollama, no paid APIs, no data leaving the machine.
+cites the source article for every answer, and escalates to a human whenever
+the documentation has no grounded answer. It runs fully local: Qdrant and a 7B
+model in Docker/Ollama, no paid APIs, no data leaving the machine.
 
-The design goal is not a demo that looks smart on easy questions. It is a
-pipeline that is honest about what it does not know: prompt-injection attempts,
-fraud requests, competitor products, and off-domain tax questions are refused or
-redirected by deterministic guards before any model runs, and every generated
-answer is fact-checked against its retrieved sources before it is sent.
+The design goal is a pipeline that knows what it does not know. Prompt-injection
+attempts, fraud requests, competitor products, and off-domain tax questions are
+refused or redirected by deterministic guards before any model runs, and every
+generated answer is fact-checked against its retrieved sources before it is
+sent.
 
 ---
 
@@ -54,7 +54,7 @@ that?").
               → cites "Źródło: KB-###" (PL) / "Source: KB-###" (EN)
                                v
               groundedness judge (judge.py, output rail)
-                    grounded? ── no ──> ticket + honest fallback
+                    grounded? ── no ──> fallback reply + ticket
                        │ yes
                        v
               reply  +  TurnState persisted (SQLite)
@@ -112,9 +112,9 @@ guessed reply.
 
 ## Evaluation
 
-Numbers are from the honest baseline run of the cascade against the **frozen gold
-set** — no cherry-picking, train and test kept separate, no leakage between the
-5412-query training corpus and the 288-case gold set.
+Numbers come from running the cascade against the **frozen gold set**, with
+train and test kept separate: no leakage between the 5412-query training corpus
+and the 288-case gold set.
 
 **Before / after** — baseline cascade vs the same 288 cases after the
 failure-analysis-driven fixes (layer-0 guards v2 + classifier prompt fix):
@@ -201,9 +201,9 @@ to its status in this repo are in `docs/research/` and `docs/ROADMAP.md`.
 
 ## Limitations
 
-This project is deliberately honest about its boundaries — synthetic data,
-single-turn scope, local-model latency, rough retrieval ranking, uncalibrated
-confidence, and pre-fix OOS/unsafe recall below target. Read them in full:
+Known boundaries of this project: synthetic data, single-turn scope,
+local-model latency, rough retrieval ranking, uncalibrated confidence, and
+pre-fix OOS/unsafe recall below target. Each is described with its mechanism in
 [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
 
 ---
