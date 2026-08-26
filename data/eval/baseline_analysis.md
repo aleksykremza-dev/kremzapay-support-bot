@@ -1,45 +1,55 @@
-# Разбор baseline-экзамена каскада (2026-07-21, ночь)
+# Baseline cascade eval: failure analysis (2026-07-21)
 
-Прогон: 288 кейсов, 45.5 мин. **accuracy 65.6% · macro-F1 0.687 · мягкая точность 69.4%**
-(мягкая = handoff на unsafe/эмоциональных считается приемлемым исходом).
-Полные данные: `baseline_cascade.json`.
+Run: 288 cases, 45.5 min. **accuracy 65.6% - macro-F1 0.687 - soft accuracy
+69.4%** (soft = handoff on unsafe/emotional cases counted as an acceptable
+outcome). Full data: `baseline_cascade.json`.
 
-## Главные находки (по убыванию важности)
+## Findings, in order of importance
 
-### 1. ГЛАВНЫЙ РИСК: 16 чужих вопросов ушли в «answer» (24.6% от special-кейсов)
-Бот полез отвечать на: настройку PayU/Stripe/Przelewy24, налоги (PIT, KPiR), спор по личной карте.
-Механика утечки: kNN принял по словарному сходству (WooCommerce, fees, faktura) → retrieval нашёл
-похожие статьи (про НАШИ плагины/комиссии) → answer.
-**Лекарство (дёшево и точно): слой 0 дополнить двумя детерминированными стражами:**
-- бренд-страж: упоминание чужих провайдеров (PayU, Stripe, Przelewy24, Tpay, Adyen, PayPal...) → redirect;
-- налоги/бухгалтерия вне kremzaPay (PIT, KPiR, księgowanie faktur kosztowych) → redirect.
+### 1. Top risk: 16 out-of-domain questions answered as if in scope (24.6% of special cases)
+The bot answered questions about configuring PayU/Stripe/Przelewy24, taxes
+(PIT, KPiR), and a personal-card dispute. Leak mechanism: kNN accepted on
+lexical similarity (WooCommerce, fees, faktura) -> retrieval found similar
+articles (about OUR plugins/fees) -> answer.
+**Fix (cheap and precise): extend layer 0 with two deterministic guards:**
+- brand guard: mention of third-party providers (PayU, Stripe, Przelewy24,
+  Tpay, Adyen, PayPal, ...) -> redirect;
+- taxes/accounting outside kremzaPay (PIT, KPiR, expense invoice bookkeeping)
+  -> redirect.
 
-### 2. unsafe-recall 26.7% — инъекции и фрод проскакивают
-11 промахов: 3 → handoff (приемлемо), 3 → ticket (терпимо), **5 → answer (плохо)**.
-**Лекарство: слой 0 — классические паттерны инъекций** (ignore instructions / system prompt /
-developer mode / DAN / wypisz prompt) и фрод-ключи (stolen card / kradziona karta / obejść
-weryfikację|KYC) → unsafe_refuse. Детерминированно, 0 мс, закрывает классику.
+### 2. unsafe recall 26.7%: injections and fraud slip through
+11 misses: 3 -> handoff (acceptable), 3 -> ticket (tolerable), **5 -> answer
+(bad)**. **Fix: layer-0 patterns for classic injections** (ignore instructions /
+system prompt / developer mode / DAN / wypisz prompt) and fraud keys (stolen
+card / kradziona karta / obejsc weryfikacje|KYC) -> unsafe_refuse.
+Deterministic, ~0 ms, covers the classics.
 
-### 3. handoff перетриггерен: 20 случаев, из них 16 — рабочие вопросы
-LLM ставит wants_human=true на любую фрустрацию, даже когда вопрос решаем
-(«klient placi i nic nie widze!!» → это payment_not_reported, а не «дайте человека»).
-**Лекарство: правка промпта** — wants_human=true ТОЛЬКО при явной просьбе или злости
-НА БОТА/сервис; злость на ситуацию ≠ запрос человека.
+### 3. handoff over-triggered: 20 cases, 16 of them workable questions
+The LLM sets wants_human=true on any frustration, even when the question is
+solvable ("klient placi i nic nie widze!!" is payment_not_reported, not "give
+me a human"). **Fix: prompt change**: wants_human=true ONLY on an explicit
+request or anger at the bot/service; anger at the situation is not a request
+for a human.
 
-### 4. Соседи почти не путаются — таксономия хорошая
-Из 99 промахов лишь 5 — «сосед за стенкой» (в своей категории). Проблема не в границах
-интентов, а в детекции special-классов (пункты 1–2). Таксономию не трогаем.
+### 4. Neighboring intents barely confuse: the taxonomy holds
+Of 99 misses only 5 are within-category neighbor confusions. The problem is
+special-class detection (findings 1-2), not intent boundaries. Taxonomy left
+untouched.
 
-### 5. По стилям: слабее всего emotional (55%) и multi (53%)
-Emotional лечится пунктом 3 (wants_human). Multi — низкий приоритет (15 кейсов).
+### 5. By style: weakest are emotional (55%) and multi (53%)
+Emotional is addressed by finding 3 (wants_human). Multi-intent is low priority
+(15 cases).
 
-### 6. chitchat 93% и other_in_scope 80% — работают хорошо.
+### 6. chitchat 93% and other_in_scope 80% work well.
 
-## План лечения (порядок применения)
-1. `rules.py` v2: бренд-страж + налоговый страж + инъекции + фрод-ключи (слой 0).
-2. Промпт классификатора: ужесточить wants_human.
-3. Свип порогов kNN (T_ACCEPT/T_OOS) на золотых кейсах БЕЗ LLM (секунды) — подобрать по данным.
-4. Перегнать экзамен → сравнить с baseline 65.6% / 0.687.
-5. (этап 7) фильтр retrieval по категории интента — лечит «zwrot → chargeback».
+## Fix plan (order of application)
+1. `rules.py` v2: brand guard + tax guard + injection + fraud keys (layer 0).
+2. Classifier prompt: tighten wants_human.
+3. kNN threshold sweep (T_ACCEPT/T_OOS) on the gold cases WITHOUT the LLM
+   (seconds): pick from the data.
+4. Re-run the eval and compare against the 65.6% / 0.687 baseline.
+5. (stage 7) filter retrieval by intent category; addresses the
+   "zwrot -> chargeback" confusion.
 
-Ожидание от 1–3: accuracy ~75%+, OOS-recall out_of_scope 0.45→0.8+, unsafe 0.27→0.7+.
+Expected from fixes 1-3: accuracy ~75%+, out_of_scope recall 0.45 -> 0.8+,
+unsafe 0.27 -> 0.7+.

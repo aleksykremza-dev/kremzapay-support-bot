@@ -1,27 +1,33 @@
-# ИИ-система поддержки: устройство на уровне реализации (blueprint)
+# AI support system at the implementation level (blueprint)
 
-> Часть 0 сводного документа Alex (deep research, 2026-07-21). Проектный референс kremzaPay-бота. Сохранено из чата, сокращено; части I–III сводного документа = docs/research/02, 03, 04.
+> Design reference compiled 2026-07-21, condensed for this project. Companion
+> notes: docs/research/02 (classifier), 03 (industry architecture),
+> 04 (competitive analysis).
 
-## 1. Состав системы: компоненты
+## 1. System components
 
-| # | Компонент | Что делает | Типовой выбор | У нас (kremzaPay) |
+| # | Component | Purpose | Typical choice | Here (kremzaPay) |
 |---|---|---|---|---|
-| 1 | Каналы | приём/доставка сообщений | виджет (WebSocket), email, Telegram Bot API | веб-чат (этап 9), n8n (этап 11) |
-| 2 | Шлюз диалогов | сессии, склейка, rate-limit | FastAPI + Redis | FastAPI (этап 9), сессии в SQLite |
-| 3 | Предобработка + input guardrails | язык, PII-маскер, injection/токсичность | малые модели + regex | язык-эвристика + unsafe-класс каскада |
-| 4 | Классификатор/роутер | intent/scope/sentiment/urgency | каскад (см. 02-classifier-spec §3.4) | этапы 6.3–6.6 |
-| 5 | RAG-движок | поиск → rerank → генерация | эмбеддер + Qdrant + cross-encoder + LLM | fastembed + Qdrant + qwen-7B (rerank — roadmap) |
-| 6 | Сценарии/действия | детерминированные флоу + tool-calling | JSON-схемы + подтверждения | Фаза 3: мок-панель kremzaPay |
-| 7 | Output guardrails + решатель | groundedness, политика, финальное решение | LLM-судья + пороги | этап 7 (судья после генерации) |
-| 8 | Handoff | очередь оператора + контекст | тикеты в PostgreSQL | тикеты в SQLite (этап 8) |
-| 9 | Хранилища | см. §3 | PostgreSQL + vector DB + Redis + объектное | SQLite + Qdrant + файлы (честное упрощение демо) |
-| 10 | Наблюдаемость + петля | трейсы, метрики, QA, эвалы | structured logs + дашборд + eval-раннер | этап 10 + eval-harness 6.7 |
+| 1 | Channels | receive/deliver messages | web widget (WebSocket), email, Telegram Bot API | web chat (stage 9), webhook API for orchestrators |
+| 2 | Dialog gateway | sessions, batching, rate limit | FastAPI + Redis | FastAPI (stage 9), sessions in SQLite |
+| 3 | Preprocessing + input guardrails | language, PII masker, injection/toxicity | small models + regex | language heuristic + layer-0 guards + PII masker |
+| 4 | Classifier/router | intent/scope/sentiment/urgency | cascade (02-classifier-spec section 3.4) | stages 6.3-6.6 |
+| 5 | RAG engine | search -> rerank -> generate | embedder + Qdrant + cross-encoder + LLM | fastembed + Qdrant + qwen-7B (rerank on roadmap) |
+| 6 | Scenarios/actions | deterministic flows + tool calling | JSON schemas + confirmations | Phase 3: mock kremzaPay panel |
+| 7 | Output guardrails + decider | groundedness, policy, final decision | LLM judge + thresholds | stage 7 (judge after generation) |
+| 8 | Handoff | operator queue + context | tickets in PostgreSQL | tickets in SQLite (stage 8) |
+| 9 | Storage | see section 3 | PostgreSQL + vector DB + Redis + object store | SQLite + Qdrant + files (a deliberate demo simplification) |
+| 10 | Observability + loop | traces, metrics, QA, evals | structured logs + dashboard + eval runner | stage 10 + eval harness 6.7 |
 
-**Ключевой принцип:** компоненты 3–7 — конвейер с контрактами: каждый шаг принимает/возвращает типизированный JSON → любой блок заменяем, не трогая остальные (так у Sierra и Decagon).
+**Key principle:** components 3-7 form a pipeline with contracts: every step
+takes and returns typed JSON, so any block can be replaced without touching the
+rest (the shape Sierra and Decagon describe).
 
-## 2. TurnState — единый контракт конвейера (ГЛАВНАЯ ПРАКТИЧЕСКАЯ ИДЕЯ)
+## 2. TurnState: the single pipeline contract
 
-Один JSON-объект, который каждый компонент дополняет; он же — готовый трейс для панели наблюдаемости («почему бот так ответил?» за 10 секунд):
+One JSON object that every component extends; the same object doubles as the
+trace for the observability panel ("why did the bot answer that?" in ten
+seconds):
 
 ```json
 {
@@ -37,37 +43,65 @@
 }
 ```
 
-`confidence_final = min(классификатор, retrieval-score, groundedness)` — система уверена настолько, насколько её слабейшее звено. Действие со счётом клиента → всегда явное подтверждение пользователем.
+`confidence_final = min(classifier, retrieval score, groundedness)`: the system
+is only as confident as its weakest signal. Any action touching a customer
+account always requires explicit user confirmation.
 
-## 3. Данные и хранилища (адаптировано к SQLite-демо)
+## 3. Data and storage (adapted to the SQLite demo)
 
-- `sessions` / `messages` (role, raw/masked text, **turn_state как JSON-колонка** — наблюдаемость без отдельной системы);
-- `tickets` — эскалации: session_id, причина, категория, приоритет, резолюция оператора (= будущие обучающие данные);
-- реестр таксономии (у нас `data/taxonomy.json`): имя, определение, примеры, контрпримеры, порог, версия;
-- `feedback` — 👍/👎, reopen-флаги;
-- Qdrant: `kb_chunks` (метаданные: статья, категория, язык, версия) + `intent_examples` (векторы эталонов интентов — по ним kNN-слой);
-- `actions_log` — audit trail каждого действия (кто, что, когда, параметры, ответ API).
-Правила: PII маскируется ДО записи в лог и до любого вызова LLM; срок хранения + удаление по запросу (GDPR).
+- `sessions` / `messages` (role, raw/masked text, **turn_state as a JSON
+  column**: observability without a separate system);
+- `tickets` for escalations: session_id, reason, category, priority, operator
+  resolution (future training data);
+- a taxonomy registry (`data/taxonomy.json` here): name, definition, examples,
+  counter-examples, threshold, version;
+- `feedback`: thumbs up/down, reopen flags;
+- Qdrant: `kb_chunks` (metadata: article, category, language, version) and
+  `intent_examples` (vectors backing the kNN layer);
+- `actions_log`: an audit trail of every action (who, what, when, parameters,
+  API response).
+Rules: PII is masked BEFORE writing to any log and before any LLM call;
+retention period + deletion on request (GDPR).
 
-## 4. Индексация базы знаний (offline)
+## 4. Knowledge base indexing (offline)
 
-Источники с владельцем и датой → семантический чанкинг ~200–500 слов с сохранением заголовков/таблиц → эмбеддинг + запись (BM25 параллельно для гибрида — roadmap) → **смоук-тест после каждой переиндексации**: фиксированные ~50 вопросов должны находить те же эталонные статьи (защита от «переиндексировали и всё сломалось»).
+Sources with an owner and a date -> semantic chunking at ~200-500 words
+preserving headers/tables -> embed + write (BM25 in parallel for hybrid search
+is on the roadmap) -> **a smoke test after every reindex**: a fixed set of ~50
+questions must retrieve the same reference articles (protection against
+"reindexed and everything silently broke").
 
-## 5. Слой действий (agentic)
+## 5. Action layer (agentic)
 
-- Каждое действие — инструмент с JSON-схемой: `get_payment_status(session_id)`, `create_refund(session_id, amount)`, `resend_webhook(session_id)`. LLM не зовёт API напрямую — только запрашивает инструмент; исполняет код системы с валидацией.
-- **Классы риска:** читающие — сразу; изменяющие — после явного подтверждения; критические — только человеком.
-- Всё в `actions_log`; ошибка инструмента ≠ падение диалога (честное сообщение + эскалация).
+- Every action is a tool with a JSON schema: `get_payment_status(session_id)`,
+  `create_refund(session_id, amount)`, `resend_webhook(session_id)`. The LLM
+  never calls an API directly; it requests a tool, and system code executes it
+  with validation.
+- **Risk classes:** read-only runs immediately; mutating runs after explicit
+  confirmation; critical runs only by a human.
+- Everything lands in `actions_log`; a tool error must not crash the dialog
+  (plain error message + escalation).
 
-## 6. Наблюдаемость и петля
+## 6. Observability and the loop
 
-Панель по диалогу (цепочка TurnState) · метрики (resolution rate с письменным определением + reopen-окно, эскалации по причинам, доля other_in_scope, латентность, токены) · автоматическая QA каждого диалога LLM-судьёй по рубрике · eval-раннер на каждое изменение (релиз только при неухудшении macro-F1 / OOS-recall / pass^k) · петля: ответы операторов → база знаний, ошибки → примеры интентов.
+Per-dialog panel (the chain of TurnStates) - metrics (resolution rate with a
+written definition and a reopen window, escalations by reason, other_in_scope
+share, latency, tokens) - automatic QA of every dialog by an LLM judge with a
+rubric - an eval runner on every change (release only when macro-F1 / OOS
+recall / pass^k do not regress) - the loop: operator replies feed the KB,
+errors feed intent examples.
 
-## 7. Порядок сборки (роадмап документа ↔ наши этапы)
+## 7. Build order (blueprint phases mapped to project stages)
 
-1. **MVP-конвейер**: шлюз + LLM-классификатор (без каскада) + RAG без реранкера + пороги + TurnState-лог. *(≈ наши этапы 5–9)*
-2. **Надёжность**: input/output guardrails, groundedness-судья, ветки OOS/chitchat/unsafe, эскалация с контекстом, shadow-mode. *(≈ 6.6 + 7 + Фаза 3)*
-3. **Качество**: реранкер, kNN-слой, калибровка порогов на золотом наборе, query rewriting. *(≈ 6.4, 6.7 + roadmap)*
-4. **Конкурентный уровень**: agentic-действия, панель наблюдаемости, авто-QA, tau2-bench, эвал-отчёт. *(= Фаза 3 плана)*
+1. **MVP pipeline**: gateway + LLM classifier (no cascade) + RAG without
+   reranker + thresholds + TurnState log. (~ stages 5-9)
+2. **Reliability**: input/output guardrails, groundedness judge,
+   OOS/chitchat/unsafe branches, escalation with context, shadow mode.
+   (~ 6.6 + 7 + Phase 3)
+3. **Quality**: reranker, kNN layer, threshold calibration on the gold set,
+   query rewriting. (~ 6.4, 6.7 + roadmap)
+4. **Market level**: agentic actions, observability panel, auto-QA, tau2-bench,
+   eval report. (= Phase 3 of the plan)
 
-Каждый этап заканчивается прогоном золотого набора — цифры «до/после» = доказательная база презентации.
+Every stage ends with a gold-set run; the before/after numbers are the
+evidence base.
