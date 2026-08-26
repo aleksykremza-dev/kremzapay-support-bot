@@ -1,9 +1,7 @@
 # Limitations
 
-This page is the honest counterweight to the README. A support system is only
-trustworthy if it is explicit about where it is weak, so the limitations below are
-stated plainly, with the mechanism behind each one. None of them are hidden in a
-footnote.
+This page is the counterweight to the README: every known weakness of the
+system, stated plainly, with the mechanism behind each one.
 
 ## Synthetic data, no live traffic
 
