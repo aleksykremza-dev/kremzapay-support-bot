@@ -1,7 +1,7 @@
 [project]
 name = "kremzapay-bot"
 version = "0.1.0"
-description = "Add your description here"
+description = "Local-first AI support bot for a fictional payment provider: intent cascade, RAG over Qdrant, guardrails, observability"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -11,3 +11,12 @@ dependencies = [
     "qdrant-client>=1.18.0",
     "uvicorn>=0.51.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
