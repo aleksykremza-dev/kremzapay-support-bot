@@ -1,67 +1,120 @@
-# Конкурентный анализ: что должен уметь ИИ-саппорт уровня рынка (2026)
+# Competitive analysis: what a market-level AI support agent must do (2026)
 
-> Исследование Alex (deep research, раунд 3, 2026-07-21; 22 источника, 14 фактов с тройной проверкой ✅, ◐ = из источника без финальной перепроверки, 3 опровергнутых утверждения исключены). Проектный референс kremzaPay-бота. Сохранено из чата, сокращено без потери сути.
+> Design reference compiled 2026-07-21 from 22 public sources, condensed for
+> this project. Items marked (unverified) come from a single source without
+> cross-checking; the rest were cross-checked against multiple sources. Vendor
+> numbers are self-reported unless noted.
 
-## 1. Обязательный минимум рынка (table stakes)
+## 1. Market table stakes
 
-✅ **Agentic actions — норма, не фича**: все 14 агентов на Artificial Analysis (Fin, Zendesk, Agentforce, Decagon, Sierra, Ada…) выполняют операции (возвраты, подписки, workflow), а не только отвечают. «Только FAQ-бот» в 2026 = вчерашний день.
-✅ **Голос почти у всех** (кроме Tidio); ◐ доля голоса 6% (2024) → 19% (2026); зона всё ещё незрелая.
-◐ Прочее: мультиязычность (Fin 95 языков), омниканальность, аналитика, handover, audit trail действий, автоматическая QA каждого диалога, симуляционное тестирование до релиза.
+- **Agentic actions are the norm, not a feature**: all 14 agents listed on
+  Artificial Analysis (Fin, Zendesk, Agentforce, Decagon, Sierra, Ada, ...)
+  execute operations (refunds, subscriptions, workflows), not just answer
+  questions. A pure FAQ bot in 2026 is behind the market.
+- **Voice is near-universal** (Tidio being the exception); (unverified) voice
+  share of interactions 6% (2024) -> 19% (2026); the area is still immature.
+- (unverified) Also expected: multilinguality (Fin claims 95 languages),
+  omnichannel, analytics, handover, an audit trail of actions, automatic QA of
+  every dialog, simulation testing before release.
 
-**Для проекта:** фундамент (RAG+классификатор+guardrails+эскалация) есть по отчётам №1–2; конкурентный уровень требует 2–3 agentic-действия с подтверждением + audit trail решений.
+**For this project:** the core (RAG + classifier + guardrails + escalation) is
+covered by notes 02-03; market level additionally requires 2-3 agentic actions
+with confirmation plus a decision audit trail.
 
-## 2. Метрики рынка
+## 2. Market metrics
 
-### Resolution rate — главная метрика и главное лукавство
-◐ Fin заявляет 67% (40+ млн диалогов); независимые разборы: в продакшене 45–53%, средняя по индустрии ≈44.8% (топ-квартиль ~58.7%), старт 40–60%. По типам: FAQ 60–70%, биллинг 50–60%, пограничные политики 20–30%, многошаговые 15–25%.
-◐ **Deflection ≠ resolution**: «assumed resolution» (клиент не ответил = решено и оплачено) при reopen 15–35% превращает «65%» в ~45% реальных.
-**Ориентиры проекта:** >45% честной резолюции = уровень рынка; >60% = зрелые лидеры. Письменное определение «резолюции» + reopen-поправка = мгновенный признак серьёзного продукта.
+### Resolution rate: the headline metric and the main trick
+(unverified) Fin claims 67% (40M+ dialogs); independent breakdowns put
+production at 45-53%, industry average ~44.8% (top quartile ~58.7%), typical
+start 40-60%. By type: FAQ 60-70%, billing 50-60%, borderline policy 20-30%,
+multi-step 15-25%.
+(unverified) **Deflection is not resolution**: "assumed resolution" (customer
+did not reply = counted and billed as resolved) at 15-35% reopen rates turns a
+claimed 65% into roughly 45% real.
+**Project benchmarks:** >45% genuine resolution is market level; >60% is mature
+leaders. A written definition of "resolution" plus a reopen correction is an
+instant marker of a serious product.
 
-### Публичные бенчмарки — главный козырь
-✅ **τ-bench / τ² / τ³ (Sierra Research)** — стандарт де-факто: симуляция клиента + политики + инструменты; домены airline/retail/telecom/banking_knowledge (RAG). ◐ MIT-лицензия — можно прогнать свою систему. ✅ Лидерборд taubench.com. ✅ **pass^k** (успех при k повторах) — надёжность, не разовый успех, остаётся главным водоразделом (2024: <50% pass^1 и ~25% pass^8 у GPT-4-агентов; 2025: ~80% pass^1 но деградация с k осталась). ✅ Telecom-домен насыщен (99.1%) → различает не модель, а система вокруг: retrieval, политики, guardrails, эскалация.
-**Для проекта:** прогнать пайплайн на tau2-bench (retail/banking_knowledge), показать pass^1 и pass^k.
+### Public benchmarks
+- **tau-bench / tau2 / tau3 (Sierra Research)** is the de-facto standard:
+  simulated customer + policies + tools; domains airline/retail/telecom/
+  banking_knowledge (RAG). (unverified) MIT license, so any system can be run
+  against it. Leaderboard at taubench.com.
+- **pass^k** (success across k repeats) measures reliability rather than
+  one-shot success and remains the main watershed (2024: <50% pass^1 and ~25%
+  pass^8 for GPT-4-class agents; 2025: ~80% pass^1 but degradation with k
+  remains).
+- The telecom domain is saturated (99.1%), so it now differentiates the system
+  around the model (retrieval, policies, guardrails, escalation), not the model.
 
-## 3. Цены и экономика (◐ конкретика)
+**For this project:** run the pipeline on tau2-bench (retail/banking_knowledge)
+and report pass^1 and pass^k.
 
-Рынок уходит к outcome-based ✅. Fin $0.99/резолюция · Zendesk ~$1.50–2.00/резолюция+$50/агент · Agentforce ~$2.00/диалог · Ada $0.15–0.45/интеракция · HubSpot/Quickchat $0.50–0.60 · Decagon ~$95–150K+/год ✅ (per-conversation и per-resolution) · Sierra ~$150K+/год, внедрение 3–7 мес. Ориентир: AI ≈$0.62/тикет vs человек $6–12.
-Слабости моделей: биллинг assumed resolution; непредсказуемость затрат (топ-жалоба на Fin); скрытые расходы (helpdesk отдельно, у Agentforce $50–150K услуг).
+## 3. Pricing and economics (unverified specifics)
 
-## 4. Где лидеры проваливаются — зоны дифференциации (◐, из сотен отзывов G2/Reddit)
+The market is moving to outcome-based pricing. Fin $0.99/resolution - Zendesk
+~$1.50-2.00/resolution + $50/agent - Agentforce ~$2.00/dialog - Ada
+$0.15-0.45/interaction - HubSpot/Quickchat $0.50-0.60 - Decagon ~$95-150K+/year
+(per-conversation and per-resolution) - Sierra ~$150K+/year with 3-7 month
+onboarding. Reference point: AI ~$0.62/ticket vs a human at $6-12.
+Known weaknesses of these models: assumed-resolution billing; unpredictable
+costs (the top complaint about Fin); hidden costs (helpdesk sold separately;
+Agentforce services at $50-150K).
 
-1. **Галлюцинации даже у Fin** (уверенные неверные ответы); без grounding 15–30% неверных, с grounding <5% → наш groundedness-слой = ответ на топ-жалобу.
-2. **Нулевая наблюдаемость** («невозможно понять, что думает ИИ», 123 отзыва у Fin) → **панель цепочки решений (интент → источники → уверенность → почему ответил/эскалировал) — сильнейший differentiator, у нас почти бесплатный**.
-3. Зависимость от качества базы (~25% статей enterprise-баз устарели).
-4. Сложность настройки, фрагментированные цены → простота запуска = преимущество.
-5. **Нет безопасного постепенного запуска** (у Fin нет shadow-режима) → дёшево реализуемая киллер-фича.
-6. Enterprise-only лидеры (Sierra без триала, Decagon managed) → self-serve сегмент открыт.
-7. Gartner: 80% автономных резолюций к 2029, НО отмена 40% agentic-проектов к 2027; 60% клиентов боятся не дозвониться до человека → честная быстрая эскалация = требование рынка.
+## 4. Where the leaders fail: differentiation opportunities (from G2/Reddit reviews, unverified)
 
-## 5. Чек-лист серьёзного проекта
+1. **Hallucinations even in Fin** (confident wrong answers); without grounding
+   15-30% of answers are wrong, with grounding <5%. A groundedness layer
+   answers the top market complaint.
+2. **Zero observability** ("impossible to understand what the AI is thinking",
+   123 reviews for Fin). A decision-chain panel (intent -> sources ->
+   confidence -> why it answered or escalated) is the strongest differentiator
+   and nearly free to build on top of a per-turn trace.
+3. Dependence on KB quality (~25% of enterprise KB articles are outdated).
+4. Setup complexity and fragmented pricing; ease of launch is an advantage.
+5. **No safe gradual rollout** (Fin has no shadow mode); cheap to implement.
+6. Enterprise-only leaders (Sierra has no trial, Decagon is managed); the
+   self-serve segment is open.
+7. Gartner: 80% autonomous resolutions by 2029, BUT 40% of agentic projects
+   cancelled by 2027; 60% of customers fear not reaching a human. Fast, plain
+   escalation is a market requirement.
 
-Ядро (спроектировано по №1–2): полный конвейер + guardrails + калиброванные пороги; три ветки: ответ / уточнение / эскалация (безопасность ≠ неуверенность).
-Конкурентный уровень (добавить):
-3. **2–3 agentic-действия** с подтверждением (статус платежа, возврат, смена тарифа).
-4. **Эвал-отчёт**: tau2-bench + свой золотой набор; pass^1/pass^k; resolution rate с письменным определением и reopen-поправкой; разбивка по типам.
-5. **Панель наблюдаемости** по каждому диалогу.
-6. **Shadow-mode** (бот пишет черновики, человек утверждает) → автономность по категориям.
-7. **Автоматическая QA каждого диалога** (LLM-судья по рубрике) + audit trail.
-8. Комплаенс концептуально: SOC 2 Type II, GDPR (DPA, EU-резиденция, erasure), мультимодельность.
-9. **Честная страница ограничений** — на фоне завышающих вендоров выглядит зрело.
+## 5. Checklist for a serious project
 
-Демо-сценарии: FAQ с источниками → биллинг с agentic-действием → out-of-scope отказ → инъекция (guardrail) → сложный кейс с эскалацией и контекстом → панель метрик.
+Core (designed per notes 02-03): full pipeline + guardrails + calibrated
+thresholds; three branches: answer / clarify / escalate (safety is not the same
+as uncertainty).
+Market level (to add):
+1. **2-3 agentic actions** with confirmation (payment status, refund, tariff
+   change).
+2. **An eval report**: tau2-bench + own gold set; pass^1/pass^k; resolution
+   rate with a written definition and reopen correction; breakdown by type.
+3. **An observability panel** for every dialog.
+4. **Shadow mode** (bot drafts, human approves), then autonomy per category.
+5. **Automatic QA of every dialog** (LLM judge with a rubric) + audit trail.
+6. Compliance at the conceptual level: SOC 2 Type II, GDPR (DPA, EU residency,
+   erasure), multi-model support.
+7. **A plain limitations page**; against overclaiming vendors it reads as
+   maturity.
 
-## 6. Фреймворки (◐)
+Demo scenarios: FAQ with sources -> billing with an agentic action ->
+out-of-scope refusal -> injection (guardrail) -> hard case with escalation and
+context -> metrics panel.
 
-LangGraph — дефолт для сложных агентов с явным графом ветвлений · OpenAI Agents SDK (лёгкий, 100+ моделей) · Claude Agent SDK · Rasa CALM (~$0.031 и ~2.6 с/сообщение; Deutsche Telekom — 50% автономных резолюций) · НЕ AutoGen (maintenance mode). Рекомендация отчёта: LangGraph + NeMo Guardrails + tau2-bench + свой классификатор. *(Решение проекта: ядро остаётся hand-built — учебная ценность; фреймворки — в roadmap.)*
+## 6. Frameworks (unverified)
 
-## 7. Позиционирование
+LangGraph is the default for complex agents with an explicit branch graph -
+OpenAI Agents SDK (light, 100+ models) - Claude Agent SDK - Rasa CALM (~$0.031
+and ~2.6 s/message; Deutsche Telekom reports 50% autonomous resolutions) - not
+AutoGen (maintenance mode). The generic recommendation would be LangGraph +
+NeMo Guardrails + tau2-bench + a custom classifier. This project keeps the core
+hand-built deliberately (learning value); framework migration stays on the
+roadmap.
 
-«Построил систему по референсной архитектуре лидеров (Fin/Sierra/Decagon), закрыл три главные жалобы рынка — наблюдаемость решений, честные метрики резолюции, безопасный постепенный запуск — и подтвердил качество на публичном бенчмарке (tau2-bench), которым меряется индустрия».
+## Sources
 
-## Источники
-
-tau2-bench: github.com/sierra-research/tau2-bench · artificialanalysis.ai/evaluations/tau2-bench · sierra.ai/blog/tau-bench-shaping-development-evaluation-agents
-Сравнения: artificialanalysis.ai/agents/customer-support · braintrust.dev/articles/best-ai-customer-service-agents-2026 · rasa.com/blog/best-ai-agents-for-enterprise
-Метрики/экономика: usefini.com/guides/deflection-rate-vs-true-resolution-rate-ai-support · fin.ai/learn/roi-ai-customer-service-agents-benchmarks · fin.ai/learn/ai-customer-service-agent-tco-calculator · a16z outcome-based pricing · metronome.com AI pricing field report · getmacha.com pricing models
-Слабости: G2 (Fin, Zendesk) · clonedesk.ai/blog/intercom-fin-limitations · matrixflows.com chatbot problems
-Фреймворки/комплаенс: langfuse.com AI agent comparison · voiceflow.com security & compliance guide
+tau2-bench: github.com/sierra-research/tau2-bench - artificialanalysis.ai/evaluations/tau2-bench - sierra.ai/blog/tau-bench-shaping-development-evaluation-agents
+Comparisons: artificialanalysis.ai/agents/customer-support - braintrust.dev/articles/best-ai-customer-service-agents-2026 - rasa.com/blog/best-ai-agents-for-enterprise
+Metrics/economics: usefini.com/guides/deflection-rate-vs-true-resolution-rate-ai-support - fin.ai/learn/roi-ai-customer-service-agents-benchmarks - fin.ai/learn/ai-customer-service-agent-tco-calculator - a16z outcome-based pricing - metronome.com AI pricing field report - getmacha.com pricing models
+Weaknesses: G2 (Fin, Zendesk) - clonedesk.ai/blog/intercom-fin-limitations - matrixflows.com chatbot problems
+Frameworks/compliance: langfuse.com AI agent comparison - voiceflow.com security & compliance guide

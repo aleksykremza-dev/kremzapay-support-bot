@@ -1,67 +1,69 @@
-# Трассировка: рекомендации исследований → статус в проекте
+# Roadmap: research recommendations traced to project status
 
-> Каждая существенная рекомендация из `docs/research/02–05` и где она в проекте.
+> Every substantial recommendation from `docs/research/02-05` and where it
+> stands in this repo. Statuses: **Done** (with the file or artifact),
+> **Planned** (with the reason it is not built yet), **Out of scope** (with the
+> blocker). Out of scope here means a real precondition is missing, mainly live
+> traffic; synthetic data substitutes for it where it can: the ~5400-query
+> training corpus (100 per intent) is kept strictly separate from the frozen
+> gold set.
 
-> **РЕШЕНИЕ ALEX 2026-07-21: «Делаем всё».** Статусы ниже пересмотрены: прежние отложенные пункты включены в план (см. пошаговый путеводитель, этапы 6.2b–6.10, 7, 9+, инфра-апгрейд, голос). Вне плана остаётся только дообучение эмбеддера на реальных парах (физика данных: нужны миллионы живых запросов) и комплаенс-сертификация (SOC 2 — процедура организации, не кода). Синтетика компенсирует отсутствие трафика: тренировочный корпус ~5200 запросов (100/интент), строго отделённый от замороженного золотого набора.
+## Classifier (research/02)
 
-> Статусы: ✅ сделано · 🔨 строим (этап N) · 📋 Фаза 3 (после ядра) · 🗺 Roadmap/Фаза 2 (нужен живой трафик или не окупается в демо — причина указана).
-
-## Классификатор (research/02)
-
-| Рекомендация | Статус |
+| Recommendation | Status |
 |---|---|
-| Двухуровневая таксономия, определения + примеры + контрпримеры | ✅ 52 интента, 10 категорий (`data/taxonomy/`) |
-| Служебные классы other_in_scope / out_of_scope / chitchat / unsafe | ✅ в таксономии |
-| Таксономия из данных (кластеризация реальных обращений) | 🔨 замена утверждена: тренировочный корпус ~100/интент (этап 6.2b) |
-| Золотой набор 300+ с 10–20% OOS, версионируется | ✅ 288 кейсов (`data/goldset/`), 22.6% safety |
-| Каскад: правила → kNN (t_accept/t_oos) → LLM → уточнение | 🔨 этапы 6.3–6.6 |
-| LLM-классификатор: строгий JSON, reasoning ДО решения, secondary_intent | 🔨 этап 6.5 |
-| Query rewriting в многооборотных диалогах | 🔨 этап 9+ (сразу после появления истории диалога) |
-| OOS минимум по 2 независимым сигналам (класс + расстояние + retrieval) | 🔨 этап 6.6 |
-| Уверенность категориями (high/medium/low), не числом | 🔨 этап 6.5 |
-| Пороги — матрица по цене ошибки на интент | 🔨 старт едиными, тюнинг на золотом наборе (6.7); полная матрица — 📋 |
-| confidence_final = минимум сигналов | 🔨 этап 6.6 (TurnState) |
-| Temperature scaling / ECE | 🔨 этап 6.9 — упрощённая калибровка по золотому набору |
-| Fine-tuned классификатор (SetFit/DeBERTa) | 🔨 этап 6.8 — SetFit на тренировочном корпусе (CPU) |
-| macro-F1, OOS-recall, confusion matrix на каждое изменение | 🔨 этап 6.7 (eval-harness) |
+| Two-level taxonomy, definitions + examples + counter-examples | Done: 52 intents, 10 categories (`data/taxonomy/`) |
+| Service classes other_in_scope / out_of_scope / chitchat / unsafe | Done: in the taxonomy |
+| Taxonomy built from data (clustering real tickets) | Done via substitute: synthetic corpus ~100/intent (`data/corpus/`) |
+| Gold set 300+ with 10-20% OOS, version controlled | Done: 288 cases (`data/goldset/`), 22.6% safety share |
+| Cascade: rules -> kNN (t_accept/t_oos) -> LLM -> clarify | Done: `rules.py`, `knn_router.py`, `llm_classifier.py`, `cascade.py` |
+| LLM classifier: strict JSON, reasoning before the decision, secondary_intent | Done: `llm_classifier.py` (two-stage) |
+| Query rewriting in multi-turn dialogs | Planned: needs dialog history first (single-turn today) |
+| OOS from at least 2 independent signals (class + distance + retrieval) | Done: kNN distance + retrieval threshold in `cascade.py` |
+| Confidence as categories (high/medium/low), not a number | Done: `llm_classifier.py` |
+| Per-intent threshold matrix by cost of error | Planned: thresholds are global today, tuned on the gold set |
+| confidence_final = minimum of signals | Done: decision logic in `cascade.py` |
+| Temperature scaling / ECE | Planned: simplified calibration against the gold set |
+| Fine-tuned classifier (SetFit/DeBERTa) | Planned: SetFit on the training corpus (CPU) |
+| macro-F1, OOS recall, confusion matrix on every change | Done: `eval_cascade.py`, results in `data/eval/` |
 
-## Архитектура индустрии (research/03)
+## Industry architecture (research/03)
 
-| Рекомендация | Статус |
+| Recommendation | Status |
 |---|---|
-| Конвейер фаз: роутинг → RAG → валидация ответа | 🔨 = наши этапы 6 → 5/7 → 7 |
-| Неуверенность → уточнение; небезопасность → эскалация (разные ветки) | 🔨 этап 6.6 (clarify vs unsafe) |
-| Reranking-ступень (поиск ~40 → rerank → топ-5) | 🔨 этап 7 — reranking-ступень |
-| Дообучение эмбеддера на своих запросах | 🗺 единственный настоящий блокер: нужны миллионы реальных пар (решение Alex: принято) |
-| Guardrails как отдельный слой (5 рельсов NeMo) | 🔨 самодельные рельсы: input=6.6 (unsafe), output=7 (судья); NeMo-фреймворк — 🗺 (учебная ценность hand-built) |
-| Асинхронные/параллельные guardrails | 📋 Фаза 3 — асинхронные рельсы |
-| Эмпирический замер порога эскалации своей LLM | 🔨 этап 6.7 = прогон qwen-7B на золотом наборе |
-| Two-Stage Fallback (переспросить → переформулировать → человек) | 🔨 этап 6.6 (clarify) + 📋 счётчик кругов |
-| Пост-анализ каждого диалога (Watchtower) | 📋 Фаза 3 (LLM-судья по рубрике) |
+| Phase pipeline: routing -> RAG -> answer validation | Done: cascade -> retrieval -> generation -> judge |
+| Uncertainty -> clarify; unsafety -> escalate (separate branches) | Done: clarify vs unsafe_refuse in `cascade.py` |
+| Reranking stage (search ~40 -> rerank -> top 5) | Planned: retrieval is single-stage kNN today |
+| Fine-tuning the embedder on own queries | Out of scope: needs millions of real query pairs |
+| Guardrails as a separate layer (5 NeMo rails) | Done hand-built: input (rules + PII), output (judge); NeMo itself Planned |
+| Async/parallel guardrails | Planned: rails run inline today |
+| Empirical measurement of the model's escalation threshold | Done: qwen-7B measured on the gold set (`data/eval/`) |
+| Two-Stage Fallback (re-ask -> rephrase -> human) | Partially done: clarify branch exists; a loop counter is Planned |
+| Post-analysis of every dialog (Watchtower-style) | Planned: LLM judge with a rubric over stored TurnStates |
 
-## Конкурентный уровень (research/04)
+## Market level (research/04)
 
-| Рекомендация | Статус |
+| Recommendation | Status |
 |---|---|
-| 2–3 agentic-действия с подтверждением | 📋 Фаза 3: get_payment_status / create_refund / resend_webhook через мок-панель |
-| Классы риска действий + actions_log | 📋 Фаза 3 (дизайн в research/05 §5) |
-| Панель наблюдаемости (цепочка решений) | 📋 Фаза 3, фундамент — TurnState с этапа 6.6 |
-| Shadow-mode (черновики на утверждение) | 📋 Фаза 3, поверх очереди тикетов (этап 8) |
-| tau2-bench + pass^1/pass^k | 📋 Фаза 3 (эвал-отчёт) |
-| Resolution rate: письменное определение + reopen-поправка | 📋 Фаза 3 (дашборд, этап 10) |
-| Автоматическая QA каждого диалога | 📋 Фаза 3 |
-| Страница ограничений (честность) | 📋 README перед публикацией |
-| Голос, омниканальность, 95 языков | 📋 голос — поздняя фаза (whisper+TTS локально); языки: EN+PL |
-| SOC 2 / GDPR-комплаенс | 🗺 концептуально в README (демо без реальных PII) |
-| Фреймворки (LangGraph/CALM) | 🗺 ядро hand-built сознательно — учебная ценность; миграция описана как опция |
+| 2-3 agentic actions with confirmation | Planned: get_payment_status / create_refund / resend_webhook against a mock panel |
+| Action risk classes + actions_log | Planned: table exists in `store.py`, actions do not yet |
+| Observability panel (decision chain) | Done: `/dashboard` over per-turn TurnState traces |
+| Shadow mode (drafts for operator approval) | Planned: on top of the ticket queue |
+| tau2-bench + pass^1/pass^k | Planned: eval report |
+| Resolution rate: written definition + reopen correction | Planned: dashboard metric |
+| Automatic QA of every dialog | Planned |
+| Limitations page | Done: `docs/LIMITATIONS.md` |
+| Voice, omnichannel, 95 languages | Planned late (local whisper + TTS); languages: EN+PL |
+| SOC 2 / GDPR compliance | Out of scope: an organizational procedure, not code; demo holds no real PII |
+| Frameworks (LangGraph/CALM) | Deliberately hand-built core (learning value); migration path documented |
 
 ## Blueprint (research/05)
 
-| Рекомендация | Статус |
+| Recommendation | Status |
 |---|---|
-| TurnState — единый контракт конвейера + трейс | 🔨 этап 6.6 и далее сквозной |
-| PostgreSQL + Redis + объектное хранилище | 📋 инфра-апгрейд после этапа 10: PostgreSQL + Redis (Docker) |
-| PII-маскер до LLM и до логов | 🔨 этап 6.10 — PII-маскер (regex) |
-| Смоук-тест после переиндексации (~50 вопросов) | 📋 добавить к ingest (фаза качества) |
-| Реестр таксономии с версиями | ✅ файлы в git = версии |
-| Роадмап 4 фаз (MVP → надёжность → качество → конкурентный) | ✅ совпадает с картой этапов |
+| TurnState as the single pipeline contract + trace | Done: end to end, persisted per turn |
+| PostgreSQL + Redis + object storage | Planned: SQLite is a deliberate demo simplification |
+| PII masker before LLM and before logs | Done: `pii.py` |
+| Smoke test after reindexing (~50 questions) | Planned: to be added to `ingest.py` |
+| Versioned taxonomy registry | Done: files in git are the versions |
+| 4-phase roadmap (MVP -> reliability -> quality -> market level) | Done: matches the stage map above |
