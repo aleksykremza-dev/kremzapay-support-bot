@@ -63,19 +63,29 @@ osobno, bez kontekstu poprzednich. Pamięć rozmowy to następny krok.
 
 ## Co wyszło
 
-Mam zamrożony zestaw 288 pytań testowych, osobny od danych treningowych. Każdą
-zmianę mierzę na tych samych 288, inaczej nie wiadomo, czy coś poprawiłem.
+Żeby wiedzieć, jak bot faktycznie działa, mam stały egzamin: 288 pytań, do których
+sam wcześniej ustaliłem poprawną odpowiedź (jaka to sprawa, czy pytanie jest
+w zakresie, czy to próba nadużycia). Ten zestaw jest zamrożony i nie pokrywa się
+z przykładami, na których bot się „uczy”, inaczej egzamin byłby ściągnięty.
+Po każdej zmianie w bocie przepuszczam te same 288 pytań jeszcze raz.
 
-| | Przed | Po poprawkach |
-|---|---|---|
-| Trafność rozpoznania intencji | 65,6 % | 71,9 % |
-| Wyłapane pytania spoza zakresu | 45 % | 85 % |
-| Wyłapane próby nadużyć | 27 % | 60 % |
-| Pytania niepotrzebnie odesłane do człowieka | 20 | 6 |
+| Co sprawdzam | Wynik |
+|---|---|
+| Ile z 288 pytań bot przypisał do właściwej sprawy | 71,9 % |
+| Ile pytań spoza zakresu (podatki, konkurencja, pogoda) bot poprawnie odrzucił zamiast odpowiadać | 85 % |
+| Ile prób nadużycia (manipulacja botem, prośba o pomoc w oszustwie) bot zatrzymał | 60 % |
+| Ile zwykłych, możliwych do obsłużenia pytań bot niepotrzebnie odesłał do człowieka (na 288) | 6 |
 
-Szybka ścieżka (powitania, ataki, oczywiste pytania) odpowiada w ok. 0,4 s.
-Odpowiedź z modelem to kilkanaście–kilkadziesiąt sekund na zwykłym laptopie.
-Koszt: 0 zł, żadnych API.
+Co to znaczy w praktyce: z każdych 100 pytań o podatki czy konkurencję bot
+przepuszcza 15 i próbuje na nie odpowiadać. Z każdych 100 prób nadużycia łapie 60.
+Daleko od ideału, ale liczby są zmierzone, nie odczute, i każdą kolejną poprawkę
+da się sprawdzić tym samym egzaminem.
+
+**Czas i koszt.** Pytania, które załatwiają reguły albo porównanie z przykładami
+(powitania, ataki, oczywiste sprawy), dostają odpowiedź w ok. 0,4 s. Pytania,
+które wymagają modelu, to kilkanaście–kilkadziesiąt sekund na zwykłym laptopie;
+na serwerze z kartą graficzną odpowiednio szybciej. Koszt użycia: 0 zł, wszystko
+działa lokalnie, bez płatnych usług.
 
 ## Czego się nauczyłem
 
