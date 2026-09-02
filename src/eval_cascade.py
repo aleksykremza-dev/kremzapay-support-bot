@@ -1,4 +1,4 @@
-"""6.7: cascade exam on the gold set. Metrics: accuracy, macro-F1, OOS-recall, confusion."""
+"""Cascade exam on the gold set. Metrics: accuracy, macro-F1, OOS-recall, confusion."""
 # [EVAL] Gold-set exam harness
 import glob
 import json

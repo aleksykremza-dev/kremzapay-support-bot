@@ -1,216 +1,112 @@
 # kremzaPay Support Bot
 
-A local-first AI support system for **kremzaPay**, a *fictional* payment
-provider. It answers merchant and buyer questions in English and Polish
-**strictly from a 242-article knowledge base** (121 EN + 121 PL, 10 categories),
-cites the source article for every answer, and escalates to a human whenever
-the documentation has no grounded answer. It runs fully local: Qdrant and a 7B
-model in Docker/Ollama, no paid APIs, no data leaving the machine.
+Bot wsparcia dla fikcyjnego operatora płatności. Odpowiada po polsku i angielsku
+wyłącznie na podstawie 242 artykułów dokumentacji, do każdej odpowiedzi podaje
+źródło, a gdy nie wie, przekazuje sprawę człowiekowi zamiast zmyślać.
+Wszystko działa lokalnie (Ollama + Qdrant), bez płatnych API.
 
-The design goal is a pipeline that knows what it does not know. Prompt-injection
-attempts, fraud requests, competitor products, and off-domain tax questions are
-refused or redirected by deterministic guards before any model runs, and every
-generated answer is fact-checked against its retrieved sources before it is
-sent.
+## Po co to zrobiłem
 
----
+Chciałem sprawdzić na własnej skórze, czy da się zbudować bota, który nie
+halucynuje: odpowiada tylko z dokumentacji i umie powiedzieć „nie wiem”.
+Firma jest wymyślona, dokumentacja też (wygenerowana i przejrzana ręcznie),
+ale problemy są prawdziwe, te same co u każdego operatora płatności:
+zwroty, chargebacki, KYC, integracja API.
 
-## Architecture
+## Jak to działa
 
-Each turn flows through a single typed contract, the **TurnState** object. Every
-component reads and extends the same JSON, so the finished object is also the
-per-turn trace shown on the observability dashboard ("why did the bot answer
-that?").
+Każde pytanie przechodzi przez pięć kroków:
 
-```
-                          user message
-                               |
-                               v
-                    ┌──────────────────────┐
-                    │  PII masker (rail)    │  regex mask before LLM & before logs
-                    └──────────┬───────────┘
-                               v
-        ┌───────────────────────────────────────────────┐
-        │              Intent cascade                    │
-        │                                                │
-        │   L0  rules.py     deterministic guards        │  injection / fraud /
-        │        │           (0 ms, no model)            │  competitor / off-tax
-        │        v                                       │
-        │   L1  knn_router   kNN over intent examples    │  t_accept / t_oos
-        │        │           (embeddings)                │
-        │        v                                       │
-        │   L2  llm_classifier  two-stage LLM            │  reasoning -> strict JSON
-        └──────────────────────┬────────────────────────┘
-                               v
-                     retrieval signal (Qdrant kNN)
-                               v
-        ┌───────────────────────────────────────────────┐
-        │           Decision branch (cascade.py)         │
-        │  answer · clarify · ticket · redirect ·        │
-        │  chitchat · unsafe · handoff                   │
-        └──────────────────────┬────────────────────────┘
-                               v
-              generation with brand voice (answer_gen.py)
-              → cites "Źródło: KB-###" (PL) / "Source: KB-###" (EN)
-                               v
-              groundedness judge (judge.py, output rail)
-                    grounded? ── no ──> fallback reply + ticket
-                       │ yes
-                       v
-              reply  +  TurnState persisted (SQLite)
-                       │
-                       v
-              observability panel (/dashboard, /api/stats)
-```
+1. **Maskowanie danych osobowych.** Numery kart, IBAN, PESEL, telefony i e-maile
+   są zamazywane, zanim tekst trafi do modelu i do logów.
+2. **Rozpoznanie intencji, od taniego do drogiego.** Najpierw reguły
+   (ataki na prompt, prośby o oszustwo, pytania o konkurencję, podatki):
+   0 ms, bez modelu. Potem podobieństwo do przykładów (kNN). Dopiero gdy to
+   nie wystarcza, model LLM. Razem 52 intencje w 10 kategoriach.
+3. **Szukanie w dokumentacji** (Qdrant, 643 fragmenty), zawężone do kategorii
+   z kroku 2.
+4. **Generowanie odpowiedzi** lokalnym modelem qwen2.5:7b, z dopiskiem
+   „Źródło: KB-###”.
+5. **Sędzia.** Osobne sprawdzenie: czy każdy fakt w odpowiedzi jest w znalezionych
+   fragmentach? Jeśli nie, odpowiedź nie wychodzi, otwiera się ticket.
 
-`confidence_final = min(classifier, retrieval score, groundedness)` — the system
-is only as confident as its weakest signal. If generation cannot be grounded in
-the retrieved chunks, the answer is withheld and a ticket is opened instead of a
-guessed reply.
+Cały przebieg rozmowy zapisuje się w SQLite jako jeden JSON (TurnState) i jest
+widoczny na panelu `/dashboard`: dlaczego bot odpowiedział tak, a nie inaczej.
 
----
+## Co wyszło
 
-## Key features
+Mam zamrożony zestaw 288 pytań testowych, osobny od danych treningowych. Każdą
+zmianę mierzę na tych samych 288, inaczej nie wiadomo, czy coś poprawiłem.
 
-- **4-layer intent cascade** — 52 intents across 10 categories plus 4 special
-  classes (`other_in_scope`, `out_of_scope`, `chitchat`, `unsafe`). Cheap
-  deterministic layers run first; the LLM only runs when needed.
-- **Deterministic layer-0 guards** (`rules.py`) — prompt-injection patterns
-  (ignore instructions / system prompt / DAN / "wypisz prompt"), fraud requests
-  (stolen card / obejść KYC), competitor products (PayU, Stripe, Przelewy24,
-  Tpay, Adyen, PayPal…), and off-domain tax/accounting questions (PIT, KPiR).
-  Zero-latency, no model call.
-- **Multilingual EN/PL semantic search** over Qdrant, using the
-  `paraphrase-multilingual-MiniLM-L12-v2` embedder (fastembed). 643 chunks
-  indexed from the 242-article KB.
-- **Grounded generation with source citations** — every answer ends with
-  `Źródło: KB-###` (PL) or `Source: KB-###` (EN), pointing at the exact KB
-  article it was drawn from.
-- **Output-rail fact-checking judge** (`judge.py`) — checks the generated answer
-  against its retrieved chunks; ungrounded answers are dropped and converted to a
-  ticket rather than sent.
-- **PII masking input rail** (`pii.py`) — sensitive tokens are masked before the
-  text reaches the LLM and before it is written to any log.
-- **SQLite persistence with full decision trace** (`store.py`,
-  `data/kremzapay.db`) — sessions, messages, tickets, and the complete TurnState
-  stored as a JSON column per turn.
-- **Observability dashboard** — `/dashboard` (chain of decisions per session)
-  and `/api/stats`.
-- **Orchestrator-agnostic webhook API** — `/chat` is plain JSON in / JSON out,
-  verified end-to-end with live webhook requests (fast-path replies in ~0.4 s,
-  LLM-bound answers in tens of seconds on the reference hardware). Any
-  orchestrator or channel gateway can drive it without adapters.
-- **Cost profile** — fully local, zero paid APIs; the cascade resolves a large
-  share of traffic without any LLM call. Per-dialog token economics and a
-  comparison against hosted models and per-resolution vendor pricing:
-  [`docs/ECONOMICS.md`](docs/ECONOMICS.md).
-- **Evaluation harness** — a **frozen 288-case gold set** (`data/goldset/`, with
-  a documented safety/OOS share) held strictly separate from a **5412-query
-  training corpus** (`data/corpus/`, synthetic and disclosed as such).
+| | Przed | Po poprawkach |
+|---|---|---|
+| Trafność rozpoznania intencji | 65,6 % | 71,9 % |
+| Wyłapane pytania spoza zakresu | 45 % | 85 % |
+| Wyłapane próby nadużyć | 27 % | 60 % |
+| Pytania niepotrzebnie odesłane do człowieka | 20 | 6 |
 
----
+Szybka ścieżka (powitania, ataki, oczywiste pytania) odpowiada w ok. 0,4 s.
+Odpowiedź z modelem to kilkanaście–kilkadziesiąt sekund na zwykłym laptopie.
+Koszt: 0 zł, żadnych API.
 
-## Evaluation
+## Czego się nauczyłem
 
-Numbers come from running the cascade against the **frozen gold set**, with
-train and test kept separate: no leakage between the 5412-query training corpus
-and the 288-case gold set.
+- Pierwsza wersja miała 65 % i wyglądała dobrze na łatwych pytaniach. Dopiero
+  analiza błędów pokazała dwie dziury: pytania o konkurencję przechodziły przez
+  kNN przez samo podobieństwo słów, a „chcę rozmawiać z człowiekiem” model widział
+  w każdej złości klienta. Obie naprawiłem regułami i poprawką promptu, stąd +6 pp.
+- Słowo „zwrot” najczęściej występuje w artykułach o chargebackach, więc
+  wyszukiwarka ciągnęła złe artykuły. Rozwiązanie: filtr po kategorii intencji.
+  Znalezione na żywym teście, nie w teorii.
+- Model 7B zamiast 3B: polski w 3B był za słaby. Wolniej, ale to portfolio,
+  nie produkcja.
+- Podczas automatycznych testów panelu wyszedł XSS (innerHTML). Naprawiony.
 
-**Before / after** — baseline cascade vs the same 288 cases after the
-failure-analysis-driven fixes (layer-0 guards v2 + classifier prompt fix):
+## Co bym zrobił inaczej
 
-| Metric | Baseline | Round 2 | Δ |
-|---|---|---|---|
-| Accuracy | 65.6% | **71.9%** | +6.3 pp |
-| Macro-F1 | 0.687 | **0.715** | +0.028 |
-| out_of_scope recall | 0.45 | **0.85** | ×1.9 |
-| unsafe recall | 0.27 | **0.60** | ×2.2 |
-| other_in_scope recall | 0.80 | 0.87 | +0.07 |
-| chitchat recall | 0.93 | 0.93 | = |
-| False handoffs (workable questions sent to a human) | 20 | **6** | −14 |
+- Testy jednostkowe od pierwszego dnia, nie na końcu. Teraz jest ich 41 i pokrywają
+  reguły, maskowanie PII i routing kaskady, ale nie generowanie ani sędziego.
+- Mniej dokumentów „badawczych”, więcej działającego kodu.
+- Pamięć rozmowy. Teraz każde pytanie jest osobne.
 
-The failure analysis (`data/eval/baseline_analysis.md`) traced the two weak
-classes to concrete leak mechanisms: competitor/tax questions accepted by lexical
-kNN similarity, and injection/fraud patterns slipping past into `answer`. This
-drove **layer-0 guards v2** (brand guard, tax guard, injection and fraud keys)
-and a **classifier prompt fix** (`wants_human=true` only on explicit request or
-anger at the bot, not on frustration with the situation).
+## Słowniczek: co za co odpowiada
 
-Full per-case reports: `data/eval/round2_cascade.json`; failure analysis that
-drove the fixes: `data/eval/baseline_analysis.md`. Remaining weak spots
-(implicit phrasings 60%, multi-intent) are the next levers: a SetFit layer-1
-classifier and threshold calibration on the training corpus.
+| Termin | Co robi | Gdzie |
+|---|---|---|
+| **TurnState** | Jeden obiekt JSON na każde pytanie. Każdy krok dopisuje do niego swój wynik (intencja, znalezione fragmenty, odpowiedź, werdykt sędziego). Ten sam obiekt trafia do bazy i na panel. | `src/cascade.py`, `src/store.py` |
+| **Kaskada intencji (L0 → L1 → L2)** | Trzy warstwy rozpoznawania, o co pyta klient. Tańsza warstwa próbuje pierwsza; droższa uruchamia się tylko, gdy tańsza nie jest pewna. | `src/cascade.py` |
+| **L0: reguły** | Wzorce tekstowe bez modelu: atak na prompt, prośba o oszustwo, konkurencja, podatki. Odpowiedź w 0 ms. | `src/rules.py` |
+| **L1: kNN router** | Porównuje pytanie z bankiem przykładów dla każdej intencji. Jeśli podobieństwo powyżej progu `t_accept`, intencja przyjęta; jeśli poniżej `t_oos`, pytanie spoza zakresu. | `src/knn_router.py` |
+| **L2: klasyfikator LLM** | Model językowy dostaje pytanie i listę intencji, najpierw rozumuje, potem zwraca ścisły JSON z wybraną intencją. | `src/llm_classifier.py` |
+| **Embeddingi** | Zamiana tekstu na wektor liczb, żeby porównywać znaczenie, a nie słowa. Model `paraphrase-multilingual-MiniLM`, ten sam dla PL i EN. | `src/ingest.py`, `src/search.py` |
+| **Qdrant** | Baza wektorowa: trzyma 643 fragmenty dokumentacji i szuka najbliższych do pytania. | `docker-compose.yml`, `src/search.py` |
+| **Retrieval** | Wyszukanie fragmentów dokumentacji pasujących do pytania, z filtrem po kategorii intencji. | `src/search.py` |
+| **Generowanie z cytatem** | Model pisze odpowiedź tylko na podstawie znalezionych fragmentów i dopisuje `Źródło: KB-###`. | `src/answer_gen.py` |
+| **Sędzia (groundedness judge)** | Drugi przebieg modelu: sprawdza, czy każde zdanie odpowiedzi ma pokrycie w fragmentach. Brak pokrycia = odpowiedź odrzucona, ticket. | `src/judge.py` |
+| **Rail PII** | Maskowanie danych osobowych na wejściu, przed modelem i przed logami. | `src/pii.py` |
+| **Gold set** | 288 pytań z ręcznie ustaloną poprawną intencją. Zamrożony w git, służy tylko do mierzenia. | `data/goldset/` |
+| **Korpus treningowy** | 5412 pytań syntetycznych do budowy przykładów dla kNN. Nie pokrywa się z gold setem. | `data/corpus/` |
+| **Accuracy / macro-F1** | Accuracy: ile pytań rozpoznano poprawnie. Macro-F1: średnia jakości po wszystkich intencjach, żeby rzadkie intencje liczyły się tak samo jak częste. | `src/eval_cascade.py` |
+| **Recall (np. out_of_scope)** | Ile pytań danej klasy bot faktycznie wyłapał. 85 % = z każdych 100 pytań spoza zakresu 85 rozpoznane. | `data/eval/` |
+| **confidence** | Pewność rozpoznania intencji: `high` lub `medium`, zależnie od tego, która warstwa zdecydowała i jak wysokie było podobieństwo w kNN (próg 0,72). | `src/cascade.py` |
 
-Methodology, not just scores: the gold set is version-frozen in git, the training
-corpus never overlaps it, and every pipeline change is re-run against the same
-288 cases so the before/after delta is the evidence.
-
----
-
-## Stack
-
-- **Python 3.12** + [uv](https://github.com/astral-sh/uv)
-- **Qdrant** (Docker) — vector store
-- **Ollama** running **qwen2.5:7b-instruct** locally — classification, generation, judge
-- **fastembed** with multilingual MiniLM (`paraphrase-multilingual-MiniLM-L12-v2`)
-- **FastAPI** + Uvicorn — HTTP API, chat UI, dashboard
-- **SQLite** — sessions, messages, tickets, TurnState traces
-
-Fully local. Zero paid APIs.
-
----
-
-## Quickstart
+## Uruchomienie
 
 ```bash
-# 1. vector store
-docker compose up -d                       # Qdrant on :6335
-
-# 2. local model
-ollama serve
+docker compose up -d                          # Qdrant
 ollama pull qwen2.5:7b-instruct
-
-# 3. dependencies
 uv sync
-
-# 4. build the index (KB -> chunks -> embeddings -> Qdrant)
-uv run python src/ingest.py
-
-# 5. run the API
+uv run python src/ingest.py                   # dokumentacja -> indeks
 uv run uvicorn api:app --app-dir src --port 8020
 ```
 
-Then open:
+Czat: http://localhost:8020 · panel: http://localhost:8020/dashboard ·
+konfiguracja w `.env` (wzór: `.env.example`).
 
-- **http://localhost:8020** — chat UI
-- **http://localhost:8020/dashboard** — decision-trace dashboard
+Testy jednostkowe (bez Dockera i modelu): `uv run pytest`. Pełna ewaluacja na
+288 pytaniach (wymaga działającego Ollama i Qdrant): `uv run python src/eval_cascade.py`.
 
-Configuration lives in `.env` (see `.env.example`): `OLLAMA_URL`, `ANSWER_MODEL`,
-`QDRANT_URL`.
+Ograniczenia: [docs/LIMITATIONS.md](docs/LIMITATIONS.md). Koszty: [docs/ECONOMICS.md](docs/ECONOMICS.md).
 
----
-
-## Engineering references
-
-The architecture is informed by public engineering practice on production support
-agents and guardrails — Intercom Fin, Sierra, Decagon, NVIDIA NeMo Guardrails, and
-the OpenAI Cookbook. The design write-ups and the mapping from each recommendation
-to its status in this repo are in `docs/research/` and `docs/ROADMAP.md`.
-
----
-
-## Limitations
-
-Known boundaries of this project: synthetic data, single-turn scope,
-local-model latency, rough retrieval ranking, uncalibrated confidence, and
-pre-fix OOS/unsafe recall below target. Each is described with its mechanism in
-[docs/LIMITATIONS.md](docs/LIMITATIONS.md).
-
----
-
-## Disclaimer
-
-**kremzaPay is not a real company.** All documentation in `kb/` is demo content
-created for this portfolio project and has no legal or informational value. The
-knowledge base, the training corpus, and the evaluation gold set are synthetic
-(LLM-generated, human-reviewed).
+*kremzaPay nie istnieje. Dokumentacja i dane testowe są syntetyczne, stworzone
+na potrzeby tego projektu.*

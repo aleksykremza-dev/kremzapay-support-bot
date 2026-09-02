@@ -1,4 +1,4 @@
-"""Classification cascade (6.6): layers 0-2 + retrieval signal -> decision + TurnState."""
+"""Classification cascade: layers 0-2 + retrieval signal -> decision + TurnState."""
 # [CASCADE] Decision pipeline: L0 -> L1 -> L2 -> retrieval signal
 import time
 import uuid

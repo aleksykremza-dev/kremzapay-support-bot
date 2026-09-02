@@ -45,8 +45,7 @@ generation, local or small model for the yes/no judge.
 
 ## Against market per-resolution pricing
 
-Vendor pricing observed in the market research (see `docs/research/04`,
-figures partially unverified, mid-2026):
+Vendor pricing observed in the market research (figures partially unverified, mid-2026):
 
 | Vendor model | Price | Implied $/1K resolved |
 |---|---|---|
