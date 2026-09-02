@@ -7,23 +7,55 @@ Wszystko działa lokalnie (Ollama + Qdrant), bez płatnych API.
 
 ## Jak to działa
 
-Każde pytanie przechodzi przez pięć kroków:
+Klient pisze pytanie na czacie. Zanim dostanie odpowiedź, pytanie przechodzi
+przez pięć etapów. Każdy etap ma swoje zadanie i swój plik w `src/`.
 
-1. **Maskowanie danych osobowych.** Numery kart, IBAN, PESEL, telefony i e-maile
-   są zamazywane, zanim tekst trafi do modelu i do logów.
-2. **Rozpoznanie intencji, od taniego do drogiego.** Najpierw reguły
-   (ataki na prompt, prośby o oszustwo, pytania o konkurencję, podatki):
-   0 ms, bez modelu. Potem podobieństwo do przykładów (kNN). Dopiero gdy to
-   nie wystarcza, model LLM. Razem 52 intencje w 10 kategoriach.
-3. **Szukanie w dokumentacji** (Qdrant, 643 fragmenty), zawężone do kategorii
-   z kroku 2.
-4. **Generowanie odpowiedzi** lokalnym modelem qwen2.5:7b, z dopiskiem
-   „Źródło: KB-###”.
-5. **Sędzia.** Osobne sprawdzenie: czy każdy fakt w odpowiedzi jest w znalezionych
-   fragmentach? Jeśli nie, odpowiedź nie wychodzi, otwiera się ticket.
+**1. Ukrycie danych osobowych.** Jeśli w pytaniu jest numer karty, IBAN, PESEL,
+telefon albo e-mail, program zamienia go na etykietę typu `[KARTA]`. Robi to od
+razu, zanim tekst zobaczy jakikolwiek model AI i zanim cokolwiek zapisze się
+w logach. Dzięki temu dane klienta nie wyciekają ani do modelu, ani do plików.
 
-Cały przebieg rozmowy zapisuje się w SQLite jako jeden JSON (TurnState) i jest
-widoczny na panelu `/dashboard`: dlaczego bot odpowiedział tak, a nie inaczej.
+**2. Ustalenie, o co właściwie pyta klient.** Bot ma listę 52 typowych spraw
+(np. „gdzie jest mój zwrot”, „jak włączyć BLIK”, „chcę zmienić konto bankowe”),
+pogrupowanych w 10 kategorii. Musi dopasować pytanie do jednej z nich. Robi to
+w trzech krokach, od najtańszego do najdroższego:
+
+- **Reguły.** Zwykłe wzorce tekstowe, bez żadnego modelu. Wyłapują to, na co bot
+  w ogóle nie powinien odpowiadać: próby zmanipulowania bota („zignoruj
+  instrukcje i…”), prośby o pomoc w oszustwie, pytania o konkurencję, pytania
+  podatkowe. Zajmuje to ułamek milisekundy.
+- **Porównanie z przykładami.** Bot ma bazę kilku tysięcy przykładowych pytań
+  z przypisaną sprawą. Sprawdza, do których nowe pytanie jest najbardziej
+  podobne znaczeniowo (technicznie: kNN na wektorach). Jeśli podobieństwo jest
+  wysokie, sprawa ustalona i model AI w ogóle nie jest potrzebny.
+- **Model językowy (LLM).** Dopiero gdy dwa poprzednie kroki nie są pewne,
+  pytanie idzie do lokalnego modelu AI, który czyta je i wybiera sprawę z listy.
+  To najdokładniejszy krok, ale najwolniejszy (sekundy), dlatego jest ostatni.
+
+**3. Znalezienie odpowiedzi w dokumentacji.** Cała pomoc kremzaPay (242 artykuły)
+jest pocięta na 643 krótkie fragmenty i zapisana w bazie Qdrant, która umie
+szukać po znaczeniu, a nie po słowach. Bazę można dowolnie powiększać: jej
+zakres zależy od regulaminów i możliwości konkretnego serwisu, a nie od bota.
+Bot wyciąga fragmenty pasujące do pytania, ale tylko z kategorii ustalonej
+w kroku 2. Bez tego filtra pytanie o zwrot ciągnęło artykuły o chargebackach,
+bo tam słowo „zwrot” pada najczęściej.
+
+**4. Napisanie odpowiedzi.** Lokalny model (qwen2.5, 7 mld parametrów, działa na
+zwykłym komputerze) dostaje pytanie i znalezione fragmenty i pisze odpowiedź
+tylko na ich podstawie. Na końcu dopisuje, z którego artykułu pochodzi
+informacja: „Źródło: KB-042”. Klient może sprawdzić.
+
+**5. Kontrola przed wysłaniem.** Osobny przebieg modelu, „sędzia”, dostaje
+odpowiedź i fragmenty i sprawdza zdanie po zdaniu: czy to jest w dokumentacji?
+Jeśli którekolwiek zdanie nie ma pokrycia, odpowiedź nie wychodzi. Zamiast niej
+klient dostaje informację, że sprawa trafia do człowieka, i otwiera się
+zgłoszenie. Bot woli nie odpowiedzieć niż zmyślić.
+
+**Co widać z zewnątrz.** Każda rozmowa zapisuje się w bazie SQLite razem z całą
+ścieżką decyzji: co wykryły reguły, jakie było podobieństwo, którą sprawę wybrał
+model, które fragmenty poszły do odpowiedzi, co powiedział sędzia. Panel
+`/dashboard` pokazuje to dla każdej rozmowy. Odpowiada na pytanie „dlaczego bot
+odpowiedział właśnie tak”, bez grzebania w logach.
 
 ## Co wyszło
 
