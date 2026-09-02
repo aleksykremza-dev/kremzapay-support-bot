@@ -41,7 +41,7 @@ w kroku 2. Bez tego filtra pytanie o zwrot ciągnęło artykuły o chargebackach
 bo tam słowo „zwrot” pada najczęściej.
 
 **4. Napisanie odpowiedzi.** Lokalny model (qwen2.5, 7 mld parametrów, działa na
-zwykłym komputerze) dostaje pytanie i znalezione fragmenty i pisze odpowiedź
+zwykłym komputerze albo na serwerze) dostaje pytanie i znalezione fragmenty i pisze odpowiedź
 tylko na ich podstawie. Na końcu dopisuje, z którego artykułu pochodzi
 informacja: „Źródło: KB-042”. Klient może sprawdzić.
 
