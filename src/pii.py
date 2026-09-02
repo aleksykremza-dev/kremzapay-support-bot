@@ -1,4 +1,4 @@
-"""6.10: PII masker (input-rail). Runs BEFORE any LLM call and BEFORE writing to logs."""
+"""PII masker (input-rail). Runs BEFORE any LLM call and BEFORE writing to logs."""
 # [PII] Input rail: PII masking before LLM and logs
 import re
 

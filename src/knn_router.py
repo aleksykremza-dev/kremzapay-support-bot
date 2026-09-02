@@ -10,7 +10,7 @@ from fastembed import TextEmbedding
 EMBED_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 CACHE_DIR = "data/cache"
 K = 10            # how many neighbors vote
-T_ACCEPT = 0.62   # mean similarity of winners above -> label accepted (initial, tuned in 6.7)
+T_ACCEPT = 0.62   # mean similarity of winners above -> label accepted (tuned on the gold set)
 T_OOS = 0.45      # max similarity below -> out_of_scope candidate
 
 _embedder = None

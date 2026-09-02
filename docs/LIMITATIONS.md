@@ -80,7 +80,3 @@ bounded by what qwen2.5:7b-instruct produces. Polish output is generally usable
 but not guaranteed to match a native or larger-model standard, especially on long
 or nuanced answers.
 
----
-
-Every item above is tracked with its planned fix and current status in
-[docs/ROADMAP.md](ROADMAP.md).
