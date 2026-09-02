@@ -100,12 +100,22 @@ które wymagają modelu, to kilkanaście–kilkadziesiąt sekund na zwykłym lap
 na serwerze z kartą graficzną odpowiednio szybciej. Koszt użycia: 0 zł, wszystko
 działa lokalnie, bez płatnych usług.
 
-## Co bym zrobił inaczej
+## Ograniczenia i co dalej
 
-- Testy jednostkowe od pierwszego dnia, nie na końcu. Teraz jest ich 41 i pokrywają
-  reguły, maskowanie PII i routing kaskady, ale nie generowanie ani sędziego.
-- Mniej dokumentów „badawczych”, więcej działającego kodu.
-- Pamięć rozmowy. Teraz każde pytanie jest osobne.
+- **Bot nie pamięta rozmowy.** Każde pytanie traktuje osobno, więc „a ile to
+  potrwa?” po pytaniu o zwrot nie zostanie zrozumiane. Następny krok: podawać
+  modelowi kilka poprzednich wiadomości z sesji.
+- **Testy nie obejmują całości.** 41 testów sprawdza reguły, maskowanie danych
+  i routing, ale nie generowanie odpowiedzi ani sędziego, bo te wymagają
+  działającego modelu. Do zrobienia: testy z nagranymi odpowiedziami modelu.
+- **Dokumentacja i pytania testowe są syntetyczne.** Wyniki mówią, jak bot radzi
+  sobie z tym zestawem, nie z prawdziwymi klientami. Sprawdzian: pilot na
+  prawdziwej dokumentacji jednego serwisu.
+- **Pewność bota to etykieta, nie liczba.** „Wysoka” i „średnia” są ustawione
+  progiem ręcznie. Do zrobienia: kalibracja na danych, żeby 80 % pewności
+  znaczyło 80 % trafień.
+
+Pełna lista ograniczeń: [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
 
 ## Słowniczek: co za co odpowiada
 
