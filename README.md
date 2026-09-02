@@ -57,6 +57,10 @@ model, które fragmenty poszły do odpowiedzi, co powiedział sędzia. Panel
 `/dashboard` pokazuje to dla każdej rozmowy. Odpowiada na pytanie „dlaczego bot
 odpowiedział właśnie tak”, bez grzebania w logach.
 
+Historia rozmowy jest zapisywana (sesja, kolejne wiadomości, zgłoszenia), ale
+na razie bot z niej nie korzysta przy odpowiadaniu: każde pytanie traktuje
+osobno, bez kontekstu poprzednich. Pamięć rozmowy to następny krok.
+
 ## Co wyszło
 
 Mam zamrożony zestaw 288 pytań testowych, osobny od danych treningowych. Każdą
