@@ -100,19 +100,6 @@ które wymagają modelu, to kilkanaście–kilkadziesiąt sekund na zwykłym lap
 na serwerze z kartą graficzną odpowiednio szybciej. Koszt użycia: 0 zł, wszystko
 działa lokalnie, bez płatnych usług.
 
-## Czego się nauczyłem
-
-- Pierwsza wersja miała 65 % i wyglądała dobrze na łatwych pytaniach. Dopiero
-  analiza błędów pokazała dwie dziury: pytania o konkurencję przechodziły przez
-  kNN przez samo podobieństwo słów, a „chcę rozmawiać z człowiekiem” model widział
-  w każdej złości klienta. Obie naprawiłem regułami i poprawką promptu, stąd +6 pp.
-- Słowo „zwrot” najczęściej występuje w artykułach o chargebackach, więc
-  wyszukiwarka ciągnęła złe artykuły. Rozwiązanie: filtr po kategorii intencji.
-  Znalezione na żywym teście, nie w teorii.
-- Model 7B zamiast 3B: polski w 3B był za słaby. Wolniej, ale to portfolio,
-  nie produkcja.
-- Podczas automatycznych testów panelu wyszedł XSS (innerHTML). Naprawiony.
-
 ## Co bym zrobił inaczej
 
 - Testy jednostkowe od pierwszego dnia, nie na końcu. Teraz jest ich 41 i pokrywają
