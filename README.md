@@ -81,6 +81,19 @@ przepuszcza 15 i próbuje na nie odpowiadać. Z każdych 100 prób nadużycia ł
 Daleko od ideału, ale liczby są zmierzone, nie odczute, i każdą kolejną poprawkę
 da się sprawdzić tym samym egzaminem.
 
+**Co się dzieje, gdy bot nie jest pewny.** Błędne rozpoznanie sprawy nie oznacza
+błędnej odpowiedzi dla klienta, bo po drodze są trzy zabezpieczenia:
+
+- pewność rozpoznania jest niska → bot nie odpowiada, tylko dopytuje klienta,
+  czego dokładnie dotyczy sprawa;
+- temat jest nasz, ale bot nie rozpoznał sprawy albo nie ma o niej nic
+  w dokumentacji → otwiera zgłoszenie do człowieka i mówi o tym klientowi;
+- odpowiedź została napisana, ale sędzia nie znalazł jej potwierdzenia
+  w dokumentacji → odpowiedź nie wychodzi, zamiast niej zgłoszenie.
+
+Błąd bota kończy się więc dopytaniem albo przekazaniem sprawy człowiekowi,
+a nie zmyśloną odpowiedzią.
+
 **Czas i koszt.** Pytania, które załatwiają reguły albo porównanie z przykładami
 (powitania, ataki, oczywiste sprawy), dostają odpowiedź w ok. 0,4 s. Pytania,
 które wymagają modelu, to kilkanaście–kilkadziesiąt sekund na zwykłym laptopie;
