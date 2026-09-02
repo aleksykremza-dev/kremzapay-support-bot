@@ -117,26 +117,28 @@ działa lokalnie, bez płatnych usług.
 
 Pełna lista ograniczeń: [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
 
-## Słowniczek: co za co odpowiada
+## Słowniczek: co za co odpowiada i gdzie to jest w kodzie
 
-| Termin | Co robi | Gdzie |
+Kolejność jak w rozdziale „Jak to działa”.
+
+| Termin | Co to jest i co robi | Gdzie |
 |---|---|---|
-| **TurnState** | Jeden obiekt JSON na każde pytanie. Każdy krok dopisuje do niego swój wynik (intencja, znalezione fragmenty, odpowiedź, werdykt sędziego). Ten sam obiekt trafia do bazy i na panel. | `src/cascade.py`, `src/store.py` |
-| **Kaskada intencji (L0 → L1 → L2)** | Trzy warstwy rozpoznawania, o co pyta klient. Tańsza warstwa próbuje pierwsza; droższa uruchamia się tylko, gdy tańsza nie jest pewna. | `src/cascade.py` |
-| **L0: reguły** | Wzorce tekstowe bez modelu: atak na prompt, prośba o oszustwo, konkurencja, podatki. Odpowiedź w 0 ms. | `src/rules.py` |
-| **L1: kNN router** | Porównuje pytanie z bankiem przykładów dla każdej intencji. Jeśli podobieństwo powyżej progu `t_accept`, intencja przyjęta; jeśli poniżej `t_oos`, pytanie spoza zakresu. | `src/knn_router.py` |
-| **L2: klasyfikator LLM** | Model językowy dostaje pytanie i listę intencji, najpierw rozumuje, potem zwraca ścisły JSON z wybraną intencją. | `src/llm_classifier.py` |
-| **Embeddingi** | Zamiana tekstu na wektor liczb, żeby porównywać znaczenie, a nie słowa. Model `paraphrase-multilingual-MiniLM`, ten sam dla PL i EN. | `src/ingest.py`, `src/search.py` |
-| **Qdrant** | Baza wektorowa: trzyma 643 fragmenty dokumentacji i szuka najbliższych do pytania. | `docker-compose.yml`, `src/search.py` |
-| **Retrieval** | Wyszukanie fragmentów dokumentacji pasujących do pytania, z filtrem po kategorii intencji. | `src/search.py` |
-| **Generowanie z cytatem** | Model pisze odpowiedź tylko na podstawie znalezionych fragmentów i dopisuje `Źródło: KB-###`. | `src/answer_gen.py` |
-| **Sędzia (groundedness judge)** | Drugi przebieg modelu: sprawdza, czy każde zdanie odpowiedzi ma pokrycie w fragmentach. Brak pokrycia = odpowiedź odrzucona, ticket. | `src/judge.py` |
-| **Rail PII** | Maskowanie danych osobowych na wejściu, przed modelem i przed logami. | `src/pii.py` |
-| **Gold set** | 288 pytań z ręcznie ustaloną poprawną intencją. Zamrożony w git, służy tylko do mierzenia. | `data/goldset/` |
-| **Korpus treningowy** | 5412 pytań syntetycznych do budowy przykładów dla kNN. Nie pokrywa się z gold setem. | `data/corpus/` |
-| **Accuracy / macro-F1** | Accuracy: ile pytań rozpoznano poprawnie. Macro-F1: średnia jakości po wszystkich intencjach, żeby rzadkie intencje liczyły się tak samo jak częste. | `src/eval_cascade.py` |
-| **Recall (np. out_of_scope)** | Ile pytań danej klasy bot faktycznie wyłapał. 85 % = z każdych 100 pytań spoza zakresu 85 rozpoznane. | `data/eval/` |
-| **confidence** | Pewność rozpoznania intencji: `high` lub `medium`, zależnie od tego, która warstwa zdecydowała i jak wysokie było podobieństwo w kNN (próg 0,72). | `src/cascade.py` |
+| **Maskowanie PII** | PII to dane osobowe. Program zamienia numery kart, IBAN, PESEL, telefony i e-maile na etykiety, zanim tekst trafi do modelu lub do logów. | `src/pii.py` |
+| **Reguły (warstwa 0)** | Wzorce tekstowe bez modelu: atak na bota, prośba o oszustwo, konkurencja, podatki. Odpowiedź natychmiast. | `src/rules.py` |
+| **Porównanie z przykładami (warstwa 1, kNN)** | Bot ma tysiące przykładowych pytań z przypisaną sprawą. Szuka kilku najbardziej podobnych do nowego pytania i patrzy, jaką sprawę mają. Jeśli podobieństwo jest powyżej progu `T_ACCEPT`, sprawa przyjęta; jeśli poniżej `T_OOS`, pytanie uznane za spoza zakresu. | `src/knn_router.py` |
+| **Klasyfikator LLM (warstwa 2)** | Model językowy dostaje pytanie i listę spraw, najpierw opisuje swoje rozumowanie, potem zwraca jedną wybraną sprawę w ścisłym formacie JSON. | `src/llm_classifier.py` |
+| **Embeddingi** | Sposób zamiany tekstu na ciąg liczb tak, żeby teksty o podobnym znaczeniu miały podobne liczby. Dzięki temu „gdzie mój zwrot” i „nie dostałem pieniędzy z powrotem” są blisko siebie, choć nie mają wspólnych słów. Ten sam model dla polskiego i angielskiego. | `src/ingest.py`, `src/search.py` |
+| **Qdrant** | Baza danych do takich ciągów liczb. Trzyma 643 fragmenty dokumentacji i szybko znajduje najbliższe do pytania. Działa w Dockerze. | `docker-compose.yml`, `src/search.py` |
+| **Wyszukiwanie (retrieval)** | Pobranie z Qdrant fragmentów pasujących do pytania, tylko z kategorii ustalonej przez klasyfikator. | `src/search.py` |
+| **Generowanie odpowiedzi** | Model pisze odpowiedź wyłącznie na podstawie znalezionych fragmentów i dopisuje `Źródło: KB-###`. | `src/answer_gen.py` |
+| **Sędzia** | Drugie wywołanie modelu: sprawdza, czy każde zdanie odpowiedzi ma pokrycie we fragmentach. Brak pokrycia = odpowiedź odrzucona, zgłoszenie do człowieka. | `src/judge.py` |
+| **TurnState** | Jeden obiekt JSON na każde pytanie. Każdy etap dopisuje do niego swój wynik. Ten sam obiekt trafia do bazy i na panel `/dashboard`. | `src/cascade.py`, `src/store.py` |
+| **Pewność (confidence)** | Etykieta `high` albo `medium`, zależnie od tego, która warstwa rozpoznała sprawę i jak wysokie było podobieństwo (próg 0,72). Niska pewność = bot dopytuje. | `src/cascade.py` |
+| **Zestaw egzaminacyjny (gold set)** | 288 pytań z ręcznie ustaloną poprawną odpowiedzią. Zamrożony, służy tylko do mierzenia. | `data/goldset/` |
+| **Korpus przykładów** | 5412 pytań syntetycznych, z których korzysta porównanie z przykładami. Nie pokrywa się z zestawem egzaminacyjnym. | `data/corpus/` |
+| **Trafność (accuracy)** | Odsetek pytań z egzaminu, którym bot przypisał właściwą sprawę. | `src/eval_cascade.py` |
+| **Macro-F1** | Średnia jakość liczona osobno dla każdej sprawy, a potem uśredniona. Dzięki temu rzadkie sprawy liczą się tak samo jak częste, a wynik nie jest zawyżony przez kilka popularnych. | `src/eval_cascade.py` |
+| **Wykrywalność (recall)** | Ile pytań danego typu bot faktycznie wyłapał. 85 % dla pytań spoza zakresu = z każdych 100 takich pytań 85 rozpoznane. | `data/eval/` |
 
 ## Uruchomienie
 
