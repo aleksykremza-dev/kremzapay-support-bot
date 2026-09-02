@@ -5,14 +5,6 @@ wyłącznie na podstawie 242 artykułów dokumentacji, do każdej odpowiedzi pod
 źródło, a gdy nie wie, przekazuje sprawę człowiekowi zamiast zmyślać.
 Wszystko działa lokalnie (Ollama + Qdrant), bez płatnych API.
 
-## Po co to zrobiłem
-
-Chciałem sprawdzić na własnej skórze, czy da się zbudować bota, który nie
-halucynuje: odpowiada tylko z dokumentacji i umie powiedzieć „nie wiem”.
-Firma jest wymyślona, dokumentacja też (wygenerowana i przejrzana ręcznie),
-ale problemy są prawdziwe, te same co u każdego operatora płatności:
-zwroty, chargebacki, KYC, integracja API.
-
 ## Jak to działa
 
 Każde pytanie przechodzi przez pięć kroków:
