@@ -5,6 +5,8 @@ wyłącznie na podstawie 242 artykułów dokumentacji, do każdej odpowiedzi pod
 źródło, a gdy nie wie, przekazuje sprawę człowiekowi zamiast zmyślać.
 Wszystko działa lokalnie (Ollama + Qdrant), bez płatnych API.
 
+![Panel /dashboard: każda rozmowa z decyzją, sprawą, ścieżką warstw i czasem odpowiedzi](docs/dashboard.png)
+
 ## Jak to działa
 
 Klient pisze pytanie na czacie. Zanim dostanie odpowiedź, pytanie przechodzi
