@@ -227,6 +227,20 @@ Po komunikacie `Application startup complete` otwórz:
 Pierwsze pytanie wymagające modelu może potrwać dłużej (model ładuje się do
 pamięci), kolejne są szybsze.
 
+### API (OpenAPI)
+
+Serwis wystawia REST API na FastAPI. Po uruchomieniu interaktywna dokumentacja OpenAPI jest pod `/docs` (Swagger UI), a sama specyfikacja pod `/openapi.json`.
+
+| Metoda | Ścieżka | Co robi |
+|---|---|---|
+| GET | `/` | strona startowa / prosty formularz |
+| GET | `/health` | sprawdzenie, czy serwis i zależności (Ollama, Qdrant) żyją |
+| POST | `/chat` | pytanie → odpowiedź z cytowanym źródłem albo eskalacja do człowieka |
+| GET | `/dashboard` | podgląd rozmów i eskalacji |
+| GET | `/api/stats` | liczby: pytania, odpowiedzi, eskalacje |
+
+Schematy żądań i odpowiedzi (Pydantic) są w `src/api.py` i trafiają do specyfikacji automatycznie.
+
 ### Konfiguracja
 
 Plik `.env` jest opcjonalny. Bez niego kod używa wartości domyślnych, takich
