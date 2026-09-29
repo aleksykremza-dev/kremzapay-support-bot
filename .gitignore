@@ -6,3 +6,5 @@ __pycache__/
 data/*.db
 data/cache/
 data/eval/*.log
+.project-status
+DESCRIPTION.md
