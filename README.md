@@ -15,63 +15,48 @@ Repozytorium zawiera silnik oraz instrukcję podłączenia własnej dokumentacji
 
 ## Jak to działa
 
-Klient pisze pytanie na czacie. Zanim dostanie odpowiedź, tekst przechodzi przez
-kolejne etapy; każdy etap ma swój plik w `src/`.
+Pytanie z czatu przechodzi przez kolejne etapy; każdy ma swój plik w `src/`.
 
 1. **Maskowanie danych osobowych** (`pii.py`). Numer karty, IBAN, PESEL, telefon
-   i e-mail są zamieniane na etykiety `<CARD_1>`, `<IBAN_1>`, `<PESEL_1>`,
-   `<PHONE_1>`, `<EMAIL_1>` zanim tekst zobaczy jakikolwiek model i zanim trafi
-   do bazy. Do modeli i do SQLite idzie wyłącznie tekst zamaskowany.
+   i e-mail stają się etykietami `<CARD_1>`, `<IBAN_1>`, `<PESEL_1>`, `<PHONE_1>`,
+   `<EMAIL_1>` zanim tekst zobaczy model i zanim trafi do bazy SQLite.
 2. **L0, reguły** (`rules.py`). Wzorce tekstowe bez modelu: manipulacja botem
-   i prośby o pomoc w oszustwie kończą się odmową (`unsafe_refuse`), pytania
-   o inne produkty i o podatki przekierowaniem (`redirect`), wyraźna prośba
-   o człowieka przekazaniem rozmowy (`handoff`). Ułamek milisekundy.
-3. **L1, kNN** (`knn_router.py`). Pytanie jest porównywane znaczeniowo
-   (embeddingi) z korpusem przykładowych pytań z przypisaną intencją. Z 10
-   najbliższych zwycięska intencja musi mieć co najmniej 5 głosów i średnie
-   podobieństwo >= `T_ACCEPT` (0,62); wtedy jest przyjęta bez modelu. Pewność:
-   `high` przy podobieństwie >= `CONF_HIGH` (0,72), inaczej `medium`.
+   i prośby o pomoc w oszustwie -> odmowa (`unsafe_refuse`); inne produkty
+   i podatki -> `redirect`; wyraźna prośba o człowieka -> `handoff`.
+3. **L1, kNN** (`knn_router.py`). Pytanie jest porównywane znaczeniowo z korpusem
+   pytań z intencją. Z 10 najbliższych zwycięska intencja musi mieć co najmniej
+   5 głosów i średnie podobieństwo >= `T_ACCEPT` (0,62); wtedy jest przyjęta bez
+   modelu, z pewnością `high` przy >= `CONF_HIGH` (0,72), inaczej `medium`.
 4. **L2, klasyfikator LLM** (`llm_classifier.py`). Gdy kNN nie jest pewny (także
-   gdy najbliższy przykład ma podobieństwo < `T_OOS`, 0,45), lokalny model w dwóch
-   krokach wybiera kategorię albo klasę specjalną, potem intencję w kategorii,
-   i zwraca JSON z pewnością `high|medium|low` oraz flagą `wants_human`.
-5. **Decyzja** (`cascade.py`). Klasy specjalne dają gotową akcję: small talk ->
+   przy podobieństwie < `T_OOS`, 0,45), lokalny model wybiera kategorię albo klasę
+   specjalną, potem intencję; zwraca JSON z pewnością `high|medium|low` i `wants_human`.
+5. **Decyzja** (`cascade.py`). Klasy specjalne dają akcję: small talk ->
    `chitchat_reply`, treść niebezpieczna -> `unsafe_refuse`, poza zakresem ->
-   `redirect`, temat w zakresie bez pasującej intencji -> `ticket`; `wants_human`
-   -> `handoff`; pewność `low` -> `clarify` (bot dopytuje). W pozostałych
-   przypadkach najlepszy fragment z Qdrant musi mieć wynik >= `RETRIEVAL_OK`
-   (0,45), inaczej `ticket` z powodem `no_knowledge`.
-6. **Odpowiedź** (`answer_gen.py`). Wyszukiwanie w Qdrant z filtrem po kategorii
-   intencji (przy mniej niż 2 trafieniach filtr jest zdejmowany), 3 najlepsze
-   fragmenty (`TOP_N`) trafiają do promptu; model pisze odpowiedź tylko na ich
-   podstawie i kończy linią `Źródło: KB-###` (`Source:` po angielsku).
+   `redirect`, temat w zakresie bez intencji -> `ticket`; `wants_human` ->
+   `handoff`; pewność `low` -> `clarify` (dopytanie). Inaczej najlepszy fragment
+   z Qdrant musi mieć wynik >= `RETRIEVAL_OK` (0,45), w przeciwnym razie `ticket`.
+6. **Odpowiedź** (`answer_gen.py`). Wyszukiwanie z filtrem po kategorii intencji
+   (przy mniej niż 2 trafieniach filtr jest zdejmowany), 3 najlepsze fragmenty
+   (`TOP_N`) idą do promptu; model odpowiada tylko na ich podstawie i kończy
+   linią `Źródło: KB-###` (`Source:` po angielsku).
 7. **Sędzia** (`judge.py`). Drugie wywołanie modelu: czy każde twierdzenie ma
-   pokrycie we fragmentach, odpowiedź `yes`/`no`. Przy `no` odpowiedź nie
-   wychodzi; klient dostaje informację o zgłoszeniu (`ticket_not_grounded`).
+   pokrycie we fragmentach (`yes`/`no`). Przy `no` odpowiedź nie wychodzi,
+   zamiast niej powstaje zgłoszenie (`ticket_not_grounded`).
 
-Każdy etap dopisuje swój wynik do jednego obiektu `TurnState` (czasy warstw,
-wynik reguł, kNN, LLM, retrieval, decyzja). Obiekt trafia do SQLite razem
-z wiadomością i jest widoczny na `/dashboard`, więc pytanie „dlaczego bot
-odpowiedział właśnie tak” nie wymaga grzebania w logach. Historia sesji jest
-zapisywana, ale przy odpowiadaniu nie jest używana: każde pytanie jest
-rozpatrywane osobno. Język (`pl`/`en`) jest wykrywany po polskich znakach
-diakrytycznych i liście typowych polskich słów.
-
-Gdy bot nie jest pewny, błąd rozpoznania nie zamienia się w błędną odpowiedź:
-niska pewność -> dopytanie (`clarify`); temat w zakresie, ale bez intencji albo
-bez pokrycia w dokumentacji -> zgłoszenie (`ticket`); prośba o człowieka ->
-`handoff`; odpowiedź bez pokrycia u sędziego -> zgłoszenie zamiast odpowiedzi.
+Błąd rozpoznania kończy się więc dopytaniem, zgłoszeniem albo przekazaniem
+człowiekowi, nie zmyśloną odpowiedzią. Każdy etap dopisuje wynik do jednego
+obiektu `TurnState` (czasy warstw, reguły, kNN, LLM, retrieval, decyzja), który
+trafia do SQLite razem z wiadomością i jest widoczny na `/dashboard`. Historia
+sesji jest zapisywana, ale każde pytanie jest rozpatrywane osobno. Język
+(`pl`/`en`) jest wykrywany po polskich znakach i liście typowych polskich słów.
 
 | Termin | Co to jest | Gdzie |
 |---|---|---|
-| Embeddingi | wektory liczb: teksty o podobnym znaczeniu są blisko siebie; jeden model dla pl i en (`EMBED_MODEL`, fastembed) | `config.py`, `knn_router.py`, `search.py` |
-| Qdrant | baza wektorów z fragmentami dokumentacji; znajduje najbliższe do pytania | `docker-compose.yml`, `search.py` |
+| Embeddingi | wektory liczb: teksty o podobnym znaczeniu są blisko siebie; jeden model dla pl i en (`EMBED_MODEL`, fastembed) | `knn_router.py`, `search.py` |
 | Progi | `K`, `T_ACCEPT`, `T_OOS`, `RETRIEVAL_OK`, `CONF_HIGH`, `TOP_K`, `TOP_N`, `CHUNK_SIZE`, `MIN_ACCURACY` | `config.py` |
 | Klient Ollama | jedno miejsce wywołań modelu: timeout, powtórka, `LLMUnavailable`, `LLMBadOutput` | `llm.py` |
 | Taksonomia | intencje z kategorią i definicją oraz klasy specjalne; wczytywana raz | `taxonomy.py`, `data/taxonomy.json` |
-| Korpus | pytania z etykietą intencji dla warstwy kNN; indeks w `data/cache/` | `data/corpus/` |
-| Gold set | pytania z oczekiwaną etykietą, tylko do mierzenia; rozłączny z korpusem | `data/goldset/` |
-| Trafność, macro-F1, recall | odsetek trafionych etykiet; F1 uśrednione po etykietach; wykrywalność klas specjalnych | `eval_cascade.py` |
+| Korpus i gold set | pytania z etykietą dla kNN (indeks w `data/cache/`); pytania egzaminacyjne do liczenia trafności i macro-F1, rozłączne z korpusem | `data/corpus/`, `data/goldset/`, `eval_cascade.py` |
 
 ## Wymagania
 
@@ -83,16 +68,12 @@ bez pokrycia w dokumentacji -> zgłoszenie (`ticket`); prośba o człowieka ->
 | Docker (dla Qdrant) | uruchomienie kontenera | `docker compose ps` |
 | Własna dokumentacja w `kb/` | bez niej `ingest.py` kończy się kodem 2 | sekcja „Własna dokumentacja” |
 
-Po starcie bota obie zależności sprawdza `GET /health`:
-`curl http://localhost:8020/health` -> `{"status":"ok","ollama":true,"qdrant":true}`.
-`status` to `degraded`, gdy któraś usługa nie odpowiada. Pole `qdrant` jest `true`
-dopiero, gdy istnieje kolekcja `kremzapay_kb`, czyli po `ingest.py`.
-
-Zmienne z `.env.example` (plik `.env` jest opcjonalny, bez niego działają
-wartości domyślne z `config.py`): `OLLAMA_URL`, `ANSWER_MODEL`, `QDRANT_URL`,
-`KB_DIR`, `DB_PATH`, `LLM_TIMEOUT_S`. W `config.py` są jeszcze `EMBED_MODEL`
-(domyślnie `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`,
-pobierany przez fastembed przy pierwszym użyciu), `COLLECTION` i `LLM_RETRIES`.
+Po starcie bota obie zależności sprawdza `curl http://localhost:8020/health` ->
+`{"status":"ok","ollama":true,"qdrant":true}`; `degraded`, gdy któraś usługa nie
+odpowiada; `qdrant` jest `true` dopiero po `ingest.py` (istnieje kolekcja
+`kremzapay_kb`). Plik `.env` jest opcjonalny; zmienne z `.env.example`:
+`OLLAMA_URL`, `ANSWER_MODEL`, `QDRANT_URL`, `KB_DIR`, `DB_PATH`, `LLM_TIMEOUT_S`;
+w `config.py` są jeszcze `EMBED_MODEL` (fastembed), `COLLECTION` i `LLM_RETRIES`.
 
 ## Uruchomienie
 
@@ -110,26 +91,23 @@ uv run uvicorn api:app --app-dir src --port 8020
 Po komunikacie `Application startup complete` otwórz http://localhost:8020
 (czat) i http://localhost:8020/dashboard (panel z przebiegiem każdej rozmowy).
 Pierwsze pytanie wymagające modelu trwa dłużej, bo model ładuje się do pamięci.
-Wszystkie ścieżki (`kb/`, `data/`, `.env`) `config.py` liczy od katalogu
-repozytorium, nie od bieżącego katalogu, więc skrypty można uruchamiać
-z dowolnego miejsca, np.
+Ścieżki (`kb/`, `data/`, `.env`) `config.py` liczy od katalogu repozytorium, nie
+od bieżącego katalogu, więc skrypty działają z dowolnego miejsca, np.
 `uv run --project ~/kremzapay-support-bot python ~/kremzapay-support-bot/src/ingest.py`.
-Zatrzymanie: `Ctrl+C` w oknie uvicorn, potem `docker compose down` (dane
-w `qdrant_data/` zostają).
+Zatrzymanie: `Ctrl+C` w oknie uvicorn, potem `docker compose down`.
 
 ## Własna dokumentacja
 
 Artykuł to plik Markdown w `kb/<kategoria>/<id>.md`. `ingest.py` czyta wzorzec
-`kb/*/*.md` (dokładnie jeden poziom podkatalogów); nazwa podkatalogu nie jest
-przez kod używana, kategoria pochodzi z nagłówka. Nagłówek między dwiema liniami
-`---` ma pola `title`, `category`, `id`; `category` musi być jedną z kategorii
+`kb/*/*.md` (jeden poziom podkatalogów); nazwa podkatalogu nie jest przez kod
+używana, kategoria pochodzi z nagłówka. Nagłówek między dwiema liniami `---` ma
+pola `title`, `category`, `id`; `category` musi być jedną z kategorii
 w `data/taxonomy.json`, bo wyszukiwanie filtruje po niej fragmenty. Treść jest
 cięta na fragmenty po akapitach (pusta linia między nimi) do ok. 800 znaków
 (`CHUNK_SIZE`); każdy fragment dostaje tytuł artykułu. Jeśli po treści jest
-jeszcze linia `---`, wszystko za ostatnią z nich jest odcinane (miejsce na
-notatki, których nie chcesz indeksować). Wersja polska i angielska to osobne
-pliki (np. `kb/refunds/KB-030-pl.md` i `kb/refunds/KB-030-en.md`); dodatkowe
-pola nagłówka, np. `lang`, trafiają do payloadu w Qdrant. Minimalny przykład,
+jeszcze linia `---`, wszystko za ostatnią z nich jest odcinane. Wersja polska
+i angielska to osobne pliki (np. `kb/refunds/KB-030-pl.md` i `KB-030-en.md`);
+dodatkowe pola nagłówka, np. `lang`, trafiają do payloadu w Qdrant. Minimalny
 `kb/refunds/KB-030-pl.md`:
 
 ```
@@ -139,15 +117,14 @@ category: refunds
 title: Gdzie jest mój zwrot
 ---
 
-Zwrot środków na kartę trwa zwykle od 3 do 7 dni roboczych od jego zlecenia
-przez sprzedawcę. Status zwrotu widać w panelu w zakładce Zwroty.
+Zwrot na kartę trwa zwykle od 3 do 7 dni roboczych od zlecenia przez sprzedawcę.
+Status zwrotu widać w panelu w zakładce Zwroty.
 
-Jeśli po 7 dniach roboczych środki nie wróciły, przygotuj numer transakcji
-i skontaktuj się z obsługą sprzedawcy.
+Jeśli po 7 dniach roboczych środki nie wróciły, przygotuj numer transakcji.
 ```
 
-Po każdej zmianie w artykułach: `uv run python src/ingest.py` (to samo co
-`make ingest`). Skrypt kasuje kolekcję i buduje ją od zera. Oczekiwany wynik:
+Po każdej zmianie w artykułach: `uv run python src/ingest.py` (`make ingest`).
+Skrypt kasuje kolekcję i buduje ją od zera. Oczekiwany wynik:
 
 ```
 Articles found: 12
@@ -163,9 +140,8 @@ i kończy się kodem wyjścia 2, kolekcja nie powstaje:
 Baza wiedzy nie jest częścią repozytorium. Umieść artykuły w kb/ (format: README, sekcja "Własna dokumentacja").
 ```
 
-Sprawdzenie wyszukiwania bez uruchamiania bota:
-`uv run python src/search.py "gdzie jest mój zwrot"` wypisuje 3 najlepsze
-fragmenty w postaci `[wynik] id (kategoria) tytuł`.
+Sprawdzenie wyszukiwania bez bota: `uv run python src/search.py "gdzie jest mój
+zwrot"` wypisuje 3 najlepsze fragmenty w postaci `[wynik] id (kategoria) tytuł`.
 
 ## Własny zbiór pytań
 
@@ -175,15 +151,15 @@ dotyczą wsparcia płatności i trzymają się `data/taxonomy.json`:
 - `taxonomy.json`: 52 intencje w 10 kategoriach (`account`, `billing`, `buyers`,
   `disputes`, `integration`, `payments`, `payouts`, `refunds`, `security`,
   `service`) plus klasy specjalne `other_in_scope`, `out_of_scope`, `chitchat`,
-  `unsafe`. Źródłem są części `data/taxonomy/part-*.json`, sklejane przez
+  `unsafe`; sklejany z `data/taxonomy/part-*.json` przez
   `uv run python src/merge_taxonomy.py` (powtórzone `id` kończy się kodem 1).
 - `corpus/corpus-*.json`: 5412 pytań z etykietą intencji, używane przez kNN.
-- `goldset/gold-*.json`: 288 pytań z oczekiwaną etykietą, używane przez test
-  trafności (`make test-accuracy`) i test funkcjonalny (`make test-func`).
-  Żadne pytanie z gold setu nie występuje w korpusie.
+- `goldset/gold-*.json`: 288 pytań z oczekiwaną etykietą dla `make test-accuracy`
+  i `make test-func`; żadne pytanie z gold setu nie występuje w korpusie.
 
 Kto podłącza dokumentację z innej dziedziny, przygotowuje własną taksonomię,
-korpus i gold set w tych samych kształtach JSON:
+korpus i gold set w tych samych kształtach JSON (taksonomia, wpis korpusu, wpis
+gold setu):
 
 ```json
 {"version": 1,
@@ -192,10 +168,8 @@ korpus i gold set w tych samych kształtach JSON:
  "special_classes": [{"id": "out_of_scope", "definition": "...", "examples": ["..."]}]}
 ```
 ```json
-{"cases": [{"q": "Ile trwa zwrot?", "intent": "refund_status_time",
-            "lang": "pl", "style": "plain"}]}
-```
-```json
+{"cases": [{"q": "Ile trwa zwrot?", "intent": "refund_status_time", "lang": "pl",
+            "style": "plain"}]}
 {"cases": [{"q": "Ile trwa zwrot?", "expected_intent": "refund_status_time",
             "expected_scope": "in_scope", "lang": "pl", "style": "plain"}]}
 ```
@@ -203,10 +177,10 @@ korpus i gold set w tych samych kształtach JSON:
 W gold secie `expected_scope` to `in_scope` albo id klasy specjalnej (wtedy
 `expected_intent` ma tę samą wartość). `uv run python tools/question_coverage.py`
 (`make coverage`) wypisuje tabelę intencja -> liczba pytań w korpusie i w gold
-secie oraz listę etykiet poniżej progu (mniej niż 20 w korpusie albo 0 w gold
-secie; `--strict` zwraca wtedy kod 1). Po zmianie korpusu skasuj `data/cache/`,
-inaczej kNN dalej używa starego indeksu. Do dopasowania są też wzorce innych
-produktów i podatków w `src/rules.py` oraz `BRAND_VOICE` w `src/answer_gen.py`.
+secie oraz etykiety poniżej progu (mniej niż 20 w korpusie albo 0 w gold secie;
+`--strict` zwraca wtedy kod 1). Po zmianie korpusu skasuj `data/cache/`, inaczej
+kNN używa starego indeksu. Do dopasowania są też wzorce w `src/rules.py`
+i `BRAND_VOICE` w `src/answer_gen.py`.
 
 ## API
 
@@ -220,14 +194,13 @@ FastAPI; interaktywna dokumentacja pod `/docs`, specyfikacja pod `/openapi.json`
 | `GET /dashboard` | panel (`web/dashboard.html`) |
 | `GET /api/stats` | JSON dla panelu: `sessions`, `actions`, ostatnie 50 dialogów, ostatnie 20 zgłoszeń |
 
-`ChatOut`: `session_id`, `reply` (tekst dla klienta), `action` (jedna z
-`answer`, `clarify`, `ticket`, `handoff`, `chitchat_reply`, `unsafe_refuse`,
-`redirect`), `intent` (albo `null`), `language` (`pl`/`en`), `ticket_id`
-(numer zgłoszenia albo `null`), `timings_ms` (czas warstw; klucze `rules`,
-`knn`, `llm`, `retrieval` pokazują, którędy przeszło pytanie). Gdy Ollama albo
-Qdrant nie odpowiada, `/chat` zwraca kod 503 z tym samym kształtem `ChatOut`:
-`action` = `ticket`, zgłoszenie już utworzone, `timings_ms` puste; adres usługi
-i błąd trafiają do logu, proces działa dalej.
+`ChatOut`: `session_id`, `reply` (tekst dla klienta), `action` (`answer`,
+`clarify`, `ticket`, `handoff`, `chitchat_reply`, `unsafe_refuse`, `redirect`),
+`intent` (albo `null`), `language` (`pl`/`en`), `ticket_id` (numer albo `null`),
+`timings_ms` (czas warstw `rules`, `knn`, `llm`, `retrieval`; klucze pokazują
+drogę pytania). Gdy Ollama albo Qdrant nie odpowiada, `/chat` zwraca kod 503
+z tym samym kształtem: `action` = `ticket`, zgłoszenie już utworzone,
+`timings_ms` puste; adres usługi i błąd idą do logu, proces żyje dalej.
 
 ```bash
 curl -s -X POST http://localhost:8020/chat -H "Content-Type: application/json" \
@@ -245,10 +218,9 @@ curl -s -X POST http://localhost:8020/chat -H "Content-Type: application/json" \
 Zgłoszenie to wiersz w tabeli `tickets` bazy SQLite (`data/kremzapay.db`, ścieżka
 w `DB_PATH`): sesja, powód (`no_knowledge`, `other_in_scope`,
 `generation_not_grounded`, `service_unavailable`), kategoria, intencja,
-priorytet, status `new`, czas. Zgłoszenia widać na `/dashboard` i w `/api/stats`.
-Nie ma integracji z e-mailem, Telegramem ani CRM: nikt nie zostanie powiadomiony,
-dopóki ktoś nie zajrzy do panelu albo do bazy. Klient widzi wtedy (teksty
-w `REPLIES` w `src/api.py`):
+priorytet, status `new`, czas. Widać je na `/dashboard` i w `/api/stats`. Nie ma
+integracji z e-mailem, Telegramem ani CRM: nikt nie zostanie powiadomiony, dopóki
+ktoś nie zajrzy do panelu albo do bazy. Klient widzi (`REPLIES` w `src/api.py`):
 
 - brak odpowiedzi w dokumentacji: „Nie znalazłem pełnej odpowiedzi w dokumentacji,
   więc utworzyłem zgłoszenie #{tid}. Zespół wróci do Ciebie.”
@@ -262,10 +234,9 @@ rozwiązanie: https://github.com/aleksykremza-dev.
 
 ## Testy
 
-Testy żywe łączą się z botem pod `http://localhost:8020` (zmienna `API_URL`
-albo `--url`) i wymagają Ollama oraz Qdrant z kolekcją; `test-accuracy` woła
-kaskadę bezpośrednio, bez serwera HTTP. Raporty trafiają do `data/reports/`
-(katalog w `.gitignore`), np. `2026-09-29-2130-accuracy.json`.
+Testy żywe łączą się z botem pod `http://localhost:8020` (zmienna `API_URL` albo
+`--url`) i wymagają Ollama oraz Qdrant z kolekcją; `test-accuracy` woła kaskadę
+bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 
 | Cel `make` | Co sprawdza | Co musi działać | Zaliczenie (inaczej kod 1) |
 |---|---|---|---|
@@ -286,10 +257,9 @@ kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usług
 
 ## Koszty
 
-Wszystkie modele działają lokalnie, więc koszt to sprzęt i prąd, nie tokeny.
-Każde wywołanie modelu ma ograniczoną długość wyjścia (`num_predict`): 220
-tokenów na każdy z dwóch etapów klasyfikatora, 400 na odpowiedź, 5 na sędziego;
-temperatura 0. Liczba wywołań zależy od ścieżki pytania:
+Modele działają lokalnie, więc koszt to sprzęt i prąd, nie tokeny. Wyjście
+modelu jest ograniczone (`num_predict`): 220 tokenów na każdy z dwóch etapów
+klasyfikatora, 400 na odpowiedź, 5 na sędziego; temperatura 0. Wywołania:
 
 | Ścieżka | Wywołania modelu | Szacunek tokenów wejście / wyjście |
 |---|---|---|
@@ -298,11 +268,10 @@ temperatura 0. Liczba wywołań zależy od ścieżki pytania:
 | odpowiedź po klasyfikatorze LLM | 2 etapy klasyfikatora + odpowiedź + sędzia (4) | ok. 3 250 / 440 |
 | zgłoszenie albo dopytanie po klasyfikatorze LLM | 2 | ok. 850 / 180 |
 
-Szacunki tokenów wynikają z rozmiarów promptów tej kaskady (3 fragmenty po ok.
-800 znaków w kontekście odpowiedzi) i są przybliżone. Ta sama kaskada na modelu
-hostowanym i rozliczanym za tokeny kosztowałaby od kilku do kilkudziesięciu
-dolarów na 1000 pytań, zależnie od cennika. Zmiana modelu w Ollama to zmiana
-`ANSWER_MODEL`; inny dostawca wymaga zmiany wyłącznie w `src/llm.py`.
+Szacunki wynikają z rozmiarów promptów tej kaskady (3 fragmenty po ok. 800
+znaków w kontekście odpowiedzi) i są przybliżone; na modelu hostowanym
+i rozliczanym za tokeny wyszłoby od kilku do kilkudziesięciu dolarów na 1000
+pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.py`.
 
 ## Ograniczenia
 
@@ -314,19 +283,16 @@ dolarów na 1000 pytań, zależnie od cennika. Zmiana modelu w Ollama to zmiana
 - Zgłoszenia nigdzie nie są dostarczane: tylko SQLite i panel.
 - Jeden model (`ANSWER_MODEL`) obsługuje klasyfikację, odpowiedź i sędziego;
   nie ma zapasowego LLM, awaria Ollama oznacza 503 i zgłoszenie.
-- Tylko polski i angielski; wykrycie języka jest heurystyczne (polskie znaki
-  i lista słów), inne języki są traktowane jak angielski.
+- Tylko polski i angielski; inne języki są traktowane jak angielski.
 - Filtr kategorii przy wyszukiwaniu działa tylko, gdy `category` w nagłówkach
   artykułów pokrywa się z kategoriami w `data/taxonomy.json`; przy rozjeździe
   wyszukiwanie po cichu wraca do wyników bez filtra.
-- Bot nie używa historii rozmowy: każde pytanie rozpatruje osobno.
 
 ## Mapa kodu
 
 `make codemap` uruchamia `tools/codemap.py` i buduje `data/reports/codemap.json`:
 dla każdej funkcji, klasy i metody w `src/` i `tools/` plik, zakres linii,
-sygnatura i link do tych linii na GitHubie w bieżącym commicie
-(`--format table` wypisuje to samo w terminalu). Moduły w `src/`:
+sygnatura i link do tych linii na GitHubie w bieżącym commicie. Moduły w `src/`:
 
 | Moduł | Rola |
 |---|---|
@@ -350,5 +316,4 @@ sygnatura i link do tych linii na GitHubie w bieżącym commicie
 ## Licencja
 
 [PolyForm Noncommercial 1.0.0](LICENSE), Copyright (c) 2026 Oleksii Kremza.
-Użycie niekomercyjne na warunkach licencji; użycie komercyjne wymaga wcześniejszej
-pisemnej zgody właściciela praw autorskich.
+Użycie komercyjne wymaga wcześniejszej pisemnej zgody właściciela praw autorskich.
