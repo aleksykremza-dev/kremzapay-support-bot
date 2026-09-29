@@ -1,6 +1,6 @@
 services:
   qdrant:
-    image: qdrant/qdrant:latest
+    image: qdrant/qdrant:v1.13.2
     container_name: kremzapay-qdrant
     ports:
       - "6335:6333"

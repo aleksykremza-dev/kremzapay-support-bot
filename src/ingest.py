@@ -1,38 +1,36 @@
-"""Ingest: reads kb/ articles, splits into chunks, turns them into embeddings, loads into Qdrant."""
-# [INGEST] KB -> chunks -> embeddings -> Qdrant
-import glob
-import os
+# Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
+import sys
 import uuid
+from pathlib import Path
 
-from dotenv import load_dotenv
 from fastembed import TextEmbedding
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 
-load_dotenv()
-QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6335")
-COLLECTION = "kremzapay_kb"
-EMBED_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-CHUNK_SIZE = 800  # characters per chunk (~1-2 paragraphs)
+import config
+
+NO_KB_MESSAGE = (
+    "Baza wiedzy nie jest częścią repozytorium. "
+    "Umieść artykuły w kb/ (format: README, sekcja \"Własna dokumentacja\")."
+)
 
 
-def parse_article(path):
-    """Parses an article file: the passport (frontmatter) separately, the text separately."""
-    raw = open(path, encoding="utf-8").read()
+def parse_article(path: Path) -> tuple[dict, str]:
+    with open(path, encoding="utf-8") as handle:
+        raw = handle.read()
     _, front, body = raw.split("---", 2)
     meta = {}
     for line in front.strip().splitlines():
         key, _, value = line.partition(":")
         meta[key.strip()] = value.strip()
-    body = body.rsplit("---", 1)[0]  # cut off the disclaimer at the end
+    body = body.rsplit("---", 1)[0]
     return meta, body.strip()
 
 
-def split_chunks(body):
-    """Splits text into chunks of ~CHUNK_SIZE characters without breaking paragraphs."""
+def split_chunks(body: str) -> list[str]:
     chunks, current = [], ""
     for paragraph in body.split("\n\n"):
-        if len(current) + len(paragraph) > CHUNK_SIZE and current:
+        if len(current) + len(paragraph) > config.CHUNK_SIZE and current:
             chunks.append(current.strip())
             current = ""
         current += paragraph + "\n\n"
@@ -41,36 +39,46 @@ def split_chunks(body):
     return chunks
 
 
-def main():
-    articles = sorted(glob.glob("kb/*/*.md"))
+def find_articles(kb_dir: Path) -> list[Path]:
+    if not kb_dir.is_dir():
+        return []
+    return sorted(kb_dir.glob("*/*.md"))
+
+
+def main(kb_dir: Path = config.KB_DIR) -> int:
+    articles = find_articles(kb_dir)
+    if not articles:
+        print(NO_KB_MESSAGE)
+        return 2
     print(f"Articles found: {len(articles)}")
 
     texts, payloads = [], []
     for path in articles:
         meta, body = parse_article(path)
-        for i, chunk in enumerate(split_chunks(body)):
+        for index, chunk in enumerate(split_chunks(body)):
             texts.append(meta["title"] + "\n" + chunk)
-            payloads.append({**meta, "chunk": i, "text": chunk})
+            payloads.append({**meta, "chunk": index, "text": chunk})
     print(f"Chunks produced: {len(texts)}")
 
-    print("Computing embeddings (first run downloads the model ~200 MB, then fast)...")
-    embedder = TextEmbedding(EMBED_MODEL)
+    print("Computing embeddings (first run downloads the model, then fast)...")
+    embedder = TextEmbedding(config.EMBED_MODEL)
     vectors = list(embedder.embed(texts))
 
-    client = QdrantClient(url=QDRANT_URL)
-    if client.collection_exists(COLLECTION):
-        client.delete_collection(COLLECTION)  # re-run = full reload from scratch
+    client = QdrantClient(url=config.QDRANT_URL)
+    if client.collection_exists(config.COLLECTION):
+        client.delete_collection(config.COLLECTION)
     client.create_collection(
-        COLLECTION,
-        vectors_config=VectorParams(size=384, distance=Distance.COSINE),
+        config.COLLECTION,
+        vectors_config=VectorParams(size=len(vectors[0]), distance=Distance.COSINE),
     )
     points = [
-        PointStruct(id=str(uuid.uuid4()), vector=v.tolist(), payload=p)
-        for v, p in zip(vectors, payloads)
+        PointStruct(id=str(uuid.uuid4()), vector=vector.tolist(), payload=payload)
+        for vector, payload in zip(vectors, payloads)
     ]
-    client.upsert(COLLECTION, points)
-    print(f"Done: {len(points)} points in collection '{COLLECTION}'")
+    client.upsert(config.COLLECTION, points)
+    print(f"Done: {len(points)} points in collection '{config.COLLECTION}'")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

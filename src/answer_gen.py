@@ -1,19 +1,9 @@
-"""Stage 7: answer generation from retrieved chunks. Brand voice lives in BRAND_VOICE."""
-# [GENERATION] Grounded answer generation with brand voice
-import json
-import os
-
-import httpx
-from dotenv import load_dotenv
-
+# Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
+import config
+import llm
+import taxonomy
 from search import search
 
-load_dotenv()
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
-MODEL = os.getenv("ANSWER_MODEL", "qwen2.5:7b-instruct")
-TOP_N = 3
-
-# Brand voice — edit freely, this is the face of kremzaPay.
 BRAND_VOICE = (
     "You are the kremzaPay support assistant. Style: warm but concise, "
     "address the user informally ('ty' in Polish, 'you' in English), "
@@ -21,25 +11,13 @@ BRAND_VOICE = (
     "steps. Always answer in {lang_name}."
 )
 
-_tax = json.load(open("data/taxonomy.json", encoding="utf-8"))
-INTENT_CATEGORY = {i["id"]: i["category"] for i in _tax["intents"]}
-INTENT_DEF = {i["id"]: i["definition"] for i in _tax["intents"]}
 
-
-def generate(question, intent=None, language="en"):
-    """Returns {'answer', 'sources', 'chunks'} or None on empty retrieval."""
-    category = INTENT_CATEGORY.get(intent)
-    # Mix the intent definition into the query: anchors the search on the topic's
-    # main article rather than its edge cases (bug "zwrot -> article about 180 days").
-    query = f"{question}. {INTENT_DEF[intent]}" if intent in INTENT_DEF else question
-    hits = search(query, category=category)[:TOP_N]
-    if not hits:
-        return None
+def _build_prompt(question: str, hits: list, language: str) -> str:
     context = "\n\n---\n\n".join(
-        f"[{h.payload['id']} — {h.payload['title']}]\n{h.payload['text']}" for h in hits
+        f"[{hit.payload['id']} : {hit.payload['title']}]\n{hit.payload['text']}" for hit in hits
     )
     lang_name = "Polish" if language == "pl" else "English"
-    prompt = (
+    return (
         BRAND_VOICE.format(lang_name=lang_name) + "\n\n"
         "Answer the QUESTION using ONLY the documentation excerpts below. "
         "Do not invent facts, numbers or features. If the excerpts are not "
@@ -48,22 +26,18 @@ def generate(question, intent=None, language="en"):
         "listing the article id(s) you actually used.\n\n"
         f"EXCERPTS:\n{context}\n\nQUESTION: {question}\n\nANSWER (in {lang_name}):"
     )
-    r = httpx.post(OLLAMA_URL + "/api/generate",
-                   json={"model": MODEL, "prompt": prompt, "stream": False,
-                         "options": {"temperature": 0, "num_predict": 400}},
-                   timeout=120)
-    text = r.json().get("response", "").strip()
-    if not text:
+
+
+def generate(question: str, intent: str | None = None, language: str = "en") -> dict | None:
+    definitions = taxonomy.intent_definition()
+    category = taxonomy.intent_category().get(intent)
+    query = f"{question}. {definitions[intent]}" if intent in definitions else question
+    hits = search(query, category=category)[:config.TOP_N]
+    if not hits:
         return None
-    sources = [f"{h.payload['id']} — {h.payload['title']}" for h in hits]
-    return {"answer": text, "sources": sources,
-            "chunks": [h.payload["text"] for h in hits]}
-
-
-if __name__ == "__main__":
-    import sys
-    q = " ".join(sys.argv[1:]) or "jak zrobic zwrot?"
-    result = generate(q, intent="refund_how", language="pl")
-    print(result["answer"] if result else "retrieval empty")
-    if result:
-        print("\nSources:", "; ".join(result["sources"]))
+    try:
+        text = llm.generate(_build_prompt(question, hits, language), num_predict=400)
+    except llm.LLMBadOutput:
+        return None
+    sources = [f"{hit.payload['id']} : {hit.payload['title']}" for hit in hits]
+    return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in hits]}

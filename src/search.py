@@ -1,57 +1,63 @@
-"""Retrieval v2: semantic search + optional filter by article category."""
-# [RETRIEVAL] Semantic search with category filter
-import os
+# Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
+import logging
 import sys
 
-from dotenv import load_dotenv
 from fastembed import TextEmbedding
 from qdrant_client import QdrantClient
 from qdrant_client.models import FieldCondition, Filter, MatchValue
 
-load_dotenv()
-QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6335")
-COLLECTION = "kremzapay_kb"
-EMBED_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-TOP_K = 5
+import config
+
+log = logging.getLogger(__name__)
 
 _embedder = None
 _client = None
 
 
-def _lazy():
+class SearchUnavailable(Exception):
+    pass
+
+
+def _lazy() -> None:
     global _embedder, _client
     if _embedder is None:
-        _embedder = TextEmbedding(EMBED_MODEL)
-        _client = QdrantClient(url=QDRANT_URL)
+        _embedder = TextEmbedding(config.EMBED_MODEL)
+        _client = QdrantClient(url=config.QDRANT_URL)
 
 
-def search(question, category=None):
-    """Top-K chunks; with category, search only within that category's articles.
-
-    The filter narrows the search ("zwrot" no longer drifts into chargeback
-    articles), and if the category yields too few, we fall back to the whole base.
-    """
+def search(question: str, category: str | None = None) -> list:
     _lazy()
     vector = list(_embedder.embed([question]))[0].tolist()
-    flt = None
+    query_filter = None
     if category:
-        flt = Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
-    hits = _client.query_points(COLLECTION, query=vector, limit=TOP_K,
-                                query_filter=flt).points
-    if category and len(hits) < 2:          # category too sparse -> whole base
-        hits = _client.query_points(COLLECTION, query=vector, limit=TOP_K).points
+        query_filter = Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
+    try:
+        hits = _client.query_points(config.COLLECTION, query=vector, limit=config.TOP_K,
+                                    query_filter=query_filter).points
+        if category and len(hits) < 2:
+            hits = _client.query_points(config.COLLECTION, query=vector, limit=config.TOP_K).points
+    except Exception as exc:
+        log.warning("qdrant %s failed: %s", config.QDRANT_URL, exc)
+        raise SearchUnavailable(f"{config.QDRANT_URL}: {exc}") from exc
     return hits
 
 
-def main():
+def ping() -> bool:
+    try:
+        client = QdrantClient(url=config.QDRANT_URL, timeout=int(config.PING_TIMEOUT_S))
+        return bool(client.collection_exists(config.COLLECTION))
+    except Exception as exc:
+        log.warning("qdrant %s not reachable: %s", config.QDRANT_URL, exc)
+        return False
+
+
+def main() -> int:
     question = " ".join(sys.argv[1:]) or "How do I refund a payment?"
-    print(f"Question: {question}\n-- without filter:")
-    for h in search(question)[:3]:
-        print(f"  [{h.score:.3f}] {h.payload['id']} ({h.payload['category']}) {h.payload['title']}")
-    print("-- filter category=refunds:")
-    for h in search(question, category="refunds")[:3]:
-        print(f"  [{h.score:.3f}] {h.payload['id']} ({h.payload['category']}) {h.payload['title']}")
+    print(f"Question: {question}")
+    for hit in search(question)[:3]:
+        print(f"  [{hit.score:.3f}] {hit.payload['id']} ({hit.payload['category']}) {hit.payload['title']}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -1,12 +1,10 @@
-"""Stage 8: storage (SQLite) — sessions, messages+TurnState, tickets, actions_log, feedback."""
-# [STORE] SQLite persistence: sessions, TurnState, tickets, audit
+# Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
 import json
-import os
 import sqlite3
 import uuid
 from datetime import datetime, timezone
 
-DB_PATH = os.getenv("DB_PATH", "data/kremzapay.db")
+import config
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS sessions (
@@ -21,109 +19,72 @@ CREATE TABLE IF NOT EXISTS tickets (
     reason TEXT NOT NULL, category TEXT, intent TEXT,
     priority TEXT NOT NULL DEFAULT 'normal', status TEXT NOT NULL DEFAULT 'new',
     created_at TEXT NOT NULL, resolution TEXT);
-CREATE TABLE IF NOT EXISTS actions_log (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
-    action TEXT NOT NULL, params TEXT, result TEXT, created_at TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS feedback (
-    id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
-    rating TEXT, reopen INTEGER DEFAULT 0, created_at TEXT NOT NULL);
 """
 
 
-def _now():
+def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _conn():
-    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-    conn = sqlite3.connect(DB_PATH)
+def _conn() -> sqlite3.Connection:
+    config.DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(config.DB_PATH)
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA)
     return conn
 
 
-def create_session(channel="web"):
+def create_session(channel: str = "web") -> str:
     sid = str(uuid.uuid4())[:12]
-    with _conn() as c:
-        c.execute("INSERT INTO sessions (id, channel, started_at) VALUES (?,?,?)",
-                  (sid, channel, _now()))
+    with _conn() as conn:
+        conn.execute("INSERT INTO sessions (id, channel, started_at) VALUES (?,?,?)",
+                     (sid, channel, _now()))
     return sid
 
 
-def add_message(session_id, role, masked_text, turn_state=None):
-    with _conn() as c:
-        cur = c.execute(
+def add_message(session_id: str, role: str, masked_text: str, turn_state: dict | None = None) -> int:
+    with _conn() as conn:
+        cursor = conn.execute(
             "INSERT INTO messages (session_id, role, masked_text, turn_state, created_at) "
             "VALUES (?,?,?,?,?)",
             (session_id, role, masked_text,
              json.dumps(turn_state, ensure_ascii=False) if turn_state else None, _now()))
-        return cur.lastrowid
+        return cursor.lastrowid
 
 
-def create_ticket(session_id, reason, category=None, intent=None, priority="normal"):
-    with _conn() as c:
-        cur = c.execute(
+def create_ticket(session_id: str, reason: str, category: str | None = None,
+                  intent: str | None = None, priority: str = "normal") -> int:
+    with _conn() as conn:
+        cursor = conn.execute(
             "INSERT INTO tickets (session_id, reason, category, intent, priority, created_at) "
             "VALUES (?,?,?,?,?,?)", (session_id, reason, category, intent, priority, _now()))
-        return cur.lastrowid
+        return cursor.lastrowid
 
 
-def list_tickets(status=None):
-    with _conn() as c:
-        q = "SELECT * FROM tickets" + (" WHERE status=?" if status else "") + " ORDER BY id DESC"
-        rows = c.execute(q, (status,) if status else ()).fetchall()
-        return [dict(r) for r in rows]
-
-
-def log_action(session_id, action, params=None, result=None):
-    with _conn() as c:
-        c.execute("INSERT INTO actions_log (session_id, action, params, result, created_at) "
-                  "VALUES (?,?,?,?,?)",
-                  (session_id, action, json.dumps(params, ensure_ascii=False), result, _now()))
-
-
-def add_feedback(session_id, rating, reopen=False):
-    with _conn() as c:
-        c.execute("INSERT INTO feedback (session_id, rating, reopen, created_at) VALUES (?,?,?,?)",
-                  (session_id, rating, int(reopen), _now()))
-
-
-if __name__ == "__main__":
-    sid = create_session("web")
-    add_message(sid, "user", "jak zrobic zwrot <CARD_1>?",
-                turn_state={"decision": {"action": "answer"}, "classification": {"intent": "refund_how"}})
-    tid = create_ticket(sid, "no_knowledge", category="payments", intent="payment_limits")
-    log_action(sid, "get_payment_status", {"session_id": "s-123"}, "completed")
-    add_feedback(sid, "up")
-    print(f"session {sid}, ticket #{tid}")
-    print("tickets:", list_tickets("new"))
-
-
-def get_stats():
-    """Summary for the observability panel: everything is read from turn_state and tickets."""
-    with _conn() as c:
-        sessions = c.execute("SELECT COUNT(*) FROM sessions").fetchone()[0]
-        rows = c.execute(
+def get_stats() -> dict:
+    with _conn() as conn:
+        sessions = conn.execute("SELECT COUNT(*) FROM sessions").fetchone()[0]
+        rows = conn.execute(
             "SELECT session_id, masked_text, turn_state, created_at FROM messages "
             "WHERE role='user' AND turn_state IS NOT NULL ORDER BY id DESC LIMIT 50"
         ).fetchall()
         dialogs = []
-        actions = {}
-        for r in rows:
-            ts = json.loads(r["turn_state"])
+        actions: dict[str, int] = {}
+        for row in rows:
+            ts = json.loads(row["turn_state"])
             action = ts.get("decision", {}).get("action", "?")
             actions[action] = actions.get(action, 0) + 1
             cls = ts.get("classification") or {}
             dialogs.append({
-                "text": r["masked_text"][:70], "action": action,
+                "text": row["masked_text"][:70], "action": action,
                 "intent": cls.get("intent"), "confidence": cls.get("confidence"),
                 "layer_path": list(ts.get("timings_ms", {}).keys()),
                 "total_ms": round(sum(ts.get("timings_ms", {}).values())),
                 "reason": ts.get("decision", {}).get("reason"),
-                "at": r["created_at"][11:19],
+                "at": row["created_at"][11:19],
             })
-        tickets = c.execute(
+        tickets = conn.execute(
             "SELECT id, reason, intent, status, created_at FROM tickets "
             "ORDER BY id DESC LIMIT 20").fetchall()
         return {"sessions": sessions, "actions": actions, "dialogs": dialogs,
-                "tickets": [dict(t) for t in tickets]}
+                "tickets": [dict(ticket) for ticket in tickets]}
