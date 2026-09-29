@@ -1,17 +1,8 @@
-"""Stage 7: judge (output-rail) — checks the finished answer against sources before sending."""
-# [JUDGE] Output guardrail: groundedness fact-check
-import os
-
-import httpx
-from dotenv import load_dotenv
-
-load_dotenv()
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
-MODEL = os.getenv("ANSWER_MODEL", "qwen2.5:7b-instruct")
+# Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
+import llm
 
 
-def grounded(answer, chunks):
-    """True if every factual claim in the answer is backed by the sources."""
+def grounded(answer: str, chunks: list[str]) -> bool:
     context = "\n\n---\n\n".join(chunks)
     prompt = (
         "You are a strict fact-checker.\n"
@@ -20,8 +11,8 @@ def grounded(answer, chunks):
         "Style phrases and the source line do not count as claims. "
         "Reply one word: yes or no."
     )
-    r = httpx.post(OLLAMA_URL + "/api/generate",
-                   json={"model": MODEL, "prompt": prompt, "stream": False,
-                         "options": {"temperature": 0, "num_predict": 5}},
-                   timeout=90)
-    return r.json().get("response", "").strip().lower().startswith("yes")
+    try:
+        verdict = llm.generate(prompt, num_predict=5)
+    except llm.LLMBadOutput:
+        return False
+    return verdict.strip().lower().startswith("yes")

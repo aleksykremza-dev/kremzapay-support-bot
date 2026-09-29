@@ -1,24 +1,27 @@
-"""Merge: combines three taxonomy parts into a single data/taxonomy.json."""
-# [TAXONOMY] Merge taxonomy parts
+# Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
 import json
+import sys
 
-PARTS = [
-    "data/taxonomy/part-a.json",
-    "data/taxonomy/part-b.json",
-    "data/taxonomy/part-c.json",
-]
+import config
 
-intents = []
-special = []
-for path in PARTS:
-    part = json.load(open(path, encoding="utf-8"))
-    intents += part["intents"]
-    special += part.get("special_classes", [])
 
-ids = [i["id"] for i in intents]
-assert len(ids) == len(set(ids)), "duplicate id in taxonomy!"
+def main() -> int:
+    intents, special = [], []
+    for path in sorted(config.TAXONOMY_PARTS_DIR.glob("part-*.json")):
+        with open(path, encoding="utf-8") as handle:
+            part = json.load(handle)
+        intents += part["intents"]
+        special += part.get("special_classes", [])
+    ids = [item["id"] for item in intents]
+    if len(ids) != len(set(ids)):
+        print("duplicate id in taxonomy")
+        return 1
+    taxonomy = {"version": 1, "intents": intents, "special_classes": special}
+    with open(config.TAXONOMY_PATH, "w", encoding="utf-8") as handle:
+        json.dump(taxonomy, handle, ensure_ascii=False, indent=1)
+    print(f"taxonomy.json ready: {len(intents)} intents, {len(special)} special classes")
+    return 0
 
-taxonomy = {"version": 1, "intents": intents, "special_classes": special}
-json.dump(taxonomy, open("data/taxonomy.json", "w", encoding="utf-8"),
-          ensure_ascii=False, indent=1)
-print(f"taxonomy.json ready: {len(intents)} intents, {len(special)} special classes, version 1")
+
+if __name__ == "__main__":
+    sys.exit(main())
