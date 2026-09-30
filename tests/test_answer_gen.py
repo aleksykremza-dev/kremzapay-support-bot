@@ -38,3 +38,33 @@ def test_generate_packs_answer_sources_chunks(monkeypatch):
     monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Answer.\nSource: a")
     result = answer_gen.generate("q", intent=None, language="en")
     assert result == {"answer": "Answer.\nSource: a", "sources": ["a : A"], "chunks": ["text a"]}
+
+
+def test_generate_keeps_only_cited_chunks(monkeypatch):
+    hits = [_hit("refund-how", "Zwrot", "text refund"), _hit("payout-schedule", "Wypłata", "text payout")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Odpowiedź.\n\nŹródło: payout-schedule")
+    result = answer_gen.generate("q", intent=None, language="pl")
+    assert result["chunks"] == ["text payout"]
+    assert result["sources"] == ["refund-how : Zwrot", "payout-schedule : Wypłata"]
+
+
+def test_generate_keeps_all_chunks_without_source_line(monkeypatch):
+    hits = [_hit("a", "A", "text a"), _hit("b", "B", "text b")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Answer without citation.")
+    assert answer_gen.generate("q", intent=None, language="en")["chunks"] == ["text a", "text b"]
+
+
+def test_generate_does_not_match_id_as_substring(monkeypatch):
+    hits = [_hit("a", "A", "text a"), _hit("ab", "AB", "text ab")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Answer.\nSource: ab")
+    assert answer_gen.generate("q", intent=None, language="en")["chunks"] == ["text ab"]
+
+
+def test_generate_keeps_all_chunks_when_cited_id_unknown(monkeypatch):
+    hits = [_hit("a", "A", "text a"), _hit("b", "B", "text b")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Answer.\nSource: zzz")
+    assert answer_gen.generate("q", intent=None, language="en")["chunks"] == ["text a", "text b"]
