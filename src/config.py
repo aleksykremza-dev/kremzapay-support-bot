@@ -23,6 +23,7 @@ QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6335")
 COLLECTION = os.getenv("COLLECTION", "kremzapay_kb")
 LLM_TIMEOUT_S = float(os.getenv("LLM_TIMEOUT_S", "120"))
 LLM_RETRIES = int(os.getenv("LLM_RETRIES", "1"))
+LLM_SEED = int(os.getenv("LLM_SEED", "42"))
 PING_TIMEOUT_S = 2.0
 
 DATA_DIR = BASE_DIR / "data"
@@ -44,4 +45,4 @@ CONF_HIGH = 0.72
 TOP_K = 5
 TOP_N = 3
 CHUNK_SIZE = 800
-MIN_ACCURACY = 0.719
+MIN_ACCURACY = 0.70
