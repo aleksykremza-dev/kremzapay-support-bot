@@ -64,7 +64,7 @@ sesji jest zapisywana, ale każde pytanie jest rozpatrywane osobno. Język
 |---|---|---|
 | Python 3.12 (`.python-version`) i [uv](https://github.com/astral-sh/uv) | środowisko `.venv` z `pyproject.toml` | `uv --version` |
 | Własna [Ollama](https://ollama.com) z modelem z `.env` (`ANSWER_MODEL`, domyślnie `qwen2.5:7b-instruct`) | klasyfikator, odpowiedzi i sędzia; jeden model na wszystkie warstwy | `curl http://localhost:11434/api/tags` zwraca listę modeli z tym tagiem |
-| Własny Qdrant; w repo `docker-compose.yml` z przypiętym obrazem `qdrant/qdrant:v1.13.2`, port `6335` na hoście, dane w `qdrant_data/` | fragmenty dokumentacji i wyszukiwanie znaczeniowe | `curl http://localhost:6335/collections` zwraca JSON |
+| Własny Qdrant; w repo `docker-compose.yml` z przypiętym obrazem `qdrant/qdrant:v1.18.2`, port `6335` na hoście, dane w `qdrant_data/` | fragmenty dokumentacji i wyszukiwanie znaczeniowe | `curl http://localhost:6335/collections` zwraca JSON |
 | Docker (dla Qdrant) | uruchomienie kontenera | `docker compose ps` |
 | Własna dokumentacja w `kb/` | bez niej `ingest.py` kończy się kodem 2 | sekcja „Własna dokumentacja” |
 
@@ -240,7 +240,7 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 
 | Cel `make` | Co sprawdza | Co musi działać | Zaliczenie (inaczej kod 1) |
 |---|---|---|---|
-| `test` | `pytest -q`: reguły, PII, kaskada, API, ingest, klient LLM; Ollama i Qdrant zastąpione atrapami | nic | 70 passed, kod 0 |
+| `test` | `pytest -q`: reguły, PII, kaskada, API, ingest, klient LLM; Ollama i Qdrant zastąpione atrapami | nic | wszystkie testy passed, zero failed, kod 0 |
 | `test-func` | `tests/live/func_by_category.py`: po 1 pytaniu z gold setu na każdą intencję i klasę specjalną przez `POST /chat` | bot + usługi | żadna klasa specjalna nie zawiodła, trafność intencji >= 0,6 (`--min-intent-accuracy`) |
 | `test-oos` | `tests/live/out_of_scope.py`: 22 pytania (injection, oszustwo, inne produkty, podatki, tematy obce) muszą dać oczekiwaną akcję; przypadki dla warstwy reguł nie mogą mieć w `timings_ms` kluczy `llm` ani `retrieval` | bot + usługi | 22/22 ok |
 | `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, accuracy, macro-F1, recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg | Ollama, Qdrant | accuracy >= 0,719 (`MIN_ACCURACY`, `--min-accuracy`) |

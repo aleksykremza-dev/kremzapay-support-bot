@@ -1,4 +1,3 @@
-"""PII masker: each pattern kind masks, clean text is untouched, mapping restores."""
 import pii
 
 
@@ -16,7 +15,6 @@ def test_iban_masked():
 
 
 def test_pesel_masked_as_pesel_not_phone():
-    # 11 digits could also match the phone pattern; PESEL must win by order.
     masked, mapping = pii.mask("mój pesel 90010112345, sprawdźcie konto")
     assert "<PESEL_1>" in masked
     assert "90010112345" not in masked
