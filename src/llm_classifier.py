@@ -11,10 +11,10 @@ def _stage1_category(text: str) -> dict:
         f"Categories of supported topics:\n{cats}\n"
         f"Special classes (use INSTEAD of a category when they fit):\n{spec}\n\n"
         "Rules: chitchat = ONLY light small talk (greetings, jokes, thanks). "
-        "Complaints, frustration or dissatisfaction with the bot/service are NOT chitchat, "
+        "Complaints, frustration or dissatisfaction with the bot/service are NOT chitchat - "
         "pick the matching category instead. wants_human=true if the user explicitly OR "
         "unambiguously wants a live person: asks for one, or is angry AT THE BOT/SERVICE itself. "
-        "Frustration about a payment problem alone is NOT wants_human, classify the problem instead.\n\n"
+        "Frustration about a payment problem alone is NOT wants_human - classify the problem instead.\n\n"
         f"User message: {text}\n\n"
         'Reply JSON: {"reasoning": "<one short sentence>", '
         '"label": "<one category OR special class id>", "wants_human": true|false}'
