@@ -1,9 +1,12 @@
 # Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
+import re
+
 import config
 import llm
 import taxonomy
 from search import search
 
+SOURCE_LINE = re.compile(r"^(Źródło|Source):", re.I)
 BRAND_VOICE = (
     "You are the kremzaPay support assistant. Style: warm but concise, "
     "address the user informally ('ty' in Polish, 'you' in English), "
@@ -28,6 +31,15 @@ def _build_prompt(question: str, hits: list, language: str) -> str:
     )
 
 
+def _cited(answer: str, hits: list) -> list:
+    lines = [line for line in answer.splitlines() if SOURCE_LINE.match(line.strip())]
+    if not lines:
+        return hits
+    cited = [hit for hit in hits
+             if any(re.search(rf"\b{re.escape(hit.payload['id'])}\b", line) for line in lines)]
+    return cited or hits
+
+
 def generate(question: str, intent: str | None = None, language: str = "en") -> dict | None:
     definitions = taxonomy.intent_definition()
     category = taxonomy.intent_category().get(intent)
@@ -40,4 +52,4 @@ def generate(question: str, intent: str | None = None, language: str = "en") -> 
     except llm.LLMBadOutput:
         return None
     sources = [f"{hit.payload['id']} : {hit.payload['title']}" for hit in hits]
-    return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in hits]}
+    return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in _cited(text, hits)]}

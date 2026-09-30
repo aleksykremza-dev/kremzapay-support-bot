@@ -60,6 +60,24 @@ def test_chat_no_knowledge_creates_ticket(client, monkeypatch):
     assert stats["tickets"][0]["id"] == 1
 
 
+def test_chat_not_grounded_becomes_ticket(client, monkeypatch):
+    import api
+    monkeypatch.setattr(api.cascade, "route", _route_answer)
+    monkeypatch.setattr(api.answer_gen, "generate", lambda *a, **k: {
+        "answer": "Zwrot trwa 1 godzinę.\nŹródło: refund-how", "sources": ["refund-how"], "chunks": ["x"]})
+    monkeypatch.setattr(api.judge, "grounded", lambda *a, **k: False)
+    response = client.post("/chat", json={"text": "jak zrobić zwrot?"})
+    assert response.status_code == 200
+    body = response.json()
+    assert body["action"] == "ticket"
+    assert body["ticket_id"] == 1
+    assert "#1" in body["reply"]
+    stats = client.get("/api/stats").json()
+    assert stats["dialogs"][0]["action"] == "ticket"
+    assert stats["dialogs"][0]["reason"] == "generation_not_grounded"
+    assert stats["tickets"][0]["reason"] == "generation_not_grounded"
+
+
 def test_chat_rules_layer_only(client, monkeypatch):
     import api
     monkeypatch.setattr(api.cascade, "route", _route_rules)

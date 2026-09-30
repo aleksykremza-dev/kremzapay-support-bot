@@ -92,6 +92,9 @@ def _handle(masked: str, sid: str) -> ChatOut:
         if generated and judge.grounded(generated["answer"], generated["chunks"]):
             reply = generated["answer"]
         else:
+            action = "ticket"
+            ts["decision"] = {"action": action, "reason": "generation_not_grounded",
+                              "confidence": ts["decision"].get("confidence")}
             reply, ticket_id = _ticket_reply(sid, lang, "generation_not_grounded", "ticket_not_grounded", cls)
     else:
         reply = REPLIES[action][lang]
