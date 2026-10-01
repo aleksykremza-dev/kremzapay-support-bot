@@ -28,8 +28,12 @@ Pytanie z czatu przechodzi przez kolejne etapy; każdy ma swój plik w `src/`.
    5 głosów i średnie podobieństwo >= `T_ACCEPT` (0,62); wtedy jest przyjęta bez
    modelu, z pewnością `high` przy >= `CONF_HIGH` (0,72), inaczej `medium`.
 4. **L2, klasyfikator LLM** (`llm_classifier.py`). Gdy kNN nie jest pewny (także
-   przy podobieństwie < `T_OOS`, 0,45), lokalny model wybiera kategorię albo klasę
-   specjalną, potem intencję; zwraca JSON z pewnością `high|medium|low` i `wants_human`.
+   przy podobieństwie < `T_OOS`, 0,45), lokalny model jednym wywołaniem najpierw
+   ustala, kto pisze (kupujący w sklepie czy sprzedawca), potem wybiera etykietę
+   spośród do `LLM_CANDIDATES` (5) unikalnych intencji z 10 sąsiadów kNN
+   (z definicjami), klas specjalnych albo `other_in_scope`; etykieta spoza tej listy
+   daje `other_in_scope` z pewnością `low`; zwraca JSON z pewnością
+   `high|medium|low` i `wants_human`.
 5. **Decyzja** (`cascade.py`). Klasy specjalne dają akcję: small talk ->
    `chitchat_reply`, treść niebezpieczna -> `unsafe_refuse`, poza zakresem ->
    `redirect`, temat w zakresie bez intencji -> `ticket`; `wants_human` ->
@@ -260,15 +264,14 @@ kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usług
 ## Koszty
 
 Modele działają lokalnie, więc koszt to sprzęt i prąd, nie tokeny. Wyjście
-modelu jest ograniczone (`num_predict`): 220 tokenów na każdy z dwóch etapów
-klasyfikatora, 400 na odpowiedź, 5 na sędziego; temperatura 0. Wywołania:
+modelu jest ograniczone (`num_predict`): 220 tokenów na klasyfikator, 400 na odpowiedź, 5 na sędziego; temperatura 0. Wywołania:
 
 | Ścieżka | Wywołania modelu | Szacunek tokenów wejście / wyjście |
 |---|---|---|
 | reguły albo kNN z gotową akcją; kNN przyjęty, ale brak pokrycia w bazie | 0 | 0 |
 | odpowiedź po kNN | odpowiedź + sędzia (2) | ok. 2 400 / 260 |
-| odpowiedź po klasyfikatorze LLM | 2 etapy klasyfikatora + odpowiedź + sędzia (4) | ok. 3 250 / 440 |
-| zgłoszenie albo dopytanie po klasyfikatorze LLM | 2 | ok. 850 / 180 |
+| odpowiedź po klasyfikatorze LLM | klasyfikator + odpowiedź + sędzia (3) | ok. 3 150 / 350 |
+| zgłoszenie albo dopytanie po klasyfikatorze LLM | 1 | ok. 750 / 90 |
 
 Szacunki wynikają z rozmiarów promptów tej kaskady (3 fragmenty po ok. 800
 znaków w kontekście odpowiedzi) i są przybliżone; na modelu hostowanym
@@ -307,7 +310,7 @@ sygnatura i link do tych linii na GitHubie w bieżącym commicie. Moduły w `src
 | `pii.py` | maskowanie danych osobowych przed modelem i przed zapisem |
 | `rules.py` | warstwa 0: wzorce ataków, oszustw, innych produktów, podatków, prośby o człowieka |
 | `knn_router.py` | warstwa 1: indeks embeddingów korpusu (cache w `data/cache/`), głosowanie sąsiadów |
-| `llm_classifier.py` | warstwa 2: dwuetapowa klasyfikacja modelem, wynik w JSON |
+| `llm_classifier.py` | warstwa 2: wybór etykiety z kandydatów kNN jednym wywołaniem modelu (najpierw kupujący czy sprzedawca), wynik w JSON |
 | `search.py` | embedding pytania i zapytanie do Qdrant z opcjonalnym filtrem kategorii; `ping` |
 | `cascade.py` | sklejenie warstw, wykrycie języka, decyzja, `TurnState` |
 | `answer_gen.py` | prompt z fragmentami, odpowiedź ze źródłem |

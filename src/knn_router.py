@@ -64,9 +64,9 @@ def classify(text: str) -> dict:
 
     if max_sim < config.T_OOS:
         return {"layer": 1, "decision": "oos_candidate", "intent": None,
-                "confidence": max_sim, "top": top[:3]}
+                "confidence": max_sim, "top": top}
     if win_conf >= config.T_ACCEPT and len(votes[winner]) >= config.K // 2:
         return {"layer": 1, "decision": "accepted", "intent": winner,
-                "confidence": win_conf, "top": top[:3]}
+                "confidence": win_conf, "top": top}
     return {"layer": 1, "decision": "grey", "intent": winner,
-            "confidence": win_conf, "top": top[:3]}
+            "confidence": win_conf, "top": top}

@@ -41,8 +41,8 @@ def test_knn_accept_without_knowledge_opens_ticket(monkeypatch):
 
 def test_llm_wants_human_hands_off(monkeypatch):
     monkeypatch.setattr(cascade.knn_router, "classify", lambda text: {
-        "decision": "rejected", "intent": None, "confidence": 0.2})
-    monkeypatch.setattr(cascade.llm_classifier, "classify", lambda text: {
+        "decision": "grey", "intent": None, "confidence": 0.2, "top": [("payment_statuses", 0.4)]})
+    monkeypatch.setattr(cascade.llm_classifier, "classify", lambda text, candidates: {
         "intent": "other_in_scope", "scope": "in_scope", "confidence": "medium",
         "wants_human": True, "sentiment": "negative", "reasoning": "asked for a person"})
     ts = cascade.route("przekaz sprawe dalej natychmiast bardzo pilne")
@@ -52,8 +52,8 @@ def test_llm_wants_human_hands_off(monkeypatch):
 
 def test_llm_low_confidence_clarifies(monkeypatch):
     monkeypatch.setattr(cascade.knn_router, "classify", lambda text: {
-        "decision": "rejected", "intent": None, "confidence": 0.2})
-    monkeypatch.setattr(cascade.llm_classifier, "classify", lambda text: {
+        "decision": "grey", "intent": None, "confidence": 0.2, "top": [("payment_statuses", 0.4)]})
+    monkeypatch.setattr(cascade.llm_classifier, "classify", lambda text, candidates: {
         "intent": "payment_statuses", "scope": "in_scope", "confidence": "low",
         "wants_human": False, "sentiment": "neutral", "reasoning": "unclear"})
     ts = cascade.route("it kind of does the thing sometimes")
@@ -65,3 +65,23 @@ def test_special_scope_takes_special_action(monkeypatch):
         "decision": "accepted", "intent": "chitchat", "confidence": 0.9})
     ts = cascade.route("hello there friend")
     assert ts["decision"]["action"] == "chitchat_reply"
+
+
+def test_llm_gets_unique_knn_candidates_in_order(monkeypatch):
+    top = [("refund_how_to", 0.71), ("refund_how_to", 0.70), ("buyer_refund_status", 0.66),
+           ("payout_schedule", 0.60), ("refund_how_to", 0.58), ("chitchat", 0.55),
+           ("api_keys_where", 0.50), ("fees_how_much", 0.49), ("payout_schedule", 0.48),
+           ("account_blocked_why", 0.47)]
+    monkeypatch.setattr(cascade.knn_router, "classify", lambda text: {
+        "decision": "grey", "intent": "refund_how_to", "confidence": 0.6, "top": top})
+    seen = {}
+
+    def fake_classify(text, candidates):
+        seen["candidates"] = candidates
+        return {"intent": "refund_how_to", "scope": "in_scope", "confidence": "low",
+                "wants_human": False, "reasoning": "x"}
+    monkeypatch.setattr(cascade.llm_classifier, "classify", fake_classify)
+    cascade.route("zwrot pieniedzy dla klienta")
+    assert seen["candidates"] == [("refund_how_to", 0.71), ("buyer_refund_status", 0.66),
+                                  ("payout_schedule", 0.60), ("chitchat", 0.55),
+                                  ("api_keys_where", 0.50)]
