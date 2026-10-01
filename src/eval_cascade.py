@@ -38,7 +38,18 @@ def load_gold() -> list[dict]:
     return cases
 
 
-def f1_scores(rows: list[dict]) -> tuple[dict, float]:
+def load_split() -> set[str]:
+    with open(config.SPLIT_PATH, encoding="utf-8") as handle:
+        return set(json.load(handle)["test"])
+
+
+def _accuracy(rows: list[dict]) -> float | None:
+    return round(sum(row["hit"] for row in rows) / len(rows), 3) if rows else None
+
+
+def f1_scores(rows: list[dict]) -> tuple[dict, float | None]:
+    if not rows:
+        return {}, None
     labels = {row["gold"] for row in rows} | {row["pred"] for row in rows}
     per = {}
     for label in labels:
@@ -55,7 +66,7 @@ def f1_scores(rows: list[dict]) -> tuple[dict, float]:
     return per, round(macro, 3)
 
 
-def run(cases: list[dict]) -> list[dict]:
+def run(cases: list[dict], test_questions: set[str]) -> list[dict]:
     rows, started = [], time.time()
     for number, case in enumerate(cases, 1):
         expected = case.get("expected_intent") or case["expected_scope"]
@@ -66,7 +77,8 @@ def run(cases: list[dict]) -> list[dict]:
             pred, action = "ERROR", "error"
             print(f"  error on case {number}: {exc}")
         rows.append({"q": case["q"], "gold": expected, "pred": pred, "action": action,
-                     "style": case.get("style"), "lang": case.get("lang"), "hit": pred == expected})
+                     "style": case.get("style"), "lang": case.get("lang"), "hit": pred == expected,
+                     "split": "test" if case["q"] in test_questions else "dev"})
         if number % 10 == 0:
             accuracy = sum(row["hit"] for row in rows) / len(rows)
             print(f"  {number}/{len(cases)}  accuracy so far: {accuracy:.0%}  "
@@ -76,13 +88,18 @@ def run(cases: list[dict]) -> list[dict]:
 
 def build_report(rows: list[dict], minutes: float) -> dict:
     per, macro = f1_scores(rows)
-    accuracy = sum(row["hit"] for row in rows) / len(rows)
+    test_rows = [row for row in rows if row["split"] == "test"]
+    _per_test, macro_test = f1_scores(test_rows)
     confusions = Counter((row["gold"], row["pred"]) for row in rows if not row["hit"])
     by_style: dict = defaultdict(lambda: [0, 0])
     for row in rows:
         by_style[row["style"]][0] += row["hit"]
         by_style[row["style"]][1] += 1
-    return {"total": len(rows), "accuracy": round(accuracy, 3), "macro_f1": macro,
+    return {"total": len(rows), "total_test": len(test_rows),
+            "accuracy_all": _accuracy(rows),
+            "accuracy_dev": _accuracy([row for row in rows if row["split"] == "dev"]),
+            "accuracy_test": _accuracy(test_rows),
+            "macro_f1": macro, "macro_f1_test": macro_test,
             "oos_recall": {label: per.get(label, {}).get("recall") for label in SPECIAL},
             "by_style": {key: f"{value[0]}/{value[1]}" for key, value in by_style.items()},
             "actions": dict(Counter(row["action"] for row in rows)),
@@ -101,7 +118,7 @@ def main() -> int:
     if args.limit:
         cases = cases[:args.limit]
     started = time.time()
-    rows = run(cases)
+    rows = run(cases, load_split())
     report = build_report(rows, (time.time() - started) / 60)
 
     out = args.out or config.REPORTS_DIR / f"{datetime.now():%Y-%m-%d-%H%M}-accuracy.json"
@@ -111,15 +128,17 @@ def main() -> int:
 
     print("=" * 60)
     print(f"CASCADE EXAM: {report['total']} cases in {report['minutes']} min")
-    print(f"  accuracy:  {report['accuracy']:.1%}")
-    print(f"  macro-F1:  {report['macro_f1']}")
+    print(f"  accuracy_all:  {report['accuracy_all']}")
+    print(f"  accuracy_dev:  {report['accuracy_dev']}")
+    print(f"  accuracy_test: {report['accuracy_test']} ({report['total_test']} cases)")
+    print(f"  macro-F1 all: {report['macro_f1']}  test: {report['macro_f1_test']}")
     print(f"  OOS-recall: {report['oos_recall']}")
     print(f"  decisions: {report['actions']}")
     for line in report["top_confusions"][:10]:
         print(f"    {line}")
     print(f"Report: {out}")
-    if report["accuracy"] < args.min_accuracy:
-        print(f"FAIL: accuracy {report['accuracy']} below {args.min_accuracy}")
+    if report["accuracy_test"] is None or report["accuracy_test"] < args.min_accuracy:
+        print(f"FAIL: accuracy_test {report['accuracy_test']} below {args.min_accuracy}")
         return 1
     return 0
 

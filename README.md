@@ -162,6 +162,7 @@ dotyczą wsparcia płatności i trzymają się `data/taxonomy.json`:
 - `corpus/corpus-*.json`: 5412 pytań z etykietą intencji, używane przez kNN.
 - `goldset/gold-*.json`: 288 pytań z oczekiwaną etykietą dla `make test-accuracy`
   i `make test-func`; żadne pytanie z gold setu nie występuje w korpusie.
+- `goldset/split.json`: podział gold setu na test (192) i dev (96), seed 42.
 
 Kto podłącza dokumentację z innej dziedziny, przygotowuje własną taksonomię,
 korpus i gold set w tych samych kształtach JSON (taksonomia, wpis korpusu, wpis
@@ -249,7 +250,7 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `test` | `pytest -q`: reguły, PII, kaskada, API, ingest, klient LLM; Ollama i Qdrant zastąpione atrapami | nic | wszystkie testy passed, zero failed, kod 0 |
 | `test-func` | `tests/live/func_by_category.py`: po 1 pytaniu z gold setu na każdą intencję i klasę specjalną przez `POST /chat` | bot + usługi | żadna klasa specjalna nie zawiodła, trafność intencji >= 0,6 (`--min-intent-accuracy`) |
 | `test-oos` | `tests/live/out_of_scope.py`: 22 pytania (injection, oszustwo, inne produkty, podatki, tematy obce) muszą dać oczekiwaną akcję; przypadki dla warstwy reguł nie mogą mieć w `timings_ms` kluczy `llm` ani `retrieval` | bot + usługi | 22/22 ok |
-| `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, accuracy, macro-F1, recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg | Ollama, Qdrant | accuracy >= 0,70 (`MIN_ACCURACY`, `--min-accuracy`); próg jest niższy od pomiaru round2 (0,719) jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 30.09 zgodne 288/288) |
+| `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg | Ollama, Qdrant | `accuracy_test` >= 0,70 (`MIN_ACCURACY`, `--min-accuracy`); próg jest niższy od pomiaru round2 (0,719) jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 30.09 zgodne 288/288) |
 | `test-load` | `tests/live/load.py --users 10 --requests 100`: 10 równoległych klientów, 100 żądań do `/chat` | bot + usługi | zero odpowiedzi 5xx i błędów transportu, p95 <= 15 000 ms (`--p95-ms`) |
 | `test-stress` | `tests/live/stress.py`: pusty tekst, 5000 znaków, same emoji, mieszanka pl/en, 10 numerów kart, 100 powtórzeń tego samego pytania, ponowne użycie `session_id`, na końcu `/health` | bot + usługi | każda odpowiedź to 200 albo 503 z JSON zawierającym `reply` |
 | `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`) |
@@ -257,6 +258,11 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `codemap` | `tools/codemap.py --out data/reports/codemap.json` | git z remote `origin` | plik zapisany, kod 0 |
 | `coverage` | `tools/question_coverage.py`: pokrycie intencji pytaniami | nic | kod 0 (z `--strict` kod 1 przy brakach) |
 | `ingest` | `src/ingest.py` | Qdrant, `kb/` | `Done: M points ...`, kod 0 |
+
+Gold set jest podzielony na stałe w `data/goldset/split.json` (seed 42): część
+test (192 pytania) i część dev (96). Podawana trafność i próg `MIN_ACCURACY` to
+`accuracy_test`; na części dev dobiera się progi i prompty, żeby wynik testu nie
+był dopasowany do pytań, na których coś stroiono.
 
 Do CI nadaje się wyłącznie `make test`: nie potrzebuje modelu ani Dockera i trwa
 kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usługach.
