@@ -37,6 +37,7 @@ TAXONOMY_PATH = DATA_DIR / "taxonomy.json"
 TAXONOMY_PARTS_DIR = DATA_DIR / "taxonomy"
 GOLD_DIR = DATA_DIR / "goldset"
 REPORTS_DIR = DATA_DIR / "reports"
+SPLIT_PATH = GOLD_DIR / "split.json"
 
 K = 10
 LLM_CANDIDATES = 5
