@@ -51,6 +51,13 @@ def _layer0(ts: dict) -> bool:
     return True
 
 
+def _candidates(top: list[tuple[str, float]]) -> list[tuple[str, float]]:
+    unique: dict[str, float] = {}
+    for label, sim in top:
+        unique.setdefault(label, sim)
+    return list(unique.items())[:config.LLM_CANDIDATES]
+
+
 def _classify(ts: dict) -> tuple:
     with _timed(ts, "knn"):
         knn = knn_router.classify(ts["raw_text"])
@@ -62,7 +69,7 @@ def _classify(ts: dict) -> tuple:
         wants_human = False
     else:
         with _timed(ts, "llm"):
-            verdict = llm_classifier.classify(ts["raw_text"])
+            verdict = llm_classifier.classify(ts["raw_text"], _candidates(knn["top"]))
         ts["llm"] = {key: verdict.get(key) for key in
                      ("intent", "scope", "confidence", "wants_human", "sentiment", "reasoning")}
         intent, scope, conf = verdict["intent"], verdict["scope"], verdict["confidence"]

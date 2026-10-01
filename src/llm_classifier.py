@@ -2,45 +2,54 @@
 import llm
 import taxonomy
 
+CONFIDENCE = {"high", "medium", "low"}
 
-def _stage1_category(text: str) -> dict:
-    cats = "\n".join(f"- {name}" for name in taxonomy.categories())
-    spec = "\n".join(f"- {key}: {value}" for key, value in taxonomy.special().items())
-    prompt = (
+
+def _offered(candidates: list[tuple[str, float]]) -> list[dict]:
+    known = {item["id"]: item for item in taxonomy.intents()}
+    return [known[label] for label, _sim in candidates if label in known]
+
+
+def _candidate_lines(offered: list[dict]) -> list[str]:
+    lines = []
+    for item in offered:
+        label = item["id"]
+        side = "buyer" if label.startswith("buyer_") else "merchant"
+        line = f"- {label} [{side}]: {item['definition']}"
+        if item.get("not"):
+            line += f" NOT: {item['not'][0]}"
+        lines.append(line)
+    return lines
+
+
+def _prompt(text: str, lines: list[str]) -> str:
+    special = taxonomy.special()
+    spec = "\n".join(f"- {key}: {value}" for key, value in special.items() if key != "other_in_scope")
+    menu = "\n".join(lines) if lines else "- (no candidates)"
+    return (
         "You classify support requests for kremzaPay (online payments, Poland).\n"
-        f"Categories of supported topics:\n{cats}\n"
-        f"Special classes (use INSTEAD of a category when they fit):\n{spec}\n\n"
-        "Rules: chitchat = ONLY light small talk (greetings, jokes, thanks). "
+        "Step 1. Decide first who writes: a shop customer (buyer) or a merchant using kremzaPay. "
+        "A buyer paid or wants to pay in someone's online shop and asks about their own purchase; "
+        "a merchant runs the shop and asks about accepting payments, the panel, payouts, "
+        "integration or the merchant account.\n"
+        "Step 2. Pick one label. Candidate intents, most similar first, "
+        "[buyer] or [merchant] marks who asks:\n"
+        f"{menu}\n"
+        f"Special classes (use INSTEAD of a candidate when they fit):\n{spec}\n"
+        f"- other_in_scope: {special.get('other_in_scope', '')} Use it only when no candidate "
+        "and no special class fits.\n\n"
+        "Rules: prefer a candidate whose [buyer]/[merchant] mark matches the author from step 1. "
+        "chitchat = ONLY light small talk (greetings, jokes, thanks). "
         "Complaints, frustration or dissatisfaction with the bot/service are NOT chitchat - "
-        "pick the matching category instead. wants_human=true if the user explicitly OR "
+        "pick the matching candidate instead. wants_human=true if the user explicitly OR "
         "unambiguously wants a live person: asks for one, or is angry AT THE BOT/SERVICE itself. "
-        "Frustration about a payment problem alone is NOT wants_human - classify the problem instead.\n\n"
+        "Frustration about a payment problem alone is NOT wants_human - classify the problem instead. "
+        "confidence: high = ready to act without a human check, medium = probably right, low = unsure.\n\n"
         f"User message: {text}\n\n"
-        'Reply JSON: {"reasoning": "<one short sentence>", '
-        '"label": "<one category OR special class id>", "wants_human": true|false}'
+        'Reply JSON: {"reasoning": "<one short sentence>", "author": "buyer|merchant", '
+        '"label": "<candidate id, special class id or other_in_scope>", '
+        '"confidence": "high|medium|low", "wants_human": true|false}'
     )
-    return llm.generate_json(prompt, num_predict=220)
-
-
-def _stage2_intent(text: str, category: str) -> dict:
-    menu = "\n".join(
-        f"- {item['id']}: {item['definition']}" + (f" NOT: {item['not'][0]}" if item.get("not") else "")
-        for item in taxonomy.categories()[category]
-    )
-    prompt = (
-        f"You classify support requests for kremzaPay. Category: {category}.\n"
-        f"Intents:\n{menu}\n- other_in_scope: fits the topic but none of the intents above\n\n"
-        f"User message: {text}\n\n"
-        "Rules: think first (reasoning), then decide. If the message contains TWO goals, "
-        "set secondary_intent. confidence: high = ready to act without a human check, "
-        "medium = probably right, low = unsure. wants_human=true ONLY if the user asks "
-        "for a live person or is angry at the bot/service itself; frustration about "
-        "the problem alone is NOT wants_human.\n"
-        'Reply JSON: {"reasoning": "...", "intent": "<id>", "secondary_intent": "<id or null>", '
-        '"confidence": "high|medium|low", "sentiment": "negative|neutral|positive", '
-        '"urgency": "high|normal", "wants_human": true|false}'
-    )
-    return llm.generate_json(prompt, num_predict=220)
 
 
 def _unsure(reason: str) -> dict:
@@ -48,26 +57,23 @@ def _unsure(reason: str) -> dict:
             "confidence": "low", "reasoning": reason, "wants_human": False}
 
 
-def classify(text: str) -> dict:
+def classify(text: str, candidates: list[tuple[str, float]]) -> dict:
+    offered = _offered(candidates)
     try:
-        stage1 = _stage1_category(text)
+        answer = llm.generate_json(_prompt(text, _candidate_lines(offered)), num_predict=220)
     except llm.LLMBadOutput as exc:
         return _unsure(f"bad llm output: {exc}")
-    label = stage1.get("label", "")
+    label = answer.get("label", "")
     if label in taxonomy.special():
-        return {"layer": 2, "intent": label, "scope": label, "confidence": "high",
-                "reasoning": stage1.get("reasoning", ""), "wants_human": bool(stage1.get("wants_human"))}
-    if label not in taxonomy.categories():
-        return _unsure(f"unknown label {label!r}")
-    try:
-        stage2 = _stage2_intent(text, label)
-    except llm.LLMBadOutput as exc:
-        return _unsure(f"bad llm output: {exc}")
-    valid = {item["id"] for item in taxonomy.categories()[label]} | {"other_in_scope"}
-    intent = stage2.get("intent") if stage2.get("intent") in valid else "other_in_scope"
-    return {"layer": 2, "intent": intent,
-            "scope": "in_scope" if intent != "other_in_scope" else "other_in_scope",
-            "category": label, "secondary_intent": stage2.get("secondary_intent"),
-            "confidence": stage2.get("confidence", "low"), "sentiment": stage2.get("sentiment"),
-            "urgency": stage2.get("urgency"), "wants_human": bool(stage2.get("wants_human")),
-            "reasoning": stage2.get("reasoning", "")}
+        scope = label
+    elif label in {item["id"] for item in offered}:
+        scope = "in_scope"
+    else:
+        return _unsure(f"label outside candidates {label!r}")
+    confidence = answer.get("confidence")
+    return {"layer": 2, "intent": label, "scope": scope,
+            "category": taxonomy.intent_category().get(label),
+            "author": answer.get("author"),
+            "confidence": confidence if confidence in CONFIDENCE else "low",
+            "wants_human": bool(answer.get("wants_human")),
+            "reasoning": answer.get("reasoning", "")}
