@@ -23,6 +23,7 @@ def generate(prompt: str, num_predict: int, json_mode: bool = False) -> str:
         "model": config.ANSWER_MODEL,
         "prompt": prompt,
         "stream": False,
+        "think": config.LLM_THINK,
         "options": {"temperature": 0, "num_predict": num_predict, "seed": config.LLM_SEED},
     }
     if json_mode:

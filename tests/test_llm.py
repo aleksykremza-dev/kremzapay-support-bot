@@ -34,6 +34,20 @@ def test_generate_sends_seed_in_options(monkeypatch):
     assert sent["options"]["seed"] == 42
 
 
+def test_generate_sends_think_flag(monkeypatch):
+    sent = {}
+
+    def capture(*_a, **k):
+        sent.update(k["json"])
+        return FakeResponse({"response": "ok"})
+    monkeypatch.setattr(httpx, "post", capture)
+    llm.generate("q", num_predict=5)
+    assert sent["think"] is False
+    monkeypatch.setattr(config, "LLM_THINK", True)
+    llm.generate("q", num_predict=5)
+    assert sent["think"] is True
+
+
 def test_generate_raises_unavailable_on_timeout(monkeypatch):
     monkeypatch.setattr(config, "LLM_RETRIES", 0)
 

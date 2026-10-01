@@ -24,6 +24,7 @@ COLLECTION = os.getenv("COLLECTION", "kremzapay_kb")
 LLM_TIMEOUT_S = float(os.getenv("LLM_TIMEOUT_S", "120"))
 LLM_RETRIES = int(os.getenv("LLM_RETRIES", "1"))
 LLM_SEED = int(os.getenv("LLM_SEED", "42"))
+LLM_THINK = os.getenv("LLM_THINK", "false").lower() == "true"
 PING_TIMEOUT_S = 2.0
 
 DATA_DIR = BASE_DIR / "data"
