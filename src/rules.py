@@ -13,6 +13,15 @@ FRAUD = [
     r"kradzion\w+ kart|skradzion\w+ kart",
     r"(obej[śs][ćc]|omin[ąa][ćc]|bypass).{0,25}(kyc|weryfikacj|verification)",
     r"launder|prani\w+ (pieni|brudnych)",
+    r"podr[oó]bi\w*.{0,30}(dokument|dow[oó]d|dane|zaświadcz|zaswiadcz)",
+    r"(fa[łl]szyw|sfa[łl]szowan)\w*.{0,40}(dokument|dane|weryfikac)",
+    r"\bfake (details|documents?|data|id|identity)\b|\bforg\w*.{0,20}(document|\bid\b|identity)",
+    r"card (that )?(is ?n.?t|is not) (actually |really )?mine|someone else.?s card",
+    r"cudz\w+ kart|nie moja karta.{0,40}zap[łl]aci|zap[łl]aci\w*.{0,40}nie moj\w* kart",
+    r"(keys?|credentials|secrets?) (of|for|from) (another|other|someone else)",
+    r"(access|log ?in|get into).{0,30}(someone else.?s|another (merchant|person|user).?s) account",
+    r"klucz\w* (innego|innej|cudz)",
+    r"cudz\w+ kont\w*.{0,30}dost[eę]p|dost[eę]p\w*.{0,30}cudz\w+ kont",
 ]
 COMPETITORS = [
     r"\b(payu|stripe|przelewy ?24|p24|tpay|paypal|adyen|dotpay|paynow|klarna|revolut)\b",
