@@ -250,7 +250,7 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `test` | `pytest -q`: reguły, PII, kaskada, API, ingest, klient LLM; Ollama i Qdrant zastąpione atrapami | nic | wszystkie testy passed, zero failed, kod 0 |
 | `test-func` | `tests/live/func_by_category.py`: po 1 pytaniu z gold setu na każdą intencję i klasę specjalną przez `POST /chat` | bot + usługi | żadna klasa specjalna nie zawiodła, trafność intencji >= 0,6 (`--min-intent-accuracy`) |
 | `test-oos` | `tests/live/out_of_scope.py`: 22 pytania (injection, oszustwo, inne produkty, podatki, tematy obce) muszą dać oczekiwaną akcję; przypadki dla warstwy reguł nie mogą mieć w `timings_ms` kluczy `llm` ani `retrieval` | bot + usługi | 22/22 ok |
-| `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg | Ollama, Qdrant | `accuracy_test` >= 0,70 (`MIN_ACCURACY`, `--min-accuracy`); próg jest niższy od pomiaru round2 (0,719) jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 30.09 zgodne 288/288) |
+| `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg | Ollama, Qdrant | `accuracy_test` >= 0,73 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,75 na `qwen2.5:7b-instruct` minus 0,02 jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 01.10 zgodne 288/288) |
 | `test-load` | `tests/live/load.py --users 10 --requests 100`: 10 równoległych klientów, 100 żądań do `/chat` | bot + usługi | zero odpowiedzi 5xx i błędów transportu, p95 <= 15 000 ms (`--p95-ms`) |
 | `test-stress` | `tests/live/stress.py`: pusty tekst, 5000 znaków, same emoji, mieszanka pl/en, 10 numerów kart, 100 powtórzeń tego samego pytania, ponowne użycie `session_id`, na końcu `/health` | bot + usługi | każda odpowiedź to 200 albo 503 z JSON zawierającym `reply` |
 | `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`) |
@@ -263,6 +263,20 @@ Gold set jest podzielony na stałe w `data/goldset/split.json` (seed 42): częś
 test (192 pytania) i część dev (96). Podawana trafność i próg `MIN_ACCURACY` to
 `accuracy_test`; na części dev dobiera się progi i prompty, żeby wynik testu nie
 był dopasowany do pytań, na których coś stroiono.
+
+Porównanie modeli na tym samym kodzie (01.10.2026, Ollama 0.35.0, GTX 1050 Ti 4 GB,
+`LLM_THINK=false`, 288 pytań, raporty w `data/reports/`):
+
+| Model | `accuracy_test` | macro-F1 (test) | Minuty |
+|---|---|---|---|
+| `qwen2.5:7b-instruct` | 0,750 | 0,751 | 18,9 |
+| `qwen3:8b` | 0,750 | 0,756 | 40,8 |
+| `gemma4:e4b` | 0,729 | 0,751 | 30,7 |
+| `qwen3:4b-instruct` | 0,714 | 0,720 | 16,0 |
+
+Domyślny `ANSWER_MODEL` to `qwen2.5:7b-instruct`: najwyższa `accuracy_test` (0,750)
+w czasie nie dłuższym niż dwukrotność jego przebiegu; `qwen3:8b` ma tę samą
+trafność, ale przebieg trwa 2,2 raza dłużej.
 
 Do CI nadaje się wyłącznie `make test`: nie potrzebuje modelu ani Dockera i trwa
 kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usługach.
@@ -291,9 +305,9 @@ pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.
 - Próg kNN `T_ACCEPT` był dobierany na tym samym gold secie, na którym liczona
   jest trafność, więc wynik jest optymistyczny; na własnych danych progi
   w `config.py` trzeba dobrać od nowa.
-- Próg `MIN_ACCURACY` (0,70) leży poniżej pomiaru round2 (0,719) jako zapas na
+- Próg `MIN_ACCURACY` (0,73) leży 0,02 poniżej `accuracy_test` (0,75) jako zapas na
   przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym
-  seed przebieg jest powtarzalny (dwa przebiegi 30.09 zgodne 288/288).
+  seed przebieg jest powtarzalny (dwa przebiegi 01.10 zgodne 288/288).
 - Zgłoszenia nigdzie nie są dostarczane: tylko SQLite i panel.
 - Jeden model (`ANSWER_MODEL`) obsługuje klasyfikację, odpowiedź i sędziego;
   nie ma zapasowego LLM, awaria Ollama oznacza 503 i zgłoszenie.
