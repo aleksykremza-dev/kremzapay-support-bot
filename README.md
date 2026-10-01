@@ -73,7 +73,8 @@ Po starcie bota obie zależności sprawdza `curl http://localhost:8020/health` -
 odpowiada; `qdrant` jest `true` dopiero po `ingest.py` (istnieje kolekcja
 `kremzapay_kb`). Plik `.env` jest opcjonalny; zmienne z `.env.example`:
 `OLLAMA_URL`, `ANSWER_MODEL`, `QDRANT_URL`, `KB_DIR`, `DB_PATH`, `LLM_TIMEOUT_S`,
-`LLM_SEED`;
+`LLM_SEED`, `LLM_THINK` (domyślnie `false`: modele z trybem myślenia, np. `qwen3:8b`,
+`gemma4:e4b`, odpowiadają od razu w polu `response`);
 w `config.py` są jeszcze `EMBED_MODEL` (fastembed), `COLLECTION` i `LLM_RETRIES`.
 
 ## Uruchomienie
