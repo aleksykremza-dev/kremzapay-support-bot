@@ -72,8 +72,8 @@ def test_cli_defaults_are_five_users_and_60s_p95():
     assert (args.users, args.requests, args.p95_ms, args.max_degraded) == (5, 100, 60000, 0.3)
 
 
-def test_makefile_test_load_uses_script_defaults():
+def test_makefile_test_load_runs_three_users_with_default_thresholds():
     makefile = (Path(__file__).parents[1] / "Makefile").read_text(encoding="utf-8")
     recipe = makefile.split("test-load:")[1].split("\n\n")[0]
-    assert "tests/live/load.py" in recipe
-    assert "--users" not in recipe and "--p95-ms" not in recipe
+    assert "tests/live/load.py --users 3" in recipe
+    assert "--p95-ms" not in recipe and "--max-degraded" not in recipe
