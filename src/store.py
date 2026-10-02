@@ -2,6 +2,8 @@
 import json
 import sqlite3
 import uuid
+from collections.abc import Iterator
+from contextlib import closing, contextmanager
 from datetime import datetime, timezone
 
 import config
@@ -26,12 +28,14 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def _conn() -> sqlite3.Connection:
+@contextmanager
+def _conn() -> Iterator[sqlite3.Connection]:
     config.DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(config.DB_PATH)
-    conn.row_factory = sqlite3.Row
-    conn.executescript(SCHEMA)
-    return conn
+    with closing(sqlite3.connect(config.DB_PATH)) as conn:
+        conn.row_factory = sqlite3.Row
+        conn.executescript(SCHEMA)
+        with conn:
+            yield conn
 
 
 def create_session(channel: str = "web") -> str:
