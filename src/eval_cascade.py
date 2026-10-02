@@ -112,13 +112,17 @@ def main() -> int:
     parser.add_argument("--out", type=Path, default=None)
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--min-accuracy", type=float, default=config.MIN_ACCURACY)
+    parser.add_argument("--subset", choices=["all", "dev", "test"], default="all")
     args = parser.parse_args()
 
+    test_questions = load_split()
     cases = load_gold()
+    if args.subset != "all":
+        cases = [case for case in cases if (case["q"] in test_questions) == (args.subset == "test")]
     if args.limit:
         cases = cases[:args.limit]
     started = time.time()
-    rows = run(cases, load_split())
+    rows = run(cases, test_questions)
     report = build_report(rows, (time.time() - started) / 60)
 
     out = args.out or config.REPORTS_DIR / f"{datetime.now():%Y-%m-%d-%H%M}-accuracy.json"
@@ -137,8 +141,9 @@ def main() -> int:
     for line in report["top_confusions"][:10]:
         print(f"    {line}")
     print(f"Report: {out}")
-    if report["accuracy_test"] is None or report["accuracy_test"] < args.min_accuracy:
-        print(f"FAIL: accuracy_test {report['accuracy_test']} below {args.min_accuracy}")
+    gate = "accuracy_dev" if args.subset == "dev" else "accuracy_test"
+    if report[gate] is None or report[gate] < args.min_accuracy:
+        print(f"FAIL: {gate} {report[gate]} below {args.min_accuracy}")
         return 1
     return 0
 
