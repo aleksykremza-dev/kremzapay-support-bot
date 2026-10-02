@@ -78,7 +78,8 @@ odpowiada; `qdrant` jest `true` dopiero po `ingest.py` (istnieje kolekcja
 `kremzapay_kb`). Plik `.env` jest opcjonalny; zmienne z `.env.example`:
 `OLLAMA_URL`, `ANSWER_MODEL`, `QDRANT_URL`, `KB_DIR`, `DB_PATH`, `LLM_TIMEOUT_S`,
 `LLM_SEED`, `LLM_THINK` (domyślnie `false`: modele z trybem myślenia, np. `qwen3:8b`,
-`gemma4:e4b`, odpowiadają od razu w polu `response`);
+`gemma4:e4b`, odpowiadają od razu w polu `response`), `MAX_INFLIGHT`, `QUEUE_TIMEOUT_S`
+(limit równoczesnych żądań `/chat`, sekcja „API”);
 w `config.py` są jeszcze `EMBED_MODEL` (fastembed), `COLLECTION` i `LLM_RETRIES`.
 
 ## Uruchomienie
@@ -209,6 +210,13 @@ drogę pytania). Gdy Ollama albo Qdrant nie odpowiada, `/chat` zwraca kod 503
 z tym samym kształtem: `action` = `ticket`, zgłoszenie już utworzone,
 `timings_ms` puste; adres usługi i błąd idą do logu, proces żyje dalej.
 
+Jednocześnie obsługiwane są najwyżej `MAX_INFLIGHT` (domyślnie 2) żądania `/chat`.
+Żądanie, które nie dostanie wolnego miejsca w ciągu `QUEUE_TIMEOUT_S` (domyślnie
+5 s), od razu dostaje 503 w kształcie `ChatOut` z `action` = `ticket` i tekstem
+„Usługa jest teraz przeciążona…”; zgłoszenie z powodem `overloaded` jest już
+utworzone, a w logu jest linia `overloaded`. Klient dostaje szybką odpowiedź
+zamiast czekać, aż model obsłuży kolejkę.
+
 ```bash
 curl -s -X POST http://localhost:8020/chat -H "Content-Type: application/json" \
   -d '{"text": "Gdzie jest mój zwrot za zamówienie z zeszłego tygodnia?"}'
@@ -323,6 +331,12 @@ pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.
 - Zgłoszenia nigdzie nie są dostarczane: tylko SQLite i panel.
 - Jeden model (`ANSWER_MODEL`) obsługuje klasyfikację, odpowiedź i sędziego;
   nie ma zapasowego LLM, awaria Ollama oznacza 503 i zgłoszenie.
+- Przepustowość ogranicza lokalny model: Ollama domyślnie obsługuje żądania po
+  kolei, a na GTX 1050 Ti 4 GB `qwen2.5:7b-instruct` działa częściowo na CPU.
+  Bez limitu przy 10 równoległych klientach mediana odpowiedzi wyniosła 114,5 s
+  (pomiar 02.10.2026), dlatego `/chat` przyjmuje najwyżej `MAX_INFLIGHT` żądań
+  naraz, a nadmiarowe po `QUEUE_TIMEOUT_S` dostają 503 ze zgłoszeniem `overloaded`.
+  Na mocniejszym sprzęcie oba parametry można podnieść w `.env`.
 - Tylko polski i angielski; inne języki są traktowane jak angielski.
 - Filtr kategorii przy wyszukiwaniu działa tylko, gdy `category` w nagłówkach
   artykułów pokrywa się z kategoriami w `data/taxonomy.json`; przy rozjeździe

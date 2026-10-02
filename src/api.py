@@ -1,5 +1,6 @@
 # Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
 import logging
+import threading
 
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, JSONResponse
@@ -16,6 +17,7 @@ import store
 
 log = logging.getLogger(__name__)
 app = FastAPI(title="kremzaPay Support Bot")
+_slots = threading.BoundedSemaphore(config.MAX_INFLIGHT)
 
 REPLIES = {
     "handoff": {
@@ -49,6 +51,10 @@ REPLIES = {
     "ticket_service_down": {
         "pl": "Usługa jest chwilowo niedostępna, przekazałem sprawę do zespołu, zgłoszenie #{tid}.",
         "en": "The service is temporarily unavailable, I've passed this to the team, ticket #{tid}.",
+    },
+    "ticket_overloaded": {
+        "pl": "Usługa jest teraz przeciążona, przekazałem sprawę do zespołu, zgłoszenie #{tid}.",
+        "en": "The service is overloaded right now, I've passed this to the team, ticket #{tid}.",
     },
 }
 
@@ -121,16 +127,26 @@ def health():
 def chat(msg: ChatIn):
     sid = msg.session_id or store.create_session("web")
     masked, _mapping = pii.mask(msg.text)
+    if not _slots.acquire(timeout=config.QUEUE_TIMEOUT_S):
+        log.warning("overloaded for session %s: no free slot of %d in %.1fs",
+                    sid, config.MAX_INFLIGHT, config.QUEUE_TIMEOUT_S)
+        return _unavailable(sid, masked, "overloaded", "ticket_overloaded")
     try:
         return _handle(masked, sid)
     except (llm.LLMUnavailable, search.SearchUnavailable) as exc:
         log.error("service unavailable for session %s: %s", sid, exc)
-        lang = cascade.detect_language(masked)
-        reply, tid = _ticket_reply(sid, lang, "service_unavailable", "ticket_service_down", {})
-        store.add_message(sid, "user", masked)
-        store.add_message(sid, "bot", reply)
-        out = ChatOut(session_id=sid, reply=reply, action="ticket", language=lang, ticket_id=tid)
-        return JSONResponse(status_code=503, content=out.model_dump())
+        return _unavailable(sid, masked, "service_unavailable", "ticket_service_down")
+    finally:
+        _slots.release()
+
+
+def _unavailable(sid: str, masked: str, reason: str, template: str) -> JSONResponse:
+    lang = cascade.detect_language(masked)
+    reply, tid = _ticket_reply(sid, lang, reason, template, {})
+    store.add_message(sid, "user", masked)
+    store.add_message(sid, "bot", reply)
+    out = ChatOut(session_id=sid, reply=reply, action="ticket", language=lang, ticket_id=tid)
+    return JSONResponse(status_code=503, content=out.model_dump())
 
 
 @app.get("/dashboard")
