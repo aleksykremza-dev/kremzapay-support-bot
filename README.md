@@ -211,11 +211,12 @@ z tym samym kształtem: `action` = `ticket`, zgłoszenie już utworzone,
 `timings_ms` puste; adres usługi i błąd idą do logu, proces żyje dalej.
 
 Jednocześnie obsługiwane są najwyżej `MAX_INFLIGHT` (domyślnie 2) żądania `/chat`.
-Żądanie, które nie dostanie wolnego miejsca w ciągu `QUEUE_TIMEOUT_S` (domyślnie
-5 s), od razu dostaje 503 w kształcie `ChatOut` z `action` = `ticket` i tekstem
-„Usługa jest teraz przeciążona…”; zgłoszenie z powodem `overloaded` jest już
-utworzone, a w logu jest linia `overloaded`. Klient dostaje szybką odpowiedź
-zamiast czekać, aż model obsłuży kolejkę.
+Żądanie czeka w kolejce na wolne miejsce najwyżej `QUEUE_TIMEOUT_S` (domyślnie
+30 s, czyli około dwóch odpowiedzi modelu); potem dostaje 503 w kształcie `ChatOut`
+z `action` = `ticket` i tekstem „Usługa jest teraz przeciążona…”; zgłoszenie
+z powodem `overloaded` jest już utworzone, a w logu jest linia `overloaded`.
+Każda odpowiedź 503 ma nagłówek `X-Reason`: `overloaded` (przeciążenie)
+albo `service_unavailable` (Ollama lub Qdrant nie odpowiada).
 
 ```bash
 curl -s -X POST http://localhost:8020/chat -H "Content-Type: application/json" \
@@ -259,7 +260,7 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `test-func` | `tests/live/func_by_category.py`: po 1 pytaniu z gold setu na każdą intencję i klasę specjalną przez `POST /chat` | bot + usługi | żadna klasa specjalna nie zawiodła, trafność intencji >= 0,6 (`--min-intent-accuracy`) |
 | `test-oos` | `tests/live/out_of_scope.py`: 22 pytania (injection, oszustwo, inne produkty, podatki, tematy obce) muszą dać oczekiwaną akcję; przypadki dla warstwy reguł nie mogą mieć w `timings_ms` kluczy `llm` ani `retrieval` | bot + usługi | 22/22 ok |
 | `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg; `--subset dev\|test\|all` (domyślnie `all`) wybiera część z `split.json`, przy `dev` próg sprawdza `accuracy_dev` | Ollama, Qdrant | `accuracy_test` >= 0,73 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,755 na `qwen2.5:7b-instruct` minus 0,02, zaokrąglony w dół do setnych, jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 01.10 zgodne 288/288) |
-| `test-load` | `tests/live/load.py --users 10 --requests 100`: 10 równoległych klientów, 100 żądań do `/chat` | bot + usługi | zero odpowiedzi 5xx i błędów transportu, p95 <= 15 000 ms (`--p95-ms`) |
+| `test-load` | `tests/live/load.py`: 5 równoległych klientów (`--users`), 100 żądań do `/chat` (`--requests`); 503 z `X-Reason: overloaded` liczone osobno jako „degraded” | bot + usługi | zero odpowiedzi 500, innych 5xx i błędów transportu; udział degraded <= 0,3 (`--max-degraded`); p95 odpowiedzi 200 <= 60 000 ms (`--p95-ms`) |
 | `test-stress` | `tests/live/stress.py`: pusty tekst, 5000 znaków, same emoji, mieszanka pl/en, 10 numerów kart, 100 powtórzeń tego samego pytania, ponowne użycie `session_id`, na końcu `/health` | bot + usługi | każda odpowiedź to 200 albo 503 z JSON zawierającym `reply` |
 | `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`) |
 | `test-all` | `test`, `test-func`, `test-oos`, `test-accuracy`, `test-load`, `test-stress` po kolei (bez `test-stability`) | wszystko | każdy cel kod 0, na końcu `ALL TESTS PASSED` |

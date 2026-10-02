@@ -146,7 +146,7 @@ def _unavailable(sid: str, masked: str, reason: str, template: str) -> JSONRespo
     store.add_message(sid, "user", masked)
     store.add_message(sid, "bot", reply)
     out = ChatOut(session_id=sid, reply=reply, action="ticket", language=lang, ticket_id=tid)
-    return JSONResponse(status_code=503, content=out.model_dump())
+    return JSONResponse(status_code=503, content=out.model_dump(), headers={"X-Reason": reason})
 
 
 @app.get("/dashboard")
