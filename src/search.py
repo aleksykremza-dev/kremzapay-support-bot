@@ -25,6 +25,11 @@ def _lazy() -> None:
         _client = QdrantClient(url=config.QDRANT_URL)
 
 
+def warm() -> None:
+    _lazy()
+    list(_embedder.embed(["warmup"]))
+
+
 def search(question: str, category: str | None = None) -> list:
     _lazy()
     vector = list(_embedder.embed([question]))[0].tolist()

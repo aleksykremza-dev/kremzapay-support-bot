@@ -162,6 +162,31 @@ def test_queue_defaults_two_slots_thirty_seconds(monkeypatch):
     assert (module.MAX_INFLIGHT, module.QUEUE_TIMEOUT_S) == (2, 30.0)
 
 
+def test_startup_warms_knn_index_and_search_once(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DB_PATH", tmp_path / "test.db")
+    import api
+    calls = []
+    monkeypatch.setattr(api.knn_router, "warm", lambda: calls.append("knn"), raising=False)
+    monkeypatch.setattr(api.search, "warm", lambda: calls.append("search"), raising=False)
+    with TestClient(api.app):
+        assert calls == ["knn", "search"]
+    assert calls == ["knn", "search"]
+
+
+def test_startup_survives_failed_warmup(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DB_PATH", tmp_path / "test.db")
+    import api
+
+    def broken():
+        raise RuntimeError("model download failed")
+    monkeypatch.setattr(api.knn_router, "warm", broken, raising=False)
+    monkeypatch.setattr(api.search, "warm", broken, raising=False)
+    monkeypatch.setattr(api.llm, "ping", lambda: True)
+    monkeypatch.setattr(api.search, "ping", lambda: True)
+    with TestClient(api.app) as started:
+        assert started.get("/health").status_code == 200
+
+
 def test_health_degraded_when_qdrant_down(client, monkeypatch):
     import api
     monkeypatch.setattr(api.llm, "ping", lambda: True)
