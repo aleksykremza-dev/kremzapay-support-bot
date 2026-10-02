@@ -119,7 +119,7 @@ def main() -> int:
     print(f"health: {health['status']} {health['body']}")
     print(f"cases: {report['total']}  failed: {len(failed)}")
     print(f"Report: {out}")
-    print("Manual step: stop Qdrant and re-run to see 503 + health degraded")
+    print("Manual step: Qdrant outage scenario, README section Testy")
     if failed:
         print(f"FAIL: {failed}")
         return 1
