@@ -95,9 +95,14 @@ uv run python src/ingest.py               # wymaga kb/ z artykułami, patrz niż
 uv run uvicorn api:app --app-dir src --port 8020
 ```
 
+Przy starcie serwer ładuje model embeddingów i indeks kNN korpusu, zanim przyjmie
+pierwsze żądanie. Przy pierwszym starcie w nowym katalogu indeks 5412 przykładów
+powstaje od zera i zapisuje się w `data/cache/` (około 2 minut na GTX 1050 Ti,
+pomiar 02.10.2026), kolejne starty czytają go z dysku w kilka sekund.
 Po komunikacie `Application startup complete` otwórz http://localhost:8020
 (czat) i http://localhost:8020/dashboard (panel z przebiegiem każdej rozmowy).
-Pierwsze pytanie wymagające modelu trwa dłużej, bo model ładuje się do pamięci.
+Pierwsze pytanie wymagające modelu trwa dłużej, bo Ollama ładuje model do pamięci
+(także po kilku minutach bezczynności).
 Ścieżki (`kb/`, `data/`, `.env`) `config.py` liczy od katalogu repozytorium, nie
 od bieżącego katalogu, więc skrypty działają z dowolnego miejsca, np.
 `uv run --project ~/kremzapay-support-bot python ~/kremzapay-support-bot/src/ingest.py`.

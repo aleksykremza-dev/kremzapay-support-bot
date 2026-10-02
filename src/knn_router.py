@@ -47,6 +47,10 @@ def _ensure_index() -> None:
     log.info("corpus cache written: %s", vectors_path)
 
 
+def warm() -> None:
+    _ensure_index()
+
+
 def classify(text: str) -> dict:
     _ensure_index()
     query = np.array(list(_embedder.embed([text]))[0], dtype=np.float32)

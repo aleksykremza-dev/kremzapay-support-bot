@@ -1,6 +1,8 @@
 # Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
 import logging
 import threading
+import time
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.responses import FileResponse, JSONResponse
@@ -10,13 +12,33 @@ import answer_gen
 import cascade
 import config
 import judge
+import knn_router
 import llm
 import pii
 import search
 import store
 
 log = logging.getLogger(__name__)
-app = FastAPI(title="kremzaPay Support Bot")
+
+
+def _warm() -> None:
+    for name, warm in (("knn", knn_router.warm), ("search", search.warm)):
+        started = time.monotonic()
+        try:
+            warm()
+        except Exception as exc:
+            log.error("warmup %s failed, it will load on the first request: %s", name, exc)
+            continue
+        log.info("warmup %s done in %.1fs", name, time.monotonic() - started)
+
+
+@asynccontextmanager
+async def _lifespan(_app: FastAPI):
+    _warm()
+    yield
+
+
+app = FastAPI(title="kremzaPay Support Bot", lifespan=_lifespan)
 _slots = threading.BoundedSemaphore(config.MAX_INFLIGHT)
 
 REPLIES = {

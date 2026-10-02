@@ -20,6 +20,6 @@ class SearchUnavailable(Exception):
     pass
 
 
-_stub("knn_router", classify=_unused)
+_stub("knn_router", classify=_unused, warm=lambda: None)
 _stub("llm_classifier", classify=_unused)
-_stub("search", search=_unused, ping=lambda: True, SearchUnavailable=SearchUnavailable)
+_stub("search", search=_unused, warm=lambda: None, ping=lambda: True, SearchUnavailable=SearchUnavailable)
