@@ -264,8 +264,9 @@ test (192 pytania) i część dev (96). Podawana trafność i próg `MIN_ACCURAC
 `accuracy_test`; na części dev dobiera się progi i prompty, żeby wynik testu nie
 był dopasowany do pytań, na których coś stroiono.
 
-Porównanie modeli z poprzednim promptem klasyfikatora (01.10.2026, Ollama 0.35.0,
-GTX 1050 Ti 4 GB, `LLM_THINK=false`, 288 pytań, raporty w `data/reports/`):
+Porównanie modeli z obecnym promptem klasyfikatora, przed dodaniem reguły
+o wypłacie z cudzego konta (01.10.2026, Ollama 0.35.0, GTX 1050 Ti 4 GB,
+`LLM_THINK=false`, 288 pytań, raporty w `data/reports/`):
 
 | Model | `accuracy_test` | macro-F1 (test) | Minuty |
 |---|---|---|---|
@@ -274,18 +275,20 @@ GTX 1050 Ti 4 GB, `LLM_THINK=false`, 288 pytań, raporty w `data/reports/`):
 | `gemma4:e4b` | 0,729 | 0,751 | 30,7 |
 | `qwen3:4b-instruct` | 0,714 | 0,720 | 16,0 |
 
-Obecny prompt (02.10.2026: kandydaci z podobieństwem malejąco, `other_in_scope`
-tylko gdy żaden kandydat nie pasuje nawet częściowo) wybrany na części dev
-spośród dwóch wariantów; dwa najlepsze modele zmierzone na części test (192):
+Obecny kod (02.10.2026, z regułą o wypłacie z cudzego konta) na części test (192):
 
 | Model | `accuracy_test` | macro-F1 (test) | Minuty (192 pytania) |
 |---|---|---|---|
-| `qwen2.5:7b-instruct` | 0,755 | 0,749 | 16,4 |
-| `qwen3:8b` | 0,740 | 0,745 | 25,3 |
+| `qwen2.5:7b-instruct` | 0,755 | 0,753 | 15,2 |
 
-Domyślny `ANSWER_MODEL` to `qwen2.5:7b-instruct`: najwyższa `accuracy_test` (0,755);
-`qwen3:8b` byłby domyślny tylko przy przewadze co najmniej 0,03, a wypada niżej
-i wolniej.
+Wariant promptu z podobieństwem kandydatów i `other_in_scope` tylko wtedy, gdy
+żaden kandydat nie pasuje nawet częściowo, sprawdzony na części dev, nie poprawił
+trafności (`qwen2.5:7b-instruct` 0,755 na teście, `qwen3:8b` 0,740), a dał więcej
+pomyłek kupujący/sprzedawca (12 zamiast 8), więc nie został przyjęty.
+
+Domyślny `ANSWER_MODEL` to `qwen2.5:7b-instruct`: najwyższa `accuracy_test`;
+`qwen3:8b` byłby domyślny tylko przy przewadze co najmniej 0,03, a w pomiarze
+z 01.10 miał tę samą trafność (0,750) przy 2,2 raza dłuższym przebiegu.
 
 Do CI nadaje się wyłącznie `make test`: nie potrzebuje modelu ani Dockera i trwa
 kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usługach.
