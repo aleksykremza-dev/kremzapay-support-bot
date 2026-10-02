@@ -22,6 +22,8 @@ FRAUD = [
     r"(access|log ?in|get into).{0,30}(someone else.?s|another (merchant|person|user).?s) account",
     r"klucz\w* (innego|innej|cudz)",
     r"cudz\w+ kont\w*.{0,30}dost[eę]p|dost[eę]p\w*.{0,30}cudz\w+ kont",
+    r"(wyprowadz|wyp[łl]aci|wyci[ąa]gn|przela|ukra[śs][ćc])\w*.{0,30}(z )?(kont\w* (innego|innej|cudz)|cudz\w+ kont)",
+    r"(withdraw|move|transfer|take|steal|drain)\w*.{0,30}from (another|someone else.?s|other) (merchant|user|person|seller)",
 ]
 COMPETITORS = [
     r"\b(payu|stripe|przelewy ?24|p24|tpay|paypal|adyen|dotpay|paynow|klarna|revolut)\b",
