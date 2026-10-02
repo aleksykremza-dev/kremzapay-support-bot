@@ -267,11 +267,28 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg; `--subset dev\|test\|all` (domyślnie `all`) wybiera część z `split.json`, przy `dev` próg sprawdza `accuracy_dev` | Ollama, Qdrant | `accuracy_test` >= 0,73 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,755 na `qwen2.5:7b-instruct` minus 0,02, zaokrąglony w dół do setnych, jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 01.10 zgodne 288/288) |
 | `test-load` | `tests/live/load.py`: 5 równoległych klientów (`--users`), 100 żądań do `/chat` (`--requests`); 503 z `X-Reason: overloaded` liczone osobno jako „degraded” | bot + usługi | zero odpowiedzi 500, innych 5xx i błędów transportu; udział degraded <= 0,3 (`--max-degraded`); p95 odpowiedzi 200 <= 60 000 ms (`--p95-ms`) |
 | `test-stress` | `tests/live/stress.py`: pusty tekst, 5000 znaków, same emoji, mieszanka pl/en, 10 numerów kart, 100 powtórzeń tego samego pytania, ponowne użycie `session_id`, na końcu `/health` | bot + usługi | każda odpowiedź to 200 albo 503 z JSON zawierającym `reply` |
-| `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`) |
+| `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`), wzrost liczby otwartych plików <= 50 (`--max-fd-growth`; liczba waha się o kilkanaście, bo połączenia SQLite zwalnia odśmiecacz) |
 | `test-all` | `test`, `test-func`, `test-oos`, `test-accuracy`, `test-load`, `test-stress` po kolei (bez `test-stability`) | wszystko | każdy cel kod 0, na końcu `ALL TESTS PASSED` |
 | `codemap` | `tools/codemap.py --out data/reports/codemap.json` | git z remote `origin` | plik zapisany, kod 0 |
 | `coverage` | `tools/question_coverage.py`: pokrycie intencji pytaniami | nic | kod 0 (z `--strict` kod 1 przy brakach) |
 | `ingest` | `src/ingest.py` | Qdrant, `kb/` | `Done: M points ...`, kod 0 |
+
+Scenariusz ręczny, awaria Qdrant (nie ma go w `make`, bo zatrzymuje kontener):
+
+```bash
+docker compose stop
+curl -s -i -X POST localhost:8020/chat -H "Content-Type: application/json" \
+  -d '{"text": "jak zrobić zwrot płatności?"}'
+curl -s localhost:8020/health
+docker compose start
+```
+
+Oczekiwane: `HTTP/1.1 503`, nagłówek `x-reason: service_unavailable`, w treści
+`action` = `ticket` i tekst „Usługa jest chwilowo niedostępna…” z numerem
+zgłoszenia; `/health` zwraca `{"status":"degraded","ollama":true,"qdrant":false}`;
+w logu serwera linie `qdrant http://localhost:6335 failed: … Connection refused`
+i `service unavailable for session …`; proces działa dalej, a po
+`docker compose start` `/health` wraca do `ok`.
 
 Gold set jest podzielony na stałe w `data/goldset/split.json` (seed 42): część
 test (192 pytania) i część dev (96). Podawana trafność i próg `MIN_ACCURACY` to

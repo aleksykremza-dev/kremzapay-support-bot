@@ -90,16 +90,29 @@ def run_loop(client: httpx.Client, pid: int, minutes: float, interval_s: float) 
         time.sleep(interval_s)
 
 
-def summarize(samples: list[dict], max_growth_mb: float) -> dict:
+def summarize(samples: list[dict], max_growth_mb: float, max_fd_growth: int) -> dict:
     rss_values = [sample["rss_mb"] for sample in samples]
     growth = round(max(rss_values) - rss_values[0], 1) if rss_values else 0.0
+    fds_start = samples[0]["fds"] if samples else 0
+    fds_max = max(sample["fds"] for sample in samples) if samples else 0
     server_errors = sum(1 for sample in samples if sample["status"] >= 500)
     transport_errors = sum(1 for sample in samples if sample["status"] == 0)
     return {"samples": len(samples), "rss_start_mb": rss_values[0] if rss_values else 0.0,
             "rss_max_mb": max(rss_values) if rss_values else 0.0, "rss_growth_mb": growth,
-            "fds_start": samples[0]["fds"] if samples else 0, "fds_max": max(s["fds"] for s in samples) if samples else 0,
+            "fds_start": fds_start, "fds_max": fds_max, "fds_growth": fds_max - fds_start,
             "server_errors": server_errors, "transport_errors": transport_errors,
-            "growth_ok": growth <= max_growth_mb}
+            "growth_ok": growth <= max_growth_mb, "fds_ok": fds_max - fds_start <= max_fd_growth}
+
+
+def failures(summary: dict, max_growth_mb: float, max_fd_growth: int) -> list[str]:
+    found = []
+    if summary["server_errors"]:
+        found.append(f"{summary['server_errors']} requests returned 5xx")
+    if not summary["growth_ok"]:
+        found.append(f"RSS growth {summary['rss_growth_mb']} MB above {max_growth_mb} MB")
+    if not summary["fds_ok"]:
+        found.append(f"open files growth {summary['fds_growth']} above {max_fd_growth}")
+    return found
 
 
 def write_report(report: dict) -> Path:
@@ -110,35 +123,38 @@ def write_report(report: dict) -> Path:
     return out
 
 
-def main() -> int:
+def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", default=os.getenv("API_URL", "http://localhost:8020"))
     parser.add_argument("--minutes", type=float, default=60)
     parser.add_argument("--interval-s", type=float, default=20)
     parser.add_argument("--pid", type=int, default=None)
     parser.add_argument("--max-rss-growth-mb", type=float, default=200)
-    args = parser.parse_args()
+    parser.add_argument("--max-fd-growth", type=int, default=50)
+    return parser
 
+
+def main() -> int:
+    args = build_parser().parse_args()
     pid = resolve_pid(args.pid)
     print(f"monitoring pid {pid} for {args.minutes} min every {args.interval_s} s")
     with httpx.Client(base_url=args.url, timeout=REQUEST_TIMEOUT_S) as client:
         samples = run_loop(client, pid, args.minutes, args.interval_s)
-    summary = summarize(samples, args.max_rss_growth_mb)
+    summary = summarize(samples, args.max_rss_growth_mb, args.max_fd_growth)
     report = {"pid": pid, "minutes": args.minutes, "interval_s": args.interval_s,
-              "max_rss_growth_mb": args.max_rss_growth_mb, **summary, "rows": samples}
+              "max_rss_growth_mb": args.max_rss_growth_mb, "max_fd_growth": args.max_fd_growth,
+              **summary, "rows": samples}
     out = write_report(report)
 
     print(f"samples: {summary['samples']}  rss: {summary['rss_start_mb']} -> {summary['rss_max_mb']} MB "
-          f"(growth {summary['rss_growth_mb']} MB)  fds: {summary['fds_start']} -> {summary['fds_max']}")
+          f"(growth {summary['rss_growth_mb']} MB)  fds: {summary['fds_start']} -> {summary['fds_max']} "
+          f"(growth {summary['fds_growth']}, limit {args.max_fd_growth})")
     print(f"server errors: {summary['server_errors']}  transport errors: {summary['transport_errors']}")
     print(f"Report: {out}")
-    if summary["server_errors"]:
-        print(f"FAIL: {summary['server_errors']} requests returned 5xx")
-        return 1
-    if not summary["growth_ok"]:
-        print(f"FAIL: RSS growth {summary['rss_growth_mb']} MB above {args.max_rss_growth_mb} MB")
-        return 1
-    return 0
+    found = failures(summary, args.max_rss_growth_mb, args.max_fd_growth)
+    for reason in found:
+        print(f"FAIL: {reason}")
+    return 1 if found else 0
 
 
 if __name__ == "__main__":
