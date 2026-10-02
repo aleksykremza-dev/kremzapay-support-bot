@@ -5,17 +5,18 @@ import taxonomy
 CONFIDENCE = {"high", "medium", "low"}
 
 
-def _offered(candidates: list[tuple[str, float]]) -> list[dict]:
+def _offered(candidates: list[tuple[str, float]]) -> list[tuple[dict, float]]:
     known = {item["id"]: item for item in taxonomy.intents()}
-    return [known[label] for label, _sim in candidates if label in known]
+    ranked = sorted(candidates, key=lambda pair: pair[1], reverse=True)
+    return [(known[label], sim) for label, sim in ranked if label in known]
 
 
-def _candidate_lines(offered: list[dict]) -> list[str]:
+def _candidate_lines(offered: list[tuple[dict, float]]) -> list[str]:
     lines = []
-    for item in offered:
+    for item, sim in offered:
         label = item["id"]
         side = "buyer" if label.startswith("buyer_") else "merchant"
-        line = f"- {label} [{side}]: {item['definition']}"
+        line = f"- {label} [{side}] similarity {sim:.2f}: {item['definition']}"
         if item.get("not"):
             line += f" NOT: {item['not'][0]}"
         lines.append(line)
@@ -32,12 +33,12 @@ def _prompt(text: str, lines: list[str]) -> str:
         "A buyer paid or wants to pay in someone's online shop and asks about their own purchase; "
         "a merchant runs the shop and asks about accepting payments, the panel, payouts, "
         "integration or the merchant account.\n"
-        "Step 2. Pick one label. Candidate intents, most similar first, "
-        "[buyer] or [merchant] marks who asks:\n"
+        "Step 2. Pick one label. Candidate intents with their similarity to the message, "
+        "highest first, [buyer] or [merchant] marks who asks:\n"
         f"{menu}\n"
         f"Special classes (use INSTEAD of a candidate when they fit):\n{spec}\n"
-        f"- other_in_scope: {special.get('other_in_scope', '')} Use it only when no candidate "
-        "and no special class fits.\n\n"
+        f"- other_in_scope: {special.get('other_in_scope', '')} Use it only if no candidate "
+        "fits, not even partially.\n\n"
         "Rules: prefer a candidate whose [buyer]/[merchant] mark matches the author from step 1. "
         "chitchat = ONLY light small talk (greetings, jokes, thanks). "
         "Complaints, frustration or dissatisfaction with the bot/service are NOT chitchat - "
@@ -66,7 +67,7 @@ def classify(text: str, candidates: list[tuple[str, float]]) -> dict:
     label = answer.get("label", "")
     if label in taxonomy.special():
         scope = label
-    elif label in {item["id"] for item in offered}:
+    elif label in {item["id"] for item, _sim in offered}:
         scope = "in_scope"
     else:
         return _unsure(f"label outside candidates {label!r}")
