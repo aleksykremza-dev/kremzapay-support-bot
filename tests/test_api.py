@@ -101,6 +101,7 @@ def test_chat_llm_down_returns_503_and_ticket(client, monkeypatch):
     assert body["action"] == "ticket"
     assert body["ticket_id"] == 1
     assert "niedostępna" in body["reply"]
+    assert response.headers["x-reason"] == "service_unavailable"
     assert client.get("/api/stats").json()["tickets"][0]["reason"] == "service_unavailable"
 
 
@@ -146,7 +147,19 @@ def test_chat_overloaded_returns_503_fast(client, monkeypatch):
     assert body["action"] == "ticket"
     assert body["ticket_id"] is not None
     assert "przeciążona" in body["reply"]
+    assert response.headers["x-reason"] == "overloaded"
     assert client.get("/api/stats").json()["tickets"][0]["reason"] == "overloaded"
+
+
+def test_queue_defaults_two_slots_thirty_seconds(monkeypatch):
+    import importlib.util
+    for name in ("MAX_INFLIGHT", "QUEUE_TIMEOUT_S"):
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setattr("dotenv.load_dotenv", lambda *a, **k: False)
+    fresh = importlib.util.spec_from_file_location("config_defaults", config.__file__)
+    module = importlib.util.module_from_spec(fresh)
+    fresh.loader.exec_module(module)
+    assert (module.MAX_INFLIGHT, module.QUEUE_TIMEOUT_S) == (2, 30.0)
 
 
 def test_health_degraded_when_qdrant_down(client, monkeypatch):
