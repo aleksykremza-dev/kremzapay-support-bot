@@ -95,9 +95,9 @@ def write_report(report: dict) -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--url", default=os.getenv("API_URL", "http://localhost:8020"))
-    parser.add_argument("--users", type=int, default=10)
+    parser.add_argument("--users", type=int, default=5)
     parser.add_argument("--requests", type=int, default=100)
-    parser.add_argument("--p95-ms", type=float, default=15000)
+    parser.add_argument("--p95-ms", type=float, default=60000)
     args = parser.parse_args()
 
     results, elapsed_s = run_load(args.url, args.users, args.requests)

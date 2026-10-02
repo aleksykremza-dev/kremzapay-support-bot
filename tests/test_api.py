@@ -1,4 +1,7 @@
 import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor
 
 import pytest
 from fastapi.testclient import TestClient
@@ -111,6 +114,39 @@ def test_chat_search_down_returns_503(client, monkeypatch):
     response = client.post("/chat", json={"text": "how do I refund?"})
     assert response.status_code == 503
     assert response.json()["language"] == "en"
+
+
+def test_chat_overloaded_returns_503_fast(client, monkeypatch):
+    import api
+    monkeypatch.setattr(config, "MAX_INFLIGHT", 2)
+    monkeypatch.setattr(config, "QUEUE_TIMEOUT_S", 0.3)
+    monkeypatch.setattr(api, "_slots", threading.BoundedSemaphore(2), raising=False)
+    release = threading.Event()
+    entered = threading.Semaphore(0)
+
+    def busy(text):
+        entered.release()
+        release.wait(5)
+        return _route_rules(text)
+    monkeypatch.setattr(api.cascade, "route", busy)
+    timer = threading.Timer(3, release.set)
+    timer.start()
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        held = [pool.submit(client.post, "/chat", json={"text": "slot"}) for _ in range(2)]
+        assert entered.acquire(timeout=2) and entered.acquire(timeout=2)
+        started = time.monotonic()
+        response = client.post("/chat", json={"text": "jak zrobić zwrot płatności?"})
+        elapsed = time.monotonic() - started
+        release.set()
+        assert all(future.result().status_code == 200 for future in held)
+    timer.cancel()
+    assert response.status_code == 503
+    assert elapsed < 2
+    body = response.json()
+    assert body["action"] == "ticket"
+    assert body["ticket_id"] is not None
+    assert "przeciążona" in body["reply"]
+    assert client.get("/api/stats").json()["tickets"][0]["reason"] == "overloaded"
 
 
 def test_health_degraded_when_qdrant_down(client, monkeypatch):
