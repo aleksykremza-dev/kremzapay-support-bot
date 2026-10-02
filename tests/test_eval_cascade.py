@@ -59,6 +59,37 @@ def test_threshold_applies_to_test_not_all(monkeypatch, tmp_path):
     assert _main(monkeypatch, tmp_path, rows, 0.8) == 0
 
 
+def _subset_run(monkeypatch, tmp_path, subset, threshold="0"):
+    gold = [{"q": q, "expected_intent": "a", "expected_scope": "in_scope"} for q in ("d1", "t1", "d2", "t2")]
+    seen = {}
+
+    def fake_run(cases, test_questions):
+        seen["qs"] = [case["q"] for case in cases]
+        return [_row(case["q"], "a", "a" if case["q"].startswith("t") else "b",
+                     "test" if case["q"] in test_questions else "dev") for case in cases]
+    monkeypatch.setattr(eval_cascade, "load_gold", lambda: gold)
+    monkeypatch.setattr(eval_cascade, "load_split", lambda: {"t1", "t2"})
+    monkeypatch.setattr(eval_cascade, "run", fake_run)
+    argv = ["eval_cascade.py", "--out", str(tmp_path / "r.json"), "--min-accuracy", threshold]
+    if subset:
+        argv += ["--subset", subset]
+    monkeypatch.setattr(sys, "argv", argv)
+    return eval_cascade.main(), seen["qs"]
+
+
+def test_subset_selects_questions(monkeypatch, tmp_path):
+    assert _subset_run(monkeypatch, tmp_path, "dev")[1] == ["d1", "d2"]
+    assert _subset_run(monkeypatch, tmp_path, "test")[1] == ["t1", "t2"]
+    assert _subset_run(monkeypatch, tmp_path, "all")[1] == ["d1", "t1", "d2", "t2"]
+    assert _subset_run(monkeypatch, tmp_path, None)[1] == ["d1", "t1", "d2", "t2"]
+
+
+def test_dev_subset_gates_on_dev_accuracy(monkeypatch, tmp_path):
+    assert _subset_run(monkeypatch, tmp_path, "dev", "0")[0] == 0
+    assert _subset_run(monkeypatch, tmp_path, "dev", "0.5")[0] == 1
+    assert _subset_run(monkeypatch, tmp_path, "test", "0.5")[0] == 0
+
+
 def test_no_test_rows_fails(monkeypatch, tmp_path):
     rows = [_row("1", "a", "a", "dev")]
     assert _main(monkeypatch, tmp_path, rows, 0.5) == 1
