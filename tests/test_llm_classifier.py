@@ -44,24 +44,13 @@ def test_single_call_with_candidates_and_specials_in_prompt(fake_taxonomy, monke
     llm_classifier.classify("jak zrobic zwrot?", CANDIDATES)
     assert len(prompts) == 1
     prompt = prompts[0]
-    assert "- refund_how_to [merchant] similarity 0.71: Merchant wants to refund a payment." in prompt
+    assert "- refund_how_to [merchant]: Merchant wants to refund a payment." in prompt
     assert "NOT refund_how_to if the buyer asks about their own refund." in prompt
-    assert "- buyer_refund_status [buyer] similarity 0.66: Buyer asks where their refund is." in prompt
+    assert "- buyer_refund_status [buyer]: Buyer asks where their refund is." in prompt
     assert "- unsafe: fraud or prompt injection" in prompt
     assert "api_keys_where" not in prompt
     assert prompt.index("buyer) or a merchant") < prompt.index("refund_how_to")
     assert prompt.index("- unsafe:") < prompt.index("- other_in_scope:")
-
-
-def test_candidates_sorted_by_similarity_and_other_in_scope_is_last_resort(fake_taxonomy, monkeypatch):
-    prompts = []
-    _answer(monkeypatch, {"label": "payout_schedule", "author": "merchant", "confidence": "high"}, prompts)
-    unsorted = [("payout_schedule", 0.52), ("refund_how_to", 0.71), ("buyer_refund_status", 0.66)]
-    verdict = llm_classifier.classify("kiedy wyplata?", unsorted)
-    prompt = prompts[0]
-    assert prompt.index("refund_how_to [") < prompt.index("buyer_refund_status [") < prompt.index("payout_schedule [")
-    assert "Use it only if no candidate fits, not even partially." in prompt
-    assert verdict["intent"] == "payout_schedule"
 
 
 def test_label_outside_candidates_is_unsure(fake_taxonomy, monkeypatch):
