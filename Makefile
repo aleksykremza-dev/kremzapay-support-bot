@@ -16,7 +16,7 @@ test-accuracy:
 	$(PY) src/eval_cascade.py
 
 test-load:
-	$(PY) tests/live/load.py
+	$(PY) tests/live/load.py --users 3
 
 test-stress:
 	$(PY) tests/live/stress.py
