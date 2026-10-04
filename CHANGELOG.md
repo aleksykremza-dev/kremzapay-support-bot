@@ -4,6 +4,38 @@ Wszystkie istotne zmiany w projekcie. Format według
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), numeracja według
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- Rozpoznanie tematu (warstwa 1): zamiast głosowania kNN na embeddingach
+  `paraphrase-multilingual-MiniLM-L12-v2` klasyfikator regresji logistycznej
+  (`CLF_C` 64) na embeddingach `intfloat/multilingual-e5-large`
+  (`ROUTER_EMBED_MODEL`, prefiks `query: `), wytrenowany na 5412 pytaniach
+  korpusu. Temat jest przyjęty bez modelu językowego, gdy prawdopodobieństwo
+  najlepszego >= `P_ACCEPT` (0,3); inaczej 5 najbardziej prawdopodobnych tematów
+  idzie do klasyfikatora LLM. `CONF_HIGH` 0,7. Usunięte `K` i `T_ACCEPT`.
+  `EMBED_MODEL` wyszukiwania w bazie bez zmian.
+- Trafność `accuracy_test` 0,755 -> 0,891, `accuracy_dev` 0,802 -> 0,948,
+  macro-F1 test 0,753 -> 0,888; klasyfikator LLM wołany przy 4 z 88 pytań dev
+  zamiast 38. `MIN_ACCURACY` 0,73 -> 0,87.
+- Pytanie spoza tematu: gdy warstwa 1 stawia `out_of_scope` na pierwszym miejscu,
+  a model wybierze `other_in_scope`, wynik to `out_of_scope` (`redirect`), nie
+  zgłoszenie.
+
+### Added
+
+- Gotowy indeks warstwy 1 w repozytorium (`data/index/router-<klucz>.npz`,
+  wektory korpusu i wagi klasyfikatora, bez pickle, 20,8 MB); klucz to model
+  embeddingów, `CLF_C` i skrót korpusu. Przy zgodnym kluczu start nie liczy
+  embeddingów korpusu (około 20 minut na CPU); przy niezgodnym indeks powstaje
+  w `data/cache/`. `make router-index` odbudowuje plik w `data/index/`.
+- Reguły: pytania o prawo VAT (odliczenie, stawki, deklaracje, split payment
+  w VAT) w grupie podatków; prośby o cudzą pracę (napisz umowę, esej,
+  wypracowanie, wiersz, kod; po angielsku essay, poem, homework, contract)
+  dają `redirect` z powodem `foreign_work`.
+- Zależność `scikit-learn`.
+
 ## [1.0.0] - 2026-10-04
 
 Pierwsze wydanie silnika po przebudowie z 29 i 30.09.2026.
