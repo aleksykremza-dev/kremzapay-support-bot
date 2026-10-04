@@ -8,6 +8,7 @@ from search import search
 
 SOURCE_LINE = re.compile(r"^(Źródło|Source):", re.I)
 SOURCE_TAIL = re.compile(r"(?:^|\s)(?:Źródło|Source)\s*:\s*([^\n]+)$", re.I)
+NO_ANSWER = "NO_ANSWER"
 BRAND_VOICE = (
     "You are the kremzaPay support assistant. Style: warm but concise, "
     "address the user informally ('ty' in Polish, 'you' in English), "
@@ -24,12 +25,16 @@ def _build_prompt(question: str, hits: list, language: str) -> str:
     return (
         BRAND_VOICE.format(lang_name=lang_name) + "\n\n"
         "Answer the QUESTION using ONLY the documentation excerpts below. "
-        "Do not invent facts, numbers or features. If the excerpts are not "
-        "enough, say so plainly.\n"
+        "Do not invent facts, numbers or features. If the excerpts do not "
+        f"answer the QUESTION, reply with exactly {NO_ANSWER} and nothing else.\n"
         "End with one line: 'Źródło: <id>' (PL) or 'Source: <id>' (EN) "
         "listing the article id(s) you actually used.\n\n"
         f"EXCERPTS:\n{context}\n\nQUESTION: {question}\n\nANSWER (in {lang_name}):"
     )
+
+
+def is_no_answer(answer: str) -> bool:
+    return answer.strip().upper().startswith(NO_ANSWER)
 
 
 def _source_lines(answer: str) -> list[str]:

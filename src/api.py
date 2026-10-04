@@ -107,6 +107,20 @@ def _ticket_reply(sid: str, lang: str, reason: str, template: str, cls: dict) ->
     return REPLIES[template][lang].format(tid=tid), tid
 
 
+def _answer(masked: str, sid: str, ts: dict, cls: dict) -> tuple[str, str, int | None]:
+    lang = ts["language"]
+    generated = answer_gen.generate(masked, intent=cls.get("intent"), language=lang)
+    if generated and answer_gen.is_no_answer(generated["answer"]):
+        reason, template = "no_knowledge", "ticket_no_knowledge"
+    elif generated and judge.grounded(masked, generated["answer"], generated["chunks"]):
+        return "answer", generated["answer"], None
+    else:
+        reason, template = "generation_not_grounded", "ticket_not_grounded"
+    ts["decision"] = {"action": "ticket", "reason": reason, "confidence": ts["decision"].get("confidence")}
+    reply, ticket_id = _ticket_reply(sid, lang, reason, template, cls)
+    return "ticket", reply, ticket_id
+
+
 def _handle(masked: str, sid: str) -> ChatOut:
     ts = cascade.route(masked)
     action = ts["decision"]["action"]
@@ -116,14 +130,7 @@ def _handle(masked: str, sid: str) -> ChatOut:
     if action == "ticket":
         reply, ticket_id = _ticket_reply(sid, lang, ts["decision"]["reason"], "ticket_no_knowledge", cls)
     elif action == "answer":
-        generated = answer_gen.generate(masked, intent=cls.get("intent"), language=lang)
-        if generated and judge.grounded(generated["answer"], generated["chunks"]):
-            reply = generated["answer"]
-        else:
-            action = "ticket"
-            ts["decision"] = {"action": action, "reason": "generation_not_grounded",
-                              "confidence": ts["decision"].get("confidence")}
-            reply, ticket_id = _ticket_reply(sid, lang, "generation_not_grounded", "ticket_not_grounded", cls)
+        action, reply, ticket_id = _answer(masked, sid, ts, cls)
     else:
         reply = REPLIES[action][lang]
     store.add_message(sid, "user", masked, turn_state=ts)

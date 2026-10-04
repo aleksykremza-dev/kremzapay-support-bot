@@ -16,7 +16,14 @@ def test_build_prompt_contains_all_chunks_and_source_rule():
     assert "Kilka dni roboczych." in prompt
     assert "Źródło: <id>" in prompt
     assert "Always answer in Polish" in prompt
+    assert "NO_ANSWER" in prompt
     assert prompt.rstrip().endswith("ANSWER (in Polish):")
+
+
+def test_is_no_answer_detects_marker():
+    assert answer_gen.is_no_answer("NO_ANSWER")
+    assert answer_gen.is_no_answer("  no_answer.\nŹródło: a")
+    assert not answer_gen.is_no_answer("Zwrot robisz w panelu.\nŹródło: refund-how")
 
 
 def test_generate_returns_none_without_hits(monkeypatch):

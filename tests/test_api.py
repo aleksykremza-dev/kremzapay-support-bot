@@ -81,6 +81,40 @@ def test_chat_not_grounded_becomes_ticket(client, monkeypatch):
     assert stats["tickets"][0]["reason"] == "generation_not_grounded"
 
 
+def test_chat_no_answer_from_generation_becomes_no_knowledge_ticket(client, monkeypatch):
+    import api
+    monkeypatch.setattr(api.cascade, "route", _route_answer)
+    monkeypatch.setattr(api.answer_gen, "generate", lambda *a, **k: {
+        "answer": "NO_ANSWER", "sources": ["refund-how"], "chunks": ["x"]})
+
+    def judge_must_not_run(*_a, **_k):
+        raise AssertionError("judge called for NO_ANSWER")
+    monkeypatch.setattr(api.judge, "grounded", judge_must_not_run)
+    body = client.post("/chat", json={"text": "jak zamknąć konto?"}).json()
+    assert body["action"] == "ticket"
+    assert body["ticket_id"] == 1
+    assert "NO_ANSWER" not in body["reply"]
+    stats = client.get("/api/stats").json()
+    assert stats["dialogs"][0]["reason"] == "no_knowledge"
+    assert stats["tickets"][0]["reason"] == "no_knowledge"
+
+
+def test_chat_judge_receives_question(client, monkeypatch):
+    import api
+    seen = {}
+    monkeypatch.setattr(api.cascade, "route", _route_answer)
+    monkeypatch.setattr(api.answer_gen, "generate", lambda *a, **k: {
+        "answer": "Zwrot robisz w panelu.\nŹródło: refund-how", "sources": ["refund-how"], "chunks": ["x"]})
+
+    def fake_grounded(question, answer, chunks):
+        seen.update(question=question, answer=answer, chunks=chunks)
+        return True
+    monkeypatch.setattr(api.judge, "grounded", fake_grounded)
+    assert client.post("/chat", json={"text": "jak zrobić zwrot?"}).json()["action"] == "answer"
+    assert seen == {"question": "jak zrobić zwrot?", "answer": "Zwrot robisz w panelu.\nŹródło: refund-how",
+                    "chunks": ["x"]}
+
+
 def test_chat_rules_layer_only(client, monkeypatch):
     import api
     monkeypatch.setattr(api.cascade, "route", _route_rules)
