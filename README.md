@@ -171,36 +171,13 @@ Co już jest gotowe pod większą skalę:
 - **Gotowe do wdrożenia:** obraz Docker (bez roota, z healthcheckiem), CI z testami
   przy każdej zmianie, bramka trafności, która blokuje pogorszenie.
 
-```mermaid
-flowchart LR
-    subgraph TERAZ["Teraz: jeden komputer"]
-        direction TB
-        c1["Czat WWW"] --> s1["Silnik, 1 kopia, 2 pytania naraz"]
-        s1 --> o1["Ollama, karta 4 GB"]
-        s1 --> q1["Qdrant, 1 węzeł"]
-        s1 --> d1["SQLite"]
-    end
-    subgraph FIRMA["W firmie: ten sam silnik"]
-        direction TB
-        ch["Widget WWW, e-mail, Teams, WhatsApp"] --> gw["Logowanie SSO, klucze API, load balancer"]
-        gw --> s2["Silnik, kopie 1..N"]
-        s2 --> m2["Model: vLLM na GPU albo Azure"]
-        s2 --> q2["Qdrant, klaster"]
-        s2 --> d2["Postgres i Redis"]
-        s2 --> hd["Helpdesk: Zendesk, Jira"]
-        s2 --> mon["Monitoring: metryki, alerty"]
-        s2 --> op["Panel operatora z logowaniem"]
-    end
-    TERAZ --> FIRMA
-    classDef jest fill:#dafbe1,stroke:#1a7f37,color:#1f2328
-    classDef plan fill:#fbefff,stroke:#8250df,stroke-dasharray:5 4,color:#1f2328
-    class s1,s2,op jest
-    class ch,gw,m2,q2,d2,hd,mon plan
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/wdrozenie-dark.svg">
+  <img src="docs/img/wdrozenie-light.svg" alt="Po lewej obecna wersja na jednym komputerze, po prawej wersja dla firmy z tym samym silnikiem i częściami do dobudowania wokół niego" width="900">
+</picture>
 
 Zielone: to, co już jest w silniku i przechodzi do wersji dla firmy bez zmian
-w logice (kaskada, reguły, sędzia, przekazanie człowiekowi, maskowanie danych).
-Fioletowe przerywane: części do dobudowania wokół silnika.
+w logice. Fioletowe przerywane: części do dobudowania wokół silnika.
 
 | Obszar | Teraz | W firmie | Status |
 |---|---|---|---|

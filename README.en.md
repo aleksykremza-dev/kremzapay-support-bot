@@ -136,6 +136,14 @@ external dependency has a single place in the code:
 - **Ready to deploy:** Docker image (non-root, healthcheck), CI on every change,
   an accuracy gate that blocks regressions.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/wdrozenie-dark.svg">
+  <img src="docs/img/wdrozenie-light.svg" alt="Left: the current version on one computer. Right: the company version with the same engine and the parts to build around it" width="900">
+</picture>
+
+Green: already in the engine and carried over without changes to its logic.
+Purple dashed: parts to build around the engine. Diagram labels are in Polish.
+
 | Area | Now | In a company | Status |
 |---|---|---|---|
 | Model | Ollama, 2 questions at a time | vLLM on GPUs or a hosted LLM, hundreds at a time | planned |
