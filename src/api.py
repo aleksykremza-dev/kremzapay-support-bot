@@ -43,8 +43,8 @@ _slots = threading.BoundedSemaphore(config.MAX_INFLIGHT)
 
 REPLIES = {
     "handoff": {
-        "pl": "Przekazuję rozmowę do konsultanta. Zostaw wiadomość, odezwiemy się.",
-        "en": "I'm handing this over to a human agent. Leave a message and we'll get back to you.",
+        "pl": "Przekazuję rozmowę do konsultanta, zgłoszenie #{tid}. Zostaw wiadomość, odezwiemy się.",
+        "en": "I'm handing this over to a human agent, ticket #{tid}. Leave a message and we'll get back to you.",
     },
     "chitchat_reply": {
         "pl": "Miło mi! Jestem botem wsparcia kremzaPay, chętnie pomogę z płatnościami, zwrotami czy wypłatami. W czym mogę pomóc?",
@@ -102,8 +102,10 @@ class HealthOut(BaseModel):
     qdrant: bool
 
 
-def _ticket_reply(sid: str, lang: str, reason: str, template: str, cls: dict) -> tuple[str, int]:
-    tid = store.create_ticket(sid, reason, category=cls.get("scope"), intent=cls.get("intent"))
+def _ticket_reply(sid: str, lang: str, reason: str, template: str, cls: dict,
+                  priority: str = "normal") -> tuple[str, int]:
+    tid = store.create_ticket(sid, reason, category=cls.get("scope"), intent=cls.get("intent"),
+                              priority=priority)
     return REPLIES[template][lang].format(tid=tid), tid
 
 
@@ -131,6 +133,8 @@ def _handle(masked: str, sid: str) -> ChatOut:
         reply, ticket_id = _ticket_reply(sid, lang, ts["decision"]["reason"], "ticket_no_knowledge", cls)
     elif action == "answer":
         action, reply, ticket_id = _answer(masked, sid, ts, cls)
+    elif action == "handoff":
+        reply, ticket_id = _ticket_reply(sid, lang, "handoff", "handoff", cls, priority="high")
     else:
         reply = REPLIES[action][lang]
     store.add_message(sid, "user", masked, turn_state=ts)
