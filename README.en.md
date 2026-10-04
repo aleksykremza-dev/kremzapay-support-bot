@@ -3,9 +3,13 @@
 [![CI](https://github.com/aleksykremza-dev/kremzapay-support-bot/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/aleksykremza-dev/kremzapay-support-bot/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/aleksykremza-dev/kremzapay-support-bot)](https://github.com/aleksykremza-dev/kremzapay-support-bot/releases)
 
-A support bot engine that answers customers from your own documentation and
-does not make things up. When it does not know the answer, it says so and opens
-a ticket for a human.
+A bot engine that answers only from the documents you give it: terms and
+conditions, regulations, company procedures, product manuals. Every answer cites
+its source, and when the documents do not contain the answer, the bot says so and
+opens a ticket for a human.
+
+The engine is not tied to one industry. The domain is set by a set of topics and
+example questions; the repository ships an example for online payment support.
 
 [Wersja polska](README.md) · Detailed documentation in `docs/` is in Polish.
 
@@ -17,8 +21,8 @@ refund ends in a complaint. I wanted a bot that would rather say "I'm passing
 this to a consultant" than invent an answer.
 
 So every answer goes through several checks before it reaches the customer, and
-each of them can stop the conversation and hand it to a human. The example
-domain is online payment support; `kremzaPay` is a working name.
+each of them can stop the conversation and hand it to a human. Payments are only
+the example the engine was built and measured on; `kremzaPay` is a working name.
 
 ## How it works
 
@@ -99,7 +103,7 @@ queue with a counter and a close button.
 | Model | local Ollama, `qwen2.5:7b-instruct`, no token cost | another Ollama model via `ANSWER_MODEL` (available); a hosted LLM such as an OpenAI-compatible API needs a change in one module, `src/llm.py`; at high traffic this is a cost either way: own GPUs or a paid API |
 | Languages | Polish and English | the models are multilingual, but a new language needs language detection, reply texts, rule patterns and example questions; a translation layer is planned |
 | Knowledge | Markdown in `kb/` | PDF, website, REST, Confluence: planned |
-| Domain | payments as an example | own taxonomy, corpus and control set (available); swappable domain packages planned |
+| Domain | payments as an example: 52 topics, 5412 example questions, rules and reply texts | another domain (e.g. law, HR procedures) needs its own set of topics, examples and reply texts (the format is documented); a document base alone is not enough; swappable domain packages planned |
 | Traffic | 2 questions at a time on a GTX 1050 Ti, extra requests wait up to 30 s, then get 503 with a ticket | the limit is set in `.env` for stronger hardware (available); vLLM, several workers and Postgres for 1000+ questions per hour planned |
 | Dashboard | no login, local use only | login and roles planned |
 | Tickets | SQLite and the dashboard | e-mail, helpdesk, CRM planned |

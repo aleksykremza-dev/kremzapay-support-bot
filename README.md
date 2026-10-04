@@ -3,9 +3,14 @@
 [![CI](https://github.com/aleksykremza-dev/kremzapay-support-bot/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/aleksykremza-dev/kremzapay-support-bot/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/aleksykremza-dev/kremzapay-support-bot)](https://github.com/aleksykremza-dev/kremzapay-support-bot/releases)
 
-Silnik bota wsparcia, który odpowiada klientom na podstawie Twojej dokumentacji
-i nie zmyśla. Gdy nie zna odpowiedzi, mówi to wprost i zakłada zgłoszenie dla
-człowieka.
+Silnik bota, który odpowiada wyłącznie na podstawie dokumentów, które mu dasz:
+regulaminów, przepisów, procedur firmy, instrukcji produktu. Do każdej odpowiedzi
+podaje źródło, a gdy odpowiedzi w dokumentach nie ma, mówi to wprost i zakłada
+zgłoszenie dla człowieka.
+
+Silnik nie jest przypisany do jednej branży. Dziedzinę ustawia zestaw tematów
+i przykładowych pytań; w repozytorium jest przykład dla obsługi płatności
+internetowych.
 
 [English version](README.en.md)
 
@@ -17,8 +22,9 @@ kończy się reklamacją. Chciałem bota, który woli napisać „przekazuję sp
 konsultantowi”, niż wymyślić odpowiedź.
 
 Dlatego odpowiedź przechodzi kilka kontroli, zanim trafi do klienta, a każda
-z nich może zatrzymać rozmowę i oddać ją człowiekowi. Przykładowa dziedzina to
-obsługa płatności internetowych; `kremzaPay` to robocza nazwa projektu.
+z nich może zatrzymać rozmowę i oddać ją człowiekowi. Płatności to tylko
+przykład, na którym silnik był budowany i mierzony; `kremzaPay` to robocza
+nazwa projektu.
 
 ## Jak to działa
 
@@ -128,7 +134,7 @@ Szczegóły i API: [docs/api.md](docs/api.md).
 | Model | lokalna Ollama, `qwen2.5:7b-instruct`, 0 zł za tokeny | inny model z Ollama jedną zmienną `ANSWER_MODEL` (jest); hostowany LLM, np. zgodny z OpenAI, wymaga zmiany jednego modułu `src/llm.py`; przy dużym ruchu to już koszt: własne GPU albo płatne API |
 | Języki | polski i angielski | modele są wielojęzyczne, ale nowy język wymaga wykrywania języka, tekstów odpowiedzi, wzorców reguł i przykładowych pytań; warstwa tłumaczenia w planie |
 | Wiedza | Markdown w `kb/` | PDF, strona WWW, REST, Confluence: w planie |
-| Dziedzina | płatności jako przykład | własna taksonomia, korpus i zbiór kontrolny (jest, [opis](docs/wlasna-domena.md)); wymienne pakiety dziedzin w planie |
+| Dziedzina | płatności jako przykład: 52 tematy, 5412 przykładowych pytań, reguły i teksty odpowiedzi | inna dziedzina (np. przepisy prawa, procedury HR) wymaga własnego zestawu tematów i przykładów oraz tekstów odpowiedzi (format jest, [opis](docs/wlasna-domena.md)); sama baza dokumentów bez tego zestawu nie wystarczy; wymienne pakiety dziedzin w planie |
 | Ruch | 2 pytania naraz na GTX 1050 Ti, nadmiar czeka do 30 s, potem dostaje 503 ze zgłoszeniem | limit w `.env` na mocniejszym sprzęcie (jest); vLLM, kilka procesów i Postgres dla 1000+ pytań na godzinę w planie |
 | Panel | bez logowania, tylko lokalnie | logowanie i role w planie |
 | Zgłoszenia | SQLite i panel | e-mail, helpdesk, CRM w planie |
