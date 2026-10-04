@@ -40,11 +40,12 @@ async def _lifespan(_app: FastAPI):
 
 app = FastAPI(title="kremzaPay Support Bot", lifespan=_lifespan)
 _slots = threading.BoundedSemaphore(config.MAX_INFLIGHT)
+CONTACT_TOKENS = ("<EMAIL_", "<PHONE_")
 
 REPLIES = {
     "handoff": {
-        "pl": "Przekazuję rozmowę do konsultanta, zgłoszenie #{tid}. Zostaw wiadomość, odezwiemy się.",
-        "en": "I'm handing this over to a human agent, ticket #{tid}. Leave a message and we'll get back to you.",
+        "pl": "Przekazuję rozmowę do konsultanta, zgłoszenie #{tid}. Zostaw e-mail lub telefon, odezwiemy się.",
+        "en": "I'm handing this over to a human agent, ticket #{tid}. Leave your e-mail or phone and we'll get back to you.",
     },
     "handoff_added": {
         "pl": "Twoja wiadomość została dodana do zgłoszenia #{tid}.",
@@ -127,7 +128,17 @@ def _answer(masked: str, sid: str, ts: dict, cls: dict) -> tuple[str, str, int |
     return "ticket", reply, ticket_id
 
 
-def _handle(masked: str, sid: str) -> ChatOut:
+def _contacts(mapping: dict[str, str]) -> list[str]:
+    return [original for token, original in mapping.items() if token.startswith(CONTACT_TOKENS)]
+
+
+def _save_contact(ticket_id: int, mapping: dict[str, str]) -> None:
+    contacts = _contacts(mapping)
+    if contacts:
+        store.set_ticket_contact(ticket_id, contacts)
+
+
+def _handle(masked: str, sid: str, mapping: dict[str, str]) -> ChatOut:
     ts = cascade.route(masked)
     action = ts["decision"]["action"]
     lang = ts["language"]
@@ -140,6 +151,7 @@ def _handle(masked: str, sid: str) -> ChatOut:
     elif action == "handoff":
         reply, ticket_id = _ticket_reply(sid, lang, "handoff", "handoff", cls, priority="high")
         store.set_session_status(sid, "handoff")
+        _save_contact(ticket_id, mapping)
     else:
         reply = REPLIES[action][lang]
     linked = ticket_id if action == "handoff" else None
@@ -149,9 +161,10 @@ def _handle(masked: str, sid: str) -> ChatOut:
                    language=lang, ticket_id=ticket_id, timings_ms=ts["timings_ms"])
 
 
-def _handoff_followup(sid: str, masked: str, ticket_id: int) -> ChatOut:
+def _handoff_followup(sid: str, masked: str, mapping: dict[str, str], ticket_id: int) -> ChatOut:
     lang = cascade.detect_language(masked)
     reply = REPLIES["handoff_added"][lang].format(tid=ticket_id)
+    _save_contact(ticket_id, mapping)
     store.add_message(sid, "user", masked, ticket_id=ticket_id)
     store.add_message(sid, "bot", reply, ticket_id=ticket_id)
     return ChatOut(session_id=sid, reply=reply, action="handoff", language=lang, ticket_id=ticket_id)
@@ -173,16 +186,16 @@ def health():
 @app.post("/chat", response_model=ChatOut, responses={503: {"model": ChatOut}})
 def chat(msg: ChatIn):
     sid = msg.session_id or store.create_session("web")
-    masked, _mapping = pii.mask(msg.text)
+    masked, mapping = pii.mask(msg.text)
     handoff_ticket = store.open_handoff_ticket(sid) if msg.session_id else None
     if handoff_ticket:
-        return _handoff_followup(sid, masked, handoff_ticket)
+        return _handoff_followup(sid, masked, mapping, handoff_ticket)
     if not _slots.acquire(timeout=config.QUEUE_TIMEOUT_S):
         log.warning("overloaded for session %s: no free slot of %d in %.1fs",
                     sid, config.MAX_INFLIGHT, config.QUEUE_TIMEOUT_S)
         return _unavailable(sid, masked, "overloaded", "ticket_overloaded")
     try:
-        return _handle(masked, sid)
+        return _handle(masked, sid, mapping)
     except (llm.LLMUnavailable, search.SearchUnavailable) as exc:
         log.error("service unavailable for session %s: %s", sid, exc)
         return _unavailable(sid, masked, "service_unavailable", "ticket_service_down")

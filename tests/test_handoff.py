@@ -128,3 +128,65 @@ def test_old_database_gets_message_ticket_column(tmp_path, monkeypatch):
     assert "ticket_id" in _columns("messages")
     assert _rows("SELECT masked_text, ticket_id FROM messages ORDER BY id") == [
         {"masked_text": "stare", "ticket_id": None}, {"masked_text": "nowe", "ticket_id": 1}]
+
+
+def test_handoff_reply_asks_for_contact(client, monkeypatch):
+    assert "zostaw e-mail lub telefon" in _start_handoff(client, monkeypatch)["reply"].lower()
+
+
+def test_english_handoff_reply_asks_for_contact(client, monkeypatch):
+    body = _start_handoff(client, monkeypatch, route=_route_llm_handoff, text="get me a person please")
+    assert "e-mail or phone" in body["reply"].lower()
+
+
+def _all_message_text():
+    return " ".join(str(value) for row in _rows("SELECT * FROM messages") for value in row.values())
+
+
+def test_contact_goes_only_to_ticket(client, monkeypatch, caplog):
+    first = _start_handoff(client, monkeypatch)
+    sid = first["session_id"]
+    caplog.set_level("DEBUG")
+    client.post("/chat", json={"text": "mój mail jan.kowalski@example.pl, tel 600 700 800", "session_id": sid})
+    contact = _rows("SELECT contact FROM tickets WHERE id=?", (first["ticket_id"],))[0]["contact"]
+    assert "jan.kowalski@example.pl" in contact
+    assert "600 700 800" in contact
+    stored = _all_message_text()
+    assert "<EMAIL_1>" in stored and "<PHONE_1>" in stored
+    assert "jan.kowalski@example.pl" not in stored and "600 700 800" not in stored
+    assert "jan.kowalski@example.pl" not in caplog.text
+
+
+def test_contact_in_the_handoff_request_is_kept(client, monkeypatch):
+    first = _start_handoff(client, monkeypatch, text="połączcie mnie z konsultantem, anna@example.pl")
+    assert _rows("SELECT contact FROM tickets")[0]["contact"] == "anna@example.pl"
+    assert "anna@example.pl" not in _all_message_text()
+    assert first["ticket_id"] == 1
+
+
+def test_message_without_contact_keeps_saved_contact(client, monkeypatch):
+    first = _start_handoff(client, monkeypatch)
+    sid = first["session_id"]
+    client.post("/chat", json={"text": "anna@example.pl", "session_id": sid})
+    client.post("/chat", json={"text": "dziękuję", "session_id": sid})
+    client.post("/chat", json={"text": "anna@example.pl albo ola@example.pl", "session_id": sid})
+    assert _rows("SELECT contact FROM tickets")[0]["contact"] == "anna@example.pl, ola@example.pl"
+
+
+def test_contact_outside_handoff_is_not_stored(client, monkeypatch):
+    import api
+    monkeypatch.setattr(api.cascade, "route", lambda text: {
+        "turn_id": "t", "raw_text": text, "language": "pl", "timings_ms": {},
+        "classification": {"intent": "payment_limits", "scope": "in_scope", "confidence": "high"},
+        "decision": {"action": "ticket", "reason": "no_knowledge", "confidence": "high"}})
+    client.post("/chat", json={"text": "limit? mój mail jan@example.pl"})
+    assert _rows("SELECT contact FROM tickets") == [{"contact": None}]
+
+
+def test_old_database_gets_ticket_contact_column(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DB_PATH", tmp_path / "old.db")
+    _old_schema_db(config.DB_PATH)
+    import store
+    store.set_ticket_contact(1, ["jan@example.pl"])
+    assert "contact" in _columns("tickets")
+    assert _rows("SELECT reason, contact FROM tickets") == [{"reason": "no_knowledge", "contact": "jan@example.pl"}]

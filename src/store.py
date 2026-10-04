@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS tickets (
     id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
     reason TEXT NOT NULL, category TEXT, intent TEXT,
     priority TEXT NOT NULL DEFAULT 'normal', status TEXT NOT NULL DEFAULT 'new',
-    created_at TEXT NOT NULL, resolution TEXT);
+    created_at TEXT NOT NULL, resolution TEXT, contact TEXT);
 """
-ADDED_COLUMNS = (("messages", "ticket_id", "INTEGER"),)
+ADDED_COLUMNS = (("messages", "ticket_id", "INTEGER"), ("tickets", "contact", "TEXT"))
 
 
 def _now() -> str:
@@ -64,6 +64,14 @@ def add_message(session_id: str, role: str, masked_text: str, turn_state: dict |
             (session_id, role, masked_text,
              json.dumps(turn_state, ensure_ascii=False) if turn_state else None, _now(), ticket_id))
         return cursor.lastrowid
+
+
+def set_ticket_contact(ticket_id: int, contacts: list[str]) -> None:
+    with _conn() as conn:
+        row = conn.execute("SELECT contact FROM tickets WHERE id=?", (ticket_id,)).fetchone()
+        saved = row["contact"].split(", ") if row and row["contact"] else []
+        merged = list(dict.fromkeys(saved + contacts))
+        conn.execute("UPDATE tickets SET contact=? WHERE id=?", (", ".join(merged) or None, ticket_id))
 
 
 def set_session_status(session_id: str, status: str) -> None:
