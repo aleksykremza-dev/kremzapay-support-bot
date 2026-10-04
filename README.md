@@ -108,6 +108,14 @@ od bieżącego katalogu, więc skrypty działają z dowolnego miejsca, np.
 `uv run --project ~/kremzapay-support-bot python ~/kremzapay-support-bot/src/ingest.py`.
 Zatrzymanie: `Ctrl+C` w oknie uvicorn, potem `docker compose down`.
 
+Kontener Qdrant nie ma stałej nazwy: Docker Compose nadaje ją od nazwy projektu,
+domyślnie nazwy katalogu (np. `kremzapay-support-bot-qdrant-1`). Druga instalacja
+na tej samej maszynie w katalogu o tej samej nazwie potrzebuje własnej nazwy
+projektu, np. `COMPOSE_PROJECT_NAME=kremzapay-test` w `.env` albo
+`docker compose -p kremzapay-test up -d`. Port `6335` jest w `docker-compose.yml`
+na stałe, więc dwie instalacje naraz wymagają zmiany portu w tym pliku i w
+`QDRANT_URL` w `.env` drugiej instalacji.
+
 ## Własna dokumentacja
 
 Artykuł to plik Markdown w `kb/<kategoria>/<id>.md`. `ingest.py` czyta wzorzec
