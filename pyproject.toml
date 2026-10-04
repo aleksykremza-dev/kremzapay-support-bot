@@ -13,6 +13,7 @@ dependencies = [
     "numpy>=1.26",
     "python-dotenv>=1.2.2",
     "qdrant-client>=1.18.0",
+    "scikit-learn>=1.9.1",
     "uvicorn>=0.51.0",
 ]
 

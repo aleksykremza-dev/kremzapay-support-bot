@@ -19,6 +19,7 @@ def _path(name: str, default: Path) -> Path:
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 ANSWER_MODEL = os.getenv("ANSWER_MODEL", "qwen2.5:7b-instruct")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+ROUTER_EMBED_MODEL = os.getenv("ROUTER_EMBED_MODEL", "intfloat/multilingual-e5-large")
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6335")
 COLLECTION = os.getenv("COLLECTION", "kremzapay_kb")
 LLM_TIMEOUT_S = float(os.getenv("LLM_TIMEOUT_S", "120"))
@@ -41,12 +42,12 @@ GOLD_DIR = DATA_DIR / "goldset"
 REPORTS_DIR = DATA_DIR / "reports"
 SPLIT_PATH = GOLD_DIR / "split.json"
 
-K = 10
 LLM_CANDIDATES = 5
-T_ACCEPT = 0.62
+CLF_C = 64.0
+P_ACCEPT = 0.3
 T_OOS = 0.45
 RETRIEVAL_OK = 0.45
-CONF_HIGH = 0.72
+CONF_HIGH = 0.7
 TOP_K = 5
 TOP_N = 3
 CHUNK_SIZE = 800
