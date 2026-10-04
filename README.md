@@ -8,6 +8,32 @@ nie jest pewny, przekazuje sprawę człowiekowi zamiast zmyślać. Działa po po
 i po angielsku, w całości lokalnie (Ollama + Qdrant), bez płatnych API. Nazwa
 `kremzaPay` w kodzie i w panelu to robocza nazwa projektu.
 
+## Szybki start
+
+Potrzebne: Docker z Compose, Ollama na hoście z modelem
+(`ollama pull qwen2.5:7b-instruct`) i artykuły w `kb/` (sekcja „Własna dokumentacja”).
+
+```bash
+git clone https://github.com/aleksykremza-dev/kremzapay-support-bot.git && cd kremzapay-support-bot
+make up
+make ingest
+```
+
+Potem http://localhost:8020 (czat) i http://localhost:8020/dashboard (panel).
+`make up` buduje obraz i uruchamia `api` (port 8020) oraz Qdrant (port 6335);
+`make ingest` wczytuje `kb/` do Qdrant w kontenerze. Pierwszy start pobiera model
+embeddingów i buduje indeks kNN (około 2 minut), wynik zostaje w `data/cache/`,
+więc kolejne starty trwają kilkanaście sekund. `make logs` pokazuje log `api`,
+`make down` zatrzymuje wszystko.
+
+Kontener łączy się z Ollama na hoście przez `host.docker.internal:11434`. Jeśli
+Ollama działa gdzie indziej (np. w WSL nasłuchuje tylko na 127.0.0.1), uruchom ją
+z `OLLAMA_HOST=0.0.0.0` i wpisz jej adres w `.env` jako `OLLAMA_URL_DOCKER`.
+Ollama w kontenerze: `docker compose --profile ollama up -d` (z GPU dodatkowo
+`-f docker-compose.yml -f docker-compose.gpu.yml`), `OLLAMA_URL_DOCKER=http://ollama:11434`
+w `.env` i `docker compose exec ollama ollama pull qwen2.5:7b-instruct`.
+Instalacja bez Dockera: sekcja „Uruchomienie”.
+
 ## Dlaczego w repozytorium nie ma bazy wiedzy
 
 Silnik był rozwijany na prawdziwej dokumentacji, która należy do jej właściciela
@@ -215,7 +241,8 @@ FastAPI; interaktywna dokumentacja pod `/docs`, specyfikacja pod `/openapi.json`
 | `GET /health` | `{"status": "ok" lub "degraded", "ollama": bool, "qdrant": bool}`; `ok` tylko gdy obie usługi odpowiadają |
 | `POST /chat` | żądanie `ChatIn`: `text` (wymagane), `session_id` (opcjonalne, brak = nowa sesja); odpowiedź `ChatOut` |
 | `GET /dashboard` | panel (`web/dashboard.html`) |
-| `GET /api/stats` | JSON dla panelu: `sessions`, `actions`, ostatnie 50 dialogów, ostatnie 20 zgłoszeń |
+| `GET /api/stats` | JSON dla panelu: `sessions`, `actions`, ostatnie 50 dialogów, ostatnie 20 zgłoszeń, `handoff_queue` (otwarte przekazania z rozmową w masce, bez kontaktu) |
+| `POST /api/tickets/{id}/close` | zamyka zgłoszenie i jego sesję; `{"id": N, "status": "closed"}`, 404 dla nieznanego numeru |
 
 `ChatOut`: `session_id`, `reply` (tekst dla klienta), `action` (`answer`,
 `clarify`, `ticket`, `handoff`, `chitchat_reply`, `unsafe_refuse`, `redirect`),
@@ -248,7 +275,7 @@ curl -s -X POST http://localhost:8020/chat -H "Content-Type: application/json" \
 
 Zgłoszenie to wiersz w tabeli `tickets` bazy SQLite (`data/kremzapay.db`, ścieżka
 w `DB_PATH`): sesja, powód (`no_knowledge`, `other_in_scope`,
-`generation_not_grounded`, `service_unavailable`), kategoria, intencja,
+`generation_not_grounded`, `service_unavailable`, `overloaded`, `handoff`), kategoria, intencja,
 priorytet, status `new`, czas. Widać je na `/dashboard` i w `/api/stats`. Nie ma
 integracji z e-mailem, Telegramem ani CRM: nikt nie zostanie powiadomiony, dopóki
 ktoś nie zajrzy do panelu albo do bazy. Klient widzi (`REPLIES` w `src/api.py`):
@@ -262,6 +289,31 @@ ktoś nie zajrzy do panelu albo do bazy. Klient widzi (`REPLIES` w `src/api.py`)
 
 Jeśli SQLite lub panel nie wystarczą, napisz do autora, pomogę podłączyć inne
 rozwiązanie: https://github.com/aleksykremza-dev.
+
+## Przekazanie człowiekowi
+
+Rozmowa trafia do człowieka, gdy klient wprost o to prosi (reguła
+`explicit_human_request` w `rules.py`) albo gdy klasyfikator uzna, że chce
+rozmawiać z człowiekiem (`wants_human`). Wtedy:
+
+1. Powstaje zgłoszenie z powodem `handoff` i priorytetem `high` (z intencją, jeśli
+   jest znana), a klient dostaje jego numer i prośbę: „Przekazuję rozmowę do
+   konsultanta, zgłoszenie #N. Zostaw e-mail lub telefon, odezwiemy się.”
+2. Sesja dostaje status `handoff`. Kolejne wiadomości w tej sesji nie trafiają
+   do kaskady ani do modelu: zapisują się w `messages` z numerem tego samego
+   zgłoszenia, a klient widzi „Twoja wiadomość została dodana do zgłoszenia #N.”
+3. Kontakt tylko w zgłoszeniu: e-mail i telefon z wiadomości (także z tej, która
+   wywołała przekazanie) trafiają w oryginale wyłącznie do kolumny
+   `tickets.contact`. W `messages`, w logach, w `/api/stats` i w modelu zostaje
+   maska (`<EMAIL_1>`, `<PHONE_1>`).
+4. Kolejka w panelu: na górze `/dashboard` blok „Czeka na człowieka” z liczbą
+   otwartych przekazań (także w tytule karty jako „(N) …”), a przy każdym numer,
+   czas, temat, informacja, czy jest kontakt, i cała rozmowa. Przycisk „Zamknij”
+   (`POST /api/tickets/{id}/close`) zamyka zgłoszenie i sesję; następna wiadomość
+   w tej sesji znowu trafia do bota.
+
+Starsze bazy dostają kolumny `tickets.contact` i `messages.ticket_id` automatycznie
+(`ALTER TABLE` przy pierwszym połączeniu).
 
 ## Testy
 
@@ -383,6 +435,13 @@ pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.
 
 ## Ograniczenia
 
+- Panel (`/dashboard`, `/api/stats`, `POST /api/tickets/{id}/close`) nie ma
+  logowania: każdy, kto dotrze do portu 8020, widzi rozmowy i może zamykać
+  zgłoszenia. Uruchamiaj go tylko lokalnie albo za własnym uwierzytelnianiem.
+- Szybkość zależy od sprzętu: na GTX 1050 Ti 4 GB mediana odpowiedzi to 14,4 s
+  (pomiar na zewnętrznej bazie 04.10.2026), a pojedyncze odpowiedzi trwają do
+  około 35 s.
+- Trafność klasyfikacji `accuracy_test` to 0,755; cel na kolejną wersję to 0,85.
 - Trafność (`make test-accuracy`) mierzy tylko rozpoznanie intencji i klasy;
   jakość tekstu odpowiedzi nie jest mierzona, jedyną kontrolą jest sędzia tak/nie.
 - Próg kNN `T_ACCEPT` był dobierany na tym samym gold secie, na którym liczona
