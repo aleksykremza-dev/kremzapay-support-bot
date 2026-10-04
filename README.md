@@ -149,6 +149,77 @@ Szczegóły i API: [docs/api.md](docs/api.md).
 
 Pełna lista: [docs/architektura.md](docs/architektura.md#ograniczenia).
 
+## Od laptopa do wdrożenia w firmie
+
+Ta wersja działa na jednym komputerze, ale nie jest zabawką na jeden komputer.
+Każdą część silnika da się wymienić na mocniejszą bez przepisywania reszty, bo
+każda zależność zewnętrzna ma w kodzie jedno miejsce.
+
+Co już jest gotowe pod większą skalę:
+
+- **Model w jednym module.** Wszystkie wywołania LLM idą przez `src/llm.py`.
+  Przejście z lokalnej Ollamy na vLLM na własnych GPU albo na hostowany model
+  (np. Azure OpenAI) zmienia ten jeden plik.
+- **Dane w jednym module.** Sesje, wiadomości i zgłoszenia zapisuje tylko
+  `src/store.py`. SQLite zamienia się na Postgres w tym miejscu.
+- **API bez stanu rozmowy w pamięci.** Historia jest w bazie, więc można
+  uruchomić kilka kopii silnika za load balancerem.
+- **Bezpieczne zachowanie przy błędach:** brak wiedzy daje zgłoszenie zamiast
+  zmyślenia, przeciążenie i awaria usług dają 503 z numerem zgłoszenia.
+- **Dane osobowe maskowane** przed modelem, logami i bazą; kontakt klienta tylko
+  w zgłoszeniu.
+- **Gotowe do wdrożenia:** obraz Docker (bez roota, z healthcheckiem), CI z testami
+  przy każdej zmianie, bramka trafności, która blokuje pogorszenie.
+
+```mermaid
+flowchart LR
+    subgraph TERAZ["Teraz: jeden komputer"]
+        direction TB
+        c1["Czat WWW"] --> s1["Silnik, 1 kopia, 2 pytania naraz"]
+        s1 --> o1["Ollama, karta 4 GB"]
+        s1 --> q1["Qdrant, 1 węzeł"]
+        s1 --> d1["SQLite"]
+    end
+    subgraph FIRMA["W firmie: ten sam silnik"]
+        direction TB
+        ch["Widget WWW, e-mail, Teams, WhatsApp"] --> gw["Logowanie SSO, klucze API, load balancer"]
+        gw --> s2["Silnik, kopie 1..N"]
+        s2 --> m2["Model: vLLM na GPU albo Azure"]
+        s2 --> q2["Qdrant, klaster"]
+        s2 --> d2["Postgres i Redis"]
+        s2 --> hd["Helpdesk: Zendesk, Jira"]
+        s2 --> mon["Monitoring: metryki, alerty"]
+        s2 --> op["Panel operatora z logowaniem"]
+    end
+    TERAZ --> FIRMA
+    classDef jest fill:#dafbe1,stroke:#1a7f37,color:#1f2328
+    classDef plan fill:#fbefff,stroke:#8250df,stroke-dasharray:5 4,color:#1f2328
+    class s1,s2,op jest
+    class ch,gw,m2,q2,d2,hd,mon plan
+```
+
+Zielone: to, co już jest w silniku i przechodzi do wersji dla firmy bez zmian
+w logice (kaskada, reguły, sędzia, przekazanie człowiekowi, maskowanie danych).
+Fioletowe przerywane: części do dobudowania wokół silnika.
+
+| Obszar | Teraz | W firmie | Status |
+|---|---|---|---|
+| Model | Ollama, 2 pytania naraz | vLLM na GPU albo hostowany LLM, setki pytań naraz | w planie |
+| Ruch | ok. 300 pytań na godzinę na GTX 1050 Ti (szacunek) | 1000+ pytań na godzinę, potwierdzone pomiarem | w planie |
+| Dane | SQLite | Postgres, kopie zapasowe, czas przechowywania | w planie |
+| Dostęp | panel bez logowania | SSO, role (operator, administrator), klucze API, dziennik działań | w planie |
+| Dziedziny | jedna dziedzina w plikach `data/` | osobny pakiet dziedziny dla każdego klienta | w planie |
+| Kanały | czat WWW | widget na stronę, e-mail, Teams, WhatsApp | w planie |
+| Zgłoszenia | SQLite i panel | Zendesk, Jira, CRM | w planie |
+| Jakość | bramka trafności w testach, sędzia odpowiedzi | ocena przy każdej zmianie, poprawki operatorów wracają jako nowe dane | częściowo |
+| Monitoring | `/health`, czas każdego kroku w bazie | metryki, wykresy, alerty (np. rośnie udział zgłoszeń) | częściowo |
+| RODO | maskowanie danych osobowych | czas przechowywania, usuwanie na żądanie, dane tylko w UE | częściowo |
+| Bezpieczeństwo odpowiedzi | reguły, odmowa zamiast zmyślenia, przekazanie człowiekowi | to samo | jest |
+| Wdrożenie | obraz Docker, CI, publiczny obraz w GHCR | to samo plus orkiestracja (Kubernetes albo Docker Swarm) | częściowo |
+
+Szczegóły, kolejność kroków i co dokładnie zmienia się w kodzie:
+[docs/wdrozenie.md](docs/wdrozenie.md).
+
 ## Dlaczego w repozytorium nie ma bazy wiedzy
 
 Silnik był rozwijany na prawdziwej dokumentacji, która należy do jej właściciela,
@@ -164,6 +235,7 @@ podłączenia własnych artykułów.
 | [docs/wlasna-domena.md](docs/wlasna-domena.md) | format artykułów, własna taksonomia, korpus i zbiór kontrolny |
 | [docs/api.md](docs/api.md) | endpointy, kształt odpowiedzi, limit równoległych żądań, zgłoszenia, przekazanie człowiekowi |
 | [docs/testy.md](docs/testy.md) | cele `make`, progi, scenariusze ręczne, porównanie modeli, pomiary |
+| [docs/wdrozenie.md](docs/wdrozenie.md) | droga od jednego komputera do wdrożenia w firmie: kroki, zmiany w kodzie, kolejność |
 | [CHANGELOG.md](CHANGELOG.md) | zmiany w kolejnych wersjach |
 
 ## Licencja
