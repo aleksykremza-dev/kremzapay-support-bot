@@ -117,6 +117,42 @@ queue with a counter and a close button.
 - Answer text quality is only controlled by the yes/no judge, it is not measured
   separately.
 
+## From a laptop to a company deployment
+
+This version runs on one computer, but it is not a one-computer toy. Every part
+can be replaced with a stronger one without rewriting the rest, because each
+external dependency has a single place in the code:
+
+- **The model in one module.** All LLM calls go through `src/llm.py`. Moving from
+  local Ollama to vLLM on your own GPUs or to a hosted model (e.g. Azure OpenAI)
+  changes this one file.
+- **Data in one module.** Sessions, messages and tickets are written only by
+  `src/store.py`; SQLite is swapped for Postgres there.
+- **No conversation state in API memory.** History lives in the database, so
+  several engine copies can run behind a load balancer.
+- **Safe behaviour on failure:** missing knowledge gives a ticket instead of an
+  invented answer; overload and service outages give 503 with a ticket number.
+- **Personal data masked** before the model, logs and database.
+- **Ready to deploy:** Docker image (non-root, healthcheck), CI on every change,
+  an accuracy gate that blocks regressions.
+
+| Area | Now | In a company | Status |
+|---|---|---|---|
+| Model | Ollama, 2 questions at a time | vLLM on GPUs or a hosted LLM, hundreds at a time | planned |
+| Traffic | about 300 questions per hour on a GTX 1050 Ti (estimate) | 1000+ per hour, confirmed by measurement | planned |
+| Data | SQLite | Postgres, backups, retention | planned |
+| Access | dashboard without login | SSO, roles, API keys, audit log | planned |
+| Domains | one domain in `data/` | a domain package per client | planned |
+| Channels | web chat | website widget, e-mail, Teams, WhatsApp | planned |
+| Tickets | SQLite and the dashboard | Zendesk, Jira, CRM | planned |
+| Quality | accuracy gate in tests, answer judge | evaluation on every change, operator corrections become new data | partial |
+| Monitoring | `/health`, timing of every step in the database | metrics, dashboards, alerts | partial |
+| GDPR | personal data masking | retention, deletion on request, EU-only data | partial |
+| Answer safety | rules, refusal instead of invention, handover to a human | the same | available |
+| Deployment | Docker image, CI, public image in GHCR | plus orchestration (Kubernetes or Docker Swarm) | partial |
+
+The step-by-step plan with code changes is in [docs/wdrozenie.md](docs/wdrozenie.md) (Polish).
+
 ## Why there is no knowledge base in the repository
 
 The engine was developed on real documentation that belongs to its owner, so it
