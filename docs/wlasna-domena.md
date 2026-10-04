@@ -61,7 +61,8 @@ dotyczą wsparcia płatności i trzymają się `data/taxonomy.json`:
   `service`) plus klasy specjalne `other_in_scope`, `out_of_scope`, `chitchat`,
   `unsafe`; sklejany z `data/taxonomy/part-*.json` przez
   `uv run python src/merge_taxonomy.py` (powtórzone `id` kończy się kodem 1).
-- `corpus/corpus-*.json`: 5412 pytań z etykietą intencji, używane przez kNN.
+- `corpus/corpus-*.json`: 5412 pytań z etykietą intencji, na których uczy się
+  klasyfikator tematu (warstwa 1).
 - `goldset/gold-*.json`: 288 pytań z oczekiwaną etykietą dla `make test-accuracy`
   i `make test-func`; żadne pytanie z gold setu nie występuje w korpusie.
 - `goldset/split.json`: podział gold setu na test (192) i dev (96), seed 42.
@@ -87,6 +88,8 @@ W gold secie `expected_scope` to `in_scope` albo id klasy specjalnej (wtedy
 `expected_intent` ma tę samą wartość). `uv run python tools/question_coverage.py`
 (`make coverage`) wypisuje tabelę intencja -> liczba pytań w korpusie i w gold
 secie oraz etykiety poniżej progu (mniej niż 20 w korpusie albo 0 w gold secie;
-`--strict` zwraca wtedy kod 1). Po zmianie korpusu skasuj `data/cache/`, inaczej
-kNN używa starego indeksu. Do dopasowania są też wzorce w `src/rules.py`
+`--strict` zwraca wtedy kod 1). Indeks tematów ma w nazwie skrót korpusu, więc po
+zmianie korpusu przy starcie powstaje nowy w `data/cache/`; `make router-index`
+zapisuje go w `data/index/` (stary plik jest usuwany), żeby inne instalacje nie
+liczyły go od nowa. Do dopasowania są też wzorce w `src/rules.py`
 i `BRAND_VOICE` w `src/answer_gen.py`.

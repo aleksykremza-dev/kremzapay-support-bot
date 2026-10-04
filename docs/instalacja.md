@@ -23,12 +23,14 @@ Instalacja bez Dockera: sekcja „Uruchomienie” niżej.
 | Własny Qdrant; w repo `docker-compose.yml` z przypiętym obrazem `qdrant/qdrant:v1.18.2`, port `6335` na hoście, dane w `qdrant_data/` | fragmenty dokumentacji i wyszukiwanie znaczeniowe | `curl http://localhost:6335/collections` zwraca JSON |
 | Docker (dla Qdrant) | uruchomienie kontenera | `docker compose ps` |
 | Własna dokumentacja w `kb/` | bez niej `ingest.py` kończy się kodem 2 | [wlasna-domena.md](wlasna-domena.md) |
+| Pamięć i dysk dla bota (bez Ollama) | proces `uvicorn` z modelami embeddingów zajmuje około 2,3 GB RAM (pomiar 04.10.2026: 2254 MB); modele fastembed na dysku około 2,4 GB (`multilingual-e5-large` 2,24 GB i `paraphrase-multilingual-MiniLM-L12-v2`); obraz Dockera 1,34 GB; gotowy indeks tematów w repo 20,8 MB | `free -g`, `df -h` |
 
 Po starcie bota obie zależności sprawdza `curl http://localhost:8020/health` ->
 `{"status":"ok","ollama":true,"qdrant":true}`; `degraded`, gdy któraś usługa nie
 odpowiada; `qdrant` jest `true` dopiero po `ingest.py` (istnieje kolekcja
 `kremzapay_kb`). Plik `.env` jest opcjonalny; zmienne z `.env.example`:
-`OLLAMA_URL`, `ANSWER_MODEL`, `QDRANT_URL`, `KB_DIR`, `DB_PATH`, `LLM_TIMEOUT_S`,
+`OLLAMA_URL`, `ANSWER_MODEL`, `ROUTER_EMBED_MODEL` (model embeddingów rozpoznania
+tematu), `QDRANT_URL`, `KB_DIR`, `DB_PATH`, `LLM_TIMEOUT_S`,
 `LLM_SEED`, `LLM_THINK` (domyślnie `false`: modele z trybem myślenia, np. `qwen3:8b`,
 `gemma4:e4b`, odpowiadają od razu w polu `response`), `MAX_INFLIGHT`, `QUEUE_TIMEOUT_S`
 (limit równoczesnych żądań `/chat`, [api.md](api.md));
@@ -47,10 +49,16 @@ uv run python src/ingest.py               # wymaga kb/ z artykułami, patrz niż
 uv run uvicorn api:app --app-dir src --port 8020
 ```
 
-Przy starcie serwer ładuje model embeddingów i indeks kNN korpusu, zanim przyjmie
-pierwsze żądanie. Przy pierwszym starcie w nowym katalogu indeks 5412 przykładów
-powstaje od zera i zapisuje się w `data/cache/` (około 2 minut na GTX 1050 Ti,
-pomiar 02.10.2026), kolejne starty czytają go z dysku w kilka sekund.
+Przy starcie serwer ładuje modele embeddingów i indeks tematów, zanim przyjmie
+pierwsze żądanie. Indeks (wektory 5412 pytań korpusu i wagi klasyfikatora) jest
+gotowy w `data/index/`, więc pierwszy start nie liczy embeddingów korpusu, tylko
+pobiera modele fastembed (około 2,4 GB). Pomiar 04.10.2026 na czystym klonie
+(`make up`): `Application startup complete` po 99 s razem z pobraniem modeli,
+`make ingest` 6 s, pierwsze `/chat` 59,7 s (warstwa tematu 94 ms, reszta to
+ładowanie modelu do Ollama), drugie 13,3 s. Bez gotowego indeksu (inny korpus,
+inny `ROUTER_EMBED_MODEL` albo `CLF_C`) indeks powstaje od zera w `data/cache/`,
+co z `multilingual-e5-large` trwa około 20 minut na CPU; `make router-index`
+zapisuje go w `data/index/`, żeby kolejne instalacje startowały szybko.
 Po komunikacie `Application startup complete` otwórz http://localhost:8020
 (czat) i http://localhost:8020/dashboard (panel z przebiegiem każdej rozmowy).
 Pierwsze pytanie wymagające modelu trwa dłużej, bo Ollama ładuje model do pamięci

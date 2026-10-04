@@ -61,16 +61,16 @@ Szczegóły, progi i pliki: [docs/architektura.md](docs/architektura.md).
 
 ## Wyniki
 
-Pomiary z 02.10 i 04.10.2026 na `qwen2.5:7b-instruct` i karcie GTX 1050 Ti 4 GB:
+Pomiary z 04.10.2026 na `qwen2.5:7b-instruct` i karcie GTX 1050 Ti 4 GB:
 
 | Co mierzę | Wynik |
 |---|---|
 | Pytania spoza bazy wiedzy, które skończyły się zgłoszeniem, a nie zmyśloną odpowiedzią | 15 z 15 |
-| Pytania z bazy, na które bot odpowiedział | 54 z 85, z czego 42 ze wskazaniem właściwego artykułu; pozostałe przekazał dalej |
+| Pytania z bazy, na które bot odpowiedział | 54 z 85, z czego 39 ze wskazaniem właściwego artykułu; pozostałe przekazał dalej |
 | Trafność rozpoznania tematu (52 tematy i 4 klasy specjalne) | **91%** na wszystkich 288 pytaniach kontrolnych; **89,1%** na 192 pytaniach, których model nie widział przy strojeniu; 94,8% na 96 pytaniach, na których dobierano ustawienia |
-| Mediana czasu odpowiedzi | 14,4 s (prawie cały czas to model; reguły, temat i wyszukiwanie trwają około 0,3 s) |
-| Stabilność, 20 minut z zapytaniem co 20 s | pamięć +0,0 MB, otwarte pliki 10 -> 10 |
-| Testy | 174 testy jednostkowe w CI przy każdej zmianie, testy na żywo: pytania spoza zakresu 22/22, rozpoznanie tematów 54/56 |
+| Mediana czasu odpowiedzi | 10,2 s (prawie cały czas to model; reguły, temat i sprawdzenie bazy trwają około 0,15 s) |
+| Stabilność, 20 minut z zapytaniem co 20 s | pamięć +4,2 MB (2250 -> 2254 MB), otwarte pliki 9 -> 9 |
+| Testy | 209 testów jednostkowych w CI przy każdej zmianie, testy na żywo: pytania spoza zakresu 22/22, rozpoznanie tematów 55/56 |
 
 Pomiar na zewnętrznej bazie: 59 artykułów z tej samej dziedziny, ale innych niż
 korpus, na którym budowałem rozpoznawanie tematów, i 100 pytań po polsku.
@@ -111,8 +111,8 @@ Czat: http://localhost:8020, panel: http://localhost:8020/dashboard, opis API:
 http://localhost:8020/docs. Gotowy obraz:
 `docker pull ghcr.io/aleksykremza-dev/kremzapay-support-bot:1.0.0`.
 
-Pierwszy start trwa około 2 minut (pobranie modelu embeddingów i budowa indeksu),
-kolejne kilkanaście sekund. Ollama w WSL, Ollama w kontenerze i instalacja bez
+Pierwszy start trwa około 2 minut (pobranie modeli embeddingów, około 2,4 GB;
+indeks tematów jest gotowy w repozytorium), kolejne kilkanaście sekund. Ollama w WSL, Ollama w kontenerze i instalacja bez
 Dockera: [docs/instalacja.md](docs/instalacja.md).
 
 ## Własna dokumentacja

@@ -57,16 +57,16 @@ flowchart TD
 
 ## Results
 
-Measured on 02.10 and 04.10.2026 with `qwen2.5:7b-instruct` on a GTX 1050 Ti 4 GB:
+Measured on 04.10.2026 with `qwen2.5:7b-instruct` on a GTX 1050 Ti 4 GB:
 
 | What | Result |
 |---|---|
 | Questions outside the knowledge base that ended in a ticket, not an invented answer | 15 of 15 |
-| Questions covered by the base that the bot answered | 54 of 85, 42 of them citing the right article; the rest were passed on |
+| Questions covered by the base that the bot answered | 54 of 85, 39 of them citing the right article; the rest were passed on |
 | Topic accuracy (52 topics and 4 special classes) | **91%** on all 288 control questions; **89.1%** on the 192 questions the model did not see during tuning; 94.8% on the 96 questions used to tune the settings |
-| Median response time | 14.4 s (almost all of it is the model; rules, topic and search take about 0.3 s) |
-| Stability, 20 minutes with a request every 20 s | memory +0.0 MB, open files 10 -> 10 |
-| Tests | 174 unit tests in CI on every change; live tests: out-of-scope 22/22, topic recognition 54/56 |
+| Median response time | 10.2 s (almost all of it is the model; rules, topic and the knowledge check take about 0.15 s) |
+| Stability, 20 minutes with a request every 20 s | memory +4.2 MB (2250 -> 2254 MB), open files 9 -> 9 |
+| Tests | 209 unit tests in CI on every change; live tests: out-of-scope 22/22, topic recognition 55/56 |
 
 The external-base measurement used 59 articles from the same domain but different
 from the corpus the topic recognition was built on, and 100 questions in Polish.
