@@ -47,8 +47,9 @@ flowchart TD
   before the model, the log or the database sees the text.
 - **Rules** catch attempts to manipulate the bot and requests for help with
   fraud without calling the model, in a fraction of a millisecond.
-- **Topic** is recognised by comparing the question with 5412 labelled questions.
-  The language model is called only when similar questions do not agree.
+- **Topic** is recognised by a classifier trained on 5412 labelled questions
+  (`multilingual-e5-large` embeddings and logistic regression). The language model
+  is called only when the classifier is not confident.
 - **The answer** is built only from the three best documentation excerpts and
   ends with a `Źródło: <article id>` line.
 - **The judge**, a second model call, checks that the excerpts answer this exact
@@ -62,13 +63,32 @@ Measured on 02.10 and 04.10.2026 with `qwen2.5:7b-instruct` on a GTX 1050 Ti 4 G
 |---|---|
 | Questions outside the knowledge base that ended in a ticket, not an invented answer | 15 of 15 |
 | Questions covered by the base that the bot answered | 54 of 85, 42 of them citing the right article; the rest were passed on |
-| Topic accuracy on the test part of the control set (192 questions) | 0.755 |
+| Topic accuracy (52 topics and 4 special classes) | **91%** on all 288 control questions; **89.1%** on the 192 questions the model did not see during tuning; 94.8% on the 96 questions used to tune the settings |
 | Median response time | 14.4 s (almost all of it is the model; rules, topic and search take about 0.3 s) |
 | Stability, 20 minutes with a request every 20 s | memory +0.0 MB, open files 10 -> 10 |
 | Tests | 174 unit tests in CI on every change; live tests: out-of-scope 22/22, topic recognition 54/56 |
 
 The external-base measurement used 59 articles from the same domain but different
 from the corpus the topic recognition was built on, and 100 questions in Polish.
+
+Topic accuracy went from 75.5% to 89.1% (on questions not seen during tuning)
+after replacing similar-question voting with a trained classifier and a stronger
+embedding model. Indirect questions gained the most (from 32 to 43 of 52), then
+emotional ones (from 40 to 51 of 56).
+
+### How to raise accuracy further
+
+- **Answer automatically only when confident**, otherwise ask a clarifying
+  question or hand over to a human; measure accuracy of automatic answers together
+  with the share of questions the bot handles alone (target: 98 to 99% at a known
+  share).
+- **Operator corrections as new data:** a "wrong topic" button in the dashboard;
+  reviewed corrections go into the corpus.
+- **Merge topics that lead to the same answer**, e.g. API errors and webhook
+  retries, account data changes and team roles.
+- **Fine-tune a small model** (e.g. SetFit) on the same 5412 questions instead of
+  logistic regression.
+- **Two independent classifiers:** when they disagree, the bot asks.
 
 ## Quick start
 
@@ -113,7 +133,9 @@ queue with a counter and a close button.
 - The dashboard and ticket closing have no login: run them locally or behind your
   own authentication.
 - On a weak GPU an answer takes from a few seconds to about 35 seconds.
-- Topic accuracy is 0.755; the target for the next version is 0.85.
+- Topic accuracy is 89.1% on questions not seen during tuning, so about 1 in 9
+  questions lands in the wrong topic; next steps are in "How to raise accuracy
+  further".
 - Answer text quality is only controlled by the yes/no judge, it is not measured
   separately.
 

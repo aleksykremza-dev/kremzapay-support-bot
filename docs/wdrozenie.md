@@ -70,8 +70,9 @@ pracowników firmy (dostęp, ustawienia), potem skala.
 ## 4. Jakość
 
 - **Teraz:** bramka trafności `make test-accuracy` (próg `MIN_ACCURACY`) i sędzia
-  każdej odpowiedzi; trafność rozpoznania tematu 0,755.
-- **Zmiana:** trafność co najmniej 0,85 (obecny etap prac); mierzenie trafności
+  każdej odpowiedzi; trafność rozpoznania tematu 89,1% na pytaniach
+  niewidzianych przy strojeniu (91% na wszystkich 288).
+- **Zmiana:** mierzenie trafności
   odpowiedzi automatycznych razem z udziałem pytań, na które bot odpowiada sam;
   przycisk w panelu „temat był inny”, z którego po przeglądzie powstają nowe
   przykłady w korpusie; ocena przy każdej zmianie na maszynie z GPU.

@@ -49,8 +49,9 @@ flowchart TD
   etykiety, zanim tekst zobaczy model, log albo baza.
 - **Reguły** łapią próby manipulacji botem i prośby o pomoc w oszustwie bez
   udziału modelu, w ułamku milisekundy.
-- **Temat** rozpoznaje porównanie z 5412 opisanymi pytaniami. Model językowy
-  włącza się dopiero wtedy, gdy podobne pytania nie dają jednoznacznej odpowiedzi.
+- **Temat** rozpoznaje klasyfikator wytrenowany na 5412 opisanych pytaniach
+  (embeddingi `multilingual-e5-large` i regresja logistyczna). Model językowy
+  włącza się dopiero wtedy, gdy klasyfikator nie jest pewny.
 - **Odpowiedź** powstaje wyłącznie z trzech najlepszych fragmentów dokumentacji
   i kończy się linią `Źródło: <id artykułu>`.
 - **Sędzia**, czyli drugie wywołanie modelu, sprawdza, czy fragmenty odpowiadają
@@ -66,7 +67,7 @@ Pomiary z 02.10 i 04.10.2026 na `qwen2.5:7b-instruct` i karcie GTX 1050 Ti 4 GB:
 |---|---|
 | Pytania spoza bazy wiedzy, które skończyły się zgłoszeniem, a nie zmyśloną odpowiedzią | 15 z 15 |
 | Pytania z bazy, na które bot odpowiedział | 54 z 85, z czego 42 ze wskazaniem właściwego artykułu; pozostałe przekazał dalej |
-| Trafność rozpoznania tematu na części testowej zbioru kontrolnego (192 pytania) | 0,755 |
+| Trafność rozpoznania tematu (52 tematy i 4 klasy specjalne) | **91%** na wszystkich 288 pytaniach kontrolnych; **89,1%** na 192 pytaniach, których model nie widział przy strojeniu; 94,8% na 96 pytaniach, na których dobierano ustawienia |
 | Mediana czasu odpowiedzi | 14,4 s (prawie cały czas to model; reguły, temat i wyszukiwanie trwają około 0,3 s) |
 | Stabilność, 20 minut z zapytaniem co 20 s | pamięć +0,0 MB, otwarte pliki 10 -> 10 |
 | Testy | 174 testy jednostkowe w CI przy każdej zmianie, testy na żywo: pytania spoza zakresu 22/22, rozpoznanie tematów 54/56 |
@@ -74,6 +75,25 @@ Pomiary z 02.10 i 04.10.2026 na `qwen2.5:7b-instruct` i karcie GTX 1050 Ti 4 GB:
 Pomiar na zewnętrznej bazie: 59 artykułów z tej samej dziedziny, ale innych niż
 korpus, na którym budowałem rozpoznawanie tematów, i 100 pytań po polsku.
 Wszystkie testy i scenariusze: [docs/testy.md](docs/testy.md).
+
+Trafność tematu wzrosła z 75,5% do 89,1% (na pytaniach niewidzianych przy
+strojeniu) po zamianie głosowania podobnych pytań na wytrenowany klasyfikator
+i mocniejszy model embeddingów. Najwięcej zyskały pytania napisane nie wprost
+(z 32 do 43 na 52) i emocjonalne (z 40 do 51 na 56).
+
+### Jak podnieść trafność dalej
+
+- **Odpowiadać samodzielnie tylko przy wysokiej pewności**, a resztę dopytywać
+  albo przekazywać człowiekowi; mierzyć trafność odpowiedzi automatycznych
+  razem z udziałem pytań, które bot obsługuje sam (cel: 98 do 99% przy znanym
+  udziale).
+- **Poprawki operatorów jako nowe dane:** przycisk „temat był inny” w panelu, po
+  przeglądzie poprawione pytania trafiają do korpusu.
+- **Scalenie tematów, które prowadzą do tej samej odpowiedzi**, np. błędy API
+  i ponawianie webhooków, zmiana danych konta i role w zespole.
+- **Dostrojenie małego modelu** (np. SetFit) na tych samych 5412 pytaniach
+  zamiast regresji logistycznej.
+- **Dwa niezależne klasyfikatory:** gdy wskażą różne tematy, bot dopytuje.
 
 ## Szybki start
 
@@ -144,7 +164,9 @@ Szczegóły i API: [docs/api.md](docs/api.md).
 - Panel i zamykanie zgłoszeń nie mają logowania: uruchamiaj lokalnie albo za
   własnym uwierzytelnianiem.
 - Na słabej karcie odpowiedź trwa od kilku do około 35 sekund.
-- Trafność rozpoznania tematu 0,755; cel na kolejną wersję to 0,85.
+- Trafność rozpoznania tematu 89,1% na pytaniach niewidzianych przy strojeniu,
+  czyli około 1 na 9 pytań trafia do złego tematu; dalsze kroki w „Jak podnieść
+  trafność dalej”.
 - Jakość tekstu odpowiedzi kontroluje tylko sędzia tak/nie, nie jest osobno mierzona.
 
 Pełna lista: [docs/architektura.md](docs/architektura.md#ograniczenia).
