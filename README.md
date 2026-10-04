@@ -20,6 +20,8 @@ make ingest
 ```
 
 Potem http://localhost:8020 (czat) i http://localhost:8020/dashboard (panel).
+Gotowy obraz każdej wersji jest też w GitHub Container Registry:
+`docker pull ghcr.io/aleksykremza-dev/kremzapay-support-bot:1.0.0`.
 `make up` buduje obraz i uruchamia `api` (port 8020) oraz Qdrant (port 6335);
 `make ingest` wczytuje `kb/` do Qdrant w kontenerze. Pierwszy start pobiera model
 embeddingów i buduje indeks kNN (około 2 minut), wynik zostaje w `data/cache/`,
@@ -36,8 +38,8 @@ Instalacja bez Dockera: sekcja „Uruchomienie”.
 
 ## Dlaczego w repozytorium nie ma bazy wiedzy
 
-Silnik był rozwijany na prawdziwej dokumentacji, która należy do jej właściciela
-i jest objęta umową o ochronie danych, dlatego baza wiedzy nie jest publikowana.
+Silnik był rozwijany na prawdziwej dokumentacji, która należy do jej właściciela,
+dlatego baza wiedzy nie jest publikowana.
 Repozytorium zawiera silnik oraz instrukcję podłączenia własnej dokumentacji
 (sekcja „Własna dokumentacja”). Bez katalogu `kb/` bot nie ma na czym odpowiadać.
 
@@ -68,12 +70,19 @@ Pytanie z czatu przechodzi przez kolejne etapy; każdy ma swój plik w `src/`.
    `handoff`; pewność `low` -> `clarify` (dopytanie). Inaczej najlepszy fragment
    z Qdrant musi mieć wynik >= `RETRIEVAL_OK` (0,45), w przeciwnym razie `ticket`.
 6. **Odpowiedź** (`answer_gen.py`). Wyszukiwanie z filtrem po kategorii intencji
-   (przy mniej niż 2 trafieniach filtr jest zdejmowany), 3 najlepsze fragmenty
-   (`TOP_N`) idą do promptu; model odpowiada tylko na ich podstawie i kończy
-   linią `Źródło: KB-###` (`Source:` po angielsku).
-7. **Sędzia** (`judge.py`). Drugie wywołanie modelu: czy każde twierdzenie ma
-   pokrycie we fragmentach (`yes`/`no`). Przy `no` odpowiedź nie wychodzi,
-   zamiast niej powstaje zgłoszenie (`ticket_not_grounded`).
+   (przy mniej niż 2 trafieniach filtr jest zdejmowany); jeśli żaden fragment nie
+   ma wyniku >= `RETRIEVAL_OK`, wyszukiwanie idzie od razu po całej bazie.
+   3 najlepsze fragmenty (`TOP_N`) idą do promptu; model odpowiada tylko na ich
+   podstawie i kończy linią `Źródło: KB-###` (`Source:` po angielsku; źródło jest
+   rozpoznawane także na końcu ostatniego akapitu). Jeśli we fragmentach nie ma
+   odpowiedzi, model zwraca `NO_ANSWER`: wtedy jedno ponowne wyszukiwanie w całej
+   bazie i ponowne wywołanie modelu, a przy kolejnym `NO_ANSWER` zgłoszenie
+   (`no_knowledge`).
+7. **Sędzia** (`judge.py`). Drugie wywołanie modelu sprawdza dwie rzeczy: czy
+   fragmenty odpowiadają na zadane pytanie, a nie tylko na pokrewny temat, i czy
+   każde twierdzenie odpowiedzi ma w nich pokrycie (`yes`/`no`). Sędzia widzi tylko
+   fragmenty wskazane w linii źródła. Przy `no` odpowiedź nie wychodzi, zamiast
+   niej powstaje zgłoszenie (`generation_not_grounded`).
 
 Błąd rozpoznania kończy się więc dopytaniem, zgłoszeniem albo przekazaniem
 człowiekowi, nie zmyśloną odpowiedzią. Każdy etap dopisuje wynik do jednego
@@ -330,7 +339,7 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg; `--subset dev\|test\|all` (domyślnie `all`) wybiera część z `split.json`, przy `dev` próg sprawdza `accuracy_dev` | Ollama, Qdrant | `accuracy_test` >= 0,73 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,755 na `qwen2.5:7b-instruct` minus 0,02, zaokrąglony w dół do setnych, jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 01.10 zgodne 288/288) |
 | `test-load` | `tests/live/load.py --users 3`: 3 równoległych klientów, czyli `MAX_INFLIGHT` + 1, normalne obciążenie; 100 żądań do `/chat` (`--requests`); 503 z `X-Reason: overloaded` liczone osobno jako „degraded”; cztery pomiary 02.10.2026 na GTX 1050 Ti po 100 żądań: od 0 do 20 odpowiedzi 503 `overloaded`, p95 odpowiedzi 200 od 50,4 do 53,5 s, kod 0 | bot + usługi | zero odpowiedzi 500, innych 5xx i błędów transportu; udział degraded <= 0,3 (`--max-degraded`); p95 odpowiedzi 200 <= 60 000 ms (`--p95-ms`) |
 | `test-stress` | `tests/live/stress.py`: pusty tekst, 5000 znaków, same emoji, mieszanka pl/en, 10 numerów kart, 100 powtórzeń tego samego pytania, ponowne użycie `session_id`, na końcu `/health` | bot + usługi | każda odpowiedź to 200 albo 503 z JSON zawierającym `reply` |
-| `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`), wzrost liczby otwartych plików <= 50 (`--max-fd-growth`; liczba waha się o kilkanaście, bo połączenia SQLite zwalnia odśmiecacz) |
+| `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`), wzrost liczby otwartych plików <= 50 (`--max-fd-growth`); pomiar 02.10.2026, 20 minut: RSS +0,0 MB, otwarte pliki 10 -> 10 (połączenia SQLite są zamykane po każdej operacji) |
 | `test-all` | `test`, `test-func`, `test-oos`, `test-accuracy`, `test-load`, `test-stress` po kolei (bez `test-stability`) | wszystko | każdy cel kod 0, na końcu `ALL TESTS PASSED` |
 | `codemap` | `tools/codemap.py --out data/reports/codemap.json` | git z remote `origin` | plik zapisany, kod 0 |
 | `coverage` | `tools/question_coverage.py`: pokrycie intencji pytaniami | nic | kod 0 (z `--strict` kod 1 przy brakach) |
@@ -427,6 +436,8 @@ modelu jest ograniczone (`num_predict`): 220 tokenów na klasyfikator, 400 na od
 | odpowiedź po kNN | odpowiedź + sędzia (2) | ok. 2 400 / 260 |
 | odpowiedź po klasyfikatorze LLM | klasyfikator + odpowiedź + sędzia (3) | ok. 3 150 / 350 |
 | zgłoszenie albo dopytanie po klasyfikatorze LLM | 1 | ok. 750 / 90 |
+| odpowiedź po `NO_ANSWER` i ponownym wyszukiwaniu w całej bazie | do 4 (klasyfikator, odpowiedź, odpowiedź, sędzia) | ok. 4 700 / 600 |
+| przekazanie człowiekowi i wiadomości w sesji `handoff` | 0 | 0 |
 
 Szacunki wynikają z rozmiarów promptów tej kaskady (3 fragmenty po ok. 800
 znaków w kontekście odpowiedzi) i są przybliżone; na modelu hostowanym
@@ -481,10 +492,10 @@ sygnatura i link do tych linii na GitHubie w bieżącym commicie. Moduły w `src
 | `llm_classifier.py` | warstwa 2: wybór etykiety z kandydatów kNN jednym wywołaniem modelu (najpierw kupujący czy sprzedawca), wynik w JSON |
 | `search.py` | embedding pytania i zapytanie do Qdrant z opcjonalnym filtrem kategorii; `ping` |
 | `cascade.py` | sklejenie warstw, wykrycie języka, decyzja, `TurnState` |
-| `answer_gen.py` | prompt z fragmentami, odpowiedź ze źródłem |
-| `judge.py` | kontrola pokrycia odpowiedzi we fragmentach |
-| `store.py` | SQLite: sesje, wiadomości, zgłoszenia, statystyki dla panelu |
-| `api.py` | FastAPI: `/`, `/health`, `/chat`, `/dashboard`, `/api/stats`, teksty odpowiedzi |
+| `answer_gen.py` | prompt z fragmentami, odpowiedź ze źródłem, `NO_ANSWER` i jedno ponowne wyszukiwanie w całej bazie |
+| `judge.py` | kontrola, czy fragmenty odpowiadają na pytanie i pokrywają każde twierdzenie |
+| `store.py` | SQLite: sesje, wiadomości, zgłoszenia, kontakt tylko w zgłoszeniu, kolejka przekazań, statystyki dla panelu, migracja starszych baz |
+| `api.py` | FastAPI: `/`, `/health`, `/chat`, `/dashboard`, `/api/stats`, `POST /api/tickets/{id}/close`, limit równoległych żądań, przekazanie człowiekowi, teksty odpowiedzi |
 | `ingest.py` | wczytanie `kb/`, cięcie na fragmenty, embeddingi, zapis do Qdrant |
 | `eval_cascade.py` | egzamin trafności na `data/goldset/`, raport JSON, kod 1 poniżej progu |
 | `merge_taxonomy.py` | sklejenie `data/taxonomy/part-*.json` w `data/taxonomy.json` |
