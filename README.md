@@ -1,5 +1,7 @@
 # kremzaPay Support Bot: silnik bota wsparcia na własnej dokumentacji
 
+[![CI](https://github.com/aleksykremza-dev/kremzapay-support-bot/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/aleksykremza-dev/kremzapay-support-bot/actions/workflows/ci.yml)
+
 Silnik bota wsparcia, który odpowiada klientom wyłącznie na podstawie Twojej
 dokumentacji (pomoc, FAQ, regulaminy), do każdej odpowiedzi podaje źródło, a gdy
 nie jest pewny, przekazuje sprawę człowiekowi zamiast zmyślać. Działa po polsku
@@ -270,6 +272,7 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | Cel `make` | Co sprawdza | Co musi działać | Zaliczenie (inaczej kod 1) |
 |---|---|---|---|
 | `test` | `pytest -q`: reguły, PII, kaskada, API, ingest, klient LLM; Ollama i Qdrant zastąpione atrapami | nic | wszystkie testy passed, zero failed, kod 0 |
+| `style` | `tools/check_style.py`: nagłówek licencji, komentarze, docstringi, długa kreska | nic | `STYLE_EXIT=0`, kod 0 |
 | `test-func` | `tests/live/func_by_category.py`: po 1 pytaniu z gold setu na każdą intencję i klasę specjalną przez `POST /chat` | bot + usługi | żadna klasa specjalna nie zawiodła, trafność intencji >= 0,6 (`--min-intent-accuracy`) |
 | `test-oos` | `tests/live/out_of_scope.py`: 22 pytania (injection, oszustwo, inne produkty, podatki, tematy obce) muszą dać oczekiwaną akcję; przypadki dla warstwy reguł nie mogą mieć w `timings_ms` kluczy `llm` ani `retrieval` | bot + usługi | 22/22 ok |
 | `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg; `--subset dev\|test\|all` (domyślnie `all`) wybiera część z `split.json`, przy `dev` próg sprawdza `accuracy_dev` | Ollama, Qdrant | `accuracy_test` >= 0,73 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,755 na `qwen2.5:7b-instruct` minus 0,02, zaokrąglony w dół do setnych, jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 01.10 zgodne 288/288) |
@@ -345,6 +348,10 @@ z 01.10 miał tę samą trafność (0,750) przy 2,2 raza dłuższym przebiegu.
 
 Do CI nadaje się wyłącznie `make test`: nie potrzebuje modelu ani Dockera i trwa
 kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usługach.
+GitHub Actions (`.github/workflows/ci.yml`) przy każdym push i pull request robi
+`uv sync --frozen`, `pytest` i bramkę stylu `tools/check_style.py` (`make style`:
+nagłówek licencji, zero komentarzy i docstringów, bez długiej kreski); bramka
+kończy się kodem 1 przy pierwszym naruszeniu.
 
 ### Pomiar na zewnętrznej bazie
 

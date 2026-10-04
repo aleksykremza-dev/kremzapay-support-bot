@@ -2,10 +2,13 @@ PY = uv run python
 REPORTS = data/reports
 COMPOSE = docker compose
 
-.PHONY: test test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap ingest ingest-local coverage up down logs
+.PHONY: test style test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap ingest ingest-local coverage up down logs
 
 test:
 	uv run pytest -q
+
+style:
+	$(PY) tools/check_style.py
 
 test-func:
 	$(PY) tests/live/func_by_category.py
