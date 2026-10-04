@@ -344,6 +344,17 @@ z 01.10 miał tę samą trafność (0,750) przy 2,2 raza dłuższym przebiegu.
 Do CI nadaje się wyłącznie `make test`: nie potrzebuje modelu ani Dockera i trwa
 kilka sekund; pozostałe cele uruchamia się lokalnie przy działających usługach.
 
+### Pomiar na zewnętrznej bazie
+
+Pomiar na zewnętrznej bazie testowej (59 artykułów, inna baza niż korpus klasyfikatora (ta sama dziedzina płatności);
+100 pytań po polsku; qwen2.5:7b-instruct, GTX 1050 Ti, 04.10.2026):
+- 15/15 pytań spoza bazy kończy się zgłoszeniem do człowieka (zero zmyślonych odpowiedzi),
+- bot odpowiedział na 54 z 85 pytań z bazy, 42 ze wskazaniem właściwego artykułu;
+  pozostałe 31 przekazał dalej (zgłoszenie lub przekierowanie),
+- mediana czasu odpowiedzi 14,4 s.
+
+Na własnej domenie (zbiór kontrolny 192 pytań): trafność klasyfikacji 0,755.
+
 ## Koszty
 
 Modele działają lokalnie, więc koszt to sprzęt i prąd, nie tokeny. Wyjście
