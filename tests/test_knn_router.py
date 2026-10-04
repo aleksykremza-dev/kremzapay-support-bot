@@ -38,6 +38,7 @@ def corpus(tmp_path, monkeypatch):
     (corpus_dir / "corpus-a1.json").write_text(json.dumps({"cases": cases}), encoding="utf-8")
     monkeypatch.setattr(knn_router.config, "CORPUS_DIR", corpus_dir)
     monkeypatch.setattr(knn_router.config, "CACHE_DIR", tmp_path / "cache")
+    monkeypatch.setattr(knn_router.config, "INDEX_DIR", tmp_path / "no-index")
     monkeypatch.setattr(knn_router.config, "ROUTER_EMBED_MODEL", "fake/model")
     monkeypatch.setattr(knn_router, "TextEmbedding", FakeEmbedder)
     monkeypatch.setattr(knn_router, "_embedder", None)
@@ -100,8 +101,8 @@ def test_cache_key_depends_on_model_corpus_and_c():
 def test_index_is_fitted_once_then_loaded_from_cache(corpus, monkeypatch):
     knn_router.warm()
     files = sorted(path.name for path in knn_router.config.CACHE_DIR.iterdir())
-    assert len(files) == 2
-    assert all(knn_router.cache_key("fake/model", corpus, knn_router.config.CLF_C) in name for name in files)
+    key = knn_router.cache_key("fake/model", corpus, knn_router.config.CLF_C)
+    assert files == [f"router-{key}.npz"]
     first = knn_router.classify("zwrot pieniedzy r")
     monkeypatch.setattr(knn_router, "_vectors", None)
     monkeypatch.setattr(knn_router, "_model", None)
@@ -111,6 +112,35 @@ def test_index_is_fitted_once_then_loaded_from_cache(corpus, monkeypatch):
     assert FakeEmbedder.calls == calls_before + 1
     assert first["top"] == second["top"]
     assert second["top"][0][0] == "refund_how_to"
+
+
+def test_tracked_index_is_used_without_embedding_corpus(corpus, tmp_path, monkeypatch):
+    index_dir = tmp_path / "index"
+    written = knn_router.export_index(index_dir)
+    key = knn_router.cache_key("fake/model", corpus, knn_router.config.CLF_C)
+    assert written == index_dir / f"router-{key}.npz"
+    for path in knn_router.config.CACHE_DIR.iterdir():
+        path.unlink()
+    monkeypatch.setattr(knn_router.config, "INDEX_DIR", index_dir)
+    monkeypatch.setattr(knn_router, "_vectors", None)
+    monkeypatch.setattr(knn_router, "_model", None)
+    monkeypatch.setattr(knn_router, "_fit", lambda *_args: pytest.fail("refit despite tracked index"))
+    calls_before = FakeEmbedder.calls
+    verdict = knn_router.classify("wyplata kiedy p")
+    assert FakeEmbedder.calls == calls_before + 1
+    assert verdict["top"][0][0] == "payout_schedule"
+    assert list(knn_router.config.CACHE_DIR.iterdir()) == []
+
+
+def test_stale_tracked_index_is_ignored_and_cache_rebuilt(corpus, tmp_path, monkeypatch):
+    index_dir = tmp_path / "index"
+    index_dir.mkdir()
+    (index_dir / "router-0000000000000000.npz").write_bytes(b"stale")
+    monkeypatch.setattr(knn_router.config, "INDEX_DIR", index_dir)
+    knn_router.warm()
+    key = knn_router.cache_key("fake/model", corpus, knn_router.config.CLF_C)
+    assert (knn_router.config.CACHE_DIR / f"router-{key}.npz").exists()
+    assert knn_router.classify("hej c")["top"][0][0] == "chitchat"
 
 
 def test_query_prefix_is_applied_for_e5(corpus, monkeypatch):

@@ -36,6 +36,7 @@ DB_PATH = _path("DB_PATH", DATA_DIR / "kremzapay.db")
 KB_DIR = _path("KB_DIR", BASE_DIR / "kb")
 CORPUS_DIR = DATA_DIR / "corpus"
 CACHE_DIR = DATA_DIR / "cache"
+INDEX_DIR = DATA_DIR / "index"
 TAXONOMY_PATH = DATA_DIR / "taxonomy.json"
 TAXONOMY_PARTS_DIR = DATA_DIR / "taxonomy"
 GOLD_DIR = DATA_DIR / "goldset"

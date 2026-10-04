@@ -2,6 +2,7 @@
 import hashlib
 import json
 import logging
+from pathlib import Path
 
 import numpy as np
 from fastembed import TextEmbedding
@@ -51,33 +52,51 @@ def probabilities(params: dict, vectors: np.ndarray) -> np.ndarray:
     return exp / exp.sum(axis=1, keepdims=True)
 
 
+def _index_name() -> str:
+    return f"router-{cache_key(config.ROUTER_EMBED_MODEL, _load_corpus(), config.CLF_C)}.npz"
+
+
+def _read(path: Path) -> bool:
+    global _vectors, _model
+    if not path.exists():
+        return False
+    with np.load(path, allow_pickle=False) as stored:
+        _vectors = stored["vectors"]
+        _model = {name: stored[name] for name in ("coef", "intercept", "classes")}
+    log.info("router index loaded: %s", path)
+    return True
+
+
+def _write(path: Path) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(path, vectors=_vectors, coef=_model["coef"], intercept=_model["intercept"],
+                        classes=_model["classes"].astype(str))
+    return path
+
+
 def _ensure_index() -> None:
     global _embedder, _vectors, _model
     if _model is not None:
         return
     if _embedder is None:
         _embedder = TextEmbedding(config.ROUTER_EMBED_MODEL)
-    cases = _load_corpus()
-    key = cache_key(config.ROUTER_EMBED_MODEL, cases, config.CLF_C)
-    config.CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    vectors_path = config.CACHE_DIR / f"corpus_vectors-{key}.npy"
-    model_path = config.CACHE_DIR / f"intent_model-{key}.npz"
-    if vectors_path.exists() and model_path.exists():
-        _vectors = np.load(vectors_path)
-        with np.load(model_path, allow_pickle=False) as stored:
-            _model = {name: stored[name] for name in ("coef", "intercept", "classes")}
+    name = _index_name()
+    if _read(config.INDEX_DIR / name) or _read(config.CACHE_DIR / name):
         return
+    cases = _load_corpus()
     log.info("indexing corpus: %d examples with %s", len(cases), config.ROUTER_EMBED_MODEL)
     _vectors = _embed([case["q"] for case in cases])
     _model = _fit(_vectors, [case["intent"] for case in cases])
-    np.save(vectors_path, _vectors)
-    np.savez(model_path, coef=_model["coef"], intercept=_model["intercept"],
-             classes=_model["classes"].astype(str))
-    log.info("router cache written: %s", model_path)
+    log.info("router cache written: %s", _write(config.CACHE_DIR / name))
 
 
 def warm() -> None:
     _ensure_index()
+
+
+def export_index(index_dir: Path) -> Path:
+    _ensure_index()
+    return _write(index_dir / _index_name())
 
 
 def ranked(proba: np.ndarray, classes: np.ndarray) -> list[tuple[str, float]]:

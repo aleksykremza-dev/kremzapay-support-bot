@@ -2,7 +2,7 @@ PY = uv run python
 REPORTS = data/reports
 COMPOSE = docker compose
 
-.PHONY: test style test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap ingest ingest-local coverage up down logs
+.PHONY: test style test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap router-index ingest ingest-local coverage up down logs
 
 test:
 	uv run pytest -q
@@ -30,6 +30,9 @@ test-stability:
 
 test-all: test test-func test-oos test-accuracy test-load test-stress
 	@echo "ALL TESTS PASSED"
+
+router-index:
+	$(PY) tools/router_index.py
 
 codemap:
 	$(PY) tools/codemap.py --out $(REPORTS)/codemap.json
