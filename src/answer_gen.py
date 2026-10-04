@@ -55,16 +55,31 @@ def _cited(answer: str, hits: list) -> list:
     return cited or hits
 
 
+def _ask(question: str, hits: list, language: str) -> str | None:
+    try:
+        return llm.generate(_build_prompt(question, hits, language), num_predict=400)
+    except llm.LLMBadOutput:
+        return None
+
+
 def generate(question: str, intent: str | None = None, language: str = "en") -> dict | None:
     definitions = taxonomy.intent_definition()
     category = taxonomy.intent_category().get(intent)
     query = f"{question}. {definitions[intent]}" if intent in definitions else question
     hits = search(query, category=category)[:config.TOP_N]
+    can_retry = category is not None
+    if can_retry and not any(hit.score >= config.RETRIEVAL_OK for hit in hits):
+        hits = search(question)[:config.TOP_N]
+        can_retry = False
     if not hits:
         return None
-    try:
-        text = llm.generate(_build_prompt(question, hits, language), num_predict=400)
-    except llm.LLMBadOutput:
+    text = _ask(question, hits, language)
+    if text is not None and can_retry and is_no_answer(text):
+        retry_hits = search(question)[:config.TOP_N]
+        if retry_hits:
+            hits = retry_hits
+            text = _ask(question, hits, language)
+    if text is None:
         return None
     sources = [f"{hit.payload['id']} : {hit.payload['title']}" for hit in hits]
     return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in _cited(text, hits)]}
