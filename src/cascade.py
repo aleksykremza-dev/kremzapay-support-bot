@@ -73,6 +73,8 @@ def _classify(ts: dict) -> tuple:
         ts["llm"] = {key: verdict.get(key) for key in
                      ("intent", "scope", "confidence", "wants_human", "sentiment", "reasoning")}
         intent, scope, conf = verdict["intent"], verdict["scope"], verdict["confidence"]
+        if scope == "other_in_scope" and knn["top"] and knn["top"][0][0] == "out_of_scope":
+            intent = scope = "out_of_scope"
         wants_human = bool(verdict.get("wants_human", False))
     ts["classification"] = {"intent": intent, "scope": scope, "confidence": conf}
     return intent, scope, conf, wants_human

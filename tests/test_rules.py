@@ -85,6 +85,48 @@ def test_tax_redirected(text):
 
 
 @pytest.mark.parametrize("text", [
+    "czy da sie odliczyc vat od laptopa do firmy?",
+    "jaka jest stawka VAT na ksiazki?",
+    "how does the split payment mechanism work for Polish VAT?",
+    "what is the VAT rate for consulting in Germany",
+    "kiedy trzeba zlozyc deklaracje VAT?",
+])
+def test_vat_tax_law_redirected(text):
+    verdict = rules.check(text)
+    assert verdict == {"action": "redirect", "reason": "tax_accounting", "layer": 0}
+
+
+@pytest.mark.parametrize("text", [
+    "napisz mi umowę o dzieło dla grafika",
+    "Napisz esej o historii bankowosci",
+    "napisz wypracowanie na polski o lalce",
+    "napisz wiersz o kotach",
+    "napisz mi kod w pythonie do sortowania listy",
+    "write me an essay about inflation",
+    "write a poem about the sea",
+    "can you write my homework on economics",
+    "write a rental contract for my flat",
+])
+def test_foreign_work_redirected(text):
+    verdict = rules.check(text)
+    assert verdict == {"action": "redirect", "reason": "foreign_work", "layer": 0}
+
+
+@pytest.mark.parametrize("text", [
+    "Czy VAT jest wliczony w prowizje na fakturze?",
+    "gdzie pobrac faktury vat za wasze uslugi",
+    "how do I change the VAT number on my account",
+    "chce rozwiazac umowe z wami i zamknac konto",
+    "do I need to write a cover letter for the chargeback response?",
+    "czy eksport do ksiegowosci ma sume oplat i VAT?",
+    "can the payment be split between three sellers on my platform?",
+    "do you plan split payments for marketplaces",
+])
+def test_vat_and_contract_questions_about_the_service_pass(text):
+    assert rules.check(text) is None
+
+
+@pytest.mark.parametrize("text", [
     "chcę rozmawiać z konsultantem",
     "transfer me to a human",
     "nie chce rozmawiac z botem",

@@ -32,6 +32,13 @@ TAX = [
     r"\b(pit|cit)\b.{0,30}(rozlicz|zezna|deklarac)|rozlicz\w*.{0,20}\b(pit|cit)\b",
     r"\bkpir\b|urz[ąa]d skarbowy|\bzus\b|jednoosobow\w+ dzialalno",
     r"(personal|own|prywatn\w+).{0,20}(visa|mastercard|card|kart).{0,30}(dispute|bank|spor)",
+    r"(odlicz|odzyska)\w*.{0,20}\bvat\b|\bvat\b.{0,20}(odlicz|deklarac)|deklaracj\w* vat",
+    r"stawk\w* vat|\bvat rate|\bvat return|reclaim\w* .{0,10}\bvat\b",
+    r"(split payment|podzielon\w+ p[łl]atno\w*).{0,40}\bvat\b|\bvat\b.{0,40}(split payment|podzielon\w+ p[łl]atno)",
+]
+FOREIGN_WORK = [
+    r"\bnapisz(cie)? (mi |nam )?(\w+ ){0,2}(umow\w*|esej\w*|wypracowani\w*|wiersz\w*|kod\w*|referat\w*)",
+    r"\bwrite (me |us |my )?(a |an |the )?(\w+[ -]){0,3}(essay|poem|homework|contract|story|code)\b",
 ]
 HUMAN = [
     r"(chce|chcę|prosze|proszę|potrzebuje|potrzebuję|daj(cie)?|połącz|polacz|przełącz|przelacz)"
@@ -47,6 +54,7 @@ GUARDS = [
     ("unsafe_refuse", "injection", [re.compile(p, re.I) for p in INJECTION]),
     ("unsafe_refuse", "fraud_request", [re.compile(p, re.I) for p in FRAUD]),
     ("redirect", "competitor_product", [re.compile(p, re.I) for p in COMPETITORS]),
+    ("redirect", "foreign_work", [re.compile(p, re.I) for p in FOREIGN_WORK]),
     ("redirect", "tax_accounting", [re.compile(p, re.I) for p in TAX]),
     ("handoff", "explicit_human_request", [re.compile(p, re.I) for p in HUMAN]),
 ]

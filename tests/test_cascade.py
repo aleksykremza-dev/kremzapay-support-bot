@@ -67,6 +67,40 @@ def test_special_scope_takes_special_action(monkeypatch):
     assert ts["decision"]["action"] == "chitchat_reply"
 
 
+def _grey_then_llm(monkeypatch, top, llm_intent, llm_scope):
+    monkeypatch.setattr(cascade.knn_router, "classify", lambda text: {
+        "decision": "grey", "intent": top[0][0], "confidence": top[0][1], "top": top})
+    monkeypatch.setattr(cascade.llm_classifier, "classify", lambda text, candidates: {
+        "intent": llm_intent, "scope": llm_scope, "confidence": "high",
+        "wants_human": False, "reasoning": "x"})
+
+
+def test_layer1_out_of_scope_overrides_llm_other_in_scope(monkeypatch):
+    _grey_then_llm(monkeypatch, [("out_of_scope", 0.28), ("buyer_how_to_pay", 0.27)],
+                   "other_in_scope", "other_in_scope")
+    ts = cascade.route("polecisz dobra pizzerie w Gdansku")
+    assert ts["decision"]["action"] == "redirect"
+    assert ts["classification"]["intent"] == "out_of_scope"
+    assert ts["classification"]["scope"] == "out_of_scope"
+
+
+def test_other_in_scope_kept_when_layer1_leader_is_an_intent(monkeypatch):
+    _grey_then_llm(monkeypatch, [("fees_how_much", 0.28), ("out_of_scope", 0.27)],
+                   "other_in_scope", "other_in_scope")
+    ts = cascade.route("czy planujecie nowy pakiet dla duzych sklepow")
+    assert ts["decision"]["action"] == "ticket"
+    assert ts["classification"]["scope"] == "other_in_scope"
+
+
+def test_llm_intent_kept_when_layer1_leader_is_out_of_scope(monkeypatch):
+    _grey_then_llm(monkeypatch, [("out_of_scope", 0.28), ("fees_how_much", 0.27)],
+                   "fees_how_much", "in_scope")
+    monkeypatch.setattr(cascade, "search", lambda text: [SimpleNamespace(score=0.9)])
+    ts = cascade.route("ile kosztuje u was prowizja")
+    assert ts["classification"]["intent"] == "fees_how_much"
+    assert ts["decision"]["action"] == "answer"
+
+
 def test_llm_gets_unique_knn_candidates_in_order(monkeypatch):
     top = [("refund_how_to", 0.71), ("refund_how_to", 0.70), ("buyer_refund_status", 0.66),
            ("payout_schedule", 0.60), ("refund_how_to", 0.58), ("chitchat", 0.55),
