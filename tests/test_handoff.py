@@ -183,6 +183,57 @@ def test_contact_outside_handoff_is_not_stored(client, monkeypatch):
     assert _rows("SELECT contact FROM tickets") == [{"contact": None}]
 
 
+def test_stats_show_handoff_queue_without_raw_contact(client, monkeypatch):
+    first = _start_handoff(client, monkeypatch, route=_route_llm_handoff, text="get me a person please")
+    client.post("/chat", json={"text": "my mail jan@example.pl", "session_id": first["session_id"]})
+    response = client.get("/api/stats")
+    queue = response.json()["handoff_queue"]
+    assert len(queue) == 1
+    item = queue[0]
+    assert (item["id"], item["intent"], item["has_contact"]) == (first["ticket_id"], "payout_missing", True)
+    assert item["created_at"]
+    assert [m["role"] for m in item["messages"]] == ["user", "bot", "user", "bot"]
+    assert item["messages"][2]["text"] == "my mail <EMAIL_1>"
+    assert "jan@example.pl" not in response.text
+
+
+def test_queue_holds_only_open_handoff_tickets(client, monkeypatch):
+    import api
+    monkeypatch.setattr(api.cascade, "route", lambda text: {
+        "turn_id": "t", "raw_text": text, "language": "pl", "timings_ms": {},
+        "classification": {"intent": "payment_limits", "scope": "in_scope", "confidence": "high"},
+        "decision": {"action": "ticket", "reason": "no_knowledge", "confidence": "high"}})
+    client.post("/chat", json={"text": "limit?"})
+    assert client.get("/api/stats").json()["handoff_queue"] == []
+
+
+def test_close_ticket_closes_ticket_and_session(client, monkeypatch):
+    import api
+    first = _start_handoff(client, monkeypatch)
+    response = client.post(f"/api/tickets/{first['ticket_id']}/close")
+    assert response.status_code == 200
+    assert response.json() == {"id": first["ticket_id"], "status": "closed"}
+    assert _rows("SELECT status FROM tickets") == [{"status": "closed"}]
+    assert _rows("SELECT status FROM sessions WHERE id=?", (first["session_id"],)) == [{"status": "closed"}]
+    assert client.get("/api/stats").json()["handoff_queue"] == []
+    monkeypatch.setattr(api.cascade, "route", _route_rules_handoff)
+    again = client.post("/chat", json={"text": "jeszcze raz człowiek", "session_id": first["session_id"]}).json()
+    assert again["ticket_id"] == 2
+
+
+def test_close_unknown_ticket_is_404(client):
+    assert client.post("/api/tickets/999/close").status_code == 404
+
+
+def test_dashboard_has_handoff_block(client):
+    html = client.get("/dashboard").text
+    assert "Czeka na człowieka" in html
+    assert "Zamknij" in html
+    assert "/api/tickets/" in html
+    assert "document.title" in html
+    assert "handoff_queue" in html
+
+
 def test_old_database_gets_ticket_contact_column(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "DB_PATH", tmp_path / "old.db")
     _old_schema_db(config.DB_PATH)

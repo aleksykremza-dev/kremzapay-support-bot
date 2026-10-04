@@ -18,9 +18,29 @@
  .a-clarify{background:#fff6cc;color:#8a6d00}
  .path{color:#8a93a5;font-size:11px}
  h2{font-size:15px;margin:0 0 8px}
+ .waiting{background:#fff;border-left:5px solid #b3264a;border-radius:12px;padding:14px 18px;margin-bottom:20px;
+          box-shadow:0 1px 4px rgba(20,30,60,.08)}
+ .waiting.empty{border-left-color:#0d7a4f}
+ .waiting h2 .count{display:inline-block;min-width:22px;padding:1px 8px;border-radius:999px;background:#b3264a;
+          color:#fff;font-size:13px;margin-left:6px;text-align:center}
+ .waiting.empty h2 .count{background:#0d7a4f}
+ .hand{border-top:1px solid #eef1f6;padding:10px 0}
+ .hand-head{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px}
+ .hand-head b{font-size:15px}
+ .contact-yes{color:#0d7a4f;font-weight:600}.contact-no{color:#a05f04;font-weight:600}
+ .hand button{margin-left:auto;background:#15325b;color:#fff;border:0;border-radius:8px;padding:6px 14px;
+          font-size:13px;cursor:pointer}
+ .hand button:hover{background:#0d2140}.hand button:focus-visible{outline:3px solid #8fb3ff;outline-offset:2px}
+ .hand button:disabled{opacity:.5;cursor:wait}
+ .conv{margin:8px 0 0;padding:0;list-style:none;font-size:13px}
+ .conv li{padding:3px 0}.conv .who{display:inline-block;width:42px;color:#67718a;font-size:11px;text-transform:uppercase}
 </style></head><body>
 <h1>kremzaPay — panel obserwowalności</h1>
 <div class="sub">every bot decision: branch · intent · layer path · time — transparency instead of a black box</div>
+<section class="waiting empty" id="waiting" aria-live="polite">
+ <h2>Czeka na człowieka <span class="count" id="waiting-count">0</span></h2>
+ <div id="waiting-list"></div>
+</section>
 <div class="cards" id="cards"></div>
 <h2>Recent dialogs</h2>
 <table><thead><tr><th>Time</th><th>Message</th><th>Decision</th><th>Intent</th><th>Layer path</th><th>ms</th></tr></thead>
@@ -30,8 +50,33 @@
 <tbody id="tickets"></tbody></table>
 <script>
 const esc=s=>String(s??"\u2014").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const baseTitle=document.title;
+function renderWaiting(queue){
+ const n=queue.length;
+ document.title = n>0 ? `(${n}) ${baseTitle}` : baseTitle;
+ document.getElementById("waiting").classList.toggle("empty", n===0);
+ document.getElementById("waiting-count").textContent=n;
+ document.getElementById("waiting-list").innerHTML = n===0
+  ? `<div class="path">Brak rozmów czekających na konsultanta.</div>`
+  : queue.map(h=>
+  `<div class="hand"><div class="hand-head"><b>#${h.id}</b>
+    <span>${esc(h.created_at.slice(0,16).replace("T"," "))}</span>
+    <span>temat: ${esc(h.intent)}</span>
+    <span class="${h.has_contact?"contact-yes":"contact-no"}">${h.has_contact?"kontakt jest":"brak kontaktu"}</span>
+    <button type="button" data-close="${h.id}">Zamknij</button></div>
+   <ul class="conv">${h.messages.map(m=>`<li><span class="who">${m.role==="user"?"klient":"bot"}</span>${esc(m.text)} <span class="path">${m.at}</span></li>`).join("")}</ul></div>`).join("");
+}
+document.getElementById("waiting-list").addEventListener("click", async e=>{
+ const id=e.target.dataset.close;
+ if(!id) return;
+ e.target.disabled=true;
+ const r=await fetch(`/api/tickets/${id}/close`,{method:"POST"});
+ if(!r.ok){e.target.disabled=false;alert(`Nie udało się zamknąć zgłoszenia #${id} (HTTP ${r.status}).`);return;}
+ refresh();
+});
 async function refresh(){
  const s = await (await fetch("/api/stats")).json();
+ renderWaiting(s.handoff_queue);
  const total = Object.values(s.actions).reduce((a,b)=>a+b,0);
  document.getElementById("cards").innerHTML =
   `<div class="card"><b>${s.sessions}</b><span>sessions</span></div>`+

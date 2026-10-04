@@ -220,3 +220,10 @@ def dashboard():
 @app.get("/api/stats")
 def stats():
     return store.get_stats()
+
+
+@app.post("/api/tickets/{ticket_id}/close")
+def close_ticket(ticket_id: int):
+    if not store.close_ticket(ticket_id):
+        return JSONResponse(status_code=404, content={"detail": f"ticket {ticket_id} not found"})
+    return {"id": ticket_id, "status": "closed"}

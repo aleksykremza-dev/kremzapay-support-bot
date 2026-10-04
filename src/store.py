@@ -97,6 +97,34 @@ def create_ticket(session_id: str, reason: str, category: str | None = None,
         return cursor.lastrowid
 
 
+def close_ticket(ticket_id: int) -> bool:
+    with _conn() as conn:
+        row = conn.execute("SELECT session_id FROM tickets WHERE id=?", (ticket_id,)).fetchone()
+        if not row:
+            return False
+        conn.execute("UPDATE tickets SET status='closed' WHERE id=?", (ticket_id,))
+        conn.execute("UPDATE sessions SET status='closed' WHERE id=?", (row["session_id"],))
+        return True
+
+
+def _handoff_queue(conn: sqlite3.Connection) -> list[dict]:
+    tickets = conn.execute(
+        "SELECT id, session_id, intent, created_at, contact FROM tickets "
+        "WHERE reason='handoff' AND status!='closed' ORDER BY id").fetchall()
+    queue = []
+    for ticket in tickets:
+        messages = conn.execute(
+            "SELECT role, masked_text, created_at FROM messages WHERE session_id=? ORDER BY id",
+            (ticket["session_id"],)).fetchall()
+        queue.append({
+            "id": ticket["id"], "intent": ticket["intent"], "created_at": ticket["created_at"],
+            "has_contact": bool(ticket["contact"]),
+            "messages": [{"role": m["role"], "text": m["masked_text"], "at": m["created_at"][11:19]}
+                         for m in messages],
+        })
+    return queue
+
+
 def get_stats() -> dict:
     with _conn() as conn:
         sessions = conn.execute("SELECT COUNT(*) FROM sessions").fetchone()[0]
@@ -123,4 +151,5 @@ def get_stats() -> dict:
             "SELECT id, reason, intent, status, created_at FROM tickets "
             "ORDER BY id DESC LIMIT 20").fetchall()
         return {"sessions": sessions, "actions": actions, "dialogs": dialogs,
-                "tickets": [dict(ticket) for ticket in tickets]}
+                "tickets": [dict(ticket) for ticket in tickets],
+                "handoff_queue": _handoff_queue(conn)}
