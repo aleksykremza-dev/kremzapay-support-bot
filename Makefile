@@ -1,7 +1,8 @@
 PY = uv run python
 REPORTS = data/reports
+COMPOSE = docker compose
 
-.PHONY: test test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap ingest coverage
+.PHONY: test test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap ingest ingest-local coverage up down logs
 
 test:
 	uv run pytest -q
@@ -34,4 +35,16 @@ coverage:
 	$(PY) tools/question_coverage.py
 
 ingest:
+	$(COMPOSE) run --rm api python src/ingest.py
+
+ingest-local:
 	$(PY) src/ingest.py
+
+up:
+	$(COMPOSE) up -d --build
+
+down:
+	$(COMPOSE) down
+
+logs:
+	$(COMPOSE) logs -f --tail=100 api

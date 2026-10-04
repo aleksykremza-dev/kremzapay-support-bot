@@ -89,7 +89,7 @@ git clone https://github.com/aleksykremza-dev/kremzapay-support-bot.git
 cd kremzapay-support-bot
 uv sync                                   # środowisko .venv z pyproject.toml
 cp .env.example .env                      # opcjonalnie: inne adresy albo model
-docker compose up -d                      # Qdrant na porcie 6335
+docker compose up -d qdrant               # sam Qdrant na porcie 6335
 ollama pull qwen2.5:7b-instruct           # model z ANSWER_MODEL
 uv run python src/ingest.py               # wymaga kb/ z artykułami, patrz niżej
 uv run uvicorn api:app --app-dir src --port 8020
@@ -143,7 +143,7 @@ Status zwrotu widać w panelu w zakładce Zwroty.
 Jeśli po 7 dniach roboczych środki nie wróciły, przygotuj numer transakcji.
 ```
 
-Po każdej zmianie w artykułach: `uv run python src/ingest.py` (`make ingest`).
+Po każdej zmianie w artykułach: `make ingest` (Docker) albo `uv run python src/ingest.py` (`make ingest-local`).
 Skrypt kasuje kolekcję i buduje ją od zera. Oczekiwany wynik:
 
 ```
@@ -279,7 +279,9 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `test-all` | `test`, `test-func`, `test-oos`, `test-accuracy`, `test-load`, `test-stress` po kolei (bez `test-stability`) | wszystko | każdy cel kod 0, na końcu `ALL TESTS PASSED` |
 | `codemap` | `tools/codemap.py --out data/reports/codemap.json` | git z remote `origin` | plik zapisany, kod 0 |
 | `coverage` | `tools/question_coverage.py`: pokrycie intencji pytaniami | nic | kod 0 (z `--strict` kod 1 przy brakach) |
-| `ingest` | `src/ingest.py` | Qdrant, `kb/` | `Done: M points ...`, kod 0 |
+| `ingest` | `src/ingest.py` w kontenerze `api` (`docker compose run --rm api`) | Docker, `kb/` | `Done: M points ...`, kod 0 |
+| `ingest-local` | `src/ingest.py` w lokalnym `.venv` | Qdrant, `kb/` | `Done: M points ...`, kod 0 |
+| `up` / `down` / `logs` | `docker compose up -d --build` / `down` / `logs -f api` | Docker | kontenery `api` i `qdrant` działają |
 
 Scenariusz ręczny, przeciążenie (więcej klientów niż `MAX_INFLIGHT` + 1):
 
@@ -296,11 +298,11 @@ i błędów transportu, serwer działa dalej (`/health` zwraca `ok`). Pomiar
 Scenariusz ręczny, awaria Qdrant (nie ma go w `make`, bo zatrzymuje kontener):
 
 ```bash
-docker compose stop
+docker compose stop qdrant
 curl -s -i -X POST localhost:8020/chat -H "Content-Type: application/json" \
   -d '{"text": "jak zrobić zwrot płatności?"}'
 curl -s localhost:8020/health
-docker compose start
+docker compose start qdrant
 ```
 
 Oczekiwane: `HTTP/1.1 503`, nagłówek `x-reason: service_unavailable`, w treści
@@ -308,7 +310,7 @@ Oczekiwane: `HTTP/1.1 503`, nagłówek `x-reason: service_unavailable`, w treśc
 zgłoszenia; `/health` zwraca `{"status":"degraded","ollama":true,"qdrant":false}`;
 w logu serwera linie `qdrant http://localhost:6335 failed: … Connection refused`
 i `service unavailable for session …`; proces działa dalej, a po
-`docker compose start` `/health` wraca do `ok`.
+`docker compose start qdrant` `/health` wraca do `ok`.
 
 Gold set jest podzielony na stałe w `data/goldset/split.json` (seed 42): część
 test (192 pytania) i część dev (96). Podawana trafność i próg `MIN_ACCURACY` to

@@ -5,3 +5,32 @@ services:
       - "6335:6333"
     volumes:
       - ./qdrant_data:/qdrant/storage
+
+  api:
+    build: .
+    image: kremzapay-bot:1.0.0
+    ports:
+      - "8020:8020"
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      OLLAMA_URL: ${OLLAMA_URL_DOCKER:-http://host.docker.internal:11434}
+      ANSWER_MODEL: ${ANSWER_MODEL:-qwen2.5:7b-instruct}
+      KB_DIR: kb
+      DB_PATH: data/kremzapay.db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
+      - ./kb:/app/kb:ro
+    depends_on:
+      - qdrant
+
+  ollama:
+    image: ollama/ollama:0.35.1
+    profiles:
+      - ollama
+    volumes:
+      - ollama_models:/root/.ollama
+
+volumes:
+  ollama_models:
