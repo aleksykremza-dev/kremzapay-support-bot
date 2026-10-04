@@ -46,6 +46,10 @@ REPLIES = {
         "pl": "Przekazuję rozmowę do konsultanta, zgłoszenie #{tid}. Zostaw wiadomość, odezwiemy się.",
         "en": "I'm handing this over to a human agent, ticket #{tid}. Leave a message and we'll get back to you.",
     },
+    "handoff_added": {
+        "pl": "Twoja wiadomość została dodana do zgłoszenia #{tid}.",
+        "en": "Your message has been added to ticket #{tid}.",
+    },
     "chitchat_reply": {
         "pl": "Miło mi! Jestem botem wsparcia kremzaPay, chętnie pomogę z płatnościami, zwrotami czy wypłatami. W czym mogę pomóc?",
         "en": "Nice to meet you! I'm the kremzaPay support bot, happy to help with payments, refunds or payouts. What can I do for you?",
@@ -135,12 +139,22 @@ def _handle(masked: str, sid: str) -> ChatOut:
         action, reply, ticket_id = _answer(masked, sid, ts, cls)
     elif action == "handoff":
         reply, ticket_id = _ticket_reply(sid, lang, "handoff", "handoff", cls, priority="high")
+        store.set_session_status(sid, "handoff")
     else:
         reply = REPLIES[action][lang]
-    store.add_message(sid, "user", masked, turn_state=ts)
-    store.add_message(sid, "bot", reply)
+    linked = ticket_id if action == "handoff" else None
+    store.add_message(sid, "user", masked, turn_state=ts, ticket_id=linked)
+    store.add_message(sid, "bot", reply, ticket_id=linked)
     return ChatOut(session_id=sid, reply=reply, action=action, intent=cls.get("intent"),
                    language=lang, ticket_id=ticket_id, timings_ms=ts["timings_ms"])
+
+
+def _handoff_followup(sid: str, masked: str, ticket_id: int) -> ChatOut:
+    lang = cascade.detect_language(masked)
+    reply = REPLIES["handoff_added"][lang].format(tid=ticket_id)
+    store.add_message(sid, "user", masked, ticket_id=ticket_id)
+    store.add_message(sid, "bot", reply, ticket_id=ticket_id)
+    return ChatOut(session_id=sid, reply=reply, action="handoff", language=lang, ticket_id=ticket_id)
 
 
 @app.get("/")
@@ -160,6 +174,9 @@ def health():
 def chat(msg: ChatIn):
     sid = msg.session_id or store.create_session("web")
     masked, _mapping = pii.mask(msg.text)
+    handoff_ticket = store.open_handoff_ticket(sid) if msg.session_id else None
+    if handoff_ticket:
+        return _handoff_followup(sid, masked, handoff_ticket)
     if not _slots.acquire(timeout=config.QUEUE_TIMEOUT_S):
         log.warning("overloaded for session %s: no free slot of %d in %.1fs",
                     sid, config.MAX_INFLIGHT, config.QUEUE_TIMEOUT_S)

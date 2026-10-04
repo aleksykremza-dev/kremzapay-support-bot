@@ -15,17 +15,25 @@ CREATE TABLE IF NOT EXISTS sessions (
 CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL REFERENCES sessions(id),
     role TEXT NOT NULL, masked_text TEXT NOT NULL,
-    turn_state TEXT, created_at TEXT NOT NULL);
+    turn_state TEXT, created_at TEXT NOT NULL, ticket_id INTEGER);
 CREATE TABLE IF NOT EXISTS tickets (
     id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
     reason TEXT NOT NULL, category TEXT, intent TEXT,
     priority TEXT NOT NULL DEFAULT 'normal', status TEXT NOT NULL DEFAULT 'new',
     created_at TEXT NOT NULL, resolution TEXT);
 """
+ADDED_COLUMNS = (("messages", "ticket_id", "INTEGER"),)
 
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    for table, column, kind in ADDED_COLUMNS:
+        existing = {row[1] for row in conn.execute(f"PRAGMA table_info({table})")}
+        if column not in existing:
+            conn.execute(f"ALTER TABLE {table} ADD COLUMN {column} {kind}")
 
 
 @contextmanager
@@ -34,6 +42,7 @@ def _conn() -> Iterator[sqlite3.Connection]:
     with closing(sqlite3.connect(config.DB_PATH)) as conn:
         conn.row_factory = sqlite3.Row
         conn.executescript(SCHEMA)
+        _migrate(conn)
         with conn:
             yield conn
 
@@ -46,14 +55,29 @@ def create_session(channel: str = "web") -> str:
     return sid
 
 
-def add_message(session_id: str, role: str, masked_text: str, turn_state: dict | None = None) -> int:
+def add_message(session_id: str, role: str, masked_text: str, turn_state: dict | None = None,
+                ticket_id: int | None = None) -> int:
     with _conn() as conn:
         cursor = conn.execute(
-            "INSERT INTO messages (session_id, role, masked_text, turn_state, created_at) "
-            "VALUES (?,?,?,?,?)",
+            "INSERT INTO messages (session_id, role, masked_text, turn_state, created_at, ticket_id) "
+            "VALUES (?,?,?,?,?,?)",
             (session_id, role, masked_text,
-             json.dumps(turn_state, ensure_ascii=False) if turn_state else None, _now()))
+             json.dumps(turn_state, ensure_ascii=False) if turn_state else None, _now(), ticket_id))
         return cursor.lastrowid
+
+
+def set_session_status(session_id: str, status: str) -> None:
+    with _conn() as conn:
+        conn.execute("UPDATE sessions SET status=? WHERE id=?", (status, session_id))
+
+
+def open_handoff_ticket(session_id: str) -> int | None:
+    with _conn() as conn:
+        row = conn.execute(
+            "SELECT t.id FROM tickets t JOIN sessions s ON s.id = t.session_id "
+            "WHERE t.session_id=? AND s.status='handoff' AND t.reason='handoff' AND t.status!='closed' "
+            "ORDER BY t.id DESC LIMIT 1", (session_id,)).fetchone()
+        return row["id"] if row else None
 
 
 def create_ticket(session_id: str, reason: str, category: str | None = None,
