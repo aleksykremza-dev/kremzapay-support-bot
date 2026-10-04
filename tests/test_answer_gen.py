@@ -68,3 +68,26 @@ def test_generate_keeps_all_chunks_when_cited_id_unknown(monkeypatch):
     monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
     monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Answer.\nSource: zzz")
     assert answer_gen.generate("q", intent=None, language="en")["chunks"] == ["text a", "text b"]
+
+
+def test_generate_reads_source_at_end_of_last_paragraph(monkeypatch):
+    hits = [_hit("refund-how", "Zwrot", "text refund"), _hit("payout-schedule", "Wypłata", "text payout")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate",
+                        lambda *a, **k: "Pierwszy akapit.\n\nWypłata idzie co tydzień. Źródło: payout-schedule")
+    assert answer_gen.generate("q", intent=None, language="pl")["chunks"] == ["text payout"]
+
+
+def test_generate_reads_english_source_at_end_of_paragraph(monkeypatch):
+    hits = [_hit("a", "A", "text a"), _hit("b", "B", "text b")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate", lambda *a, **k: "Answer here. Source: b")
+    assert answer_gen.generate("q", intent=None, language="en")["chunks"] == ["text b"]
+
+
+def test_generate_ignores_source_word_inside_earlier_paragraph(monkeypatch):
+    hits = [_hit("a", "A", "text a"), _hit("b", "B", "text b")]
+    monkeypatch.setattr(answer_gen, "search", lambda *a, **k: hits)
+    monkeypatch.setattr(answer_gen.llm, "generate",
+                        lambda *a, **k: "Check the field Source: b in the panel.\n\nAnswer end.")
+    assert answer_gen.generate("q", intent=None, language="en")["chunks"] == ["text a", "text b"]

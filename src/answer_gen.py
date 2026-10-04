@@ -7,6 +7,7 @@ import taxonomy
 from search import search
 
 SOURCE_LINE = re.compile(r"^(Źródło|Source):", re.I)
+SOURCE_TAIL = re.compile(r"(?:^|\s)(?:Źródło|Source)\s*:\s*([^\n]+)$", re.I)
 BRAND_VOICE = (
     "You are the kremzaPay support assistant. Style: warm but concise, "
     "address the user informally ('ty' in Polish, 'you' in English), "
@@ -31,8 +32,17 @@ def _build_prompt(question: str, hits: list, language: str) -> str:
     )
 
 
+def _source_lines(answer: str) -> list[str]:
+    lines = [line.strip() for line in answer.splitlines() if line.strip()]
+    found = [line for line in lines if SOURCE_LINE.match(line)]
+    tail = SOURCE_TAIL.search(lines[-1]) if lines else None
+    if tail and not SOURCE_LINE.match(lines[-1]):
+        found.append(tail.group(1))
+    return found
+
+
 def _cited(answer: str, hits: list) -> list:
-    lines = [line for line in answer.splitlines() if SOURCE_LINE.match(line.strip())]
+    lines = _source_lines(answer)
     if not lines:
         return hits
     cited = [hit for hit in hits
