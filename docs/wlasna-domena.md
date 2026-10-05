@@ -9,8 +9,9 @@ Jak podłączyć własne artykuły i jak przygotować taksonomię, korpus i zbi�
 Artykuł to plik Markdown w `kb/<kategoria>/<id>.md`. `ingest.py` czyta wzorzec
 `kb/*/*.md` (jeden poziom podkatalogów); nazwa podkatalogu nie jest przez kod
 używana, kategoria pochodzi z nagłówka. Nagłówek między dwiema liniami `---` ma
-pola `title`, `category`, `id`; `category` musi być jedną z kategorii
-w `data/taxonomy.json`, bo wyszukiwanie filtruje po niej fragmenty. Treść jest
+pola `title`, `category`, `id`; `category` jest zapisywana przy fragmencie
+i widoczna w wynikach wyszukiwania (od wersji 1.1.0 wyszukiwanie nie filtruje
+po kategorii, szuka w całej bazie). Treść jest
 cięta na fragmenty po akapitach (pusta linia między nimi) do ok. 800 znaków
 (`CHUNK_SIZE`); każdy fragment dostaje tytuł artykułu. Jeśli po treści jest
 jeszcze linia `---`, wszystko za ostatnią z nich jest odcinane. Wersja polska

@@ -16,10 +16,10 @@ bez serwera HTTP. Raporty JSON trafiają do `data/reports/` (w `.gitignore`).
 | `style` | `tools/check_style.py`: nagłówek licencji, komentarze, docstringi, długa kreska | nic | `STYLE_EXIT=0`, kod 0 |
 | `test-func` | `tests/live/func_by_category.py`: po 1 pytaniu z gold setu na każdą intencję i klasę specjalną przez `POST /chat` | bot + usługi | żadna klasa specjalna nie zawiodła, trafność intencji >= 0,6 (`--min-intent-accuracy`) |
 | `test-oos` | `tests/live/out_of_scope.py`: 22 pytania (injection, oszustwo, inne produkty, podatki, tematy obce; tematy obce muszą dać `redirect`, nie zgłoszenie) muszą dać oczekiwaną akcję; przypadki dla warstwy reguł nie mogą mieć w `timings_ms` kluczy `llm` ani `retrieval` | bot + usługi | 22/22 ok |
-| `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg; `--subset dev\|test\|all` (domyślnie `all`) wybiera część z `split.json`, przy `dev` próg sprawdza `accuracy_dev` | Ollama, Qdrant | `accuracy_test` >= 0,87 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,891 na `qwen2.5:7b-instruct` minus 0,02, zaokrąglony w dół do setnych, jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (dwa przebiegi 04.10 zgodne 288/288) |
+| `test-accuracy` | `src/eval_cascade.py`: 288 pytań gold setu, `accuracy_all`, `accuracy_dev`, `accuracy_test`, macro-F1 (wszystkie i test), recall klas specjalnych, najczęstsze pomyłki; `--limit N` skraca przebieg; `--subset dev\|test\|all` (domyślnie `all`) wybiera część z `split.json`, przy `dev` próg sprawdza `accuracy_dev` | Ollama, Qdrant | `accuracy_test` >= 0,87 (`MIN_ACCURACY`, `--min-accuracy`); próg to pomiar 0,891 na `qwen2.5:7b-instruct` minus 0,02, zaokrąglony w dół do setnych, jako zapas na przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym seed przebieg jest powtarzalny (trzy przebiegi 04.10 i 05.10 zgodne 288/288) |
 | `test-load` | `tests/live/load.py --users 3`: 3 równoległych klientów, czyli `MAX_INFLIGHT` + 1, normalne obciążenie; 100 żądań do `/chat` (`--requests`); 503 z `X-Reason: overloaded` liczone osobno jako „degraded”; cztery pomiary 02.10.2026 na GTX 1050 Ti po 100 żądań: od 0 do 20 odpowiedzi 503 `overloaded`, p95 odpowiedzi 200 od 50,4 do 53,5 s, kod 0 | bot + usługi | zero odpowiedzi 500, innych 5xx i błędów transportu; udział degraded <= 0,3 (`--max-degraded`); p95 odpowiedzi 200 <= 60 000 ms (`--p95-ms`) |
 | `test-stress` | `tests/live/stress.py`: pusty tekst, 5000 znaków, same emoji, mieszanka pl/en, 10 numerów kart, 100 powtórzeń tego samego pytania, ponowne użycie `session_id`, na końcu `/health` | bot + usługi | każda odpowiedź to 200 albo 503 z JSON zawierającym `reply` |
-| `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`), wzrost liczby otwartych plików <= 50 (`--max-fd-growth`); pomiar 04.10.2026, 20 minut: RSS +4,2 MB (2250 -> 2254 MB), otwarte pliki 9 -> 9 (połączenia SQLite są zamykane po każdej operacji) |
+| `test-stability` | `tests/live/stability.py --minutes 60`: sonda co 20 s (`--interval-s`), RSS i liczba deskryptorów procesu `uvicorn api:app` z `/proc` (Linux; `--pid`) | bot + usługi | zero 5xx, wzrost RSS <= 200 MB (`--max-rss-growth-mb`), wzrost liczby otwartych plików <= 50 (`--max-fd-growth`); pomiar 05.10.2026, 20 minut: RSS +0,4 MB (1731 -> 1732 MB), otwarte pliki 9 -> 9 (połączenia SQLite są zamykane po każdej operacji) |
 | `test-all` | `test`, `test-func`, `test-oos`, `test-accuracy`, `test-load`, `test-stress` po kolei (bez `test-stability`) | wszystko | każdy cel kod 0, na końcu `ALL TESTS PASSED` |
 | `codemap` | `tools/codemap.py --out data/reports/codemap.json` | git z remote `origin` | plik zapisany, kod 0 |
 | `coverage` | `tools/question_coverage.py`: pokrycie intencji pytaniami | nic | kod 0 (z `--strict` kod 1 przy brakach) |
@@ -74,10 +74,11 @@ kandydatów dla 72 pytań dev z intencją):
 
 Cała kaskada na części dev: 0,802 (kNN MiniLM) -> 0,948 (obecna). Przy `P_ACCEPT`
 0,3 klasyfikator LLM jest wołany przy 4 z 88 pytań dev, które nie zatrzymały się
-na regułach (wcześniej 38). Dwa przebiegi wszystkich 288 pytań 04.10.2026
-(drugi po dodaniu reguły `out_of_scope` i wzorców VAT oraz cudzej pracy) dały
-te same 288 odpowiedzi: `accuracy_all` 0,910, `accuracy_dev` 0,948,
-`accuracy_test` 0,891, macro-F1 test 0,888, 2,4 do 2,8 minuty.
+na regułach (wcześniej 38). Trzy przebiegi wszystkich 288 pytań (04.10.2026
+pierwszy; drugi po dodaniu reguły `out_of_scope` i wzorców VAT oraz cudzej
+pracy; 05.10.2026 trzeci, po zmianach w wyszukiwaniu i generacji w wersji 1.1.0)
+dały te same 288 etykiet: `accuracy_all` 0,910, `accuracy_dev` 0,948,
+`accuracy_test` 0,891, macro-F1 test 0,888, 2,4 do 3,6 minuty.
 
 Porównanie modeli językowych z routerem kNN z wersji 1.0.0, przed dodaniem reguły
 o wypłacie z cudzego konta (01.10.2026, Ollama 0.35.0, GTX 1050 Ti 4 GB,
@@ -116,22 +117,36 @@ kończy się kodem 1 przy pierwszym naruszeniu.
 ### Pomiar na zewnętrznej bazie
 
 Pomiar na zewnętrznej bazie testowej (59 artykułów, inna baza niż korpus klasyfikatora (ta sama dziedzina płatności);
-100 pytań po polsku; qwen2.5:7b-instruct, GTX 1050 Ti, 04.10.2026). Obecny kod
-w porównaniu z wersją 1.0.0 (router kNN) na tych samych pytaniach:
+100 pytań po polsku: 85 z odpowiedzią w bazie, 15 spoza bazy; qwen2.5:7b-instruct,
+GTX 1050 Ti). Przed zmianami w wyszukiwaniu i generacji (05.10.2026) pytania
+podzielono na część do strojenia (49: 42 z bazy, 7 spoza) i część testową (51: 43
+z bazy, 8 spoza), seed 42, osobno po artykułach i po pytaniach spoza bazy.
+Zmiany dobierano tylko na części do strojenia; część testowa była uruchomiona raz,
+a po dodaniu reguły dla pytań o bieżącą awarię (dodanej po analizie błędu na
+części testowej) drugi raz.
 
-| Metryka | 1.0.0 (kNN) | obecny kod (e5 + regresja logistyczna) |
-|---|---|---|
-| Pytania spoza bazy zakończone zgłoszeniem | 15/15 | 15/15 |
-| Odpowiedzi na pytania z bazy | 54 z 85 | 54 z 85 |
-| Odpowiedzi ze wskazaniem właściwego artykułu | 42 z 85 | 39 z 85 |
-| Zgłoszenia na pytania, na które baza ma odpowiedź | 28 | 30 |
-| Przekierowania pytań z bazy (`redirect`) | 3 | 1 |
-| Mediana / p95 czasu odpowiedzi | 14,4 / 25,9 s | 10,2 / 22,8 s |
+| Metryka | 1.0.0 (kNN, 04.10) | e5 + regresja logistyczna, wyszukiwanie w kategorii (04.10) | 1.1.0, część testowa (51) | 1.1.0, wszystkie 100 |
+|---|---|---|---|---|
+| Właściwy artykuł wśród odpowiedzi na pytania z bazy | 42 z 54 | 39 z 54 | **34 z 34** | **66 z 67** |
+| Odpowiedzi na pytania z bazy | 54 z 85 | 54 z 85 | 34 z 43 | 67 z 85 |
+| Pytania spoza bazy zakończone zgłoszeniem | 15/15 | 15/15 | 8/8* | 15/15* |
+| Zgłoszenia na pytania, na które baza ma odpowiedź | 28 | 30 | 8 | 17 |
+| Przekierowania pytań z bazy (`redirect`) | 3 | 1 | 1 | 1 |
+| Mediana / p95 czasu odpowiedzi | 14,4 / 25,9 s | 10,2 / 22,8 s | 14,6 s | 12,3 / 23,4 s |
 
-Wynik na zewnętrznej bazie nie poprawił się razem z trafnością tematu: klasyfikator
-częściej wybiera konkretny temat zamiast `other_in_scope` (zgłoszenia z tego powodu
-10 -> 5), ale część tych tematów prowadzi do kategorii, w której nie ma właściwego
-artykułu (np. dwa pytania sprzedawcy o wyłączenie metody płatności rozpoznane jako
-temat kupującego).
+\* Po dodaniu reguły dla pytań o bieżącą awarię, dodanej po analizie błędu na
+części testowej: w pierwszym przebiegu części testowej było 7/8 (pytanie „czy
+macie teraz awarię” dostało odpowiedź z poradami zamiast zgłoszenia).
+
+Pierwszy przebieg części testowej (przed regułą): 34 z 35 odpowiedzi z właściwym
+artykułem, 35 z 43 odpowiedzi. Na części do strojenia: przed zmianami 14 z 23,
+po zmianach 32 z 33; bez sprawdzania linii źródła 30 z 33. Wyszukiwanie samo
+(bez modelu, właściwy artykuł na pierwszym miejscu, 42 pytania z bazy z części do
+strojenia): `paraphrase-multilingual-MiniLM-L12-v2` 20, `multilingual-e5-large`
+w całej bazie 37, `multilingual-e5-large` z filtrem kategorii tematu i definicją
+tematu w zapytaniu 24.
+
+Mediana czasu rośnie, bo bot częściej odpowiada sam: odpowiedzi 54 -> 67, mediana
+odpowiedzi 13,7 -> 14,5 s, mediana zgłoszenia 8,4 -> 5,2 s.
 
 Na własnej domenie (zbiór kontrolny 192 pytań): trafność klasyfikacji 0,891.

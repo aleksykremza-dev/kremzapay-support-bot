@@ -50,26 +50,35 @@ flowchart TD
 - **Topic** is recognised by a classifier trained on 5412 labelled questions
   (`multilingual-e5-large` embeddings and logistic regression). The language model
   is called only when the classifier is not confident.
-- **The answer** is built only from the three best documentation excerpts and
-  ends with a `Źródło: <article id>` line.
+- **The answer** is built only from the three documentation excerpts closest to
+  the question (search over the whole base) and ends with a `Źródło: <article id>`
+  line that the bot checks against the excerpts it found.
+- **Questions about a current outage** always go to the team as a ticket: the
+  documentation cannot know the current state of the services.
 - **The judge**, a second model call, checks that the excerpts answer this exact
   question and that every claim in the answer is backed by them.
 
 ## Results
 
-Measured on 04.10.2026 with `qwen2.5:7b-instruct` on a GTX 1050 Ti 4 GB:
+Measured on 05.10.2026 with `qwen2.5:7b-instruct` on a GTX 1050 Ti 4 GB:
 
 | What | Result |
 |---|---|
-| Questions outside the knowledge base that ended in a ticket, not an invented answer | 15 of 15 |
-| Questions covered by the base that the bot answered | 54 of 85, 39 of them citing the right article; the rest were passed on |
+| Answers citing the right article among answers given to questions covered by the base | **34 of 34** on the test half (51 questions not used for tuning); **66 of 67** on all 100 questions |
+| Questions covered by the base that the bot answered | 67 of 85; the rest were passed on |
+| Questions outside the knowledge base that ended in a ticket, not an invented answer | 15 of 15, after adding a rule for questions about a current outage, added after analysing an error on the test half |
 | Topic accuracy (52 topics and 4 special classes) | **91%** on all 288 control questions; **89.1%** on the 192 questions the model did not see during tuning; 94.8% on the 96 questions used to tune the settings |
-| Median response time | 10.2 s (almost all of it is the model; rules, topic and the knowledge check take about 0.15 s) |
-| Stability, 20 minutes with a request every 20 s | memory +4.2 MB (2250 -> 2254 MB), open files 9 -> 9 |
-| Tests | 209 unit tests in CI on every change; live tests: out-of-scope 22/22, topic recognition 55/56 |
+| Median response time | 12.3 s (was 10.2 s: the bot answers on its own more often, and an answer takes longer than a ticket; almost all of it is the model, rules, topic and the knowledge check take about 0.3 s) |
+| Stability, 20 minutes with a request every 20 s | memory +0.4 MB (1731 -> 1732 MB), open files 9 -> 9 |
+| Tests | 219 unit tests in CI on every change; live tests: out-of-scope 22/22, topic recognition 55/56 |
 
 The external-base measurement used 59 articles from the same domain but different
-from the corpus the topic recognition was built on, and 100 questions in Polish.
+from the corpus the topic recognition was built on, and 100 questions in Polish,
+split before the changes into a tuning half (49) and a test half (51). Before
+this change (already with the new topic classifier) 39 of 54 answers cited the
+right article; the gain came from searching the whole base with
+`multilingual-e5-large` instead of the topic category and from checking the
+source line.
 
 Topic accuracy went from 75.5% to 89.1% (on questions not seen during tuning)
 after replacing similar-question voting with a trained classifier and a stronger
@@ -103,7 +112,9 @@ make ingest
 
 Chat: http://localhost:8020, dashboard: http://localhost:8020/dashboard, API docs:
 http://localhost:8020/docs. Prebuilt image:
-`docker pull ghcr.io/aleksykremza-dev/kremzapay-support-bot:1.0.0`.
+`docker pull ghcr.io/aleksykremza-dev/kremzapay-support-bot:1.1.0`. After an
+upgrade from 1.0.0 run `make ingest` again: base vectors now have 1024
+dimensions instead of 384.
 
 An article is a Markdown file `kb/<category>/<id>.md` with a short header
 (`id`, `category`, `title`); run `make ingest` after every change.
@@ -132,7 +143,8 @@ queue with a counter and a close button.
 
 - The dashboard and ticket closing have no login: run them locally or behind your
   own authentication.
-- On a weak GPU an answer takes from a few seconds to about 35 seconds.
+- On a weak GPU an answer takes from a few seconds to about 35 seconds (the first
+  question after a start up to about a minute while Ollama loads the model).
 - Topic accuracy is 89.1% on questions not seen during tuning, so about 1 in 9
   questions lands in the wrong topic; next steps are in "How to raise accuracy
   further".

@@ -48,7 +48,7 @@ curl -s -X POST http://localhost:8020/chat -H "Content-Type: application/json" \
 
 Zgłoszenie to wiersz w tabeli `tickets` bazy SQLite (`data/kremzapay.db`, ścieżka
 w `DB_PATH`): sesja, powód (`no_knowledge`, `other_in_scope`,
-`generation_not_grounded`, `service_unavailable`, `overloaded`, `handoff`), kategoria, intencja,
+`generation_not_grounded`, `service_status`, `service_unavailable`, `overloaded`, `handoff`), kategoria, intencja,
 priorytet, status `new`, czas. Widać je na `/dashboard` i w `/api/stats`. Nie ma
 integracji z e-mailem, Telegramem ani CRM: nikt nie zostanie powiadomiony, dopóki
 ktoś nie zajrzy do panelu albo do bazy. Klient widzi (`REPLIES` w `src/api.py`):

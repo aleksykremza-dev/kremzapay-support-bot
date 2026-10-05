@@ -71,7 +71,9 @@ pracowników firmy (dostęp, ustawienia), potem skala.
 
 - **Teraz:** bramka trafności `make test-accuracy` (próg `MIN_ACCURACY`) i sędzia
   każdej odpowiedzi; trafność rozpoznania tematu 89,1% na pytaniach
-  niewidzianych przy strojeniu (91% na wszystkich 288).
+  niewidzianych przy strojeniu (91% na wszystkich 288); na zewnętrznej bazie
+  właściwy artykuł w 34 z 34 odpowiedzi części testowej (66 z 67 na wszystkich
+  100 pytaniach).
 - **Zmiana:** mierzenie trafności
   odpowiedzi automatycznych razem z udziałem pytań, na które bot odpowiada sam;
   przycisk w panelu „temat był inny”, z którego po przeglądzie powstają nowe

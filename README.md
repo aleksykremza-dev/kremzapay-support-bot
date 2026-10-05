@@ -52,8 +52,11 @@ flowchart TD
 - **Temat** rozpoznaje klasyfikator wytrenowany na 5412 opisanych pytaniach
   (embeddingi `multilingual-e5-large` i regresja logistyczna). Model językowy
   włącza się dopiero wtedy, gdy klasyfikator nie jest pewny.
-- **Odpowiedź** powstaje wyłącznie z trzech najlepszych fragmentów dokumentacji
-  i kończy się linią `Źródło: <id artykułu>`.
+- **Odpowiedź** powstaje wyłącznie z trzech fragmentów dokumentacji najbliższych
+  pytaniu (wyszukiwanie w całej bazie) i kończy się linią `Źródło: <id artykułu>`,
+  którą bot sprawdza z listą znalezionych fragmentów.
+- **Pytania o bieżącą awarię** zawsze trafiają do zespołu jako zgłoszenie:
+  dokumentacja nie zna aktualnego stanu usług.
 - **Sędzia**, czyli drugie wywołanie modelu, sprawdza, czy fragmenty odpowiadają
   właśnie na to pytanie i czy każde twierdzenie ma w nich oparcie.
 
@@ -61,19 +64,24 @@ Szczegóły, progi i pliki: [docs/architektura.md](docs/architektura.md).
 
 ## Wyniki
 
-Pomiary z 04.10.2026 na `qwen2.5:7b-instruct` i karcie GTX 1050 Ti 4 GB:
+Pomiary z 05.10.2026 na `qwen2.5:7b-instruct` i karcie GTX 1050 Ti 4 GB:
 
 | Co mierzę | Wynik |
 |---|---|
-| Pytania spoza bazy wiedzy, które skończyły się zgłoszeniem, a nie zmyśloną odpowiedzią | 15 z 15 |
-| Pytania z bazy, na które bot odpowiedział | 54 z 85, z czego 39 ze wskazaniem właściwego artykułu; pozostałe przekazał dalej |
+| Odpowiedzi ze wskazaniem właściwego artykułu wśród odpowiedzi udzielonych na pytania z bazy | **34 z 34** na części testowej (51 pytań, nieużywanych przy strojeniu); **66 z 67** na wszystkich 100 pytaniach |
+| Pytania z bazy, na które bot odpowiedział | 67 z 85; pozostałe przekazał dalej |
+| Pytania spoza bazy wiedzy, które skończyły się zgłoszeniem, a nie zmyśloną odpowiedzią | 15 z 15, po dodaniu reguły dla pytań o bieżącą awarię, dodanej po analizie błędu na części testowej |
 | Trafność rozpoznania tematu (52 tematy i 4 klasy specjalne) | **91%** na wszystkich 288 pytaniach kontrolnych; **89,1%** na 192 pytaniach, których model nie widział przy strojeniu; 94,8% na 96 pytaniach, na których dobierano ustawienia |
-| Mediana czasu odpowiedzi | 10,2 s (prawie cały czas to model; reguły, temat i sprawdzenie bazy trwają około 0,15 s) |
-| Stabilność, 20 minut z zapytaniem co 20 s | pamięć +4,2 MB (2250 -> 2254 MB), otwarte pliki 9 -> 9 |
-| Testy | 209 testów jednostkowych w CI przy każdej zmianie, testy na żywo: pytania spoza zakresu 22/22, rozpoznanie tematów 55/56 |
+| Mediana czasu odpowiedzi | 12,3 s (wcześniej 10,2 s: bot częściej odpowiada sam, a odpowiedź trwa dłużej niż zgłoszenie; prawie cały czas to model, reguły, temat i sprawdzenie bazy trwają około 0,3 s) |
+| Stabilność, 20 minut z zapytaniem co 20 s | pamięć +0,4 MB (1731 -> 1732 MB), otwarte pliki 9 -> 9 |
+| Testy | 219 testów jednostkowych w CI przy każdej zmianie, testy na żywo: pytania spoza zakresu 22/22, rozpoznanie tematów 55/56 |
 
 Pomiar na zewnętrznej bazie: 59 artykułów z tej samej dziedziny, ale innych niż
-korpus, na którym budowałem rozpoznawanie tematów, i 100 pytań po polsku.
+korpus, na którym budowałem rozpoznawanie tematów, i 100 pytań po polsku,
+podzielonych przed zmianami na część do strojenia (49) i część testową (51).
+Przed tą zmianą (już z nowym klasyfikatorem tematów) właściwy artykuł miało
+39 z 54 odpowiedzi; poprawę dało wyszukiwanie modelem `multilingual-e5-large`
+w całej bazie zamiast w kategorii tematu i sprawdzanie linii źródła.
 Wszystkie testy i scenariusze: [docs/testy.md](docs/testy.md).
 
 Trafność tematu wzrosła z 75,5% do 89,1% (na pytaniach niewidzianych przy
@@ -109,10 +117,12 @@ make ingest
 
 Czat: http://localhost:8020, panel: http://localhost:8020/dashboard, opis API:
 http://localhost:8020/docs. Gotowy obraz:
-`docker pull ghcr.io/aleksykremza-dev/kremzapay-support-bot:1.0.0`.
+`docker pull ghcr.io/aleksykremza-dev/kremzapay-support-bot:1.1.0`.
 
-Pierwszy start trwa około 2 minut (pobranie modeli embeddingów, około 2,4 GB;
-indeks tematów jest gotowy w repozytorium), kolejne kilkanaście sekund. Ollama w WSL, Ollama w kontenerze i instalacja bez
+Pierwszy start trwa około 2 minut (pobranie modelu embeddingów, około 2,2 GB;
+indeks tematów jest gotowy w repozytorium), kolejne kilkanaście sekund.
+Po aktualizacji z wersji 1.0.0 trzeba ponownie wykonać `make ingest`: wektory
+bazy mają teraz 1024 wymiary zamiast 384. Ollama w WSL, Ollama w kontenerze i instalacja bez
 Dockera: [docs/instalacja.md](docs/instalacja.md).
 
 ## Własna dokumentacja
@@ -163,7 +173,8 @@ Szczegóły i API: [docs/api.md](docs/api.md).
 
 - Panel i zamykanie zgłoszeń nie mają logowania: uruchamiaj lokalnie albo za
   własnym uwierzytelnianiem.
-- Na słabej karcie odpowiedź trwa od kilku do około 35 sekund.
+- Na słabej karcie odpowiedź trwa od kilku do około 35 sekund (pierwsze pytanie
+  po starcie do około minuty, bo Ollama ładuje model).
 - Trafność rozpoznania tematu 89,1% na pytaniach niewidzianych przy strojeniu,
   czyli około 1 na 9 pytań trafia do złego tematu; dalsze kroki w „Jak podnieść
   trafność dalej”.

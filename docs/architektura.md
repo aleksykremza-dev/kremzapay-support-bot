@@ -35,17 +35,22 @@ Pytanie z czatu przechodzi przez kolejne etapy; każdy ma swój plik w `src/`.
    specjalne dają akcję: small talk -> `chitchat_reply`, treść niebezpieczna ->
    `unsafe_refuse`, poza zakresem -> `redirect`, temat w zakresie bez intencji ->
    `ticket`; `wants_human` -> `handoff`; pewność `low` -> `clarify` (dopytanie).
-   Inaczej najlepszy fragment z Qdrant musi mieć wynik >= `RETRIEVAL_OK` (0,45),
-   w przeciwnym razie `ticket`.
-6. **Odpowiedź** (`answer_gen.py`). Wyszukiwanie z filtrem po kategorii intencji
-   (przy mniej niż 2 trafieniach filtr jest zdejmowany); jeśli żaden fragment nie
-   ma wyniku >= `RETRIEVAL_OK`, wyszukiwanie idzie od razu po całej bazie.
-   3 najlepsze fragmenty (`TOP_N`) idą do promptu; model odpowiada tylko na ich
-   podstawie i kończy linią `Źródło: KB-###` (`Source:` po angielsku; źródło jest
-   rozpoznawane także na końcu ostatniego akapitu). Jeśli we fragmentach nie ma
-   odpowiedzi, model zwraca `NO_ANSWER`: wtedy jedno ponowne wyszukiwanie w całej
-   bazie i ponowne wywołanie modelu, a przy kolejnym `NO_ANSWER` zgłoszenie
-   (`no_knowledge`).
+   Temat `service_down_question` (czy jest awaria, czy działa, nic nie przechodzi)
+   daje zawsze `ticket` z powodem `service_status`, bez wyszukiwania i bez
+   odpowiedzi modelu, bo dokumentacja nie zna bieżącego stanu usług. Inaczej
+   najlepszy fragment z Qdrant musi mieć wynik >= `RETRIEVAL_OK` (0,45),
+   w przeciwnym razie `ticket`. Z modelem `multilingual-e5-large` wyniki są
+   prawie zawsze powyżej 0,8 (także dla pytań spoza bazy), więc ten próg w praktyce
+   nie odsiewa niczego; pytania spoza bazy zatrzymują `NO_ANSWER` i sędzia.
+6. **Odpowiedź** (`answer_gen.py`). Wyszukiwanie samym pytaniem w całej bazie
+   (bez filtra kategorii tematu: przy błędnym temacie prowadził do cudzego
+   artykułu). 3 najlepsze fragmenty (`TOP_N`) idą do promptu; model odpowiada
+   tylko na ich podstawie i kończy linią `Źródło: <id>` (`Source:` po angielsku).
+   Linię źródła składa kod: identyfikatory z odpowiedzi modelu są porównywane
+   z identyfikatorami znalezionych fragmentów (literówka w id jest zamieniana na
+   najbliższy id, inna etykieta przed id też jest rozpoznawana); bez rozpoznanego
+   id źródłem jest pierwszy fragment. Jeśli we fragmentach nie ma odpowiedzi,
+   model zwraca `NO_ANSWER` i powstaje zgłoszenie (`no_knowledge`).
 7. **Sędzia** (`judge.py`). Drugie wywołanie modelu sprawdza dwie rzeczy: czy
    fragmenty odpowiadają na zadane pytanie, a nie tylko na pokrewny temat, i czy
    każde twierdzenie odpowiedzi ma w nich pokrycie (`yes`/`no`). Sędzia widzi tylko
@@ -61,7 +66,7 @@ sesji jest zapisywana, ale każde pytanie jest rozpatrywane osobno. Język
 
 | Termin | Co to jest | Gdzie |
 |---|---|---|
-| Embeddingi | wektory liczb: teksty o podobnym znaczeniu są blisko siebie; jeden model dla pl i en; temat: `ROUTER_EMBED_MODEL` (`multilingual-e5-large`), wyszukiwanie w bazie: `EMBED_MODEL` (`paraphrase-multilingual-MiniLM-L12-v2`), oba przez fastembed | `knn_router.py`, `search.py` |
+| Embeddingi | wektory liczb: teksty o podobnym znaczeniu są blisko siebie; jeden model dla pl i en; temat: `ROUTER_EMBED_MODEL`, wyszukiwanie w bazie: `EMBED_MODEL`, domyślnie oba `multilingual-e5-large` (prefiksy `query: ` i `passage: `, jedna instancja modelu w pamięci), przez fastembed | `embeddings.py`, `knn_router.py`, `search.py`, `ingest.py` |
 | Regresja logistyczna | klasyfikator liniowy (scikit-learn) na wektorach korpusu; daje prawdopodobieństwo każdej etykiety | `knn_router.py`, `data/index/` |
 | Progi | `CLF_C`, `P_ACCEPT`, `T_OOS`, `LLM_CANDIDATES`, `RETRIEVAL_OK`, `CONF_HIGH`, `TOP_K`, `TOP_N`, `CHUNK_SIZE`, `MIN_ACCURACY` | `config.py` |
 | Klient Ollama | jedno miejsce wywołań modelu: timeout, powtórka, `LLMUnavailable`, `LLMBadOutput` | `llm.py` |
@@ -75,11 +80,11 @@ modelu jest ograniczone (`num_predict`): 220 tokenów na klasyfikator, 400 na od
 
 | Ścieżka | Wywołania modelu | Szacunek tokenów wejście / wyjście |
 |---|---|---|
-| reguły albo L1 z gotową akcją; L1 przyjęty, ale brak pokrycia w bazie | 0 | 0 |
+| reguły albo L1 z gotową akcją; L1 przyjęty, ale brak pokrycia w bazie; pytanie o bieżącą awarię | 0 | 0 |
 | odpowiedź po L1 | odpowiedź + sędzia (2) | ok. 2 400 / 260 |
 | odpowiedź po klasyfikatorze LLM | klasyfikator + odpowiedź + sędzia (3) | ok. 3 150 / 350 |
 | zgłoszenie albo dopytanie po klasyfikatorze LLM | 1 | ok. 750 / 90 |
-| odpowiedź po `NO_ANSWER` i ponownym wyszukiwaniu w całej bazie | do 4 (klasyfikator, odpowiedź, odpowiedź, sędzia) | ok. 4 700 / 600 |
+| `NO_ANSWER` po klasyfikatorze LLM | klasyfikator + odpowiedź (2) | ok. 3 000 / 100 |
 | przekazanie człowiekowi i wiadomości w sesji `handoff` | 0 | 0 |
 
 Szacunki wynikają z rozmiarów promptów tej kaskady (3 fragmenty po ok. 800
@@ -92,9 +97,16 @@ pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.
 - Panel (`/dashboard`, `/api/stats`, `POST /api/tickets/{id}/close`) nie ma
   logowania: każdy, kto dotrze do portu 8020, widzi rozmowy i może zamykać
   zgłoszenia. Uruchamiaj go tylko lokalnie albo za własnym uwierzytelnianiem.
-- Szybkość zależy od sprzętu: na GTX 1050 Ti 4 GB mediana odpowiedzi to 10,2 s
-  (pomiar na zewnętrznej bazie 04.10.2026), a pojedyncze odpowiedzi trwają do
-  około 35 s.
+- Szybkość zależy od sprzętu: na GTX 1050 Ti 4 GB mediana odpowiedzi to 12,3 s
+  (pomiar na zewnętrznej bazie 05.10.2026; wcześniej 10,2 s, bo bot częściej
+  przekazywał pytania dalej, a zgłoszenie jest szybsze niż odpowiedź), a pojedyncze
+  odpowiedzi trwają do około 35 s (pierwsze pytanie po starcie do około minuty).
+- Po aktualizacji z wersji 1.0.0 bazę trzeba wczytać ponownie (`make ingest`):
+  wektory mają 1024 wymiary (`multilingual-e5-large`) zamiast 384.
+- `RETRIEVAL_OK` (0,45) z modelem `multilingual-e5-large` w praktyce nie działa:
+  najlepszy fragment ma wynik powyżej 0,8 także dla pytań spoza bazy (na części
+  dev zewnętrznej bazy: pytania z bazy od 0,825, spoza bazy do 0,85), więc progiem
+  nie da się ich rozdzielić. Pytania spoza bazy zatrzymuje `NO_ANSWER` i sędzia.
 - Trafność klasyfikacji `accuracy_test` to 0,891 (192 pytania, których nie
   używano przy strojeniu); około 1 na 9 pytań trafia do złego tematu.
 - Trafność (`make test-accuracy`) mierzy tylko rozpoznanie intencji i klasy;
@@ -102,11 +114,12 @@ pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.
 - Model embeddingów, `CLF_C` i `P_ACCEPT` dobierano tylko na części dev gold setu
   (96 pytań) i walidacji krzyżowej na korpusie; na własnych danych progi
   w `config.py` trzeba dobrać od nowa.
-- Model `multilingual-e5-large` zajmuje 2,24 GB na dysku i razem z modelem wyszukiwania około 2,3 GB RAM
-  procesu; temat liczy się na CPU w około 0,1 s na pytanie.
+- Model `multilingual-e5-large` zajmuje 2,24 GB na dysku; jedna instancja służy
+  rozpoznaniu tematu i wyszukiwaniu. Temat i wyszukiwanie liczą się na CPU
+  w około 0,3 s na pytanie.
 - Próg `MIN_ACCURACY` (0,87) leży co najmniej 0,02 poniżej `accuracy_test` (0,891) jako zapas na
   przyszłe aktualizacje modelu, zależności i promptów; przy temperature 0 i stałym
-  seed przebieg jest powtarzalny (dwa przebiegi 04.10 zgodne 288/288).
+  seed przebieg jest powtarzalny (trzy przebiegi 04.10 i 05.10 zgodne 288/288).
 - Zgłoszenia nigdzie nie są dostarczane: tylko SQLite i panel.
 - Jeden model (`ANSWER_MODEL`) obsługuje klasyfikację, odpowiedź i sędziego;
   nie ma zapasowego LLM, awaria Ollama oznacza 503 i zgłoszenie.
@@ -117,9 +130,6 @@ pytań. Inny model w Ollama to zmiana `ANSWER_MODEL`; inny dostawca to `src/llm.
   naraz, a nadmiarowe po `QUEUE_TIMEOUT_S` dostają 503 ze zgłoszeniem `overloaded`.
   Na mocniejszym sprzęcie oba parametry można podnieść w `.env`.
 - Tylko polski i angielski; inne języki są traktowane jak angielski.
-- Filtr kategorii przy wyszukiwaniu działa tylko, gdy `category` w nagłówkach
-  artykułów pokrywa się z kategoriami w `data/taxonomy.json`; przy rozjeździe
-  wyszukiwanie po cichu wraca do wyników bez filtra.
 
 ## Mapa kodu
 
@@ -136,9 +146,10 @@ sygnatura i link do tych linii na GitHubie w bieżącym commicie. Moduły w `src
 | `rules.py` | warstwa 0: wzorce ataków, oszustw, innych produktów, podatków (w tym VAT), cudzej pracy, prośby o człowieka |
 | `knn_router.py` | warstwa 1: embeddingi e5, regresja logistyczna na korpusie, gotowy indeks z `data/index/` albo `data/cache/`, kandydaci dla warstwy 2 |
 | `llm_classifier.py` | warstwa 2: wybór etykiety z kandydatów L1 jednym wywołaniem modelu (najpierw kupujący czy sprzedawca), wynik w JSON |
-| `search.py` | embedding pytania i zapytanie do Qdrant z opcjonalnym filtrem kategorii; `ping` |
-| `cascade.py` | sklejenie warstw, wykrycie języka, decyzja, `TurnState` |
-| `answer_gen.py` | prompt z fragmentami, odpowiedź ze źródłem, `NO_ANSWER` i jedno ponowne wyszukiwanie w całej bazie |
+| `embeddings.py` | jedna instancja modelu embeddingów na nazwę, prefiksy `query: ` / `passage: ` |
+| `search.py` | embedding pytania i zapytanie do Qdrant w całej bazie; `ping` |
+| `cascade.py` | sklejenie warstw, wykrycie języka, decyzja (w tym zgłoszenie dla pytań o bieżącą awarię), `TurnState` |
+| `answer_gen.py` | wyszukiwanie w całej bazie, prompt z fragmentami, odpowiedź z linią źródła sprawdzoną z fragmentami, `NO_ANSWER` |
 | `judge.py` | kontrola, czy fragmenty odpowiadają na pytanie i pokrywają każde twierdzenie |
 | `store.py` | SQLite: sesje, wiadomości, zgłoszenia, kontakt tylko w zgłoszeniu, kolejka przekazań, statystyki dla panelu, migracja starszych baz |
 | `api.py` | FastAPI: `/`, `/health`, `/chat`, `/dashboard`, `/api/stats`, `POST /api/tickets/{id}/close`, limit równoległych żądań, przekazanie człowiekowi, teksty odpowiedzi |
