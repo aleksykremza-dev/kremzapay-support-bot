@@ -2,13 +2,15 @@ PY = uv run python
 REPORTS = data/reports
 COMPOSE = docker compose
 
-.PHONY: test style test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap router-index ingest ingest-local coverage up down logs
+.PHONY: test lint test-func test-oos test-accuracy test-load test-stress test-stability test-all codemap router-index ingest ingest-local coverage up down logs
 
 test:
 	uv run pytest -q
 
-style:
-	$(PY) tools/check_style.py
+lint:
+	uv run ruff check src tools tests
+	@missing=$$(grep -L "Copyright (c) 2026 Oleksii Kremza" src/*.py tools/*.py tests/live/*.py || true); \
+	if [ -n "$$missing" ]; then echo "Missing license header: $$missing"; exit 1; fi
 
 test-func:
 	$(PY) tests/live/func_by_category.py

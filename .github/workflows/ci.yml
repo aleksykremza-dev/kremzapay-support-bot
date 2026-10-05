@@ -19,5 +19,9 @@ jobs:
         run: uv sync --frozen
       - name: Unit tests
         run: uv run pytest -q
-      - name: Style gate
-        run: uv run python tools/check_style.py
+      - name: Lint
+        run: uv run ruff check src tools tests
+      - name: License header
+        run: |
+          missing=$(grep -L "Copyright (c) 2026 Oleksii Kremza" src/*.py tools/*.py tests/live/*.py || true)
+          if [ -n "$missing" ]; then echo "Missing license header: $missing"; exit 1; fi

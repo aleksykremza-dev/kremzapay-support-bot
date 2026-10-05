@@ -14,9 +14,3 @@ data/eval/*.log
 .pytest_cache/
 tests/
 tools/
-PROJECT.md
-TASKS.md
-JOURNAL.md
-BACKLOG.md
-DESCRIPTION.md
-.project-status

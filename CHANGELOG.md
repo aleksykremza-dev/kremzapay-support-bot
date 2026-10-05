@@ -4,6 +4,15 @@ Wszystkie istotne zmiany w projekcie. Format według
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), numeracja według
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+
+- CI i `make lint`: `ruff check` (zestaw domyślny) oraz sprawdzenie nagłówka
+  licencji zamiast własnego skryptu stylu; cel `make style` zastąpiony przez
+  `make lint`.
+- Panel: polski podtytuł.
+
 ## [1.1.0] - 2026-10-05
 
 Trafniejsze rozpoznanie tematu i odpowiedzi z właściwego artykułu.

@@ -37,7 +37,7 @@ document.getElementById("f").addEventListener("submit",async e=>{
    body:JSON.stringify({text,session_id:sid})});
   const j=await r.json();sid=j.session_id;wait.className="msg bot";wait.textContent=j.reply;
   const d=document.createElement("div");d.className="dbg";
-  d.textContent=`${j.debug.action} · ${j.debug.intent??"—"} · ${Object.entries(j.debug.timings_ms).map(([k,v])=>k+":"+v+"ms").join(" ")}`;
+  d.textContent=`${j.debug.action} · ${j.debug.intent??"-"} · ${Object.entries(j.debug.timings_ms).map(([k,v])=>k+":"+v+"ms").join(" ")}`;
   log.appendChild(d);
  }catch(err){wait.textContent="Błąd połączenia: "+err}
  b.disabled=false;t.focus();

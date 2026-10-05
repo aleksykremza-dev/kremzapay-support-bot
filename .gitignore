@@ -8,9 +8,3 @@ data/*.db
 data/cache/
 data/eval/*.log
 data/reports/
-.project-status
-DESCRIPTION.md
-BACKLOG.md
-PROJECT.md
-TASKS.md
-JOURNAL.md
