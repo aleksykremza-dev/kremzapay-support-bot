@@ -116,7 +116,7 @@ def _ticket_reply(sid: str, lang: str, reason: str, template: str, cls: dict,
 
 def _answer(masked: str, sid: str, ts: dict, cls: dict) -> tuple[str, str, int | None]:
     lang = ts["language"]
-    generated = answer_gen.generate(masked, intent=cls.get("intent"), language=lang)
+    generated = answer_gen.generate(masked, language=lang)
     if generated and answer_gen.is_no_answer(generated["answer"]):
         reason, template = "no_knowledge", "ticket_no_knowledge"
     elif generated and judge.grounded(masked, generated["answer"], generated["chunks"]):

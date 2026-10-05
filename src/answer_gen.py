@@ -1,13 +1,15 @@
 # Copyright (c) 2026 Oleksii Kremza. Licensed under PolyForm Noncommercial 1.0.0, see LICENSE.
+import difflib
 import re
 
 import config
 import llm
-import taxonomy
 from search import search
 
-SOURCE_LINE = re.compile(r"^(Źródło|Source):", re.I)
-SOURCE_TAIL = re.compile(r"(?:^|\s)(?:Źródło|Source)\s*:\s*([^\n]+)$", re.I)
+SOURCE_LINE = re.compile(r"^(Źródło|Source)\s*:", re.I)
+LABEL_TAIL = re.compile(r"(?:^|\s)(\S+)\s*:\s*([^:\n]+)$")
+ID_TOKEN = re.compile(r"[^\s,;]+")
+ID_MATCH_CUTOFF = 0.8
 NO_ANSWER = "NO_ANSWER"
 BRAND_VOICE = (
     "You are the kremzaPay support assistant. Style: warm but concise, "
@@ -37,22 +39,43 @@ def is_no_answer(answer: str) -> bool:
     return answer.strip().upper().startswith(NO_ANSWER)
 
 
-def _source_lines(answer: str) -> list[str]:
-    lines = [line.strip() for line in answer.splitlines() if line.strip()]
-    found = [line for line in lines if SOURCE_LINE.match(line)]
-    tail = SOURCE_TAIL.search(lines[-1]) if lines else None
-    if tail and not SOURCE_LINE.match(lines[-1]):
-        found.append(tail.group(1))
-    return found
+def _match_id(token: str, ids: list[str]) -> str | None:
+    clean = token.strip(".`'\"[]()<>").lower().replace("_", "-")
+    if clean in ids:
+        return clean
+    close = difflib.get_close_matches(clean, ids, n=1, cutoff=ID_MATCH_CUTOFF)
+    return close[0] if close else None
 
 
-def _cited(answer: str, hits: list) -> list:
-    lines = _source_lines(answer)
-    if not lines:
-        return hits
-    cited = [hit for hit in hits
-             if any(re.search(rf"\b{re.escape(hit.payload['id'])}\b", line) for line in lines)]
-    return cited or hits
+def _ids_in(text: str, ids: list[str]) -> list[str]:
+    return [found for found in (_match_id(token, ids) for token in ID_TOKEN.findall(text)) if found]
+
+
+def _split_source(answer: str, ids: list[str]) -> tuple[str, list[str]]:
+    body, cited = [], []
+    for line in answer.strip().splitlines():
+        if SOURCE_LINE.match(line.strip()):
+            cited += _ids_in(SOURCE_LINE.sub("", line.strip()), ids)
+        else:
+            body.append(line)
+    while body and not body[-1].strip():
+        body.pop()
+    tail = LABEL_TAIL.search(body[-1]) if body else None
+    if tail:
+        tokens = ID_TOKEN.findall(tail.group(2))
+        found = [_match_id(token, ids) for token in tokens]
+        if tokens and all(found):
+            cited += found
+            body[-1] = body[-1][:tail.start()].rstrip()
+    return "\n".join(body).rstrip(), list(dict.fromkeys(cited))
+
+
+def _with_source(answer: str, hits: list, language: str) -> tuple[str, list]:
+    ids = [hit.payload["id"] for hit in hits]
+    body, cited = _split_source(answer, ids)
+    cited = cited or ids[:1]
+    label = "Źródło" if language == "pl" else "Source"
+    return f"{body}\n\n{label}: {', '.join(cited)}", [hit for hit in hits if hit.payload["id"] in cited]
 
 
 def _ask(question: str, hits: list, language: str) -> str | None:
@@ -62,24 +85,15 @@ def _ask(question: str, hits: list, language: str) -> str | None:
         return None
 
 
-def generate(question: str, intent: str | None = None, language: str = "en") -> dict | None:
-    definitions = taxonomy.intent_definition()
-    category = taxonomy.intent_category().get(intent)
-    query = f"{question}. {definitions[intent]}" if intent in definitions else question
-    hits = search(query, category=category)[:config.TOP_N]
-    can_retry = category is not None
-    if can_retry and not any(hit.score >= config.RETRIEVAL_OK for hit in hits):
-        hits = search(question)[:config.TOP_N]
-        can_retry = False
+def generate(question: str, language: str = "en") -> dict | None:
+    hits = search(question)[:config.TOP_N]
     if not hits:
         return None
     text = _ask(question, hits, language)
-    if text is not None and can_retry and is_no_answer(text):
-        retry_hits = search(question)[:config.TOP_N]
-        if retry_hits:
-            hits = retry_hits
-            text = _ask(question, hits, language)
     if text is None:
         return None
     sources = [f"{hit.payload['id']} : {hit.payload['title']}" for hit in hits]
-    return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in _cited(text, hits)]}
+    if is_no_answer(text):
+        return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in hits]}
+    text, cited = _with_source(text, hits, language)
+    return {"answer": text, "sources": sources, "chunks": [hit.payload["text"] for hit in cited]}

@@ -40,7 +40,7 @@ def corpus(tmp_path, monkeypatch):
     monkeypatch.setattr(knn_router.config, "CACHE_DIR", tmp_path / "cache")
     monkeypatch.setattr(knn_router.config, "INDEX_DIR", tmp_path / "no-index")
     monkeypatch.setattr(knn_router.config, "ROUTER_EMBED_MODEL", "fake/model")
-    monkeypatch.setattr(knn_router, "TextEmbedding", FakeEmbedder)
+    monkeypatch.setattr(knn_router.embeddings, "model", FakeEmbedder)
     monkeypatch.setattr(knn_router, "_embedder", None)
     monkeypatch.setattr(knn_router, "_vectors", None)
     monkeypatch.setattr(knn_router, "_model", None)

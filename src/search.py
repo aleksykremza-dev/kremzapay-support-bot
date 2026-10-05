@@ -2,11 +2,10 @@
 import logging
 import sys
 
-from fastembed import TextEmbedding
 from qdrant_client import QdrantClient
-from qdrant_client.models import FieldCondition, Filter, MatchValue
 
 import config
+import embeddings
 
 log = logging.getLogger(__name__)
 
@@ -21,7 +20,7 @@ class SearchUnavailable(Exception):
 def _lazy() -> None:
     global _embedder, _client
     if _embedder is None:
-        _embedder = TextEmbedding(config.EMBED_MODEL)
+        _embedder = embeddings.model(config.EMBED_MODEL)
         _client = QdrantClient(url=config.QDRANT_URL)
 
 
@@ -30,17 +29,11 @@ def warm() -> None:
     list(_embedder.embed(["warmup"]))
 
 
-def search(question: str, category: str | None = None) -> list:
+def search(question: str) -> list:
     _lazy()
-    vector = list(_embedder.embed([question]))[0].tolist()
-    query_filter = None
-    if category:
-        query_filter = Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
+    vector = list(_embedder.embed(embeddings.prefixed(config.EMBED_MODEL, [question], "query")))[0].tolist()
     try:
-        hits = _client.query_points(config.COLLECTION, query=vector, limit=config.TOP_K,
-                                    query_filter=query_filter).points
-        if category and len(hits) < 2:
-            hits = _client.query_points(config.COLLECTION, query=vector, limit=config.TOP_K).points
+        hits = _client.query_points(config.COLLECTION, query=vector, limit=config.TOP_K).points
     except Exception as exc:
         log.warning("qdrant %s failed: %s", config.QDRANT_URL, exc)
         raise SearchUnavailable(f"{config.QDRANT_URL}: {exc}") from exc

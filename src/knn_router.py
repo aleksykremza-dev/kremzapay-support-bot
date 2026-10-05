@@ -5,14 +5,12 @@ import logging
 from pathlib import Path
 
 import numpy as np
-from fastembed import TextEmbedding
 from sklearn.linear_model import LogisticRegression
 
 import config
+import embeddings
 
 log = logging.getLogger(__name__)
-
-QUERY_PREFIX = {"intfloat/multilingual-e5-large": "query: "}
 
 _embedder = None
 _vectors = None
@@ -35,8 +33,8 @@ def cache_key(model: str, cases: list[dict], c_value: float) -> str:
 
 
 def _embed(texts: list[str]) -> np.ndarray:
-    prefix = QUERY_PREFIX.get(config.ROUTER_EMBED_MODEL, "")
-    vectors = np.array(list(_embedder.embed([prefix + text for text in texts])), dtype=np.float32)
+    prefixed = embeddings.prefixed(config.ROUTER_EMBED_MODEL, texts, "query")
+    vectors = np.array(list(_embedder.embed(prefixed)), dtype=np.float32)
     return vectors / np.linalg.norm(vectors, axis=1, keepdims=True)
 
 
@@ -79,7 +77,7 @@ def _ensure_index() -> None:
     if _model is not None:
         return
     if _embedder is None:
-        _embedder = TextEmbedding(config.ROUTER_EMBED_MODEL)
+        _embedder = embeddings.model(config.ROUTER_EMBED_MODEL)
     name = _index_name()
     if _read(config.INDEX_DIR / name) or _read(config.CACHE_DIR / name):
         return

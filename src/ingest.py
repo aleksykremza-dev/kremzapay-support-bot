@@ -3,11 +3,11 @@ import sys
 import uuid
 from pathlib import Path
 
-from fastembed import TextEmbedding
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
 
 import config
+import embeddings
 
 NO_KB_MESSAGE = (
     "Baza wiedzy nie jest częścią repozytorium. "
@@ -61,8 +61,8 @@ def main(kb_dir: Path = config.KB_DIR) -> int:
     print(f"Chunks produced: {len(texts)}")
 
     print("Computing embeddings (first run downloads the model, then fast)...")
-    embedder = TextEmbedding(config.EMBED_MODEL)
-    vectors = list(embedder.embed(texts))
+    embedder = embeddings.model(config.EMBED_MODEL)
+    vectors = list(embedder.embed(embeddings.prefixed(config.EMBED_MODEL, texts, "passage")))
 
     client = QdrantClient(url=config.QDRANT_URL)
     if client.collection_exists(config.COLLECTION):

@@ -18,8 +18,9 @@ def _path(name: str, default: Path) -> Path:
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 ANSWER_MODEL = os.getenv("ANSWER_MODEL", "qwen2.5:7b-instruct")
-EMBED_MODEL = os.getenv("EMBED_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+EMBED_MODEL = os.getenv("EMBED_MODEL", "intfloat/multilingual-e5-large")
 ROUTER_EMBED_MODEL = os.getenv("ROUTER_EMBED_MODEL", "intfloat/multilingual-e5-large")
+EMBED_PREFIXES = {"intfloat/multilingual-e5-large": ("query: ", "passage: ")}
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6335")
 COLLECTION = os.getenv("COLLECTION", "kremzapay_kb")
 LLM_TIMEOUT_S = float(os.getenv("LLM_TIMEOUT_S", "120"))
