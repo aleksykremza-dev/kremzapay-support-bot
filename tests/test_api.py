@@ -63,6 +63,22 @@ def test_chat_no_knowledge_creates_ticket(client, monkeypatch):
     assert stats["tickets"][0]["id"] == 1
 
 
+def test_chat_service_status_ticket_says_status_is_checked(client, monkeypatch):
+    import api
+
+    def route(text):
+        ts = _route_ticket(text)
+        ts["classification"]["intent"] = "service_down_question"
+        ts["decision"]["reason"] = "service_status"
+        return ts
+    monkeypatch.setattr(api.cascade, "route", route)
+    monkeypatch.setattr(api.answer_gen, "generate", lambda *a, **k: pytest.fail("generated an answer"))
+    body = client.post("/chat", json={"text": "czy jest awaria?"}).json()
+    assert body["action"] == "ticket"
+    assert body["reply"] == api.REPLIES["ticket_service_status"]["pl"].format(tid=body["ticket_id"])
+    assert client.get("/api/stats").json()["tickets"][0]["reason"] == "service_status"
+
+
 def test_chat_not_grounded_becomes_ticket(client, monkeypatch):
     import api
     monkeypatch.setattr(api.cascade, "route", _route_answer)

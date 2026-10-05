@@ -15,6 +15,7 @@ SPECIAL_ACTIONS = {
     "out_of_scope": "redirect",
     "other_in_scope": "ticket",
 }
+LIVE_STATUS_INTENTS = {"service_down_question"}
 
 PL_WORDS = {"jak", "czy", "gdzie", "nie", "moge", "mogę", "zwrot", "platnosc",
             "płatność", "wyplata", "wypłata", "dzien", "dzień", "prosze", "proszę"}
@@ -89,6 +90,9 @@ def _decide(ts: dict, scope: str, conf: str, wants_human: bool) -> None:
         return
     if conf == "low":
         ts["decision"] = {"action": "clarify", "reason": "low_confidence", "confidence": conf}
+        return
+    if ts["classification"]["intent"] in LIVE_STATUS_INTENTS:
+        ts["decision"] = {"action": "ticket", "reason": "service_status", "confidence": conf}
         return
     with _timed(ts, "retrieval"):
         top_score = _retrieval_signal(ts["raw_text"])

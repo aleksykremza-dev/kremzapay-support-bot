@@ -75,6 +75,10 @@ REPLIES = {
         "pl": "Nie mogę teraz odpowiedzieć rzetelnie na to pytanie, więc utworzyłem zgłoszenie #{tid}. Zespół wróci do Ciebie.",
         "en": "I can't answer this reliably right now, so I've created ticket #{tid}. Our team will get back to you.",
     },
+    "ticket_service_status": {
+        "pl": "Nie widzę bieżącego stanu usług, więc utworzyłem zgłoszenie #{tid}. Zespół sprawdzi, czy jest awaria, i wróci do Ciebie.",
+        "en": "I can't see the current state of our services, so I've created ticket #{tid}. The team will check for an outage and get back to you.",
+    },
     "ticket_service_down": {
         "pl": "Usługa jest chwilowo niedostępna, przekazałem sprawę do zespołu, zgłoszenie #{tid}.",
         "en": "The service is temporarily unavailable, I've passed this to the team, ticket #{tid}.",
@@ -145,7 +149,9 @@ def _handle(masked: str, sid: str, mapping: dict[str, str]) -> ChatOut:
     cls = ts.get("classification") or {}
     ticket_id = None
     if action == "ticket":
-        reply, ticket_id = _ticket_reply(sid, lang, ts["decision"]["reason"], "ticket_no_knowledge", cls)
+        reason = ts["decision"]["reason"]
+        template = "ticket_service_status" if reason == "service_status" else "ticket_no_knowledge"
+        reply, ticket_id = _ticket_reply(sid, lang, reason, template, cls)
     elif action == "answer":
         action, reply, ticket_id = _answer(masked, sid, ts, cls)
     elif action == "handoff":

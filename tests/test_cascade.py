@@ -30,6 +30,24 @@ def test_knn_accept_with_good_retrieval_answers(monkeypatch):
     assert ts["decision"] == {"action": "answer", "reason": "ok", "confidence": "high"}
 
 
+def test_live_service_status_question_opens_ticket_without_search(monkeypatch):
+    monkeypatch.setattr(cascade.knn_router, "classify", lambda text: {
+        "decision": "accepted", "intent": "service_down_question", "confidence": 0.80})
+    monkeypatch.setattr(cascade, "search", lambda text: pytest.fail("search for a live status question"))
+    ts = cascade.route("czy macie teraz awarie? nic nie przechodzi")
+    assert ts["decision"] == {"action": "ticket", "reason": "service_status", "confidence": "high"}
+    assert "retrieval" not in ts
+
+
+def test_service_status_rule_after_llm_classifier(monkeypatch):
+    _grey_then_llm(monkeypatch, [("service_down_question", 0.25), ("payment_statuses", 0.2)],
+                   "service_down_question", "in_scope")
+    monkeypatch.setattr(cascade, "search", lambda text: pytest.fail("search for a live status question"))
+    ts = cascade.route("czy u was dziala dzisiaj wszystko?")
+    assert ts["decision"]["action"] == "ticket"
+    assert ts["decision"]["reason"] == "service_status"
+
+
 def test_knn_accept_without_knowledge_opens_ticket(monkeypatch):
     monkeypatch.setattr(cascade.knn_router, "classify", lambda text: {
         "decision": "accepted", "intent": "refunds_how_to", "confidence": 0.80})
